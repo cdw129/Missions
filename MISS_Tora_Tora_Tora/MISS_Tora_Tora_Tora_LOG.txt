@@ -1,0 +1,14 @@
+**** log file for mission MISS_Tora_Tora_Tora ****
+wereareyou=3  1) Intro 2)Start 3)Middle 4)End
+Ships that got out=1  Needed to win=12 CT2
+wereareyou=4  1) Intro 2)Start 3)Middle 4)End
+Ships that got out=2  Needed to win=12 CT3
+Ships that got out=3  Needed to win=12 CT1
+Ships that got out=4  Needed to win=12 CT5
+wereareyou=5  1) Intro 2)Start 3)Middle 4)End
+Ships that got out=5  Needed to win=12 CT6
+Ships that got out=6  Needed to win=12 CT4
+Ships that got out=7  Needed to win=12 CT8
+wereareyou=6  1) Intro 2)Start 3)Middle 4)End
+wereareyou=6 - CB01 Does not exist
+Ships that got out=8  Needed to win=12 CT7
