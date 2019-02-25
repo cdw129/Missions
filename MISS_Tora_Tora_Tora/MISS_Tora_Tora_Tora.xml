@@ -1,0 +1,1117 @@
+<mission_data version="1.0" background_id_arme="39d393f3-edb4-4be8-a3bb-0b59e0354fca" playerShipNames_arme="Artemis\Intrepid\Aegis\Horatio\Excalibur\Hera\Ceres\Diana">
+  <start id_arme="39d393f3-edb4-4be8-a3bb-0b59e0354fca">
+    <!--Game start up-->
+    <set_variable name="Station" randomIntLow="1" randomIntHigh="3" />
+    <set_variable name="WhoGotOut" value="0.0" integer="yes" />
+    <set_variable name="FleetNUM" value="0.0" integer="yes" />
+    <set_variable name="Num" value="0" integer="yes" />
+    <set_variable name="NumB" value="0" integer="yes" />
+    <set_variable name="CTnumber" value="1" integer="yes" />
+    <set_variable name="Alph" value="26.0" integer="yes" />
+    <set_variable name="Startup" value="0.0" integer="yes" />
+    <set_variable name="Start" value="0.0" integer="yes" />
+    <set_variable name="Middle" value="0.0" integer="yes" />
+    <set_variable name="End" value="0.0" integer="yes" />
+    <set_variable name="AmountToWin" value="0.0" integer="yes" />
+    <set_variable name="Difficulty" value="7.0" integer="yes" />
+    <set_variable name="WillStart" value="0.0" integer="yes" />
+    <set_variable name="IncomingEnemys" value="0.0" integer="yes" />
+    <set_variable name="Attackincoming" value="0.0" integer="yes" />
+    <set_variable name="WhatFleet" value="0.0" integer="yes" />
+    <set_variable name="OutcomingFleet" value="0.0" integer="yes" />
+    <set_variable name="wereareyou" value="1.0" integer="yes" />
+    <set_difficulty_level value="7" />
+    <set_timer name="StrikeForceEnter" seconds="50000" />
+    <!--Creating the enviroment-->
+    <create count="100" type="asteroids" startX="53402.0" startY="0.0" startZ="51230.0" radius="19162" randomRange="25000" randomSeed="3800" />
+    <create count="60" type="nebulas" startX="24017.0" startY="0.0" startZ="49927.0" endX="42835.0" endY="0.0" endZ="29372.0" randomRange="10000" randomSeed="30" />
+    <create count="60" type="nebulas" startX="90025.0" startY="0.0" startZ="65850.0" endX="42835.0" endY="0.0" endZ="29372.0" randomRange="10000" randomSeed="30" />
+    <create count="60" type="nebulas" startX="49349.0" startY="0.0" startZ="83655.0" endX="42835.0" endY="0.0" endZ="29372.0" randomRange="10000" randomSeed="30" />
+    <create type="station" x="76430.0" y="0.0" z="42791.0" angle="0" name="CB01" hullID="1001" sideValue="2" />
+    <create type="station" x="52264.0" y="0.0" z="53840.0" angle="0" name="CB02" hullID="1001" sideValue="2" />
+    <create type="station" x="31235.0" y="0.0" z="38559.0" angle="0" name="CB03" hullID="1001" sideValue="2" />
+    <create type="blackHole" x="49060.0" y="0.0" z="27490.0" />
+    <create type="monster" monsterType="1" x="67588.0" y="0.0" z="4330.0" angle="0" />
+    <create type="monster" monsterType="1" x="64548.0" y="0.0" z="3896.0" angle="0" />
+    <create type="monster" monsterType="1" x="64982.0" y="0.0" z="6501.0" angle="0" />
+    <create type="monster" monsterType="1" x="68601.0" y="0.0" z="7080.0" angle="0" />
+    <create type="monster" monsterType="1" x="61653.0" y="0.0" z="3751.0" angle="0" />
+    <create type="monster" monsterType="1" x="61074.0" y="0.0" z="6936.0" angle="0" />
+    <!--GM BUTTONS-->
+    <set_gm_button text="Start Game/Intro" y="120" />
+    <set_gm_button text="Start Game/Start" y="120" />
+    <set_gm_button text="Start Game/Middle" y="120" />
+    <set_gm_button text="Start Game/End" y="120" />
+    <set_gm_button text="Ships Got Out/1" y="120" />
+    <set_gm_button text="Ships Got Out/2" y="120" />
+    <set_gm_button text="Ships Got Out/3" y="120" />
+    <set_gm_button text="Ships Got Out/4" y="120" />
+    <set_gm_button text="Ships Got Out/5" y="120" />
+    <set_gm_button text="Ships Got Out/6" y="120" />
+    <set_gm_button text="Ships Got Out/7" y="120" />
+    <set_gm_button text="Ships Got Out/8" y="120" />
+    <set_gm_button text="Ships Got Out/9" y="120" />
+    <set_gm_button text="Ships Got Out/10" y="120" />
+    <set_gm_button text="Ships Got Out/11" y="120" />
+    <set_gm_button text="Ships Got Out/12" y="120" />
+    <set_gm_button text="Set difficulty/1" menu_w="120" />
+    <set_gm_button text="Set difficulty/2" menu_w="120" />
+    <set_gm_button text="Set difficulty/3" menu_w="120" />
+    <set_gm_button text="Set difficulty/4" menu_w="120" />
+    <set_gm_button text="Set difficulty/5" menu_w="120" />
+    <set_gm_button text="Set difficulty/6" menu_w="120" />
+    <set_gm_button text="Set difficulty/7" menu_w="120" />
+    <set_gm_button text="Set difficulty/8" menu_w="120" />
+    <set_gm_button text="Set difficulty/9" menu_w="120" />
+    <set_gm_button text="Set difficulty/10" menu_w="120" />
+    <set_gm_button text="Set difficulty/11" menu_w="120" />
+    <set_gm_button text="Create Transport/Create Transport" menu_w="120" />
+    <set_gm_button text="Create Enemy/Kralien/Heavy" menu_w="120" />
+    <set_gm_button text="Create Enemy/Kralien/Med" menu_w="120" />
+    <set_gm_button text="Create Enemy/Kralien/Light" menu_w="120" />
+    <set_gm_button text="Create Enemy/Torgoth/Heavy" menu_w="120" />
+    <set_gm_button text="Create Enemy/Torgoth/Med" menu_w="120" />
+    <set_gm_button text="Create Enemy/Torgoth/Light" menu_w="120" />
+    <set_gm_button text="Create Enemy/Avonian/Heavy" menu_w="120" />
+    <set_gm_button text="Create Enemy/Avonian/Med" menu_w="120" />
+    <set_gm_button text="Create Enemy/Avonian/Light" menu_w="120" />
+    <set_gm_button text="Give Command/Atack/CB01" menu_w="120" />
+    <set_gm_button text="Give Command/Atack/CB02" menu_w="120" />
+    <set_gm_button text="Give Command/Atack/CB03" menu_w="120" />
+    <set_gm_button text="Give Command/Clear AI" menu_w="120" />
+    <set_gm_button text="Delete/Selected ship" />
+    <gm_instructions title="Press Start to start game">If your starting from the beginning then select Start and intro. If not then look at the log file to determine where you should start.</gm_instructions>
+  </start>
+  <folder_arme name="Start" id_arme="bfb44f21-6505-40cf-a92f-2c4f678687c0" expanded_arme="" />
+  <event name="Intro Game coms" id_arme="9f757418-b69c-477c-be74-869a39ded8eb" parent_id_arme="bfb44f21-6505-40cf-a92f-2c4f678687c0">
+    <if_variable name="Intro" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Mission 01  &quot;Tora,Tora,Tora&quot;" consoles="MHWESCOF" />
+    <incoming_comms_text from="TSN Command" type="STATUS">All Captains be aware! There is a large enemy fleet heading to this sector and we MUST evacuate. Cover the transports and keep the enemy at bay until we have completed the Evac! Sensors have them at about five minutes out so you have then to prepare. God Speed!</incoming_comms_text>
+    <set_variable name="OutcomingFleet" value="1.0" integer="yes" />
+    <set_timer name="UntillInvasion" seconds="299" />
+    <set_variable name="Start" value="1.0" integer="yes" />
+    <set_variable name="wereareyou" value="1.0" integer="yes" />
+    <log text="wereareyou=1 Intro 5 min, 3 ships spawn" />
+    <set_variable name="Intro" value="0.0" integer="yes" />
+  </event>
+  <event name="Start Game coms" id_arme="bb515168-24c4-4299-bc6e-76e545a0c875" parent_id_arme="bfb44f21-6505-40cf-a92f-2c4f678687c0">
+    <if_variable name="Startup" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="TSN Command" type="STATUS">You have five minutes to Prepare</incoming_comms_text>
+    <set_variable name="Middle" value="1.0" integer="yes" />
+    <set_timer name="StrikeForceEnter" seconds="299" />
+    <set_timer name="TillFinshGame" seconds="900" />
+    <set_variable name="Startup" value="0.0" integer="yes" />
+  </event>
+  <event name="Middle Game com" id_arme="45dc18fb-3f82-45b6-b39e-2e28e505350b" parent_id_arme="bfb44f21-6505-40cf-a92f-2c4f678687c0">
+    <if_variable name="MiddleStartup" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="TSN Command" type="STATUS">You have five minutes to Prepare</incoming_comms_text>
+    <set_variable name="Middle" value="1.0" integer="yes" />
+    <set_timer name="StrikeForceEnter" seconds="299" />
+    <set_timer name="TillFinshGame" seconds="600" />
+    <set_variable name="MiddleStartup" value="0.0" integer="yes" />
+  </event>
+  <event name="End Game com" id_arme="acd45c8e-e5f8-4d12-9c93-341681ebf58f" parent_id_arme="bfb44f21-6505-40cf-a92f-2c4f678687c0">
+    <if_variable name="EndStartup" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="TSN Command" type="STATUS">You have five minutes to Prepare</incoming_comms_text>
+    <set_variable name="Middle" value="1.0" integer="yes" />
+    <set_timer name="StrikeForceEnter" seconds="299" />
+    <set_timer name="TillFinshGame" seconds="330" />
+    <set_variable name="EndStartup" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Middle" id_arme="2c69df87-081c-4726-a242-965ecb792a2f" expanded_arme="" />
+  <event name="After 5 min timer" id_arme="eb1dd890-e279-47ce-a634-42e6cc858f4a" parent_id_arme="2c69df87-081c-4726-a242-965ecb792a2f">
+    <if_variable name="Start" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="UntillInvasion" />
+    <set_variable name="Attackincoming" value="1.0" integer="yes" />
+    <set_timer name="StrikeForceEnter" seconds="299" />
+    <set_timer name="TillFinshGame" seconds="900" />
+    <set_variable name="OutcomingFleet" value="1.0" integer="yes" />
+    <set_variable name="Middle" value="1.0" integer="yes" />
+    <set_variable name="wereareyou" value="wereareyou+1" integer="yes" />
+    <log text="wereareyou=|wereareyou|  1) Intro 2)Start 3)Middle 4)End" />
+    <set_variable name="Start" value="0.0" integer="yes" />
+  </event>
+  <event name="strike foce timer" id_arme="64e0eeaf-580c-44f8-9bbd-2b5c1d19734e" parent_id_arme="2c69df87-081c-4726-a242-965ecb792a2f">
+    <if_timer_finished name="StrikeForceEnter" />
+    <set_variable name="Attackincoming" value="1.0" integer="yes" />
+    <set_variable name="OutcomingFleet" value="1.0" integer="yes" />
+    <set_fleet_property property="fleetSpacing" value="0.0" fleetIndex="0" />
+    <set_variable name="wereareyou" value="wereareyou+1" integer="yes" />
+    <log text="wereareyou=|wereareyou|  1) Intro 2)Start 3)Middle 4)End" />
+    <set_timer name="StrikeForceEnter" seconds="299" />
+  </event>
+  <event name="If no bases are found" id_arme="b36be04b-71ff-422c-b11d-f256effc6738" parent_id_arme="2c69df87-081c-4726-a242-965ecb792a2f">
+    <if_not_exists name="CB01" />
+    <if_not_exists name="CB02" />
+    <if_not_exists name="CB03" />
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Mission Control">All bases were lost!</incoming_comms_text>
+    <set_timer name="TillFinshGame" seconds="30" />
+    <set_variable name="End" value="1.0" integer="yes" />
+    <set_variable name="Middle" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Incomming attackers" id_arme="2536c472-5bc8-4d8b-8438-60d2cbee8082" parent_id_arme="2c69df87-081c-4726-a242-965ecb792a2f" expanded_arme="" />
+  <event name="enemys are coming" id_arme="f98e18ff-4253-4459-bfbb-7c2df9116093" parent_id_arme="2536c472-5bc8-4d8b-8438-60d2cbee8082">
+    <if_variable name="Attackincoming" comparator="EQUALS" value="1.0" />
+    <set_variable name="FleetNUM" value="FleetNUM+1" integer="yes" />
+    <incoming_comms_text from="TSN Information" type="STATUS">Incoming Fleet!</incoming_comms_text>
+    <set_variable name="HeavyFleet" randomIntLow="1" randomIntHigh="3" integer="yes" />
+    <set_variable name="HeavyFleetNUM" value="1.0" integer="yes" />
+    <set_variable name="MedFleet" randomIntLow="1" randomIntHigh="3" integer="yes" />
+    <set_variable name="MedFleetNUM" value="2.0" integer="yes" />
+    <set_variable name="LightFleet" randomIntLow="1" randomIntHigh="3" integer="yes" />
+    <set_variable name="LightFleetNUM" value="4.0" integer="yes" />
+    <set_variable name="Alph" value="26.0" integer="yes" />
+    <set_variable name="NumB" value="9" integer="yes" />
+    <set_variable name="Num" value="99" integer="yes" />
+    <set_fleet_property property="fleetSpacing" value="0.0" fleetIndex="FleetNUM" />
+    <set_variable name="Attackincoming" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Kralien" id_arme="2787702f-bbb5-47e0-a406-d1a16bd892c3" parent_id_arme="2536c472-5bc8-4d8b-8438-60d2cbee8082" expanded_arme="" />
+  <folder_arme name="Kralien Heavy" id_arme="805c5dd0-8594-4db6-accd-f1673fd616a6" parent_id_arme="2787702f-bbb5-47e0-a406-d1a16bd892c3" />
+  <event name="Create Kralien Heavy" id_arme="71989843-2b75-4ca6-93f6-641b005f5fb5" parent_id_arme="805c5dd0-8594-4db6-accd-f1673fd616a6">
+    <if_variable name="HeavyFleet" comparator="EQUALS" value="1.0" />
+    <if_variable name="HeavyFleetNUM" comparator="GREATER" value="0.0" />
+    <set_variable name="RandomNUMA" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMB" randomIntLow="2" randomIntHigh="8" />
+    <set_variable name="RandomNUMC" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMD" randomIntLow="2" randomIntHigh="3" />
+    <create type="enemy" x="RandomNUMA*RandomNUMB" y="0.0" z="RandomNUMC*RandomNUMD" angle="0" hullID="2002" sideValue="1" fleetnumber="-1" />
+    <set_variable name="HeavyFleetNUM" value="HeavyFleetNUM-1" integer="yes" />
+  </event>
+  <folder_arme name="Kralien Med" id_arme="6a65a2da-7583-4f03-8079-87fe1688043b" parent_id_arme="2787702f-bbb5-47e0-a406-d1a16bd892c3" />
+  <event name="Create Kralien Med" id_arme="e2230380-278d-4e00-84ed-338daff439f6" parent_id_arme="6a65a2da-7583-4f03-8079-87fe1688043b">
+    <if_variable name="MedFleet" comparator="EQUALS" value="1.0" />
+    <if_variable name="MedFleetNUM" comparator="GREATER" value="0.0" />
+    <set_variable name="RandomNUMA" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMB" randomIntLow="2" randomIntHigh="8" />
+    <set_variable name="RandomNUMC" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMD" randomIntLow="2" randomIntHigh="3" />
+    <create type="enemy" x="RandomNUMA*RandomNUMB" y="0.0" z="RandomNUMC*RandomNUMD" angle="0" hullID="2001" sideValue="1" fleetnumber="-1" />
+    <set_variable name="MedFleetNUM" value="MedFleetNUM-1" integer="yes" />
+  </event>
+  <folder_arme name="Kralien Light" id_arme="defaf184-0d73-4677-b182-6d2f6aad68a0" parent_id_arme="2787702f-bbb5-47e0-a406-d1a16bd892c3" expanded_arme="" />
+  <event name="Create Kralien Light" id_arme="0d19df8b-7a3e-4641-968e-2396f11f7442" parent_id_arme="defaf184-0d73-4677-b182-6d2f6aad68a0">
+    <if_variable name="LightFleet" comparator="EQUALS" value="1.0" />
+    <if_variable name="LightFleetNUM" comparator="GREATER" value="0.0" />
+    <set_variable name="RandomNUMA" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMB" randomIntLow="2" randomIntHigh="8" />
+    <set_variable name="RandomNUMC" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMD" randomIntLow="2" randomIntHigh="3" />
+    <create type="enemy" x="RandomNUMA*RandomNUMB" y="0.0" z="RandomNUMC*RandomNUMD" angle="0" hullID="2000" sideValue="1" fleetnumber="-1" />
+    <set_variable name="LightFleetNUM" value="LightFleetNUM-1" integer="yes" />
+  </event>
+  <folder_arme name="Torgoth" id_arme="8060d71b-a1f7-403d-81ff-b17de440ce6b" parent_id_arme="2536c472-5bc8-4d8b-8438-60d2cbee8082" expanded_arme="" />
+  <folder_arme name="Torgoth Heavy" id_arme="795449f8-1171-4d8e-a896-635bae5f26cd" parent_id_arme="8060d71b-a1f7-403d-81ff-b17de440ce6b" />
+  <event name="Create Torgoth Heavy" id_arme="4e87c71d-e997-40e1-a3ba-365f7419b5cc" parent_id_arme="795449f8-1171-4d8e-a896-635bae5f26cd">
+    <if_variable name="HeavyFleet" comparator="EQUALS" value="2.0" />
+    <if_variable name="HeavyFleetNUM" comparator="GREATER" value="0.0" />
+    <set_variable name="RandomNUMA" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMB" randomIntLow="2" randomIntHigh="8" />
+    <set_variable name="RandomNUMC" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMD" randomIntLow="2" randomIntHigh="3" />
+    <create type="enemy" x="RandomNUMA*RandomNUMB" y="0.0" z="RandomNUMC*RandomNUMD" angle="0" hullID="4002" sideValue="1" fleetnumber="-1" />
+    <set_variable name="HeavyFleetNUM" value="HeavyFleetNUM-1" integer="yes" />
+  </event>
+  <folder_arme name="Torgoth Med" id_arme="48a67ca8-d2df-47b7-9e99-08cd01e1736f" parent_id_arme="8060d71b-a1f7-403d-81ff-b17de440ce6b" />
+  <event name="Create Torgoth Med" id_arme="048fa3dc-fe97-418b-aaa1-010f7b11f148" parent_id_arme="48a67ca8-d2df-47b7-9e99-08cd01e1736f">
+    <if_variable name="MedFleet" comparator="EQUALS" value="2.0" />
+    <if_variable name="MedFleetNUM" comparator="GREATER" value="0.0" />
+    <set_variable name="RandomNUMA" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMB" randomIntLow="2" randomIntHigh="8" />
+    <set_variable name="RandomNUMC" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMD" randomIntLow="2" randomIntHigh="3" />
+    <create type="enemy" x="RandomNUMA*RandomNUMB" y="0.0" z="RandomNUMC*RandomNUMD" angle="0" hullID="4001" sideValue="1" fleetnumber="-1" />
+    <set_variable name="MedFleetNUM" value="MedFleetNUM-1" integer="yes" />
+  </event>
+  <folder_arme name="Torgoth Light" id_arme="f48ac65e-8d08-455f-99c4-7afb81a5543d" parent_id_arme="8060d71b-a1f7-403d-81ff-b17de440ce6b" />
+  <event name="Create Torgoth Light" id_arme="3d5d8603-60a7-41af-b04e-496d847b1256" parent_id_arme="f48ac65e-8d08-455f-99c4-7afb81a5543d">
+    <if_variable name="LightFleet" comparator="EQUALS" value="2.0" />
+    <if_variable name="LightFleetNUM" comparator="GREATER" value="0.0" />
+    <set_variable name="RandomNUMA" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMB" randomIntLow="2" randomIntHigh="8" />
+    <set_variable name="RandomNUMC" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMD" randomIntLow="2" randomIntHigh="3" />
+    <create type="enemy" x="RandomNUMA*RandomNUMB" y="0.0" z="RandomNUMC*RandomNUMD" angle="0" hullID="4000" sideValue="1" fleetnumber="-1" />
+    <set_variable name="LightFleetNUM" value="LightFleetNUM-1" integer="yes" />
+  </event>
+  <folder_arme name="Avonian" id_arme="0704094c-d19f-42c4-bb2c-88e13b0204d4" parent_id_arme="2536c472-5bc8-4d8b-8438-60d2cbee8082" expanded_arme="" />
+  <folder_arme name="Avonian Heavy" id_arme="d019e8fd-1fd9-4386-af0d-5b2c68c22040" parent_id_arme="0704094c-d19f-42c4-bb2c-88e13b0204d4" />
+  <event name="Create Avonian Heavy" id_arme="7a7229f5-bb59-4a43-bff5-68057b03f86e" parent_id_arme="d019e8fd-1fd9-4386-af0d-5b2c68c22040">
+    <if_variable name="HeavyFleet" comparator="EQUALS" value="3.0" />
+    <if_variable name="HeavyFleetNUM" comparator="GREATER" value="0.0" />
+    <set_variable name="RandomNUMA" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMB" randomIntLow="2" randomIntHigh="8" />
+    <set_variable name="RandomNUMC" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMD" randomIntLow="2" randomIntHigh="3" />
+    <create type="enemy" x="RandomNUMA*RandomNUMB" y="0.0" z="RandomNUMC*RandomNUMD" angle="0" hullID="3002" sideValue="1" fleetnumber="-1" />
+    <set_variable name="HeavyFleetNUM" value="HeavyFleetNUM-1" integer="yes" />
+  </event>
+  <folder_arme name="Avonian Med" id_arme="edc17761-f128-4710-8a60-8f12bdd35b4c" parent_id_arme="0704094c-d19f-42c4-bb2c-88e13b0204d4" />
+  <event name="Create Avonian Med" id_arme="0c9d3fc4-bf82-4da3-aab9-5887ceac5427" parent_id_arme="edc17761-f128-4710-8a60-8f12bdd35b4c">
+    <if_variable name="MedFleet" comparator="EQUALS" value="3.0" />
+    <if_variable name="MedFleetNUM" comparator="GREATER" value="0.0" />
+    <set_variable name="RandomNUMA" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMB" randomIntLow="2" randomIntHigh="8" />
+    <set_variable name="RandomNUMC" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMD" randomIntLow="2" randomIntHigh="3" />
+    <create type="enemy" x="RandomNUMA*RandomNUMB" y="0.0" z="RandomNUMC*RandomNUMD" angle="0" hullID="3001" sideValue="1" fleetnumber="-1" />
+    <set_variable name="MedFleetNUM" value="MedFleetNUM-1" integer="yes" />
+  </event>
+  <folder_arme name="Avonian Light" id_arme="f2ca8dd5-e42d-489a-b6e9-379869696b40" parent_id_arme="0704094c-d19f-42c4-bb2c-88e13b0204d4" />
+  <event name="Create Avonian Light" id_arme="2c013c81-4274-4c02-a5d6-0ef809ce6f4d" parent_id_arme="f2ca8dd5-e42d-489a-b6e9-379869696b40">
+    <if_variable name="LightFleet" comparator="EQUALS" value="3.0" />
+    <if_variable name="LightFleetNUM" comparator="GREATER" value="0.0" />
+    <set_variable name="RandomNUMA" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMB" randomIntLow="2" randomIntHigh="8" />
+    <set_variable name="RandomNUMC" randomIntLow="9000" randomIntHigh="10000" integer="yes" />
+    <set_variable name="RandomNUMD" randomIntLow="2" randomIntHigh="3" />
+    <create type="enemy" x="RandomNUMA*RandomNUMB" y="0.0" z="RandomNUMC*RandomNUMD" angle="0" hullID="2000" sideValue="1" fleetnumber="-1" />
+    <set_variable name="LightFleetNUM" value="LightFleetNUM-1" integer="yes" />
+  </event>
+  <folder_arme name="Create AI" id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d" parent_id_arme="2536c472-5bc8-4d8b-8438-60d2cbee8082" expanded_arme="" />
+  <event name="A" id_arme="af47f5f2-bc83-4fa0-bb67-502b3c3e180f" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="26.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="A|Num|" />
+    <add_ai type="LEADER_LEADS" name="A|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="A|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="A|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="20000" value2="20000" name="A|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="A|Num|" />
+    <add_ai type="CHASE_ANGER" name="A|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="A|Num|" />
+    <add_ai type="SPCL_AI" name="A|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="B" id_arme="3b9d233a-8fbf-450b-9cb9-f6640578324e" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="25.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="B|Num|" />
+    <add_ai type="LEADER_LEADS" name="B|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="B|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="B|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="30000" value2="30000" name="B|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="20000" value2="20000" name="B|Num|" />
+    <add_ai type="CHASE_ANGER" name="B|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="B|Num|" />
+    <add_ai type="SPCL_AI" name="B|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="C" id_arme="3e94f7e7-6d5b-4a6d-bb93-c785b66b49a3" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="24.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="C|Num|" />
+    <add_ai type="LEADER_LEADS" name="C|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="C|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="C|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="C|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="C|Num|" />
+    <add_ai type="CHASE_ANGER" name="C|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="C|Num|" />
+    <add_ai type="SPCL_AI" name="C|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="D" id_arme="2b871342-c3b0-4e85-9c2f-64e786fecc05" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="23.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="D|Num|" />
+    <add_ai type="LEADER_LEADS" name="D|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="D|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="D|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="D|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="D|Num|" />
+    <add_ai type="CHASE_ANGER" name="D|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="D|Num|" />
+    <add_ai type="SPCL_AI" name="D|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="E" id_arme="e75720f4-b905-4cfc-8134-a2fd3fb18bf4" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="22.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="E|Num|" />
+    <add_ai type="LEADER_LEADS" name="E|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="E|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="E|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="E|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="E|Num|" />
+    <add_ai type="CHASE_ANGER" name="E|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="E|Num|" />
+    <add_ai type="SPCL_AI" name="E|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="F" id_arme="7dfe6154-68ff-462e-ad69-e873d17d5fb1" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="21.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="F|Num|" />
+    <add_ai type="LEADER_LEADS" name="F|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="F|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="F|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="F|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="F|Num|" />
+    <add_ai type="CHASE_ANGER" name="F|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="F|Num|" />
+    <add_ai type="SPCL_AI" name="F|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="G" id_arme="7e6079de-7b34-4dc9-8e78-c0445a7bfe0c" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="20.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="G|Num|" />
+    <add_ai type="LEADER_LEADS" name="G|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="G|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="G|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="G|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="G|Num|" />
+    <add_ai type="CHASE_ANGER" name="G|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="G|Num|" />
+    <add_ai type="SPCL_AI" name="G|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="H" id_arme="e53daaed-f254-463c-8820-eb97b16e51dc" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="19.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="H|Num|" />
+    <add_ai type="LEADER_LEADS" name="H|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="H|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="H|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="H|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="H|Num|" />
+    <add_ai type="CHASE_ANGER" name="H|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="H|Num|" />
+    <add_ai type="SPCL_AI" name="H|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="I" id_arme="ea9be94a-366c-42e8-a0ea-e816d72be5bd" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="18.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="I|Num|" />
+    <add_ai type="LEADER_LEADS" name="I|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="I|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="I|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="I|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="I|Num|" />
+    <add_ai type="CHASE_ANGER" name="I|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="I|Num|" />
+    <add_ai type="SPCL_AI" name="I|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="J" id_arme="351fb69e-3bca-46bd-a55a-5a51455e42c0" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="17.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="J|Num|" />
+    <add_ai type="LEADER_LEADS" name="J|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="J|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="J|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="J|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="J|Num|" />
+    <add_ai type="CHASE_ANGER" name="J|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="J|Num|" />
+    <add_ai type="SPCL_AI" name="J|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="K" id_arme="9fcd9b2a-f34d-48a9-b68d-a45b59abf3a4" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="16.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="K|Num|" />
+    <add_ai type="LEADER_LEADS" name="K|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="K|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="K|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="K|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="K|Num|" />
+    <add_ai type="CHASE_ANGER" name="K|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="K|Num|" />
+    <add_ai type="SPCL_AI" name="K|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="L" id_arme="7fd29c28-7c1a-42f5-8bd9-bb42e49a4614" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="15.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="L|Num|" />
+    <add_ai type="LEADER_LEADS" name="L|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="L|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="L|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="L|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="L|Num|" />
+    <add_ai type="CHASE_ANGER" name="L|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="L|Num|" />
+    <add_ai type="SPCL_AI" name="L|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="M" id_arme="779ff24a-40b4-4766-86ab-cb9b86d42282" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="14.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="M|Num|" />
+    <add_ai type="LEADER_LEADS" name="M|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="M|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="M|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="M|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="M|Num|" />
+    <add_ai type="CHASE_ANGER" name="M|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="M|Num|" />
+    <add_ai type="SPCL_AI" name="M|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="N" id_arme="5c90285b-06dc-4fbc-b46c-ba36f17d6b58" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="13.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="N|Num|" />
+    <add_ai type="LEADER_LEADS" name="N|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="N|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="N|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="N|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="N|Num|" />
+    <add_ai type="CHASE_ANGER" name="N|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="N|Num|" />
+    <add_ai type="SPCL_AI" name="N|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="O" id_arme="6d518253-cd10-4300-a018-9e212b4039a3" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="12.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="O|Num|" />
+    <add_ai type="LEADER_LEADS" name="O|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="O|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="O|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="O|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="O|Num|" />
+    <add_ai type="CHASE_ANGER" name="O|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="O|Num|" />
+    <add_ai type="SPCL_AI" name="O|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="P" id_arme="9dc8344a-709f-4d44-8bdf-d307985d0d2a" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="11.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="P|Num|" />
+    <add_ai type="LEADER_LEADS" name="P|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="P|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="P|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="P|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="P|Num|" />
+    <add_ai type="CHASE_ANGER" name="P|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="P|Num|" />
+    <add_ai type="SPCL_AI" name="P|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="Q" id_arme="434a72a1-34dd-4866-8fc1-aef5a2ee7936" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="10.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="Q|Num|" />
+    <add_ai type="LEADER_LEADS" name="Q|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="Q|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="Q|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="Q|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="Q|Num|" />
+    <add_ai type="CHASE_ANGER" name="Q|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="Q|Num|" />
+    <add_ai type="SPCL_AI" name="Q|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="R" id_arme="1458cfe1-2cf2-46d1-8dbf-e6ae127eb682" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="9.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="R|Num|" />
+    <add_ai type="LEADER_LEADS" name="R|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="R|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="R|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="R|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="R|Num|" />
+    <add_ai type="CHASE_ANGER" name="R|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="R|Num|" />
+    <add_ai type="SPCL_AI" name="R|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="S" id_arme="0177d7c7-70fa-4354-b737-a9467a498ee4" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="8.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="S|Num|" />
+    <add_ai type="LEADER_LEADS" name="S|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="S|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="S|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="S|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="S|Num|" />
+    <add_ai type="CHASE_ANGER" name="S|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="S|Num|" />
+    <add_ai type="SPCL_AI" name="S|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="T" id_arme="3ee36b47-ff12-4371-83da-0b3dc534b991" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="7.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="T|Num|" />
+    <add_ai type="LEADER_LEADS" name="T|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="T|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="T|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="T|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="T|Num|" />
+    <add_ai type="CHASE_ANGER" name="T|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="T|Num|" />
+    <add_ai type="SPCL_AI" name="T|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="U" id_arme="bd3d2206-c3c6-4e58-bc64-309363184f27" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="6.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="U|Num|" />
+    <add_ai type="LEADER_LEADS" name="U|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="U|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="U|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="U|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="U|Num|" />
+    <add_ai type="CHASE_ANGER" name="U|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="U|Num|" />
+    <add_ai type="SPCL_AI" name="U|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="V" id_arme="78d13585-98fd-4073-9333-27fa4b9cdd62" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="5.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="V|Num|" />
+    <add_ai type="LEADER_LEADS" name="V|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="V|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="V|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="V|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="V|Num|" />
+    <add_ai type="CHASE_ANGER" name="V|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="V|Num|" />
+    <add_ai type="SPCL_AI" name="V|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="W" id_arme="db93f74b-bba6-4d9f-89a2-26096ccf02b6" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="4.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="W|Num|" />
+    <add_ai type="LEADER_LEADS" name="W|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="W|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="W|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="W|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="W|Num|" />
+    <add_ai type="CHASE_ANGER" name="W|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="W|Num|" />
+    <add_ai type="SPCL_AI" name="W|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="X" id_arme="ac5f8e65-6646-4db1-9013-b8243d78c377" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="3.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="X|Num|" />
+    <add_ai type="LEADER_LEADS" name="X|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="X|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="X|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="X|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="X|Num|" />
+    <add_ai type="CHASE_ANGER" name="X|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="X|Num|" />
+    <add_ai type="SPCL_AI" name="X|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="Y" id_arme="a09c981b-c1af-472e-a7a4-fd44c7ed317c" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="2.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="Y|Num|" />
+    <add_ai type="LEADER_LEADS" name="Y|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="Y|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="Y|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="Y|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="Y|Num|" />
+    <add_ai type="CHASE_ANGER" name="Y|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="Y|Num|" />
+    <add_ai type="SPCL_AI" name="Y|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="Z" id_arme="fc68dd28-054b-4d5e-bb61-2cb4f1625253" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="1.0" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="Z|Num|" />
+    <add_ai type="LEADER_LEADS" name="Z|Num|" />
+    <add_ai type="FOLLOW_LEADER" name="Z|Num|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="Z|Num|" />
+    <add_ai type="CHASE_AI_SHIP" value1="50000" value2="30000" name="Z|Num|" />
+    <add_ai type="CHASE_PLAYER" value1="30000" value2="30000" name="Z|Num|" />
+    <add_ai type="CHASE_ANGER" name="Z|Num|" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="10000" name="Z|Num|" />
+    <add_ai type="SPCL_AI" name="Z|Num|" />
+    <set_variable name="Alph" value="Alph-1" integer="yes" />
+  </event>
+  <event name="repete" id_arme="8f9a3d53-ba9b-4619-aed0-d463cf49be74" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="Num" comparator="GREATER" value="-1" />
+    <if_variable name="Alph" comparator="EQUALS" value="0.0" />
+    <set_variable name="Num" value="Num-1" integer="yes" />
+    <set_variable name="Alph" value="26.0" integer="yes" />
+  </event>
+  <event name="AI NumB" id_arme="c7f8e1b6-1c44-479e-b929-4c2382024639" parent_id_arme="f7c7c89c-454d-4bba-8b58-b64f74cd632d">
+    <if_variable name="NumB" comparator="GREATER" value="-1" />
+    <add_ai type="CHASE_STATION" value1="50000" name="A0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="B0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="C0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="D0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="E0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="F0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="G0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="H0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="I0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="J0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="K0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="L0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="M0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="N0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="O0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="P0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="Q0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="R0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="S0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="T0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="U0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="V0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="W0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="X0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="Y0|NumB|" />
+    <add_ai type="CHASE_STATION" value1="50000" name="Z0|NumB|" />
+    <set_variable name="NumB" value="NumB-1" integer="yes" />
+  </event>
+  <folder_arme name="civilan cargo" id_arme="e0513427-c572-4cac-a575-ca1bf655bf3c" parent_id_arme="2c69df87-081c-4726-a242-965ecb792a2f" expanded_arme="" />
+  <folder_arme name="leaving the stations" id_arme="fef45a6a-9822-4520-8141-cdd75730c82c" parent_id_arme="e0513427-c572-4cac-a575-ca1bf655bf3c" expanded_arme="" />
+  <event name="Create from CB01" id_arme="4c53f666-31e9-4b24-9074-e71fa038cb20" parent_id_arme="fef45a6a-9822-4520-8141-cdd75730c82c">
+    <if_variable name="OutcomingFleet" comparator="EQUALS" value="1.0" />
+    <if_exists name="CB01" />
+    <create type="neutral" x="76376.0" y="0.0" z="44378.0" angle="180" name="CT|CTnumber|" hullID="1505" sideValue="2" />
+    <clear_ai name="CT|CTnumber|" />
+    <add_ai type="POINT_THROTTLE" value1="47079.0" value2="0.0" value3="100000.0" value4="2.0" name="CT|CTnumber|" />
+    <set_object_property property="topSpeed" value="1.0" name="CT|CTnumber|" />
+    <set_variable name="CTnumber" value="CTnumber+1" integer="yes" />
+    <set_variable name="OutcomingFleet" value="2.0" integer="yes" />
+  </event>
+  <event name="CB01 Doesnot exist" id_arme="e1d9c595-89cd-48b1-b810-e7353dd73b79" parent_id_arme="fef45a6a-9822-4520-8141-cdd75730c82c">
+    <if_variable name="OutcomingFleet" comparator="EQUALS" value="1.0" />
+    <if_not_exists name="CB01" />
+    <log text="wereareyou=|wereareyou| - CB01 Does not exist" />
+    <set_variable name="OutcomingFleet" value="2.0" integer="yes" />
+  </event>
+  <event name="Create from CB02" id_arme="d854da12-9cf0-40db-8bc7-b15837318a92" parent_id_arme="fef45a6a-9822-4520-8141-cdd75730c82c">
+    <if_variable name="OutcomingFleet" comparator="EQUALS" value="2.0" />
+    <if_exists name="CB02" />
+    <create type="neutral" x="52264.0" y="0.0" z="56485.0" angle="180" name="CT|CTnumber|" hullID="1505" sideValue="2" />
+    <clear_ai name="CT|CTnumber|" />
+    <add_ai type="POINT_THROTTLE" value1="49618.0" value2="0.0" value3="100000.0" value4="2.0" name="CT|CTnumber|" />
+    <set_object_property property="topSpeed" value="1.0" name="CT|CTnumber|" />
+    <set_variable name="CTnumber" value="CTnumber+1" integer="yes" />
+    <set_variable name="OutcomingFleet" value="3.0" integer="yes" />
+  </event>
+  <event name="CB02 Doesnot exist" id_arme="14c4ae7f-cf56-47a5-869f-789dd988f295" parent_id_arme="fef45a6a-9822-4520-8141-cdd75730c82c">
+    <if_variable name="OutcomingFleet" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="CB02" />
+    <log text="wereareyou=|wereareyou| - CB02 Does not exist" />
+    <set_variable name="OutcomingFleet" value="3.0" integer="yes" />
+  </event>
+  <event name="Create from CB03" id_arme="70fbd398-f08f-461e-a96d-c7e303874693" parent_id_arme="fef45a6a-9822-4520-8141-cdd75730c82c">
+    <if_variable name="OutcomingFleet" comparator="EQUALS" value="3.0" />
+    <if_exists name="CB03" />
+    <create type="neutral" x="31314.0" y="0.0" z="40206.0" angle="180" name="CT|CTnumber|" hullID="1505" sideValue="2" />
+    <clear_ai name="CT|CTnumber|" />
+    <add_ai type="POINT_THROTTLE" value1="46029.0" value2="0.0" value3="100000.0" value4="2.0" name="CT|CTnumber|" />
+    <set_object_property property="topSpeed" value="1.0" name="CT|CTnumber|" />
+    <set_variable name="CTnumber" value="CTnumber+1" integer="yes" />
+    <set_variable name="OutcomingFleet" value="0.0" integer="yes" />
+  </event>
+  <event name="CB03 Doesnot exist" id_arme="16b4e61c-b2f7-4f5d-852e-1048daa86eac" parent_id_arme="fef45a6a-9822-4520-8141-cdd75730c82c">
+    <if_variable name="OutcomingFleet" comparator="EQUALS" value="3.0" />
+    <if_not_exists name="CB03" />
+    <log text="wereareyou=|wereareyou| - CB03 Does not exist" />
+    <set_variable name="OutcomingFleet" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="CS Warp out " id_arme="33405d50-da57-48bd-94ef-76502fdbd691" parent_id_arme="e0513427-c572-4cac-a575-ca1bf655bf3c" expanded_arme="" />
+  <event name="CT1" id_arme="ef7a37f0-52cc-4d59-a47b-5e0449b50ec0" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_exists name="CT1" />
+    <if_object_property property="positionZ" name="CT1" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT1" />
+    <destroy name="CT1" />
+  </event>
+  <event name="CT2" id_arme="3473ed69-3e77-4908-a3bd-f054150ffdb0" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_exists name="CT2" />
+    <if_object_property property="positionZ" name="CT2" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT2" />
+    <destroy name="CT2" />
+  </event>
+  <event name="CT3" id_arme="a1111e11-e554-477c-9ca8-849f31e41d32" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_exists name="CT3" />
+    <if_object_property property="positionZ" name="CT3" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT3" />
+    <destroy name="CT3" />
+  </event>
+  <event name="CT4" id_arme="c4146b11-5de8-4643-b0ca-f8638a01f68e" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_exists name="CT4" />
+    <if_object_property property="positionZ" name="CT4" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT4" />
+    <destroy name="CT4" />
+  </event>
+  <event name="CT5" id_arme="fb0d8c35-59b2-4b6f-b4f0-b1647c846982" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_exists name="CT5" />
+    <if_object_property property="positionZ" name="CT5" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT5" />
+    <destroy name="CT5" />
+  </event>
+  <event name="CT6" id_arme="153c72a6-3520-4cb9-a18e-eae623bd3fa7" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_exists name="CT6" />
+    <if_object_property property="positionZ" name="CT6" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT6" />
+    <destroy name="CT6" />
+  </event>
+  <event name="CT7" id_arme="86d23a2f-15bb-4ca4-8935-bd6fbfd245c7" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_exists name="CT7" />
+    <if_object_property property="positionZ" name="CT7" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT7" />
+    <destroy name="CT7" />
+  </event>
+  <event name="CT8" id_arme="d1fbabf5-5fde-4559-b10a-1c50ab3b8e5b" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_exists name="CT8" />
+    <if_object_property property="positionZ" name="CT8" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT8" />
+    <destroy name="CT8" />
+  </event>
+  <event name="CT9" id_arme="8a0a8f99-e538-4d93-95f9-923d0c423e55" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_exists name="CT9" />
+    <if_object_property property="positionZ" name="CT9" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT9" />
+    <destroy name="CT9" />
+  </event>
+  <event name="CT10" id_arme="caeabd73-0cbe-4cbd-aac4-bc9e560018fa" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_exists name="CT10" />
+    <if_object_property property="positionZ" name="CT10" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT10" />
+    <destroy name="CT10" />
+  </event>
+  <event name="CT11" id_arme="08b0c974-0dd1-4bb3-b150-b7299df88bef" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_exists name="CT11" />
+    <if_object_property property="positionZ" name="CT11" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT11" />
+    <destroy name="CT11" />
+  </event>
+  <event name="CT12" id_arme="c7adbd2c-26e5-44dc-aa57-9b997b4bdeef" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_exists name="CT12" />
+    <if_object_property property="positionZ" name="CT12" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT12" />
+    <destroy name="CT12" />
+  </event>
+  <event name="CT13" id_arme="7776ef9a-b516-49e0-91a6-e2267db206a4" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_exists name="CT13" />
+    <if_object_property property="positionZ" name="CT13" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT13" />
+    <destroy name="CT13" />
+  </event>
+  <event name="CT14" id_arme="d39f871f-392d-4664-8735-7da5616c98c2" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_exists name="CT14" />
+    <if_object_property property="positionZ" name="CT14" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT14" />
+    <destroy name="CT14" />
+  </event>
+  <event name="CT15" id_arme="80eb5431-03bc-4524-9f08-37d9d21c2911" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_exists name="CT15" />
+    <if_object_property property="positionZ" name="CT15" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT15" />
+    <destroy name="CT15" />
+  </event>
+  <folder_arme name="End" id_arme="3d60362e-412d-4ede-bc99-f1c2f3aad193" expanded_arme="" />
+  <event name="end invasion timer" id_arme="df6ecaf4-594c-459a-8ca0-511c93d45879" parent_id_arme="3d60362e-412d-4ede-bc99-f1c2f3aad193">
+    <if_timer_finished name="TillFinshGame" />
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <if_not_exists name="CT1" />
+    <incoming_comms_text from="Mission Controle" sideValue="2" type="STATUS">Thats it! We are pulling out of this sector.  Protect any remaining transports then jump out of this sector.</incoming_comms_text>
+    <set_variable name="End" value="1.0" integer="yes" />
+    <set_variable name="Middle" value="0.0" integer="yes" />
+  </event>
+  <event name="All players out" id_arme="60f18931-f6df-45d2-9eaf-39d2dfbed116" parent_id_arme="3d60362e-412d-4ede-bc99-f1c2f3aad193">
+    <if_not_exists name="CT1" />
+    <if_not_exists name="CT2" />
+    <if_not_exists name="CT3" />
+    <if_not_exists name="CT4" />
+    <if_not_exists name="CT5" />
+    <if_not_exists name="CT6" />
+    <if_not_exists name="CT7" />
+    <if_not_exists name="CT8" />
+    <if_not_exists name="CT9" />
+    <if_not_exists name="CT10" />
+    <if_not_exists name="CT11" />
+    <if_not_exists name="CT12" />
+    <if_not_exists name="CT13" />
+    <if_not_exists name="CT14" />
+    <if_not_exists name="CT15" />
+    <if_variable name="End" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Mission Control">All transports are out of this sector.  Stand by for jump ......</incoming_comms_text>
+    <set_variable name="End" value="0.0" integer="yes" />
+    <log text="END OF GAME!!  Ships that got out=|WhoGotOut|  Needed to win=12 " />
+    <end_mission />
+  </event>
+  <folder_arme name="GM Command" id_arme="bfca6fb0-7430-4f5e-9d35-6ccf07b28cca" />
+  <event name="Intro Game" id_arme="3bbeeaca-ec82-45c1-8500-7cefeded5204" parent_id_arme="bfca6fb0-7430-4f5e-9d35-6ccf07b28cca">
+    <if_gm_button text="Start Game/Intro" />
+    <clear_gm_button text="Start Game" />
+    <clear_gm_button text="Ships Got Out" />
+    <gm_instructions title="Game Has Started">5 Min Timer has been set and players have been warned^Game is Running and level is 7</gm_instructions>
+    <set_variable name="wereareyou" value="1.0" integer="yes" />
+    <set_variable name="Intro" value="1.0" integer="yes" />
+  </event>
+  <event name="Start Game" id_arme="638855b3-b715-4fd1-b9f3-aa8b8b40f8f4" parent_id_arme="bfca6fb0-7430-4f5e-9d35-6ccf07b28cca">
+    <if_gm_button text="Start Game/Start" />
+    <clear_gm_button text="Start Game" />
+    <clear_gm_button text="Ships Got Out" />
+    <gm_instructions title="Game Has Started">5 Min Timer has been set and players have been warned^Game is Running and level is 7</gm_instructions>
+    <set_variable name="wereareyou" value="2.0" integer="yes" />
+    <set_variable name="Startup" value="1.0" integer="yes" />
+  </event>
+  <event name="Middle Game" id_arme="2474d52a-4358-49fc-ba09-e7f5c28e5bce" parent_id_arme="bfca6fb0-7430-4f5e-9d35-6ccf07b28cca">
+    <if_gm_button text="Start Game/Middle" />
+    <clear_gm_button text="Start Game" />
+    <clear_gm_button text="Ships Got Out" />
+    <gm_instructions title="Game Has Started">5 Min Timer has been set and players have been warned^Game is Running and level is 7</gm_instructions>
+    <set_variable name="wereareyou" value="3.0" integer="yes" />
+    <set_variable name="MiddleStartup" value="1.0" integer="yes" />
+  </event>
+  <event name="End Game" id_arme="38100dd9-a3e1-4a73-85ba-b3876eab81de" parent_id_arme="bfca6fb0-7430-4f5e-9d35-6ccf07b28cca">
+    <if_gm_button text="Start Game/End" />
+    <clear_gm_button text="Start Game" />
+    <clear_gm_button text="Ships Got Out" />
+    <gm_instructions title="Game Has Started">5 Min Timer has been set and players have been warned^Game is Running and level is 7</gm_instructions>
+    <set_variable name="wereareyou" value="4.0" integer="yes" />
+    <set_variable name="EndStartup" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Difficulty" id_arme="a443207b-33a5-474f-99e7-d12abd380542" parent_id_arme="bfca6fb0-7430-4f5e-9d35-6ccf07b28cca" />
+  <event name="level 1" id_arme="e825f507-0fc1-46a0-9a9e-4c309a85bcbe" parent_id_arme="a443207b-33a5-474f-99e7-d12abd380542">
+    <if_gm_button text="Set difficulty/1" />
+    <set_difficulty_level value="1" />
+    <gm_instructions title="Game Has Started">Game is Running and level is 1</gm_instructions>
+  </event>
+  <event name="level  2" id_arme="e31b1262-0714-423b-943c-df1238f9ff12" parent_id_arme="a443207b-33a5-474f-99e7-d12abd380542">
+    <if_gm_button text="Set difficulty/2" />
+    <set_difficulty_level value="2" />
+    <gm_instructions title="Game Has Started">Game is Running and level is 2</gm_instructions>
+  </event>
+  <event name="level 3" id_arme="cec3dcf3-33e0-4d5c-a195-d5f7bd727140" parent_id_arme="a443207b-33a5-474f-99e7-d12abd380542">
+    <if_gm_button text="Set difficulty/3" />
+    <set_difficulty_level value="3" />
+    <gm_instructions title="Game Has Started">Game is Running and level is 3</gm_instructions>
+  </event>
+  <event name="level 4" id_arme="9a339c1a-6016-4264-968f-50a26f46bb80" parent_id_arme="a443207b-33a5-474f-99e7-d12abd380542">
+    <if_gm_button text="Set difficulty/4" />
+    <set_difficulty_level value="4" />
+    <gm_instructions title="Game Has Started">Game is Running and level is 4</gm_instructions>
+  </event>
+  <event name="level 5" id_arme="49eaf503-9f18-4c9c-b169-72df2643925e" parent_id_arme="a443207b-33a5-474f-99e7-d12abd380542">
+    <if_gm_button text="Set difficulty/5" />
+    <set_difficulty_level value="5" />
+    <gm_instructions title="Game Has Started">Game is Running and level is 5</gm_instructions>
+  </event>
+  <event name="level 6" id_arme="cbed88b4-9330-4724-87e1-af06eb986db0" parent_id_arme="a443207b-33a5-474f-99e7-d12abd380542">
+    <if_gm_button text="Set difficulty/6" />
+    <set_difficulty_level value="6" />
+    <gm_instructions title="Game Has Started">Game is Running and level is 6</gm_instructions>
+  </event>
+  <event name="level 7" id_arme="6a7dd852-bfc7-47e2-b365-fb76d0330c6b" parent_id_arme="a443207b-33a5-474f-99e7-d12abd380542">
+    <if_gm_button text="Set difficulty/7" />
+    <set_difficulty_level value="7" />
+    <gm_instructions title="Game Has Started">Game is Running and level is 7</gm_instructions>
+  </event>
+  <event name="level 8" id_arme="9e5a7a2a-037f-4337-a42c-74b03926bcf1" parent_id_arme="a443207b-33a5-474f-99e7-d12abd380542">
+    <if_gm_button text="Set difficulty/8" />
+    <set_difficulty_level value="8" />
+    <gm_instructions title="Game Has Started">Game is Running and level is 8</gm_instructions>
+  </event>
+  <event name="level 9" id_arme="004baf38-10e8-439b-9a82-9b2ec3b8bf1c" parent_id_arme="a443207b-33a5-474f-99e7-d12abd380542">
+    <if_gm_button text="Set difficulty/9" />
+    <set_difficulty_level value="9" />
+    <gm_instructions title="Game Has Started">Game is Running and level is 9</gm_instructions>
+  </event>
+  <event name="level 10" id_arme="ca912fe2-5197-4b02-9baf-bba8dbe6cc05" parent_id_arme="a443207b-33a5-474f-99e7-d12abd380542">
+    <if_gm_button text="Set difficulty/10" />
+    <set_difficulty_level value="10" />
+    <gm_instructions title="Game Has Started">Game is Running and level is 10</gm_instructions>
+  </event>
+  <event name="level 11" id_arme="4a01adfc-a1d0-42fc-b8b0-41c80867c340" parent_id_arme="a443207b-33a5-474f-99e7-d12abd380542">
+    <if_gm_button text="Set difficulty/11" />
+    <set_difficulty_level value="11" />
+    <gm_instructions title="Game Has Started">Game is Running and level is 11</gm_instructions>
+  </event>
+  <folder_arme name="Ship Commands" id_arme="cfd1c047-81b5-40a9-adee-c9c1938c8da2" parent_id_arme="bfca6fb0-7430-4f5e-9d35-6ccf07b28cca" />
+  <folder_arme name="Clear AI" id_arme="ce08404a-72ba-4bd2-9ea4-0ba75625db53" parent_id_arme="cfd1c047-81b5-40a9-adee-c9c1938c8da2" />
+  <event name="clear AI" id_arme="a93c0bfb-eaba-40ef-accb-25203b2d0a59" parent_id_arme="ce08404a-72ba-4bd2-9ea4-0ba75625db53">
+    <if_gm_button text="Give Command/Clear AI" />
+    <clear_ai use_gm_selection="" />
+  </event>
+  <folder_arme name="Attack" id_arme="f1c09257-536b-48f2-b7ca-32bbd6d63171" parent_id_arme="cfd1c047-81b5-40a9-adee-c9c1938c8da2" />
+  <event name="Atack CB01" id_arme="e596cb9d-9b01-49c4-85ce-ed1f924a7cf0" parent_id_arme="f1c09257-536b-48f2-b7ca-32bbd6d63171">
+    <if_gm_button text="Give Command/Atack/CB01" />
+    <add_ai type="ATTACK" targetName="CB01" value1="180.0" use_gm_selection="" />
+  </event>
+  <event name="Atack CB02" id_arme="6d123c78-fb10-4dee-9532-cadff0d19c20" parent_id_arme="f1c09257-536b-48f2-b7ca-32bbd6d63171">
+    <if_gm_button text="Give Command/Atack/CB02" />
+    <add_ai type="ATTACK" targetName="CB02" value1="180.0" use_gm_selection="" />
+  </event>
+  <event name="Atack CB03" id_arme="fc922983-0c69-4a5c-9c31-0515e308ee00" parent_id_arme="f1c09257-536b-48f2-b7ca-32bbd6d63171">
+    <if_gm_button text="Give Command/Atack/CB03" />
+    <add_ai type="ATTACK" targetName="CB03" value1="180.0" use_gm_selection="" />
+    <add_ai type="ATTACK" targetName="CB03" value1="180.0" use_gm_selection="" />
+  </event>
+  <folder_arme name="Creating Ships" id_arme="962d1789-419f-4008-bc25-6429236d1cac" parent_id_arme="bfca6fb0-7430-4f5e-9d35-6ccf07b28cca" />
+  <folder_arme name="Kralien" id_arme="ab090a66-1e48-4763-b717-eb6a4055d63d" parent_id_arme="962d1789-419f-4008-bc25-6429236d1cac" expanded_arme="" />
+  <folder_arme name="Kralien Heavy" id_arme="d78a9747-82c4-47d3-92af-57bfca81a1c3" parent_id_arme="ab090a66-1e48-4763-b717-eb6a4055d63d" expanded_arme="" />
+  <event name="Create Kralien Heavy" id_arme="9038eed4-842c-4288-a7b7-8e9f02e12ac4" parent_id_arme="d78a9747-82c4-47d3-92af-57bfca81a1c3">
+    <if_gm_button text="Create Enemy/Kralien/Heavy" />
+    <create type="enemy" use_gm_position="" angle="0" hullID="2002" sideValue="1" />
+  </event>
+  <folder_arme name="Kralien Med" id_arme="de6bc0cb-b170-4913-ab16-162b0674320e" parent_id_arme="ab090a66-1e48-4763-b717-eb6a4055d63d" expanded_arme="" />
+  <event name="Create Kralien Med" id_arme="dc03b20e-6393-40e7-a0ad-4f78e8ee3f6a" parent_id_arme="de6bc0cb-b170-4913-ab16-162b0674320e">
+    <if_gm_button text="Create Enemy/Kralien/Med" />
+    <create type="enemy" use_gm_position="" angle="0" hullID="2001" sideValue="1" />
+  </event>
+  <folder_arme name="Kralien Light" id_arme="cc6c94b3-9a8e-44e5-922e-6ccaed7eb40a" parent_id_arme="ab090a66-1e48-4763-b717-eb6a4055d63d" expanded_arme="" />
+  <event name="Create Kralien Light" id_arme="4473eb64-1b61-478b-8ce2-d53f56ea1c94" parent_id_arme="cc6c94b3-9a8e-44e5-922e-6ccaed7eb40a">
+    <if_gm_button text="Create Enemy/Kralien/Light" />
+    <create type="enemy" use_gm_position="" angle="0" hullID="2000" sideValue="1" />
+  </event>
+  <folder_arme name="Torgoth" id_arme="f0bb9004-92ee-4c68-b3c1-ef783ba8814b" parent_id_arme="962d1789-419f-4008-bc25-6429236d1cac" />
+  <folder_arme name="Torgoth Heavy" id_arme="d6843c71-8322-4fd9-a77f-9e287ab449a8" parent_id_arme="f0bb9004-92ee-4c68-b3c1-ef783ba8814b" expanded_arme="" />
+  <event name="Create Torgoth Heavy" id_arme="4494f47b-055f-4ead-9c6f-2104f01bf7e2" parent_id_arme="d6843c71-8322-4fd9-a77f-9e287ab449a8">
+    <if_gm_button text="Create Enemy/Torgoth/Heavy" />
+    <create type="enemy" use_gm_position="" angle="0" hullID="4002" sideValue="1" />
+  </event>
+  <folder_arme name="Torgoth Med" id_arme="6e2f9923-f857-4256-8d7c-56537b37aa46" parent_id_arme="f0bb9004-92ee-4c68-b3c1-ef783ba8814b" expanded_arme="" />
+  <event name="Create Torgoth Med" id_arme="f31e19bf-7d5a-4e76-80d8-f00f95824c2f" parent_id_arme="6e2f9923-f857-4256-8d7c-56537b37aa46">
+    <if_gm_button text="Create Enemy/Torgoth/Med" />
+    <create type="enemy" use_gm_position="" angle="0" hullID="4001" sideValue="1" />
+  </event>
+  <folder_arme name="Torgoth Light" id_arme="5a2e476f-81de-4eac-8b20-aa509f591c2f" parent_id_arme="f0bb9004-92ee-4c68-b3c1-ef783ba8814b" expanded_arme="" />
+  <event name="Create Torgoth Light" id_arme="f4dc7c31-a0ad-414b-8f23-aed8eba4dcac" parent_id_arme="5a2e476f-81de-4eac-8b20-aa509f591c2f">
+    <if_gm_button text="Create Enemy/Torgoth/Light" />
+    <create type="enemy" use_gm_position="" angle="0" hullID="4000" sideValue="1" />
+  </event>
+  <folder_arme name="Avonian" id_arme="ae57d092-874c-4689-8526-54599bc36190" parent_id_arme="962d1789-419f-4008-bc25-6429236d1cac" />
+  <folder_arme name="Avonian Heavy" id_arme="866697b5-1413-46bf-9b6e-43cf4faaa69d" parent_id_arme="ae57d092-874c-4689-8526-54599bc36190" expanded_arme="" />
+  <event name="Create Avonian Heavy" id_arme="a69e23ea-78cb-4fff-9c0d-d27340348ee6" parent_id_arme="866697b5-1413-46bf-9b6e-43cf4faaa69d">
+    <if_gm_button text="Create Enemy/Avonian/Heavy" />
+    <create type="enemy" use_gm_position="" angle="0" hullID="3002" sideValue="1" />
+  </event>
+  <folder_arme name="Avonian Med" id_arme="ba7951be-b817-441d-9770-354d3f094916" parent_id_arme="ae57d092-874c-4689-8526-54599bc36190" expanded_arme="" />
+  <event name="Create Avonian Med" id_arme="2668edbe-aded-4fba-aa87-cd600532a5d9" parent_id_arme="ba7951be-b817-441d-9770-354d3f094916">
+    <if_gm_button text="Create Enemy/Avonian/Med" />
+    <create type="enemy" use_gm_position="" angle="0" hullID="3001" sideValue="1" />
+  </event>
+  <folder_arme name="Avonian Light" id_arme="8a7055d9-eddc-4a0e-af00-008a09cc1a5d" parent_id_arme="ae57d092-874c-4689-8526-54599bc36190" expanded_arme="" />
+  <event name="Create Avonian Light" id_arme="63c0dde0-3ae9-49e6-94a8-922e0770af83" parent_id_arme="8a7055d9-eddc-4a0e-af00-008a09cc1a5d">
+    <if_gm_button text="Create Enemy/Avonian/Light" />
+    <create type="enemy" use_gm_position="" angle="0" hullID="3002" sideValue="1" />
+  </event>
+  <folder_arme name="Create Transport" id_arme="f5df83a1-0593-45b5-8a8b-a57ac7371131" parent_id_arme="962d1789-419f-4008-bc25-6429236d1cac" />
+  <event name="Make a good guy" id_arme="ff28558c-3a43-4746-8704-a069b421ce0e" parent_id_arme="f5df83a1-0593-45b5-8a8b-a57ac7371131">
+    <if_gm_button text="Create Transport/Create Transport" />
+    <create type="neutral" use_gm_position="" angle="180" name="CT|CTnumber|" hullID="1505" sideValue="2" fleetnumber="-1" />
+    <clear_ai name="CT|CTnumber|" />
+    <add_ai type="POINT_THROTTLE" value1="47079.0" value2="0.0" value3="100000.0" value4="1.0" name="CT|CTnumber|" />
+    <set_variable name="CTnumber" value="CTnumber+1" integer="yes" />
+  </event>
+  <folder_arme name="Delete Ships" id_arme="9785a791-37d6-4f98-8167-18926f02a792" parent_id_arme="bfca6fb0-7430-4f5e-9d35-6ccf07b28cca" />
+  <event name="Delete Ship" id_arme="bd4bd53a-d751-4148-b6de-adc4b1812fed" parent_id_arme="9785a791-37d6-4f98-8167-18926f02a792">
+    <if_gm_button text="Delete/Selected ship" />
+    <destroy use_gm_selection="" />
+  </event>
+  <folder_arme name="Delete Stations" id_arme="0daa30be-64cf-4ce9-afe8-01655d1ee387" parent_id_arme="bfca6fb0-7430-4f5e-9d35-6ccf07b28cca" />
+  <event name="delete 01" id_arme="4ceaaff4-b41c-4ace-95f7-537672505198" parent_id_arme="0daa30be-64cf-4ce9-afe8-01655d1ee387">
+    <if_gm_button text="Delete Station/CB01" />
+    <destroy name="CB01" />
+  </event>
+  <event name="delete 02" id_arme="48a45a67-c6ed-4b79-9811-d69c8788562e" parent_id_arme="0daa30be-64cf-4ce9-afe8-01655d1ee387">
+    <if_gm_button text="Delete Station/CB02" />
+    <destroy name="CB02" />
+  </event>
+  <event name="delete 03" id_arme="3f2d30ef-0c3f-46ab-8c22-dc76708cf92f" parent_id_arme="0daa30be-64cf-4ce9-afe8-01655d1ee387">
+    <if_gm_button text="Delete Station/CB03" />
+    <destroy name="CB03" />
+  </event>
+  <folder_arme name="Ships got out " id_arme="54c908e5-4e8f-4652-b2e4-97d180987242" parent_id_arme="bfca6fb0-7430-4f5e-9d35-6ccf07b28cca" expanded_arme="" />
+  <event name="1" id_arme="2f4fd28a-051c-43c0-8eae-95a62ed10f08" parent_id_arme="54c908e5-4e8f-4652-b2e4-97d180987242">
+    <if_gm_button text="Ships Got Out/1" />
+    <set_variable name="CTnumber" value="2.0" integer="yes" />
+    <log text="Ships that got out=1" />
+    <clear_gm_button text="Ships Got Out" />
+  </event>
+  <event name="2" id_arme="0ab0447a-07fa-488b-9e81-6e81b2c7d3bd" parent_id_arme="54c908e5-4e8f-4652-b2e4-97d180987242">
+    <if_gm_button text="Ships Got Out/2" />
+    <set_variable name="CTnumber" value="3.0" integer="yes" />
+    <log text="Ships that got out=2" />
+    <clear_gm_button text="Ships Got Out" />
+  </event>
+  <event name="3" id_arme="c9357c94-24d2-4d11-a141-daf9c2f97117" parent_id_arme="54c908e5-4e8f-4652-b2e4-97d180987242">
+    <if_gm_button text="Ships Got Out/3" />
+    <set_variable name="CTnumber" value="4.0" integer="yes" />
+    <log text="Ships that got out=3" />
+    <clear_gm_button text="Ships Got Out" />
+  </event>
+  <event name="4" id_arme="8c045737-64f4-47e4-8aee-2f95149dbdcd" parent_id_arme="54c908e5-4e8f-4652-b2e4-97d180987242">
+    <if_gm_button text="Ships Got Out/4" />
+    <set_variable name="CTnumber" value="5.0" integer="yes" />
+    <log text="Ships that got out=4" />
+    <clear_gm_button text="Ships Got Out" />
+  </event>
+  <event name="5" id_arme="4482ec7f-4888-4c46-8531-eefb7a471f63" parent_id_arme="54c908e5-4e8f-4652-b2e4-97d180987242">
+    <if_gm_button text="Ships Got Out/5" />
+    <set_variable name="CTnumber" value="6.0" integer="yes" />
+    <log text="Ships that got out=5" />
+    <clear_gm_button text="Ships Got Out" />
+  </event>
+  <event name="6" id_arme="125bc428-9a97-4631-88b0-d862743586d1" parent_id_arme="54c908e5-4e8f-4652-b2e4-97d180987242">
+    <if_gm_button text="Ships Got Out/6" />
+    <set_variable name="CTnumber" value="7.0" integer="yes" />
+    <log text="Ships that got out=6" />
+    <clear_gm_button text="Ships Got Out" />
+  </event>
+  <event name="7" id_arme="6d200226-4901-4a76-9417-9ff3744424b4" parent_id_arme="54c908e5-4e8f-4652-b2e4-97d180987242">
+    <if_gm_button text="Ships Got Out/7" />
+    <set_variable name="CTnumber" value="8.0" integer="yes" />
+    <log text="Ships that got out=7" />
+    <clear_gm_button text="Ships Got Out" />
+  </event>
+  <event name="8" id_arme="6ee328f5-98e6-444a-806e-65350a3ed178" parent_id_arme="54c908e5-4e8f-4652-b2e4-97d180987242">
+    <if_gm_button text="Ships Got Out/8" />
+    <set_variable name="CTnumber" value="9.0" integer="yes" />
+    <log text="Ships that got out=8" />
+    <clear_gm_button text="Ships Got Out" />
+  </event>
+  <event name="9" id_arme="0236894b-5fe4-4c5a-8d72-9b008febc204" parent_id_arme="54c908e5-4e8f-4652-b2e4-97d180987242">
+    <if_gm_button text="Ships Got Out/9" />
+    <set_variable name="CTnumber" value="10.0" integer="yes" />
+    <log text="Ships that got out=9" />
+    <clear_gm_button text="Ships Got Out" />
+  </event>
+  <event name="10" id_arme="56ab7c86-c882-480a-8baf-15df018b1e21" parent_id_arme="54c908e5-4e8f-4652-b2e4-97d180987242">
+    <if_gm_button text="Ships Got Out/10" />
+    <set_variable name="CTnumber" value="11.0" integer="yes" />
+    <log text="Ships that got out=10" />
+    <clear_gm_button text="Ships Got Out" />
+  </event>
+  <event name="11" id_arme="cf310e5e-ea9e-4773-aa16-af7fcd7c2d1c" parent_id_arme="54c908e5-4e8f-4652-b2e4-97d180987242">
+    <if_gm_button text="Ships Got Out/11" />
+    <set_variable name="CTnumber" value="12.0" integer="yes" />
+    <log text="Ships that got out=11" />
+    <clear_gm_button text="Ships Got Out" />
+  </event>
+  <event name="12" id_arme="5c9597bf-77db-4fe2-b732-20680bced129" parent_id_arme="54c908e5-4e8f-4652-b2e4-97d180987242">
+    <if_gm_button text="Ships Got Out/12" />
+    <set_variable name="CTnumber" value="13.0" integer="yes" />
+    <log text="Ships that got out=12" />
+    <clear_gm_button text="Ships Got Out" />
+  </event>
+</mission_data>
