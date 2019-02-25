@@ -771,13 +771,13 @@
     <set_variable name="Amountofshark" randomIntLow="1" randomIntHigh="5" />
     <!--Jelly-->
     <set_variable name="Jellywillhappen" randomIntLow="-20" randomIntHigh="MAXJellywillhappen" />
-    <set_variable name="Amountofjelly" randomIntLow="1" randomIntHigh="5" />
+    <set_variable name="Amountofjelly" randomIntLow="1" randomIntHigh="10" />
     <!--Piranha-->
     <set_variable name="Piranhawillhappen" randomIntLow="-20" randomIntHigh="MAXPiranhawillhappen" />
-    <set_variable name="Amountofpiranha" randomIntLow="1" randomIntHigh="5" />
+    <set_variable name="Amountofpiranha" randomIntLow="1" randomIntHigh="10" />
     <!--Typhoon-->
     <set_variable name="Typhoonwillhappen" randomIntLow="-20" randomIntHigh="MAXTyphoonwillhappen" />
-    <set_variable name="AmountofTyphoon" randomIntLow="1" randomIntHigh="5" />
+    <set_variable name="AmountofTyphoon" randomIntLow="1" randomIntHigh="3" />
     <!--Charybdis (create nebulas)-->
     <set_variable name="Charybdiswillhappen" randomIntLow="-20" randomIntHigh="MAXCharybdiswillhappen" />
     <set_variable name="AmountofCharybdis" randomIntLow="1" randomIntHigh="5" />
@@ -1006,7 +1006,7 @@
     <set_variable name="CreateEnviroment" value="1.0" integer="yes" />
     <set_variable name="KillEnemys" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Sectors" id_arme="898a769e-3c48-4309-ad24-08082a051615" expanded_arme="" />
+  <folder_arme name="Sectors" id_arme="898a769e-3c48-4309-ad24-08082a051615" />
   <folder_arme name="0,0" id_arme="6b9af3fe-faf5-4ce4-be75-d094d2093621" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" />
   <event name="CreateGrid 0,0" id_arme="cd58e8c4-bdc5-4ee5-b37e-0fc5be57bbbd" parent_id_arme="6b9af3fe-faf5-4ce4-be75-d094d2093621">
     <if_variable name="IsCreate" comparator="EQUALS" value="1" />
@@ -1152,7 +1152,7 @@
     <set_variable name="IsDestroy" value="0" />
     <set_variable name="IsCreate" value="1" />
   </event>
-  <folder_arme name="2,2" id_arme="ec8335c7-a7e6-4f56-ae18-b1b75316ecac" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" />
+  <folder_arme name="2,2" id_arme="ec8335c7-a7e6-4f56-ae18-b1b75316ecac" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" expanded_arme="" />
   <event name="CreateGrid 2,2" id_arme="18849be7-0627-4392-8bc1-ab023d8b157c" parent_id_arme="ec8335c7-a7e6-4f56-ae18-b1b75316ecac">
     <if_variable name="IsCreate" comparator="EQUALS" value="1" />
     <if_variable name="x" comparator="EQUALS" value="2.0" />
@@ -1162,7 +1162,7 @@
     <set_variable name="MAXJellywillhappen" value="30.0" integer="yes" />
     <set_variable name="MAXPiranhawillhappen" value="0" integer="yes" />
     <set_variable name="MAXTyphoonwillhappen" value="0" integer="yes" />
-    <set_variable name="MAXCharybdiswillhappen" value="40.0" integer="yes" />
+    <set_variable name="MAXCharybdiswillhappen" value="100.0" integer="yes" />
     <create count="50" type="asteroids" startX="63094.0" startY="0.0" startZ="43648.0" endX="63094.0" endY="0.0" endZ="63648.0" randomRange="15000" />
     <create type="station" x="52244.0" y="0.0" z="55572.0" angle="0" name="SB-01" hullID="1004" />
     <create count="50" type="asteroids" startX="63094.0" startY="100.0" startZ="43648.0" endX="63094.0" endY="100.0" endZ="63648.0" randomRange="20000" />
