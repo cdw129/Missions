@@ -1,11 +1,16 @@
 <mission_data version="1.0" background_id_arme="572f2d8c-9b42-4bfd-9cd0-28a9f212d9ca" playerShipNames_arme="Artemis\Intrepid\Aegis\Horatio\Excalibur\Hera\Ceres\Diana">
   <start id_arme="572f2d8c-9b42-4bfd-9cd0-28a9f212d9ca">
+    <!--Game setup-->
     <set_difficulty_level value="8" />
+    <set_object_property property="sensorSetting" value="1" />
     <!--set known pirate ships arthorazation var-->
+    <set_variable name="MissionSelection" value="0.0" integer="yes" />
+    <set_variable name="MissionRunning" value="0.0" integer="yes" />
     <set_variable name="Jimi-Saru" value="1.0" integer="yes" />
     <set_variable name="Fulminatae" value="1.0" integer="yes" />
     <set_variable name="Apocalypse" value="1.0" integer="yes" />
     <!--Set up on ships-->
+    <set_variable name="CTnumber" value="1" integer="yes" />
     <set_variable name="CheckForShip1" value="1.0" integer="yes" />
     <set_variable name="CheckForShip2" value="0.0" integer="yes" />
     <set_variable name="CheckForShip3" value="0.0" integer="yes" />
@@ -38,11 +43,10 @@
     <set_variable name="WhatRace4" value="1.0" integer="yes" />
     <set_variable name="WhatRace5" value="1.0" integer="yes" />
     <set_variable name="HowManyGroups" value="0.0" integer="yes" />
-    <!--all ships effected-->
-    <set_object_property property="sensorSetting" value="1" />
     <!-- Starting sector -->
-    <set_variable name="x" value="0.0" integer="yes" />
-    <set_variable name="z" value="0.0" integer="yes" />
+    <set_variable name="DisableLoop" value="1.0" integer="yes" />
+    <set_variable name="x" value="20.0" integer="yes" />
+    <set_variable name="z" value="20.0" integer="yes" />
     <set_variable name="TempX" value="0.0" integer="yes" />
     <set_variable name="TempZ" value="0.0" integer="yes" />
     <!-- Sets the flag to create a sector based on the start position -->
@@ -157,6 +161,7 @@
     <set_gm_button text="GM Opps/Change location/Z/-9" />
     <set_gm_button text="GM Opps/Change location/Z/-10" />
     <set_gm_button text="GM Opps/Change location/GO!" />
+    <set_gm_button text="Mission Selection/Tora Tora Tora/Start" />
     <gm_instructions title="Sector Locking">
 
 			You must unlock the sector in order for the vessels to continue the transition after you lock it.
@@ -170,7 +175,7 @@
     <!--END Start Block-->
   </start>
   <folder_arme name="Named Ships" id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
-  <folder_arme name="Movement script" id_arme="4ded7db6-bc56-49e8-8581-c475536cf975" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
+  <folder_arme name="Movement script" id_arme="4ded7db6-bc56-49e8-8581-c475536cf975" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
   <event name="PositionLeftX" id_arme="6af9d54f-3bc4-4c25-8b4f-e6f559a8c24c" parent_id_arme="4ded7db6-bc56-49e8-8581-c475536cf975">
     <if_variable name="IsSectorLocked" comparator="EQUALS" value="0" />
     <if_object_property property="positionX" name="PVTR Jimi-Saru" comparator="GREATER" value="99990" />
@@ -312,7 +317,7 @@
     <set_variable name="PVTRApocalypseReady" value="0.0" integer="yes" />
     <set_variable name="CheckForShip3" value="0.0" integer="yes" />
   </event>
-  <event name="Setting up Horatio" id_arme="1b74c2ea-ce3e-4a21-a908-d55e7e56e1f5" parent_id_arme="cdd2c353-da90-41e4-9c9f-3b1c770f7ccd">
+  <event name="Setting up TSN Academia" id_arme="1b74c2ea-ce3e-4a21-a908-d55e7e56e1f5" parent_id_arme="cdd2c353-da90-41e4-9c9f-3b1c770f7ccd">
     <if_exists name="TSN Academia" />
     <if_variable name="CheckForShip4" comparator="EQUALS" value="1.0" />
     <set_variable name="TSNAcademiaReady" value="0.0" integer="yes" />
@@ -759,8 +764,8 @@
     <set_variable name="Movedover4" value="0.0" integer="yes" />
     <set_variable name="TSNAcademiaReady" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Map Trigers" id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" expanded_arme="" />
-  <folder_arme name="Create Enviroment" id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" expanded_arme="" />
+  <folder_arme name="Map Trigers" id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
+  <folder_arme name="Create Enviroment" id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
   <event name="Setup" id_arme="80f2e26f-2680-4ad2-a280-d6abad0b7399" parent_id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e">
     <if_variable name="CreateEnviroment" comparator="EQUALS" value="1.0" />
     <!--Whales-->
@@ -1006,7 +1011,7 @@
     <set_variable name="CreateEnviroment" value="1.0" integer="yes" />
     <set_variable name="KillEnemys" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Sectors" id_arme="898a769e-3c48-4309-ad24-08082a051615" />
+  <folder_arme name="Sectors" id_arme="898a769e-3c48-4309-ad24-08082a051615" expanded_arme="" />
   <folder_arme name="0,0" id_arme="6b9af3fe-faf5-4ce4-be75-d094d2093621" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" />
   <event name="CreateGrid 0,0" id_arme="cd58e8c4-bdc5-4ee5-b37e-0fc5be57bbbd" parent_id_arme="6b9af3fe-faf5-4ce4-be75-d094d2093621">
     <if_variable name="IsCreate" comparator="EQUALS" value="1" />
@@ -1152,7 +1157,7 @@
     <set_variable name="IsDestroy" value="0" />
     <set_variable name="IsCreate" value="1" />
   </event>
-  <folder_arme name="2,2" id_arme="ec8335c7-a7e6-4f56-ae18-b1b75316ecac" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" expanded_arme="" />
+  <folder_arme name="2,2" id_arme="ec8335c7-a7e6-4f56-ae18-b1b75316ecac" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" />
   <event name="CreateGrid 2,2" id_arme="18849be7-0627-4392-8bc1-ab023d8b157c" parent_id_arme="ec8335c7-a7e6-4f56-ae18-b1b75316ecac">
     <if_variable name="IsCreate" comparator="EQUALS" value="1" />
     <if_variable name="x" comparator="EQUALS" value="2.0" />
@@ -1162,7 +1167,7 @@
     <set_variable name="MAXJellywillhappen" value="30.0" integer="yes" />
     <set_variable name="MAXPiranhawillhappen" value="0" integer="yes" />
     <set_variable name="MAXTyphoonwillhappen" value="0" integer="yes" />
-    <set_variable name="MAXCharybdiswillhappen" value="100.0" integer="yes" />
+    <set_variable name="MAXCharybdiswillhappen" value="1000.0" integer="yes" />
     <create count="50" type="asteroids" startX="63094.0" startY="0.0" startZ="43648.0" endX="63094.0" endY="0.0" endZ="63648.0" randomRange="15000" />
     <create type="station" x="52244.0" y="0.0" z="55572.0" angle="0" name="SB-01" hullID="1004" />
     <create count="50" type="asteroids" startX="63094.0" startY="100.0" startZ="43648.0" endX="63094.0" endY="100.0" endZ="63648.0" randomRange="20000" />
@@ -1205,6 +1210,291 @@
     <!-- Flag the creation of a new sector if an event name_arme exists. -->
     <set_variable name="IsDestroy" value="0" />
     <set_variable name="IsCreate" value="1" />
+  </event>
+  <folder_arme name="-2,2" id_arme="204148fa-a9fa-4060-b597-065ca1a25ba4" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" />
+  <event name="CreateGrid -2,2" id_arme="584908cc-9841-46e6-b103-2a728c063d31" parent_id_arme="204148fa-a9fa-4060-b597-065ca1a25ba4">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="-2.0" />
+    <if_variable name="z" comparator="EQUALS" value="2.0" />
+    <set_variable name="MAXWhalewillhappen" value="0" integer="yes" />
+    <set_variable name="MAXSharkwillhappen" value="0" integer="yes" />
+    <set_variable name="MAXJellywillhappen" value="0" integer="yes" />
+    <set_variable name="MAXPiranhawillhappen" value="0" integer="yes" />
+    <set_variable name="MAXTyphoonwillhappen" value="0" integer="yes" />
+    <set_variable name="MAXCharybdiswillhappen" value="0" integer="yes" />
+    <warning_popup_message message="Industrial Operations" consoles="MHWESCOF" />
+    <!---->
+    <create count="500" type="asteroids" startX="47178.0" startY="100.0" startZ="79457.0" endX="24596.0" endY="-100.0" endZ="20253.0" randomRange="20000" randomSeed="75" />
+    <create count="500" type="nebulas" nebType="2" startX="34440.0" startY="0.0" startZ="87708.0" endX="30821.0" endY="0.0" endZ="12870.0" randomRange="10000" />
+    <create count="500" type="nebulas" nebType="3" startX="52534.0" startY="0.0" startZ="86694.0" endX="14898.0" endY="0.0" endZ="13594.0" randomRange="10000" />
+    <create count="10" type="mines" startAngle="288.8" endAngle="354.4" startX="73089.0" startY="0.0" startZ="35741.0" radius="14077" />
+    <create count="10" type="mines" startAngle="82" endAngle="27.6" startX="73089.0" startY="0.0" startZ="35741.0" radius="14077" />
+    <create count="10" type="mines" startAngle="265.4" endAngle="197.4" startX="73089.0" startY="0.0" startZ="35741.0" radius="14077" />
+    <create count="10" type="mines" startAngle="165.5" endAngle="107" startX="73089.0" startY="0.0" startZ="35741.0" radius="14077" />
+    <create type="station" x="73089.0" y="0.0" z="35452.0" angle="0" name="IB-01" hullID="1003" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid -2,2" id_arme="5bcdb7ec-74a7-43d6-b4dc-2e2bd8046321" parent_id_arme="204148fa-a9fa-4060-b597-065ca1a25ba4">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="-2.0" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="2.0" />
+    <set_variable name="MAXWhalewillhappen" value="25.0" integer="yes" />
+    <set_variable name="MAXSharkwillhappen" value="25.0" integer="yes" />
+    <set_variable name="MAXJellywillhappen" value="30.0" integer="yes" />
+    <set_variable name="MAXPiranhawillhappen" value="15.0" integer="yes" />
+    <set_variable name="MAXTyphoonwillhappen" value="10.0" integer="yes" />
+    <set_variable name="MAXCharybdiswillhappen" value="30.0" integer="yes" />
+    <!-- This is where all the objects are destroyed in the sector. -->
+    <destroy name="IB-01" />
+    <!-- Flag the creation of a new sector if an event name_arme exists. -->
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" integer="yes" />
+  </event>
+  <folder_arme name="-2,3" id_arme="306c177d-55f4-423a-843d-c5a79222fdb9" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" />
+  <event name="CreateGrid -2,3" id_arme="d3944caf-f451-4b2d-af6c-48af41a7ee51" parent_id_arme="306c177d-55f4-423a-843d-c5a79222fdb9">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="-2.0" />
+    <if_variable name="z" comparator="EQUALS" value="3.0" />
+    <set_variable name="MAXWhalewillhappen" value="40.0" integer="yes" />
+    <set_variable name="MAXSharkwillhappen" value="0" integer="yes" />
+    <set_variable name="MAXJellywillhappen" value="0" integer="yes" />
+    <set_variable name="MAXPiranhawillhappen" value="0" integer="yes" />
+    <set_variable name="MAXTyphoonwillhappen" value="0" integer="yes" />
+    <set_variable name="MAXCharybdiswillhappen" value="0" integer="yes" />
+    <!---->
+    <create count="100" type="asteroids" startX="53402.0" startY="0.0" startZ="51230.0" radius="19162" randomRange="25000" randomSeed="3800" />
+    <create count="60" type="nebulas" nebType="2" startX="24017.0" startY="0.0" startZ="49927.0" endX="42835.0" endY="0.0" endZ="29372.0" randomRange="10000" randomSeed="30" />
+    <create count="60" type="nebulas" nebType="3" startX="90025.0" startY="0.0" startZ="65850.0" endX="42835.0" endY="0.0" endZ="29372.0" randomRange="10000" randomSeed="30" />
+    <create count="60" type="nebulas" nebType="2" startX="49349.0" startY="0.0" startZ="83655.0" endX="42835.0" endY="0.0" endZ="29372.0" randomRange="10000" randomSeed="30" />
+    <create type="station" x="76430.0" y="0.0" z="42791.0" angle="0" name="CB-01" hullID="1001" sideValue="2" />
+    <create type="station" x="52264.0" y="0.0" z="53840.0" angle="0" name="CB-02" hullID="1001" sideValue="2" />
+    <create type="station" x="31235.0" y="0.0" z="38559.0" angle="0" name="CB-03" hullID="1001" sideValue="2" />
+    <create type="blackHole" x="49060.0" y="0.0" z="27490.0" name="Singularity2" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid -2,3" id_arme="f33c99cc-0662-4c96-8598-eaf95150b28c" parent_id_arme="306c177d-55f4-423a-843d-c5a79222fdb9">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="-2.0" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="3.0" />
+    <set_variable name="MAXWhalewillhappen" value="25.0" integer="yes" />
+    <set_variable name="MAXSharkwillhappen" value="25.0" integer="yes" />
+    <set_variable name="MAXJellywillhappen" value="30.0" integer="yes" />
+    <set_variable name="MAXPiranhawillhappen" value="15.0" integer="yes" />
+    <set_variable name="MAXTyphoonwillhappen" value="10.0" integer="yes" />
+    <set_variable name="MAXCharybdiswillhappen" value="30.0" integer="yes" />
+    <!-- This is where all the objects are destroyed in the sector. -->
+    <destroy name="CB-01" />
+    <destroy name="CB-02" />
+    <destroy name="CB-03" />
+    <destroy name="Singularity2" />
+    <!-- Flag the creation of a new sector if an event name_arme exists. -->
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" integer="yes" />
+  </event>
+  <folder_arme name="-2,-2" id_arme="1ab0a182-c075-43f0-acfd-aae01025fd33" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" />
+  <event name="CreateGrid -2,-2" id_arme="0989fe04-11d8-45f1-9331-c3622d5deb94" parent_id_arme="1ab0a182-c075-43f0-acfd-aae01025fd33">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="-2.0" />
+    <if_variable name="z" comparator="EQUALS" value="-2.0" />
+    <set_variable name="TransportAI1" value="1.0" integer="yes" />
+    <set_variable name="TransportAI2" value="1.0" integer="yes" />
+    <set_variable name="TransportAI3" value="1.0" integer="yes" />
+    <set_variable name="TransportAI4" value="1.0" integer="yes" />
+    <warning_popup_message message="Industrial Sector" consoles="MHWESCOF" />
+    <set_variable name="MAXWhalewillhappen" value="40.0" integer="yes" />
+    <set_variable name="MAXSharkwillhappen" value="15.0" integer="yes" />
+    <set_variable name="MAXJellywillhappen" value="20.0" integer="yes" />
+    <set_variable name="MAXPiranhawillhappen" value="15.0" integer="yes" />
+    <set_variable name="MAXTyphoonwillhappen" value="5.0" integer="yes" />
+    <set_variable name="MAXCharybdiswillhappen" value="60.0" integer="yes" />
+    <create count="100" type="mines" startAngle="-20.1" endAngle="318.8" startX="49852.0" startY="0.0" startZ="50595.0" radius="21160" />
+    <create count="100" type="mines" startAngle="-19.9" endAngle="317.5" startX="49852.0" startY="100.0" startZ="50595.0" radius="21160" />
+    <create count="100" type="mines" startAngle="-18.2" endAngle="317.2" startX="49852.0" startY="-100.0" startZ="50595.0" radius="21160" />
+    <create count="100" type="mines" startAngle="-18.3" endAngle="317.3" startX="49852.0" startY="-200.0" startZ="50595.0" radius="21160" />
+    <create count="100" type="mines" startAngle="-18.7" endAngle="317.8" startX="49852.0" startY="200.0" startZ="50595.0" radius="21160" />
+    <create count="100" type="mines" startAngle="-18.2" endAngle="317.5" startX="49852.0" startY="-300.0" startZ="50595.0" radius="21160" />
+    <create count="100" type="mines" startAngle="-18.8" endAngle="317.2" startX="49852.0" startY="300.0" startZ="50595.0" radius="21160" />
+    <create count="100" type="mines" startAngle="-17.7" endAngle="316.1" startX="49852.0" startY="-400.0" startZ="50595.0" radius="21160" />
+    <create count="100" type="mines" startAngle="-18.9" endAngle="317.5" startX="49852.0" startY="400.0" startZ="50595.0" radius="21160" />
+    <create count="100" type="mines" startAngle="-16.8" endAngle="318.3" startX="49852.0" startY="500.0" startZ="50595.0" radius="21160" />
+    <create count="100" type="mines" startAngle="-18.2" endAngle="317" startX="49852.0" startY="-500.0" startZ="50595.0" radius="21160" />
+    <create count="100" type="mines" startAngle="-17.6" endAngle="317.3" startX="49852.0" startY="600.0" startZ="50595.0" radius="21160" />
+    <create count="100" type="mines" startAngle="-17.7" endAngle="317.9" startX="49852.0" startY="-600.0" startZ="50595.0" radius="21160" />
+    <create count="50" type="nebulas" nebType="2" startX="16353.0" startY="0.0" startZ="80669.0" endX="80968.0" endY="0.0" endZ="61612.0" randomRange="15072" />
+    <create count="50" type="nebulas" nebType="3" startX="16353.0" startY="0.0" startZ="17096.0" endX="82308.0" endY="0.0" endZ="23200.0" randomRange="15072" />
+    <create count="50" type="nebulas" nebType="2" startX="79479.0" startY="0.0" startZ="17245.0" endX="19777.0" endY="0.0" endZ="83200.0" randomRange="15072" />
+    <create count="50" type="asteroids" startX="14864.0" startY="0.0" startZ="86625.0" endX="15460.0" endY="0.0" endZ="17394.0" randomRange="15072" />
+    <create type="station" x="60720.0" y="0.0" z="33325.0" angle="0" name="D-01" hullID="1002" />
+    <create type="station" x="49703.0" y="0.0" z="50297.0" angle="0" name="IB-01" hullID="1002" />
+    <create type="station" x="63101.0" y="0.0" z="47901.0" angle="0" name="IB-02" hullID="1002" />
+    <create type="station" x="42111.0" y="0.0" z="40952.0" angle="0" name="IB-03" hullID="1002" />
+    <create type="station" x="39216.0" y="0.0" z="54704.0" angle="0" name="IB-04" hullID="1002" />
+    <create type="station" x="56732.0" y="0.0" z="61073.0" angle="0" name="IB-05" hullID="1002" />
+    <create type="neutral" x="53402.0" y="0.0" z="47177.0" angle="290" name="TS01" hullID="1505" />
+    <create type="neutral" x="47323.0" y="0.0" z="46164.0" angle="20" name="TS02" hullID="1505" />
+    <create type="neutral" x="47033.0" y="0.0" z="52098.0" angle="120" name="TS03" hullID="1505" />
+    <create type="neutral" x="53113.0" y="0.0" z="53546.0" angle="200" name="TS04" hullID="1505" />
+    <!---->
+    <clear_ai name="TP-01" />
+    <clear_ai name="TS01" />
+    <clear_ai name="TS02" />
+    <clear_ai name="TS03" />
+    <clear_ai name="TS04" />
+    <add_ai type="POINT_THROTTLE" value1="63101.0" value2="0.0" value3="47901.0" value4="0.5" name="TS01" />
+    <add_ai type="POINT_THROTTLE" value1="42111.0" value2="0.0" value3="40952.0" value4="0.5" name="TS02" />
+    <add_ai type="POINT_THROTTLE" value1="39216.0" value2="0.0" value3="54704.0" value4="0.5" name="TS03" />
+    <add_ai type="POINT_THROTTLE" value1="56732.0" value2="0.0" value3="61073.0" value4="0.5" name="TS04" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid -2,-2" id_arme="80c8c8db-e787-4e35-abd2-d9ef5704b941" parent_id_arme="1ab0a182-c075-43f0-acfd-aae01025fd33">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="-2.0" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="-2.0" />
+    <set_variable name="MAXWhalewillhappen" value="25.0" integer="yes" />
+    <set_variable name="MAXSharkwillhappen" value="25.0" integer="yes" />
+    <set_variable name="MAXJellywillhappen" value="30.0" integer="yes" />
+    <set_variable name="MAXPiranhawillhappen" value="15.0" integer="yes" />
+    <set_variable name="MAXTyphoonwillhappen" value="10.0" integer="yes" />
+    <set_variable name="MAXCharybdiswillhappen" value="30.0" integer="yes" />
+    <!-- This is where all the objects are destroyed in the sector. -->
+    <destroy name="D-01" />
+    <destroy name="IB-01" />
+    <destroy name="IB-02" />
+    <destroy name="IB-03" />
+    <destroy name="IB-04" />
+    <destroy name="IB-05" />
+    <destroy name="TS01" />
+    <destroy name="TS02" />
+    <destroy name="TS03" />
+    <destroy name="TS04" />
+    <!-- Flag the creation of a new sector if an event name_arme exists. -->
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" integer="yes" />
+  </event>
+  <event name="TS01 Back" id_arme="614acbcc-a0dc-4465-9608-458ae8aa5b74" parent_id_arme="1ab0a182-c075-43f0-acfd-aae01025fd33">
+    <if_distance name1="TS01" name2="IB-02" comparator="LESS_EQUAL" value="1000.0" />
+    <if_variable name="TransportAI1" comparator="EQUALS" value="1.0" />
+    <set_variable name="TransportAI1" value="2.0" integer="yes" />
+    <clear_ai name="TS01" />
+    <add_ai type="POINT_THROTTLE" value1="49703.0" value2="0.0" value3="50297.0" value4="0.5" name="TS01" />
+  </event>
+  <event name="TS01 Forth" id_arme="53a08d91-59b9-47e0-b712-2702ae15b60b" parent_id_arme="1ab0a182-c075-43f0-acfd-aae01025fd33">
+    <if_distance name1="TS01" name2="IB-01" comparator="LESS_EQUAL" value="1000.0" />
+    <if_variable name="TransportAI1" comparator="EQUALS" value="2.0" />
+    <clear_ai name="TS01" />
+    <add_ai type="POINT_THROTTLE" value1="63101.0" value2="0.0" value3="47901.0" value4="0.5" name="TS01" />
+    <set_variable name="TransportAI1" value="1.0" integer="yes" />
+  </event>
+  <event name="TS02 Back" id_arme="f76cd97e-c873-4cb4-bd01-48660fc687a0" parent_id_arme="1ab0a182-c075-43f0-acfd-aae01025fd33">
+    <if_distance name1="TS02" name2="IB-03" comparator="LESS_EQUAL" value="1000.0" />
+    <if_variable name="TransportAI2" comparator="EQUALS" value="1.0" />
+    <clear_ai name="TS02" />
+    <add_ai type="POINT_THROTTLE" value1="49703.0" value2="0.0" value3="50297.0" value4="0.5" name="TS02" />
+    <set_variable name="TransportAI2" value="2.0" integer="yes" />
+  </event>
+  <event name="TS02 Forth" id_arme="b8cec625-5dc1-489f-9afe-7c21a4d591e1" parent_id_arme="1ab0a182-c075-43f0-acfd-aae01025fd33">
+    <if_distance name1="TS02" name2="IB-01" comparator="LESS_EQUAL" value="1000.0" />
+    <if_variable name="TransportAI2" comparator="EQUALS" value="2.0" />
+    <clear_ai name="TS02" />
+    <add_ai type="POINT_THROTTLE" value1="42111.0" value2="0.0" value3="40952.0" value4="0.5" name="TS02" />
+    <set_variable name="TransportAI2" value="1.0" integer="yes" />
+  </event>
+  <event name="TS03 Back" id_arme="1d1dc0d8-d2af-4232-b3f9-b073ad7cba82" parent_id_arme="1ab0a182-c075-43f0-acfd-aae01025fd33">
+    <if_distance name1="TS03" name2="IB-04" comparator="LESS_EQUAL" value="1000.0" />
+    <if_variable name="TransportAI3" comparator="EQUALS" value="1.0" />
+    <clear_ai name="TS03" />
+    <add_ai type="POINT_THROTTLE" value1="49703.0" value2="0.0" value3="50297.0" value4="0.5" name="TS03" />
+    <set_variable name="TransportAI3" value="2.0" integer="yes" />
+  </event>
+  <event name="TS03 Forth" id_arme="68b28cea-5329-4cfc-b536-062d6d88575d" parent_id_arme="1ab0a182-c075-43f0-acfd-aae01025fd33">
+    <if_distance name1="TS03" name2="IB-01" comparator="LESS_EQUAL" value="1000.0" />
+    <if_variable name="TransportAI3" comparator="EQUALS" value="2.0" />
+    <clear_ai name="TS03" />
+    <add_ai type="POINT_THROTTLE" value1="39216.0" value2="0.0" value3="54704.0" value4="0.5" name="TS03" />
+    <set_variable name="TransportAI3" value="1.0" integer="yes" />
+  </event>
+  <event name="TS04 Back" id_arme="6cbb5319-9435-4f2d-9888-7d2345aa997f" parent_id_arme="1ab0a182-c075-43f0-acfd-aae01025fd33">
+    <if_distance name1="TS04" name2="IB-05" comparator="LESS_EQUAL" value="1000.0" />
+    <if_variable name="TransportAI4" comparator="EQUALS" value="1.0" />
+    <clear_ai name="TS04" />
+    <add_ai type="POINT_THROTTLE" value1="49703.0" value2="0.0" value3="50297.0" value4="0.5" name="TS04" />
+    <set_variable name="TransportAI4" value="2.0" integer="yes" />
+  </event>
+  <event name="TS04 Forth" id_arme="37e6e86e-f350-40b5-aba4-1fd5a6c7f9a2" parent_id_arme="1ab0a182-c075-43f0-acfd-aae01025fd33">
+    <if_distance name1="TS04" name2="IB-01" comparator="LESS_EQUAL" value="1000.0" />
+    <if_variable name="TransportAI4" comparator="EQUALS" value="2.0" />
+    <clear_ai name="TS04" />
+    <add_ai type="POINT_THROTTLE" value1="56732.0" value2="0.0" value3="61073.0" value4="0.5" name="TS04" />
+    <set_variable name="TransportAI4" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="2,-2" id_arme="059ee07b-4c06-4f35-92d3-4e7477fdef42" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" expanded_arme="" />
+  <event name="CreateGrid 2,-2" id_arme="4bd28fb5-d8b2-4120-8b4f-5a0ecc442707" parent_id_arme="059ee07b-4c06-4f35-92d3-4e7477fdef42">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="2.0" />
+    <if_variable name="z" comparator="EQUALS" value="-2.0" />
+    <set_variable name="MAXWhalewillhappen" value="100.0" integer="yes" />
+    <set_variable name="MAXSharkwillhappen" value="0" integer="yes" />
+    <set_variable name="MAXJellywillhappen" value="0" integer="yes" />
+    <set_variable name="MAXPiranhawillhappen" value="0" integer="yes" />
+    <set_variable name="MAXTyphoonwillhappen" value="0" integer="yes" />
+    <set_variable name="MAXCharybdiswillhappen" value="20.0" integer="yes" />
+    <!---->
+    <create count="100" type="nebulas" nebType="2" startX="25754.0" startY="0.0" startZ="74825.0" endX="77142.0" endY="0.0" endZ="21556.0" randomRange="20000" />
+    <create type="station" x="50000.0" y="0.0" z="90000.0" angle="0" name="CivB-01" hullID="1001" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid 2,-2" id_arme="ecaf297a-95df-4a17-9ebf-ead0eb8f9d1d" parent_id_arme="059ee07b-4c06-4f35-92d3-4e7477fdef42">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="2.0" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="-2.0" />
+    <set_variable name="MAXWhalewillhappen" value="25.0" integer="yes" />
+    <set_variable name="MAXSharkwillhappen" value="25.0" integer="yes" />
+    <set_variable name="MAXJellywillhappen" value="30.0" integer="yes" />
+    <set_variable name="MAXPiranhawillhappen" value="15.0" integer="yes" />
+    <set_variable name="MAXTyphoonwillhappen" value="10.0" integer="yes" />
+    <set_variable name="MAXCharybdiswillhappen" value="30.0" integer="yes" />
+    <!-- This is where all the objects are destroyed in the sector. -->
+    <destroy name="CivB-01" />
+    <!-- Flag the creation of a new sector if an event name_arme exists. -->
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" integer="yes" />
+  </event>
+  <folder_arme name="2,0" id_arme="2d24c9be-1310-49f6-8a70-9104590252e4" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" expanded_arme="" />
+  <event name="CreateGrid 2,0" id_arme="ba18a84b-dc30-40ca-b41a-59f1d30e99d8" parent_id_arme="2d24c9be-1310-49f6-8a70-9104590252e4">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="2.0" />
+    <if_variable name="z" comparator="EQUALS" value="0" />
+    <set_variable name="MAXWhalewillhappen" value="100.0" integer="yes" />
+    <set_variable name="MAXSharkwillhappen" value="0" integer="yes" />
+    <set_variable name="MAXJellywillhappen" value="0" integer="yes" />
+    <set_variable name="MAXPiranhawillhappen" value="0" integer="yes" />
+    <set_variable name="MAXTyphoonwillhappen" value="0" integer="yes" />
+    <set_variable name="MAXCharybdiswillhappen" value="20.0" integer="yes" />
+    <!---->
+    <create count="100" type="nebulas" nebType="3" startX="22570.0" startY="0.0" startZ="22569.0" endX="79168.0" endY="0.0" endZ="76996.0" randomRange="20000" />
+    <create type="station" x="50000.0" y="0.0" z="10000.0" angle="0" name="CivB-02" hullID="1001" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid 2,0" id_arme="9e93fbd4-1f98-4e35-97a5-417447137106" parent_id_arme="2d24c9be-1310-49f6-8a70-9104590252e4">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="2.0" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="0" />
+    <set_variable name="MAXWhalewillhappen" value="25.0" integer="yes" />
+    <set_variable name="MAXSharkwillhappen" value="25.0" integer="yes" />
+    <set_variable name="MAXJellywillhappen" value="30.0" integer="yes" />
+    <set_variable name="MAXPiranhawillhappen" value="15.0" integer="yes" />
+    <set_variable name="MAXTyphoonwillhappen" value="10.0" integer="yes" />
+    <set_variable name="MAXCharybdiswillhappen" value="30.0" integer="yes" />
+    <!-- This is where all the objects are destroyed in the sector. -->
+    <destroy name="CivB-02" />
+    <!-- Flag the creation of a new sector if an event name_arme exists. -->
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" integer="yes" />
   </event>
   <folder_arme name="Bad Guys" id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
   <folder_arme name="Making groups" id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
@@ -1832,23 +2122,332 @@
     <destroy name="ES05" />
     <set_variable name="AmountofBadGuysTeam5" value="-1.0" integer="yes" />
   </event>
-  <folder_arme name="GM Commands" id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
+  <folder_arme name="Missions" id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" />
+  <folder_arme name="Toratora" id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" parent_id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" expanded_arme="" />
+  <event name="Starting game" id_arme="d5741f4f-f0fb-4270-8abf-826baa8ae2a8" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68">
+    <if_variable name="MissionSelection" comparator="EQUALS" value="1.0" />
+    <if_variable name="x" comparator="EQUALS" value="-2.0" />
+    <if_variable name="z" comparator="EQUALS" value="3.0" />
+    <set_variable name="IsSectorLocked" value="1" integer="yes" />
+    <set_variable name="Intro" value="1.0" integer="yes" />
+    <set_variable name="MissionRunning" value="1.0" integer="yes" />
+    <set_variable name="MissionSelection" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Start" id_arme="bfb44f21-6505-40cf-a92f-2c4f678687c0" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" expanded_arme="" />
+  <event name="Intro Game coms" id_arme="9f757418-b69c-477c-be74-869a39ded8eb" parent_id_arme="bfb44f21-6505-40cf-a92f-2c4f678687c0">
+    <if_variable name="Intro" comparator="EQUALS" value="1.0" />
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Mission 01  &quot;Tora,Tora,Tora&quot;" consoles="MHWESCOF" />
+    <incoming_comms_text from="TSN Command" type="STATUS">All Captains be aware! There is a large enemy fleet heading to this sector and we MUST evacuate. Cover the transports and keep the enemy at bay until we have completed the Evac! Sensors have them at about five minutes out so you have then to prepare. God Speed!</incoming_comms_text>
+    <set_variable name="OutcomingFleet" value="1.0" integer="yes" />
+    <set_timer name="UntillInvasion" seconds="299" />
+    <set_variable name="Start" value="1.0" integer="yes" />
+    <set_variable name="wereareyou" value="1.0" integer="yes" />
+    <log text="wereareyou=1 Intro 5 min, 3 ships spawn" />
+    <set_variable name="Intro" value="0.0" integer="yes" />
+  </event>
+  <event name="Start Game coms" id_arme="bb515168-24c4-4299-bc6e-76e545a0c875" parent_id_arme="bfb44f21-6505-40cf-a92f-2c4f678687c0">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_variable name="Startup" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="TSN Command" type="STATUS">You have five minutes to Prepare</incoming_comms_text>
+    <set_variable name="Middle" value="1.0" integer="yes" />
+    <set_timer name="StrikeForceEnter" seconds="299" />
+    <set_timer name="TillFinshGame" seconds="900" />
+    <set_variable name="Startup" value="0.0" integer="yes" />
+  </event>
+  <event name="Middle Game com" id_arme="45dc18fb-3f82-45b6-b39e-2e28e505350b" parent_id_arme="bfb44f21-6505-40cf-a92f-2c4f678687c0">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_variable name="MiddleStartup" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="TSN Command" type="STATUS">You have five minutes to Prepare</incoming_comms_text>
+    <set_variable name="Middle" value="1.0" integer="yes" />
+    <set_timer name="StrikeForceEnter" seconds="299" />
+    <set_timer name="TillFinshGame" seconds="600" />
+    <set_variable name="MiddleStartup" value="0.0" integer="yes" />
+  </event>
+  <event name="End Game com" id_arme="acd45c8e-e5f8-4d12-9c93-341681ebf58f" parent_id_arme="bfb44f21-6505-40cf-a92f-2c4f678687c0">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_variable name="EndStartup" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="TSN Command" type="STATUS">You have five minutes to Prepare</incoming_comms_text>
+    <set_variable name="Middle" value="1.0" integer="yes" />
+    <set_timer name="StrikeForceEnter" seconds="299" />
+    <set_timer name="TillFinshGame" seconds="330" />
+    <set_variable name="EndStartup" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Middle" id_arme="2c69df87-081c-4726-a242-965ecb792a2f" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" expanded_arme="" />
+  <event name="After 5 min timer" id_arme="eb1dd890-e279-47ce-a634-42e6cc858f4a" parent_id_arme="2c69df87-081c-4726-a242-965ecb792a2f">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_variable name="Start" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="UntillInvasion" />
+    <set_variable name="MinX" value="2.0" integer="yes" />
+    <set_variable name="MinY" value="1.0" integer="yes" />
+    <set_variable name="MaxX" value="9.0" integer="yes" />
+    <set_variable name="MaxY" value="1.0" integer="yes" />
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+    <set_variable name="WhatRace1" value="1.0" integer="yes" />
+    <set_variable name="WhatRace2" value="4.0" integer="yes" />
+    <set_variable name="WhatRace3" randomIntLow="1" randomIntHigh="4" integer="yes" />
+    <set_variable name="WhatRace4" randomIntLow="1" randomIntHigh="4" integer="yes" />
+    <set_variable name="WhatRace5" randomIntLow="1" randomIntHigh="4" integer="yes" />
+    <set_timer name="StrikeForceEnter" seconds="299" />
+    <set_timer name="TillFinshGame" seconds="900" />
+    <set_variable name="OutcomingFleet" value="1.0" integer="yes" />
+    <set_variable name="Middle" value="1.0" integer="yes" />
+    <set_variable name="wereareyou" value="wereareyou+1" integer="yes" />
+    <log text="wereareyou=|wereareyou|  1) Intro 2)Start 3)Middle 4)End" />
+    <set_variable name="Start" value="0.0" integer="yes" />
+  </event>
+  <event name="strike foce timer" id_arme="64e0eeaf-580c-44f8-9bbd-2b5c1d19734e" parent_id_arme="2c69df87-081c-4726-a242-965ecb792a2f">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="StrikeForceEnter" />
+    <set_variable name="MinX" value="2.0" integer="yes" />
+    <set_variable name="MinY" value="1.0" integer="yes" />
+    <set_variable name="MaxX" value="9.0" integer="yes" />
+    <set_variable name="MaxY" value="1.0" integer="yes" />
+    <set_variable name="WhatRace1" value="1.0" integer="yes" />
+    <set_variable name="WhatRace2" value="4.0" integer="yes" />
+    <set_variable name="WhatRace3" randomIntLow="1" randomIntHigh="4" integer="yes" />
+    <set_variable name="WhatRace4" randomIntLow="1" randomIntHigh="4" integer="yes" />
+    <set_variable name="WhatRace5" randomIntLow="1" randomIntHigh="4" integer="yes" />
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+    <set_variable name="OutcomingFleet" value="1.0" integer="yes" />
+    <set_variable name="wereareyou" value="wereareyou+1" integer="yes" />
+    <log text="wereareyou=|wereareyou|  1) Intro 2)Start 3)Middle 4)End" />
+    <set_timer name="StrikeForceEnter" seconds="299" />
+  </event>
+  <event name="If no bases are found" id_arme="b36be04b-71ff-422c-b11d-f256effc6738" parent_id_arme="2c69df87-081c-4726-a242-965ecb792a2f">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_not_exists name="CB-01" />
+    <if_not_exists name="CB-02" />
+    <if_not_exists name="CB-03" />
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Mission Control">All bases were lost!</incoming_comms_text>
+    <set_timer name="TillFinshGame" seconds="30" />
+    <set_variable name="End" value="1.0" integer="yes" />
+    <set_variable name="Middle" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="civilan cargo" id_arme="e0513427-c572-4cac-a575-ca1bf655bf3c" parent_id_arme="2c69df87-081c-4726-a242-965ecb792a2f" expanded_arme="" />
+  <folder_arme name="leaving the stations" id_arme="fef45a6a-9822-4520-8141-cdd75730c82c" parent_id_arme="e0513427-c572-4cac-a575-ca1bf655bf3c" expanded_arme="" />
+  <event name="Create from CB01" id_arme="4c53f666-31e9-4b24-9074-e71fa038cb20" parent_id_arme="fef45a6a-9822-4520-8141-cdd75730c82c">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_variable name="OutcomingFleet" comparator="EQUALS" value="1.0" />
+    <if_exists name="CB-01" />
+    <create type="neutral" x="76376.0" y="0.0" z="44378.0" angle="180" name="CT|CTnumber|" hullID="1505" sideValue="2" />
+    <clear_ai name="CT|CTnumber|" />
+    <add_ai type="POINT_THROTTLE" value1="47079.0" value2="0.0" value3="100000.0" value4="2.0" name="CT|CTnumber|" />
+    <set_object_property property="topSpeed" value="1.0" name="CT|CTnumber|" />
+    <set_variable name="CTnumber" value="CTnumber+1" integer="yes" />
+    <set_variable name="OutcomingFleet" value="2.0" integer="yes" />
+  </event>
+  <event name="CB01 Doesnot exist" id_arme="e1d9c595-89cd-48b1-b810-e7353dd73b79" parent_id_arme="fef45a6a-9822-4520-8141-cdd75730c82c">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_variable name="OutcomingFleet" comparator="EQUALS" value="1.0" />
+    <if_not_exists name="CB-01" />
+    <log text="wereareyou=|wereareyou| - CB01 Does not exist" />
+    <set_variable name="OutcomingFleet" value="2.0" integer="yes" />
+  </event>
+  <event name="Create from CB02" id_arme="d854da12-9cf0-40db-8bc7-b15837318a92" parent_id_arme="fef45a6a-9822-4520-8141-cdd75730c82c">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_variable name="OutcomingFleet" comparator="EQUALS" value="2.0" />
+    <if_exists name="CB-02" />
+    <create type="neutral" x="52264.0" y="0.0" z="56485.0" angle="180" name="CT|CTnumber|" hullID="1505" sideValue="2" />
+    <clear_ai name="CT|CTnumber|" />
+    <add_ai type="POINT_THROTTLE" value1="49618.0" value2="0.0" value3="100000.0" value4="2.0" name="CT|CTnumber|" />
+    <set_object_property property="topSpeed" value="1.0" name="CT|CTnumber|" />
+    <set_variable name="CTnumber" value="CTnumber+1" integer="yes" />
+    <set_variable name="OutcomingFleet" value="3.0" integer="yes" />
+  </event>
+  <event name="CB02 Doesnot exist" id_arme="14c4ae7f-cf56-47a5-869f-789dd988f295" parent_id_arme="fef45a6a-9822-4520-8141-cdd75730c82c">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_variable name="OutcomingFleet" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="CB-02" />
+    <log text="wereareyou=|wereareyou| - CB02 Does not exist" />
+    <set_variable name="OutcomingFleet" value="3.0" integer="yes" />
+  </event>
+  <event name="Create from CB03" id_arme="70fbd398-f08f-461e-a96d-c7e303874693" parent_id_arme="fef45a6a-9822-4520-8141-cdd75730c82c">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_variable name="OutcomingFleet" comparator="EQUALS" value="3.0" />
+    <if_exists name="CB-03" />
+    <create type="neutral" x="31314.0" y="0.0" z="40206.0" angle="180" name="CT|CTnumber|" hullID="1505" sideValue="2" />
+    <clear_ai name="CT|CTnumber|" />
+    <add_ai type="POINT_THROTTLE" value1="46029.0" value2="0.0" value3="100000.0" value4="2.0" name="CT|CTnumber|" />
+    <set_object_property property="topSpeed" value="1.0" name="CT|CTnumber|" />
+    <set_variable name="CTnumber" value="CTnumber+1" integer="yes" />
+    <set_variable name="OutcomingFleet" value="0.0" integer="yes" />
+  </event>
+  <event name="CB03 Doesnot exist" id_arme="16b4e61c-b2f7-4f5d-852e-1048daa86eac" parent_id_arme="fef45a6a-9822-4520-8141-cdd75730c82c">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_variable name="OutcomingFleet" comparator="EQUALS" value="3.0" />
+    <if_not_exists name="CB-03" />
+    <log text="wereareyou=|wereareyou| - CB03 Does not exist" />
+    <set_variable name="OutcomingFleet" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="CS Warp out " id_arme="33405d50-da57-48bd-94ef-76502fdbd691" parent_id_arme="e0513427-c572-4cac-a575-ca1bf655bf3c" />
+  <event name="CT1" id_arme="ef7a37f0-52cc-4d59-a47b-5e0449b50ec0" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_exists name="CT1" />
+    <if_object_property property="positionZ" name="CT1" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT1" />
+    <destroy name="CT1" />
+  </event>
+  <event name="CT2" id_arme="3473ed69-3e77-4908-a3bd-f054150ffdb0" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_exists name="CT2" />
+    <if_object_property property="positionZ" name="CT2" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT2" />
+    <destroy name="CT2" />
+  </event>
+  <event name="CT3" id_arme="a1111e11-e554-477c-9ca8-849f31e41d32" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_exists name="CT3" />
+    <if_object_property property="positionZ" name="CT3" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT3" />
+    <destroy name="CT3" />
+  </event>
+  <event name="CT4" id_arme="c4146b11-5de8-4643-b0ca-f8638a01f68e" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_exists name="CT4" />
+    <if_object_property property="positionZ" name="CT4" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT4" />
+    <destroy name="CT4" />
+  </event>
+  <event name="CT5" id_arme="fb0d8c35-59b2-4b6f-b4f0-b1647c846982" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_exists name="CT5" />
+    <if_object_property property="positionZ" name="CT5" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT5" />
+    <destroy name="CT5" />
+  </event>
+  <event name="CT6" id_arme="153c72a6-3520-4cb9-a18e-eae623bd3fa7" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_exists name="CT6" />
+    <if_object_property property="positionZ" name="CT6" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT6" />
+    <destroy name="CT6" />
+  </event>
+  <event name="CT7" id_arme="86d23a2f-15bb-4ca4-8935-bd6fbfd245c7" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_exists name="CT7" />
+    <if_object_property property="positionZ" name="CT7" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT7" />
+    <destroy name="CT7" />
+  </event>
+  <event name="CT8" id_arme="d1fbabf5-5fde-4559-b10a-1c50ab3b8e5b" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_exists name="CT8" />
+    <if_object_property property="positionZ" name="CT8" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT8" />
+    <destroy name="CT8" />
+  </event>
+  <event name="CT9" id_arme="8a0a8f99-e538-4d93-95f9-923d0c423e55" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_exists name="CT9" />
+    <if_object_property property="positionZ" name="CT9" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT9" />
+    <destroy name="CT9" />
+  </event>
+  <event name="CT10" id_arme="caeabd73-0cbe-4cbd-aac4-bc9e560018fa" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_exists name="CT10" />
+    <if_object_property property="positionZ" name="CT10" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT10" />
+    <destroy name="CT10" />
+  </event>
+  <event name="CT11" id_arme="08b0c974-0dd1-4bb3-b150-b7299df88bef" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_exists name="CT11" />
+    <if_object_property property="positionZ" name="CT11" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT11" />
+    <destroy name="CT11" />
+  </event>
+  <event name="CT12" id_arme="c7adbd2c-26e5-44dc-aa57-9b997b4bdeef" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_exists name="CT12" />
+    <if_object_property property="positionZ" name="CT12" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT12" />
+    <destroy name="CT12" />
+  </event>
+  <event name="CT13" id_arme="7776ef9a-b516-49e0-91a6-e2267db206a4" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_exists name="CT13" />
+    <if_object_property property="positionZ" name="CT13" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT13" />
+    <destroy name="CT13" />
+  </event>
+  <event name="CT14" id_arme="d39f871f-392d-4664-8735-7da5616c98c2" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_exists name="CT14" />
+    <if_object_property property="positionZ" name="CT14" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT14" />
+    <destroy name="CT14" />
+  </event>
+  <event name="CT15" id_arme="80eb5431-03bc-4524-9f08-37d9d21c2911" parent_id_arme="33405d50-da57-48bd-94ef-76502fdbd691">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_exists name="CT15" />
+    <if_object_property property="positionZ" name="CT15" comparator="GREATER" value="98000.0" />
+    <set_variable name="WhoGotOut" value="WhoGotOut+1" integer="yes" />
+    <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT15" />
+    <destroy name="CT15" />
+  </event>
+  <folder_arme name="End" id_arme="3d60362e-412d-4ede-bc99-f1c2f3aad193" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" />
+  <event name="end invasion timer" id_arme="df6ecaf4-594c-459a-8ca0-511c93d45879" parent_id_arme="3d60362e-412d-4ede-bc99-f1c2f3aad193">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="TillFinshGame" />
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <if_not_exists name="CT1" />
+    <incoming_comms_text from="Mission Controle" sideValue="2" type="STATUS">Thats it! We are pulling out of this sector.  Protect any remaining transports then jump out of this sector.</incoming_comms_text>
+    <set_variable name="End" value="1.0" integer="yes" />
+    <set_variable name="Middle" value="0.0" integer="yes" />
+  </event>
+  <event name="All players out" id_arme="60f18931-f6df-45d2-9eaf-39d2dfbed116" parent_id_arme="3d60362e-412d-4ede-bc99-f1c2f3aad193">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
+    <if_not_exists name="CT1" />
+    <if_not_exists name="CT2" />
+    <if_not_exists name="CT3" />
+    <if_not_exists name="CT4" />
+    <if_not_exists name="CT5" />
+    <if_not_exists name="CT6" />
+    <if_not_exists name="CT7" />
+    <if_not_exists name="CT8" />
+    <if_not_exists name="CT9" />
+    <if_not_exists name="CT10" />
+    <if_not_exists name="CT11" />
+    <if_not_exists name="CT12" />
+    <if_not_exists name="CT13" />
+    <if_not_exists name="CT14" />
+    <if_not_exists name="CT15" />
+    <if_variable name="End" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Mission Control">All transports are out of this sector. Sector is unlocked! Retrete to -2.2 for further information.</incoming_comms_text>
+    <set_variable name="IsSectorLocked" value="0.0" integer="yes" />
+    <set_variable name="MissionRunning" value="0.0" integer="yes" />
+    <log text="END OF GAME!!  Ships that got out=|WhoGotOut|  Needed to win=12 " />
+    <set_variable name="End" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="GM Commands" id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
   <event name="SectorLocking" id_arme="1dde4798-693d-4316-8cdb-9e9e568693af" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f">
     <if_gm_button text="Sector/Lock" />
     <if_variable name="IsSectorLocked" comparator="EQUALS" value="0" />
-    <set_variable name="IsSectorLocked" value="1" />
-    <big_message title="Priority Message" subtitle1="Incoming Transmission" subtitle2="See Communications Console" />
-    <warning_popup_message message="Incoming Transmission" consoles="MHWESCO" />
-    <incoming_comms_text from="Command">Hold your position in this sector, Priority Message for Commanding Officer incoming.</incoming_comms_text>
+    <warning_popup_message message="Sector Locked" consoles="MHWESCOF" />
+    <set_variable name="IsSectorLocked" value="1" integer="yes" />
   </event>
   <event name="SectorUnLocking" id_arme="1b191d31-1980-44d4-8c88-b8f7611df40e" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f">
     <if_gm_button text="Sector/Unlock" />
     <if_variable name="IsSectorLocked" comparator="EQUALS" value="1" />
-    <set_variable name="IsSectorLocked" value="0" />
-    <incoming_comms_text from="Command">Commanding Officer, carry out debrief session with your crew if neccessary, then carry on.</incoming_comms_text>
-  </event>
-  <event name="Location" id_arme="0ddc1116-8867-4905-859a-0a85e9ed1a58" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f">
-    <if_gm_button text="GM Opps/Change location" />
+    <warning_popup_message message="Sector Unlocked" consoles="MHWESCOF" />
+    <set_variable name="IsSectorLocked" value="0" integer="yes" />
   </event>
   <folder_arme name="Creating bad guys" id_arme="986a044b-a1df-4a33-b522-f1eabf063e13" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <folder_arme name="Groups" id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b" parent_id_arme="986a044b-a1df-4a33-b522-f1eabf063e13" />
@@ -2117,7 +2716,7 @@
     <set_object_property property="energy" value="1000" name="PVTR Apocalypse" />
     <set_object_property property="energy" value="1000" name="TSN Academia" />
   </event>
-  <folder_arme name="Locations" id_arme="b5bfa1d0-8fae-43d2-87d1-97874a1a2cb0" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
+  <folder_arme name="Locations" id_arme="b5bfa1d0-8fae-43d2-87d1-97874a1a2cb0" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <folder_arme name="X" id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7" parent_id_arme="b5bfa1d0-8fae-43d2-87d1-97874a1a2cb0" />
   <event name="10" id_arme="18133edb-8b82-4ac1-a32d-e22f3facf187" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
     <if_gm_button text="GM Opps/Change location/X/10" />
@@ -2310,5 +2909,10 @@
     <set_variable name="Movedover3" value="1.0" integer="yes" />
     <set_variable name="Movedover4" value="1.0" integer="yes" />
     <!---->
+  </event>
+  <folder_arme name="Mission selection" id_arme="e0740ab4-52b4-4748-a527-6874ba9c724a" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
+  <event name="Tora Tora Tora" id_arme="32602c77-8800-4959-be93-b54040978909" parent_id_arme="e0740ab4-52b4-4748-a527-6874ba9c724a">
+    <if_gm_button text="Mission Selection/Tora Tora Tora/Start" />
+    <set_variable name="MissionSelection" value="1.0" integer="yes" />
   </event>
 </mission_data>
