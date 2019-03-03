@@ -1,5 +1,16 @@
 <mission_data version="1.0" background_id_arme="572f2d8c-9b42-4bfd-9cd0-28a9f212d9ca" playerShipNames_arme="Artemis\Intrepid\Aegis\Horatio\Excalibur\Hera\Ceres\Diana">
   <start id_arme="572f2d8c-9b42-4bfd-9cd0-28a9f212d9ca">
+    <!--Linner Code-->
+    <set_timer name="LinermovementTick" seconds="120" />
+    <set_variable name="LinnervisOnlocation" value="0.0" integer="yes" />
+    <set_variable name="LinnerAlive" value="1.0" integer="yes" />
+    <set_variable name="LinnerMessage" value="0.0" integer="yes" />
+    <set_variable name="Linnervis" value="0.0" integer="yes" />
+    <set_variable name="LinnerX" value="2.0" integer="yes" />
+    <set_variable name="LinnerZ" value="-2.0" integer="yes" />
+    <set_variable name="LinnerXmov" value="50000.0" integer="yes" />
+    <set_variable name="LinnerZmov" value="90000.0" integer="yes" />
+    <set_variable name="LinnerMovement" value="1.0" integer="yes" />
     <!--Game setup-->
     <set_difficulty_level value="8" />
     <set_object_property property="sensorSetting" value="1" />
@@ -1430,40 +1441,7 @@
     <add_ai type="POINT_THROTTLE" value1="56732.0" value2="0.0" value3="61073.0" value4="0.5" name="TS04" />
     <set_variable name="TransportAI4" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="2,-2" id_arme="059ee07b-4c06-4f35-92d3-4e7477fdef42" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" expanded_arme="" />
-  <event name="CreateGrid 2,-2" id_arme="4bd28fb5-d8b2-4120-8b4f-5a0ecc442707" parent_id_arme="059ee07b-4c06-4f35-92d3-4e7477fdef42">
-    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
-    <if_variable name="x" comparator="EQUALS" value="2.0" />
-    <if_variable name="z" comparator="EQUALS" value="-2.0" />
-    <set_variable name="MAXWhalewillhappen" value="100.0" integer="yes" />
-    <set_variable name="MAXSharkwillhappen" value="0" integer="yes" />
-    <set_variable name="MAXJellywillhappen" value="0" integer="yes" />
-    <set_variable name="MAXPiranhawillhappen" value="0" integer="yes" />
-    <set_variable name="MAXTyphoonwillhappen" value="0" integer="yes" />
-    <set_variable name="MAXCharybdiswillhappen" value="20.0" integer="yes" />
-    <!---->
-    <create count="100" type="nebulas" nebType="2" startX="25754.0" startY="0.0" startZ="74825.0" endX="77142.0" endY="0.0" endZ="21556.0" randomRange="20000" />
-    <create type="station" x="50000.0" y="0.0" z="90000.0" angle="0" name="CivB-01" hullID="1001" />
-    <!-- end create unnamed objects -->
-    <set_variable name="IsCreate" value="0" />
-  </event>
-  <event name="DestroyGrid 2,-2" id_arme="ecaf297a-95df-4a17-9ebf-ead0eb8f9d1d" parent_id_arme="059ee07b-4c06-4f35-92d3-4e7477fdef42">
-    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
-    <if_variable name="destroy_x" comparator="EQUALS" value="2.0" />
-    <if_variable name="destroy_z" comparator="EQUALS" value="-2.0" />
-    <set_variable name="MAXWhalewillhappen" value="25.0" integer="yes" />
-    <set_variable name="MAXSharkwillhappen" value="25.0" integer="yes" />
-    <set_variable name="MAXJellywillhappen" value="30.0" integer="yes" />
-    <set_variable name="MAXPiranhawillhappen" value="15.0" integer="yes" />
-    <set_variable name="MAXTyphoonwillhappen" value="10.0" integer="yes" />
-    <set_variable name="MAXCharybdiswillhappen" value="30.0" integer="yes" />
-    <!-- This is where all the objects are destroyed in the sector. -->
-    <destroy name="CivB-01" />
-    <!-- Flag the creation of a new sector if an event name_arme exists. -->
-    <set_variable name="IsDestroy" value="0" />
-    <set_variable name="IsCreate" value="1" integer="yes" />
-  </event>
-  <folder_arme name="2,0" id_arme="2d24c9be-1310-49f6-8a70-9104590252e4" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" expanded_arme="" />
+  <folder_arme name="2,0" id_arme="2d24c9be-1310-49f6-8a70-9104590252e4" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" />
   <event name="CreateGrid 2,0" id_arme="ba18a84b-dc30-40ca-b41a-59f1d30e99d8" parent_id_arme="2d24c9be-1310-49f6-8a70-9104590252e4">
     <if_variable name="IsCreate" comparator="EQUALS" value="1" />
     <if_variable name="x" comparator="EQUALS" value="2.0" />
@@ -1492,6 +1470,39 @@
     <set_variable name="MAXCharybdiswillhappen" value="30.0" integer="yes" />
     <!-- This is where all the objects are destroyed in the sector. -->
     <destroy name="CivB-02" />
+    <!-- Flag the creation of a new sector if an event name_arme exists. -->
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" integer="yes" />
+  </event>
+  <folder_arme name="2,-2" id_arme="059ee07b-4c06-4f35-92d3-4e7477fdef42" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" />
+  <event name="CreateGrid 2,-2" id_arme="4bd28fb5-d8b2-4120-8b4f-5a0ecc442707" parent_id_arme="059ee07b-4c06-4f35-92d3-4e7477fdef42">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="2.0" />
+    <if_variable name="z" comparator="EQUALS" value="-2.0" />
+    <set_variable name="MAXWhalewillhappen" value="100.0" integer="yes" />
+    <set_variable name="MAXSharkwillhappen" value="0" integer="yes" />
+    <set_variable name="MAXJellywillhappen" value="0" integer="yes" />
+    <set_variable name="MAXPiranhawillhappen" value="0" integer="yes" />
+    <set_variable name="MAXTyphoonwillhappen" value="0" integer="yes" />
+    <set_variable name="MAXCharybdiswillhappen" value="20.0" integer="yes" />
+    <!---->
+    <create count="100" type="nebulas" nebType="2" startX="25754.0" startY="0.0" startZ="74825.0" endX="77142.0" endY="0.0" endZ="21556.0" randomRange="20000" />
+    <create type="station" x="50000.0" y="0.0" z="90000.0" angle="0" name="CivB-01" hullID="1001" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid 2,-2" id_arme="ecaf297a-95df-4a17-9ebf-ead0eb8f9d1d" parent_id_arme="059ee07b-4c06-4f35-92d3-4e7477fdef42">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="2.0" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="-2.0" />
+    <set_variable name="MAXWhalewillhappen" value="25.0" integer="yes" />
+    <set_variable name="MAXSharkwillhappen" value="25.0" integer="yes" />
+    <set_variable name="MAXJellywillhappen" value="30.0" integer="yes" />
+    <set_variable name="MAXPiranhawillhappen" value="15.0" integer="yes" />
+    <set_variable name="MAXTyphoonwillhappen" value="10.0" integer="yes" />
+    <set_variable name="MAXCharybdiswillhappen" value="30.0" integer="yes" />
+    <!-- This is where all the objects are destroyed in the sector. -->
+    <destroy name="CivB-01" />
     <!-- Flag the creation of a new sector if an event name_arme exists. -->
     <set_variable name="IsDestroy" value="0" />
     <set_variable name="IsCreate" value="1" integer="yes" />
@@ -2436,7 +2447,202 @@
     <log text="END OF GAME!!  Ships that got out=|WhoGotOut|  Needed to win=12 " />
     <set_variable name="End" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="GM Commands" id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
+  <folder_arme name="LL-01 AI movement" id_arme="1edf422b-6931-471b-aed0-283e490b10e3" />
+  <folder_arme name="non vis movement" id_arme="1d44ce6d-6932-4827-a879-af91ee78d68f" parent_id_arme="1edf422b-6931-471b-aed0-283e490b10e3" />
+  <folder_arme name="Moving north" id_arme="14855af7-b12a-42e4-98df-bfa41fc024f0" parent_id_arme="1d44ce6d-6932-4827-a879-af91ee78d68f" />
+  <event name="move" id_arme="817cb7fc-3a48-4c6b-9135-805aca98e54f" parent_id_arme="14855af7-b12a-42e4-98df-bfa41fc024f0">
+    <if_timer_finished name="LinermovementTick" />
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="1.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <set_variable name="LinnerZmov" value="LinnerZmov-10000" integer="yes" />
+    <set_timer name="LinermovementTick" seconds="120" />
+  </event>
+  <event name="Sector transistion" id_arme="d386c14b-2898-4254-b283-e760165b4130" parent_id_arme="14855af7-b12a-42e4-98df-bfa41fc024f0">
+    <if_variable name="LinnerZ" comparator="NOT" value="0.0" />
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="1.0" />
+    <if_variable name="LinnerZmov" comparator="LESS_EQUAL" value="5000.0" />
+    <if_variable name="Linnervis" comparator="EQUALS" value="0.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <set_variable name="LinnerZmov" value="100000.0" integer="yes" />
+    <set_variable name="LinnerZ" value="LinnerZ+1" integer="yes" />
+  </event>
+  <event name="Change location" id_arme="6d24b996-dcd7-47c4-ad1c-24f186119ab1" parent_id_arme="14855af7-b12a-42e4-98df-bfa41fc024f0">
+    <if_timer_finished name="LinermovementTick" />
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="1.0" />
+    <if_variable name="Linnervis" comparator="EQUALS" value="0.0" />
+    <if_variable name="LinnerZ" comparator="EQUALS" value="0.0" />
+    <if_variable name="LinnerZmov" comparator="LESS_EQUAL" value="10000.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <set_variable name="LinnerMovement" value="2.0" integer="yes" />
+    <set_timer name="LinermovementTick" seconds="120" />
+  </event>
+  <folder_arme name="Moving South" id_arme="7d13779f-e671-4669-94d7-e678e4bce4dd" parent_id_arme="1d44ce6d-6932-4827-a879-af91ee78d68f" />
+  <event name="move" id_arme="e951eeaf-3674-4d41-863d-5054e1bc5cea" parent_id_arme="7d13779f-e671-4669-94d7-e678e4bce4dd">
+    <if_timer_finished name="LinermovementTick" />
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="2.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <set_variable name="LinnerZmov" value="LinnerZmov+10000" integer="yes" />
+    <set_timer name="LinermovementTick" seconds="120" />
+  </event>
+  <event name="Sector transistion" id_arme="4a7be7f6-b3dc-449f-9c86-2bafc40e3e9e" parent_id_arme="7d13779f-e671-4669-94d7-e678e4bce4dd">
+    <if_variable name="LinnerZ" comparator="NOT" value="-2.0" />
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="2.0" />
+    <if_variable name="LinnerZmov" comparator="GREATER_EQUAL" value="95000.0" />
+    <if_variable name="Linnervis" comparator="EQUALS" value="0.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <set_variable name="LinnerZmov" value="0.0" integer="yes" />
+    <set_variable name="LinnerZ" value="LinnerZ-1" integer="yes" />
+  </event>
+  <event name="Change location" id_arme="2e2d51a5-f26f-438a-9bc2-f37e4b4c50be" parent_id_arme="7d13779f-e671-4669-94d7-e678e4bce4dd">
+    <if_timer_finished name="LinermovementTick" />
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="2.0" />
+    <if_variable name="Linnervis" comparator="EQUALS" value="0.0" />
+    <if_variable name="LinnerZ" comparator="EQUALS" value="-2.0" />
+    <if_variable name="LinnerZmov" comparator="GREATER_EQUAL" value="90000.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <set_variable name="LinnerMovement" value="1.0" integer="yes" />
+    <set_timer name="LinermovementTick" seconds="120" />
+  </event>
+  <folder_arme name="Vis Movement" id_arme="7c58d883-b719-429b-bd7b-7d4080f66a54" parent_id_arme="1edf422b-6931-471b-aed0-283e490b10e3" />
+  <event name="Become vis North" id_arme="6e66266e-a778-4600-b975-6bf019ee9384" parent_id_arme="7c58d883-b719-429b-bd7b-7d4080f66a54">
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <if_variable name="LinnerX" comparator="EQUALS" value="x" />
+    <if_variable name="LinnerZ" comparator="EQUALS" value="z" />
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="1.0" />
+    <if_variable name="Linnervis" comparator="EQUALS" value="0.0" />
+    <create type="neutral" x="LinnerXmov" y="0.0" z="LinnerZmov" angle="0" name="LL-01" hullID="12" />
+    <clear_ai name="LL-01" />
+    <add_ai type="POINT_THROTTLE" value1="50000.0" value2="0.0" value3="0.0" value4="1.0" name="LL-01" />
+    <add_ai type="AVOID_BLACK_HOLE" value1="5000" name="LL-01" />
+    <set_variable name="Linnervis" value="1.0" integer="yes" />
+  </event>
+  <event name="Become vis South" id_arme="3ba2e29a-a319-4e4c-a3b9-2d8a046f588c" parent_id_arme="7c58d883-b719-429b-bd7b-7d4080f66a54">
+    <if_variable name="LinnerX" comparator="EQUALS" value="x" />
+    <if_variable name="LinnerZ" comparator="EQUALS" value="z" />
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="2.0" />
+    <if_variable name="Linnervis" comparator="EQUALS" value="0.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="LinnerXmov" y="0.0" z="LinnerZmov" angle="180" name="LL-01" hullID="12" />
+    <clear_ai name="LL-01" />
+    <add_ai type="POINT_THROTTLE" value1="50000.0" value2="0.0" value3="100000.0" value4="1.0" name="LL-01" />
+    <add_ai type="AVOID_BLACK_HOLE" value1="5000" name="LL-01" />
+    <set_variable name="Linnervis" value="1.0" integer="yes" />
+  </event>
+  <event name="Become non visX" id_arme="4f8ff353-d8eb-4046-b822-c326653361bb" parent_id_arme="7c58d883-b719-429b-bd7b-7d4080f66a54">
+    <if_variable name="LinnerX" comparator="NOT" value="x" />
+    <if_variable name="Linnervis" comparator="EQUALS" value="1.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <set_variable name="Linnervis" value="0.0" integer="yes" />
+    <destroy name="LL-01" />
+    <set_variable name="LinnervisOnlocation" value="0.0" integer="yes" />
+    <set_variable name="LinnerMessage" value="0.0" integer="yes" />
+  </event>
+  <event name="Become non visZ" id_arme="98cd1eb8-c877-40a8-9c08-e3d1a5eedca0" parent_id_arme="7c58d883-b719-429b-bd7b-7d4080f66a54">
+    <if_variable name="LinnerZ" comparator="NOT" value="z" />
+    <if_variable name="Linnervis" comparator="EQUALS" value="1.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <set_variable name="Linnervis" value="0.0" integer="yes" />
+    <destroy name="LL-01" />
+    <set_variable name="LinnervisOnlocation" value="0.0" integer="yes" />
+    <set_variable name="LinnerMessage" value="0.0" integer="yes" />
+  </event>
+  <event name="Sector Trans North" id_arme="9cefb68f-59e6-40cf-bf35-e6f200af0b77" parent_id_arme="7c58d883-b719-429b-bd7b-7d4080f66a54">
+    <if_variable name="LinnerZ" comparator="NOT" value="0.0" />
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="1.0" />
+    <if_object_property property="positionZ" name="LL-01" comparator="LESS_EQUAL" value="5000.0" />
+    <if_variable name="Linnervis" comparator="EQUALS" value="1.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <set_variable name="LinnerZmov" value="95000.0" integer="yes" />
+    <set_variable name="LinnerZ" value="LinnerZ+1" integer="yes" />
+    <set_variable name="Linnervis" value="0.0" integer="yes" />
+    <destroy name="LL-01" />
+    <set_variable name="LinnerMessage" value="0.0" integer="yes" />
+  </event>
+  <event name="Sector Trans South" id_arme="347287a1-16d5-4b44-b56f-8bf09aa31277" parent_id_arme="7c58d883-b719-429b-bd7b-7d4080f66a54">
+    <if_variable name="LinnerZ" comparator="NOT" value="-2.0" />
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="2.0" />
+    <if_object_property property="positionZ" name="LL-01" comparator="GREATER_EQUAL" value="95000.0" />
+    <if_variable name="Linnervis" comparator="EQUALS" value="1.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <set_variable name="LinnerZmov" value="5000.0" integer="yes" />
+    <set_variable name="LinnerZ" value="LinnerZ-1" integer="yes" />
+    <set_variable name="Linnervis" value="0.0" integer="yes" />
+    <destroy name="LL-01" />
+    <set_variable name="LinnerMessage" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="At location" id_arme="3fa79e55-99fc-4333-9c9c-a233ba7ec4ec" parent_id_arme="1edf422b-6931-471b-aed0-283e490b10e3" />
+  <event name="Location north" id_arme="6cbc666f-e12c-46b3-8a98-d4092ff55332" parent_id_arme="3fa79e55-99fc-4333-9c9c-a233ba7ec4ec">
+    <if_variable name="LinnerX" comparator="EQUALS" value="2.0" />
+    <if_variable name="LinnerZ" comparator="EQUALS" value="0.0" />
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="1.0" />
+    <if_variable name="Linnervis" comparator="EQUALS" value="1.0" />
+    <if_variable name="LinnervisOnlocation" comparator="EQUALS" value="0.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <clear_ai name="LL-01" />
+    <add_ai type="POINT_THROTTLE" value1="50000.0" value2="0.0" value3="10000.0" value4="1.0" name="LL-01" />
+    <add_ai type="AVOID_BLACK_HOLE" value1="5000" name="LL-01" />
+    <set_variable name="LinnervisOnlocation" value="1.0" integer="yes" />
+  </event>
+  <event name="At station North" id_arme="c9637b4d-b745-43d6-9305-d34161cd461e" parent_id_arme="3fa79e55-99fc-4333-9c9c-a233ba7ec4ec">
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="1.0" />
+    <if_variable name="LinnervisOnlocation" comparator="EQUALS" value="1.0" />
+    <if_distance name1="LL-01" name2="CivB-02" comparator="LESS_EQUAL" value="700.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <set_variable name="LinnerXmov" value="50000.0" integer="yes" />
+    <set_variable name="LinnerZmov" value="10700.0" integer="yes" />
+    <clear_ai name="LL-01" />
+    <add_ai type="POINT_THROTTLE" value1="50000.0" value2="0.0" value3="100000.0" value4="1.0" name="LL-01" />
+    <add_ai type="AVOID_BLACK_HOLE" value1="5000" name="LL-01" />
+    <set_variable name="LinnerMovement" value="2.0" integer="yes" />
+  </event>
+  <event name="Location south" id_arme="5eefa058-d8c8-4dd7-bf57-6ca93bc4e1f0" parent_id_arme="3fa79e55-99fc-4333-9c9c-a233ba7ec4ec">
+    <if_variable name="LinnerX" comparator="EQUALS" value="2.0" />
+    <if_variable name="LinnerZ" comparator="EQUALS" value="-2.0" />
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="2.0" />
+    <if_variable name="Linnervis" comparator="EQUALS" value="1.0" />
+    <if_variable name="LinnervisOnlocation" comparator="EQUALS" value="0.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <clear_ai name="LL-01" />
+    <add_ai type="POINT_THROTTLE" value1="50000.0" value2="0.0" value3="90000.0" value4="1.0" name="LL-01" />
+    <add_ai type="AVOID_BLACK_HOLE" value1="5000" name="LL-01" />
+    <set_variable name="LinnervisOnlocation" value="1.0" integer="yes" />
+  </event>
+  <event name="At station South" id_arme="6998d770-4df8-4fa7-87a8-c927b9fbebc2" parent_id_arme="3fa79e55-99fc-4333-9c9c-a233ba7ec4ec">
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="2.0" />
+    <if_variable name="LinnervisOnlocation" comparator="EQUALS" value="1.0" />
+    <if_distance name1="LL-01" name2="CivB-01" comparator="LESS_EQUAL" value="700.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <set_variable name="LinnerXmov" value="50000.0" integer="yes" />
+    <set_variable name="LinnerZmov" value="89300.0" integer="yes" />
+    <clear_ai name="LL-01" />
+    <add_ai type="POINT_THROTTLE" value1="50000.0" value2="0.0" value3="0.0" value4="1.0" name="LL-01" />
+    <add_ai type="AVOID_BLACK_HOLE" value1="5000" name="LL-01" />
+    <set_variable name="LinnerMovement" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Messages from AI" id_arme="ab0ce452-c139-4dd4-b4ac-5544634742de" parent_id_arme="1edf422b-6931-471b-aed0-283e490b10e3" />
+  <event name="When havaing travlers" id_arme="25b3de2f-18bb-40df-902b-cbc75e7a1c3a" parent_id_arme="ab0ce452-c139-4dd4-b4ac-5544634742de">
+    <if_variable name="Linnervis" comparator="EQUALS" value="1.0" />
+    <if_variable name="LinnerMessage" comparator="EQUALS" value="0.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="LL-01" type="FRIEND">We are an unarmed and transporting passangers to CivB-02 in sector 2,0</incoming_comms_text>
+    <set_variable name="LinnerMessage" value="1.0" integer="yes" />
+  </event>
+  <event name="When havaing travlers" id_arme="0f19b73f-1ead-48fa-b2f3-a14adbe17aef" parent_id_arme="ab0ce452-c139-4dd4-b4ac-5544634742de">
+    <if_variable name="Linnervis" comparator="EQUALS" value="1.0" />
+    <if_variable name="LinnerMessage" comparator="EQUALS" value="0.0" />
+    <if_variable name="LinnerMovement" comparator="EQUALS" value="2.0" />
+    <if_variable name="LinnerAlive" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="LL-01" type="FRIEND">We are an unarmed and going to pick-up passangers at CivB-02 in sector 2,-2</incoming_comms_text>
+    <set_variable name="LinnerMessage" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Killing Ship" id_arme="2e7f84ff-cc66-454d-8b29-c64b33b51647" parent_id_arme="1edf422b-6931-471b-aed0-283e490b10e3" />
+  <event name="on location and killing ship" id_arme="348f7a0c-5b3d-470a-8c3d-c6c8ff033feb" parent_id_arme="2e7f84ff-cc66-454d-8b29-c64b33b51647">
+    <if_not_exists name="LL-01" />
+    <if_variable name="Linnervis" comparator="EQUALS" value="1.0" />
+    <set_variable name="LinnerAlive" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="GM Commands" id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <event name="SectorLocking" id_arme="1dde4798-693d-4316-8cdb-9e9e568693af" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f">
     <if_gm_button text="Sector/Lock" />
     <if_variable name="IsSectorLocked" comparator="EQUALS" value="0" />
