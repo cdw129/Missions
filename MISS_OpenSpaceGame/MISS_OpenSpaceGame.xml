@@ -1,5 +1,28 @@
 <mission_data version="1.0" background_id_arme="572f2d8c-9b42-4bfd-9cd0-28a9f212d9ca" playerShipNames_arme="Artemis\Intrepid\Aegis\Horatio\Excalibur\Hera\Ceres\Diana">
   <start id_arme="572f2d8c-9b42-4bfd-9cd0-28a9f212d9ca">
+    <warning_popup_message message="Please stand by while systems come online." consoles="MHWESCOF" />
+    <!--Set up on ships-->
+    <set_variable name="CTnumber" value="1" integer="yes" />
+    <set_variable name="CheckForShip1" value="0.0" integer="yes" />
+    <set_variable name="CheckForShip2" value="0.0" integer="yes" />
+    <set_variable name="CheckForShip3" value="0.0" integer="yes" />
+    <set_variable name="CheckForShip4" value="0.0" integer="yes" />
+    <set_variable name="PVTRJimiSaruUp" value="0.0" integer="yes" />
+    <set_variable name="PVTRJimiSaruDown" value="0.0" integer="yes" />
+    <set_variable name="PVTRJimiSaruRight" value="0.0" integer="yes" />
+    <set_variable name="PVTRJimiSaruLeft" value="0.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyUp" value="0.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyDown" value="0.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyRight" value="0.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyLeft" value="0.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyUp" value="0.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyDown" value="0.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyRight" value="0.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyLeft" value="0.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyUp" value="0.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyDown" value="0.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyRight" value="0.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyLeft" value="0.0" integer="yes" />
     <!--Linner Code-->
     <set_timer name="LinermovementTick" seconds="120" />
     <set_variable name="LinnervisOnlocation" value="0.0" integer="yes" />
@@ -20,15 +43,6 @@
     <set_variable name="Jimi-Saru" value="1.0" integer="yes" />
     <set_variable name="Fulminatae" value="1.0" integer="yes" />
     <set_variable name="Apocalypse" value="1.0" integer="yes" />
-    <!--Set up on ships-->
-    <set_variable name="CTnumber" value="1" integer="yes" />
-    <set_variable name="CheckForShip1" value="1.0" integer="yes" />
-    <set_variable name="CheckForShip2" value="0.0" integer="yes" />
-    <set_variable name="CheckForShip3" value="0.0" integer="yes" />
-    <set_variable name="CheckForShip4" value="0.0" integer="yes" />
-    <set_variable name="PVTRFulminataeReady" value="0.0" integer="yes" />
-    <set_variable name="PVTRApocalypseReady" value="0.0" integer="yes" />
-    <set_variable name="TSNAcademiaReady" value="0.0" integer="yes" />
     <!--FGS var-->
     <set_variable name="startticker1" value="0.0" integer="yes" />
     <set_variable name="amounttogive1" value="0.0" integer="yes" />
@@ -73,7 +87,7 @@
     <!-- Comms gets a message for current sector location -->
     <incoming_comms_text from="DSTAN AND ONBOARD NAV">Current position (|x|, |z|)</incoming_comms_text>
     <!-- Locking and unlocking sector transition -->
-    <set_variable name="IsSectorLocked" value="1.0" integer="yes" />
+    <set_variable name="IsSectorLocked" value="0.0" integer="yes" />
     <!-- Sets the flag to destroy the sector we are leaving, the flag is reset as soon as it is done -->
     <set_variable name="IsKill" value="0" integer="yes" />
     <set_variable name="IsDestroy" value="0" integer="yes" />
@@ -186,13 +200,13 @@
     <!--END Start Block-->
   </start>
   <folder_arme name="Named Ships" id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
-  <folder_arme name="Movement script" id_arme="4ded7db6-bc56-49e8-8581-c475536cf975" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
+  <folder_arme name="Movement script" id_arme="4ded7db6-bc56-49e8-8581-c475536cf975" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
   <event name="PositionLeftX" id_arme="6af9d54f-3bc4-4c25-8b4f-e6f559a8c24c" parent_id_arme="4ded7db6-bc56-49e8-8581-c475536cf975">
+    <if_variable name="PVTRJimiSaruLeft" comparator="EQUALS" value="1.0" />
+    <if_variable name="PVTRFulminataeReadyLeft" comparator="EQUALS" value="1.0" />
+    <if_variable name="PVTRApocalypseReadyLeft" comparator="EQUALS" value="1.0" />
+    <if_variable name="TSNAcademiaReadyLeft" comparator="EQUALS" value="1.0" />
     <if_variable name="IsSectorLocked" comparator="EQUALS" value="0" />
-    <if_object_property property="positionX" name="PVTR Jimi-Saru" comparator="GREATER" value="99990" />
-    <if_variable name="PVTRFulminataeReady" comparator="EQUALS" value="1.0" />
-    <if_variable name="PVTRApocalypseReady" comparator="EQUALS" value="1.0" />
-    <if_variable name="TSNAcademiaReady" comparator="EQUALS" value="1.0" />
     <set_object_property property="positionX" value="100" name="PVTR Jimi-Saru" />
     <set_object_property property="positionX" value="100" name="PVTR Fulminatae" />
     <set_object_property property="positionX" value="100" name="PVTR Apocalypse" />
@@ -212,17 +226,18 @@
     <!-- Comms gets a message for current sector location -->
     <incoming_comms_text from="DSTAN AND ONBOARD NAV">Current position (|x|, |z|)</incoming_comms_text>
     <!--Extra-->
+    <set_variable name="Movedover1" value="1.0" integer="yes" />
     <set_variable name="Movedover2" value="1.0" integer="yes" />
     <set_variable name="Movedover3" value="1.0" integer="yes" />
     <set_variable name="Movedover4" value="1.0" integer="yes" />
     <!---->
   </event>
   <event name="PositionBottomZ" id_arme="30e0c303-fe44-4b65-b87b-a2ca1c2e03b4" parent_id_arme="4ded7db6-bc56-49e8-8581-c475536cf975">
+    <if_variable name="PVTRJimiSaruDown" comparator="EQUALS" value="1.0" />
+    <if_variable name="PVTRFulminataeReadyDown" comparator="EQUALS" value="1.0" />
+    <if_variable name="PVTRApocalypseReadyDown" comparator="EQUALS" value="1.0" />
+    <if_variable name="TSNAcademiaReadyDown" comparator="EQUALS" value="1.0" />
     <if_variable name="IsSectorLocked" comparator="EQUALS" value="0" />
-    <if_object_property property="positionZ" name="PVTR Jimi-Saru" comparator="GREATER" value="99990" />
-    <if_variable name="PVTRFulminataeReady" comparator="EQUALS" value="1.0" />
-    <if_variable name="PVTRApocalypseReady" comparator="EQUALS" value="1.0" />
-    <if_variable name="TSNAcademiaReady" comparator="EQUALS" value="1.0" />
     <set_object_property property="positionZ" value="100" name="PVTR Jimi-Saru" />
     <set_object_property property="positionZ" value="100" name="PVTR Fulminatae" />
     <set_object_property property="positionZ" value="100" name="PVTR Apocalypse" />
@@ -242,17 +257,18 @@
     <!-- Comms gets a message for current sector location -->
     <incoming_comms_text from="DSTAN AND ONBOARD NAV">Current position (|x|, |z|)</incoming_comms_text>
     <!--Extra-->
+    <set_variable name="Movedover1" value="1.0" integer="yes" />
     <set_variable name="Movedover2" value="1.0" integer="yes" />
     <set_variable name="Movedover3" value="1.0" integer="yes" />
     <set_variable name="Movedover4" value="1.0" integer="yes" />
     <!---->
   </event>
   <event name="PositionRightX" id_arme="7a3eea57-5e35-45bf-b603-c3bc7b152bb3" parent_id_arme="4ded7db6-bc56-49e8-8581-c475536cf975">
+    <if_variable name="PVTRJimiSaruRight" comparator="EQUALS" value="1.0" />
+    <if_variable name="PVTRFulminataeReadyRight" comparator="EQUALS" value="1.0" />
+    <if_variable name="PVTRApocalypseReadyRight" comparator="EQUALS" value="1.0" />
+    <if_variable name="TSNAcademiaReadyRight" comparator="EQUALS" value="1.0" />
     <if_variable name="IsSectorLocked" comparator="EQUALS" value="0" />
-    <if_object_property property="positionX" name="PVTR Jimi-Saru" comparator="LESS" value="10" />
-    <if_variable name="PVTRFulminataeReady" comparator="EQUALS" value="1.0" />
-    <if_variable name="PVTRApocalypseReady" comparator="EQUALS" value="1.0" />
-    <if_variable name="TSNAcademiaReady" comparator="EQUALS" value="1.0" />
     <set_object_property property="positionX" value="99900" name="PVTR Jimi-Saru" />
     <set_object_property property="positionX" value="99900" name="PVTR Fulminatae" />
     <set_object_property property="positionX" value="99900" name="PVTR Apocalypse" />
@@ -272,17 +288,18 @@
     <!-- Comms gets a message for current sector location -->
     <incoming_comms_text from="DSTAN AND ONBOARD NAV">Current position (|x|, |z|)</incoming_comms_text>
     <!--Extra-->
+    <set_variable name="Movedover1" value="1.0" integer="yes" />
     <set_variable name="Movedover2" value="1.0" integer="yes" />
     <set_variable name="Movedover3" value="1.0" integer="yes" />
     <set_variable name="Movedover4" value="1.0" integer="yes" />
     <!---->
   </event>
   <event name="PositionTopZ" id_arme="81a8b148-b5ae-46f1-8e1f-329fc82223dc" parent_id_arme="4ded7db6-bc56-49e8-8581-c475536cf975">
+    <if_variable name="PVTRJimiSaruUp" comparator="EQUALS" value="1.0" />
+    <if_variable name="PVTRFulminataeReadyUp" comparator="EQUALS" value="1.0" />
+    <if_variable name="PVTRApocalypseReadyUp" comparator="EQUALS" value="1.0" />
+    <if_variable name="TSNAcademiaReadyUp" comparator="EQUALS" value="1.0" />
     <if_variable name="IsSectorLocked" comparator="EQUALS" value="0" />
-    <if_object_property property="positionZ" name="PVTR Jimi-Saru" comparator="LESS" value="10" />
-    <if_variable name="PVTRFulminataeReady" comparator="EQUALS" value="1.0" />
-    <if_variable name="PVTRApocalypseReady" comparator="EQUALS" value="1.0" />
-    <if_variable name="TSNAcademiaReady" comparator="EQUALS" value="1.0" />
     <set_object_property property="positionZ" value="99900" name="PVTR Jimi-Saru" />
     <set_object_property property="positionZ" value="99900" name="PVTR Fulminatae" />
     <set_object_property property="positionZ" value="99900" name="PVTR Apocalypse" />
@@ -302,63 +319,85 @@
     <!-- Comms gets a message for current sector location -->
     <incoming_comms_text from="DSTAN AND ONBOARD NAV">Current position (|x|, |z|)</incoming_comms_text>
     <!--Extra-->
+    <set_variable name="Movedover1" value="1.0" integer="yes" />
     <set_variable name="Movedover2" value="1.0" integer="yes" />
     <set_variable name="Movedover3" value="1.0" integer="yes" />
     <set_variable name="Movedover4" value="1.0" integer="yes" />
     <!---->
   </event>
-  <folder_arme name="setup" id_arme="0554694a-fea2-4a18-a574-42b2702182a6" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
+  <folder_arme name="setup" id_arme="0554694a-fea2-4a18-a574-42b2702182a6" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
   <folder_arme name="Ships exists" id_arme="cdd2c353-da90-41e4-9c9f-3b1c770f7ccd" parent_id_arme="0554694a-fea2-4a18-a574-42b2702182a6" expanded_arme="" />
   <event name="Setting up PVTR Jimi-Saru" id_arme="5737ad8d-ce61-4322-bef0-e4e33b93fbe7" parent_id_arme="cdd2c353-da90-41e4-9c9f-3b1c770f7ccd">
     <if_variable name="CheckForShip1" comparator="EQUALS" value="1.0" />
     <if_exists name="PVTR Jimi-Saru" />
-    <warning_popup_message message="The lead ship will be PVTR Jimi-Saru" consoles="MHWESCO" />
-    <set_variable name="IsSectorLocked" value="0.0" integer="yes" />
+    <set_variable name="PVTRJimiSaruUp" value="0.0" integer="yes" />
+    <set_variable name="PVTRJimiSaruDown" value="0.0" integer="yes" />
+    <set_variable name="PVTRJimiSaruRight" value="0.0" integer="yes" />
+    <set_variable name="PVTRJimiSaruLeft" value="0.0" integer="yes" />
     <set_variable name="CheckForShip1" value="0.0" integer="yes" />
   </event>
   <event name="Setting up PVTR Fulminatae" id_arme="b602fca7-1565-4610-80b0-4b08580826d6" parent_id_arme="cdd2c353-da90-41e4-9c9f-3b1c770f7ccd">
     <if_exists name="PVTR Fulminatae" />
     <if_variable name="CheckForShip2" comparator="EQUALS" value="1.0" />
-    <set_variable name="PVTRFulminataeReady" value="0.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyUp" value="0.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyDown" value="0.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyRight" value="0.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyLeft" value="0.0" integer="yes" />
     <set_variable name="CheckForShip2" value="0.0" integer="yes" />
   </event>
   <event name="Setting up PVTR Apocalypse" id_arme="17f0a74b-5a38-4e43-900a-61fa9a33a9af" parent_id_arme="cdd2c353-da90-41e4-9c9f-3b1c770f7ccd">
     <if_exists name="PVTR Apocalypse" />
     <if_variable name="CheckForShip3" comparator="EQUALS" value="1.0" />
-    <set_variable name="PVTRApocalypseReady" value="0.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyUp" value="0.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyDown" value="0.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyRight" value="0.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyLeft" value="0.0" integer="yes" />
     <set_variable name="CheckForShip3" value="0.0" integer="yes" />
   </event>
   <event name="Setting up TSN Academia" id_arme="1b74c2ea-ce3e-4a21-a908-d55e7e56e1f5" parent_id_arme="cdd2c353-da90-41e4-9c9f-3b1c770f7ccd">
     <if_exists name="TSN Academia" />
     <if_variable name="CheckForShip4" comparator="EQUALS" value="1.0" />
-    <set_variable name="TSNAcademiaReady" value="0.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyUp" value="0.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyDown" value="0.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyRight" value="0.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyLeft" value="0.0" integer="yes" />
     <set_variable name="CheckForShip4" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ships does NOT exists" id_arme="9989c8cc-5a00-4bbe-81a0-289132108e28" parent_id_arme="0554694a-fea2-4a18-a574-42b2702182a6" />
+  <folder_arme name="Ships does NOT exists" id_arme="9989c8cc-5a00-4bbe-81a0-289132108e28" parent_id_arme="0554694a-fea2-4a18-a574-42b2702182a6" expanded_arme="" />
   <event name="Setting up PVTR Jimi-Saru" id_arme="9d7a31f2-8848-48bc-ae5b-6cb206601abe" parent_id_arme="9989c8cc-5a00-4bbe-81a0-289132108e28">
     <if_variable name="CheckForShip1" comparator="EQUALS" value="0.0" />
     <if_not_exists name="PVTR Jimi-Saru" />
-    <set_variable name="IsSectorLocked" value="1.0" integer="yes" />
-    <warning_popup_message message="Game Will NOT play without lead ship PVTR Jimi-Saru" consoles="MHWESCO" />
-    <set_variable name="IsSectorLocked" value="1" integer="yes" />
+    <set_variable name="PVTRJimiSaruUp" value="1.0" integer="yes" />
+    <set_variable name="PVTRJimiSaruDown" value="1.0" integer="yes" />
+    <set_variable name="PVTRJimiSaruRight" value="1.0" integer="yes" />
+    <set_variable name="PVTRJimiSaruLeft" value="1.0" integer="yes" />
     <set_variable name="CheckForShip1" value="1.0" integer="yes" />
   </event>
   <event name="Setting up PVTR Fulminatae" id_arme="050e73d5-5ae9-4bba-873c-9050dfd7119e" parent_id_arme="9989c8cc-5a00-4bbe-81a0-289132108e28">
     <if_not_exists name="PVTR Fulminatae" />
     <if_variable name="CheckForShip2" comparator="EQUALS" value="0.0" />
-    <set_variable name="PVTRFulminataeReady" value="1.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyUp" value="1.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyDown" value="1.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyRight" value="1.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyLeft" value="1.0" integer="yes" />
     <set_variable name="CheckForShip2" value="1.0" integer="yes" />
   </event>
   <event name="Setting up PVTR Apocalypse" id_arme="dab624b4-370a-497f-bbef-f0d087182f0c" parent_id_arme="9989c8cc-5a00-4bbe-81a0-289132108e28">
     <if_not_exists name="PVTR Apocalypse" />
     <if_variable name="CheckForShip3" comparator="EQUALS" value="0.0" />
-    <set_variable name="PVTRApocalypseReady" value="1.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyUp" value="1.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyDown" value="1.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyRight" value="1.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyLeft" value="1.0" integer="yes" />
     <set_variable name="CheckForShip3" value="1.0" integer="yes" />
   </event>
   <event name="Setting up TSN Academia" id_arme="9c381364-3796-462f-9be3-27bf3a711733" parent_id_arme="9989c8cc-5a00-4bbe-81a0-289132108e28">
     <if_not_exists name="TSN Academia" />
     <if_variable name="CheckForShip4" comparator="EQUALS" value="0.0" />
-    <set_variable name="TSNAcademiaReady" value="1.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyUp" value="1.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyDown" value="1.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyRight" value="1.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyLeft" value="1.0" integer="yes" />
     <set_variable name="CheckForShip4" value="1.0" integer="yes" />
   </event>
   <folder_arme name="known pirate ships" id_arme="fe8b5df3-9bb9-41b7-8ee9-6e2daf4c45f5" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
@@ -637,143 +676,128 @@
     <set_variable name="FGSactive4" value="0.0" integer="yes" />
     <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">TSN Academia is all toped off</incoming_comms_text>
   </event>
-  <folder_arme name="Move Together" id_arme="b088bbca-04e0-47ca-817b-d4b3a2de869f" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
-  <folder_arme name="PVTR Jimi-Saru" id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b" parent_id_arme="b088bbca-04e0-47ca-817b-d4b3a2de869f" expanded_arme="" />
-  <event name="ReadyRight" id_arme="0995e31c-bd2a-4e47-9212-855cd0ad18ab" parent_id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b">
+  <folder_arme name="Move Together" id_arme="b088bbca-04e0-47ca-817b-d4b3a2de869f" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
+  <folder_arme name="PVTR Jimi-Saru" id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b" parent_id_arme="b088bbca-04e0-47ca-817b-d4b3a2de869f" />
+  <event name="ReadyRight" id_arme="1b08b75d-90eb-4e12-99bc-1521fb9bc09b" parent_id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b">
     <if_object_property property="positionX" name="PVTR Jimi-Saru" comparator="LESS" value="10" />
-    <if_variable name="ReadyRight" comparator="EQUALS" value="0.0" />
-    <set_variable name="ReadyRight" value="1.0" integer="yes" />
+    <if_variable name="CheckForShip1" comparator="EQUALS" value="0.0" />
+    <set_variable name="PVTRJimiSaruRight" value="1.0" integer="yes" />
   </event>
-  <event name="Not Ready Right" id_arme="9ddaa12c-3e51-470f-a771-d231b954bc49" parent_id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b">
-    <if_object_property property="positionX" name="PVTR Jimi-Saru" comparator="GREATER" value="10" />
-    <if_variable name="ReadyRight" comparator="EQUALS" value="1.0" />
-    <set_variable name="ReadyRight" value="0.0" integer="yes" />
+  <event name="ReadyLeft" id_arme="dac3e5a5-3d55-4818-bef3-b7fd16bb5f5b" parent_id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b">
+    <if_object_property property="positionX" name="PVTR Jimi-Saru" comparator="GREATER" value="99990.0" />
+    <if_variable name="CheckForShip1" comparator="EQUALS" value="0.0" />
+    <set_variable name="PVTRJimiSaruLeft" value="1.0" integer="yes" />
   </event>
-  <event name="Ready Left" id_arme="6c648b1a-def5-45b9-93b4-1ca6900c2972" parent_id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b">
-    <if_object_property property="positionX" name="PVTR Jimi-Saru" comparator="GREATER" value="99990" />
-    <if_variable name="ReadyLeft" comparator="NOT" value="1.0" />
-    <set_variable name="ReadyLeft" value="1.0" integer="yes" />
+  <event name="ReadyBottom" id_arme="5de48db9-ec41-4fa0-9d79-f8235a94b1d7" parent_id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b">
+    <if_object_property property="positionZ" name="PVTR Jimi-Saru" comparator="GREATER" value="99990.0" />
+    <if_variable name="CheckForShip1" comparator="EQUALS" value="0.0" />
+    <set_variable name="PVTRJimiSaruDown" value="1.0" integer="yes" />
   </event>
-  <event name="Not Ready Left" id_arme="b6e3ef6f-e963-4ecb-9409-b5ffe9c373be" parent_id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b">
-    <if_object_property property="positionX" name="PVTR Jimi-Saru" comparator="LESS" value="99990" />
-    <if_variable name="ReadyLeft" comparator="EQUALS" value="1.0" />
-    <set_variable name="ReadyLeft" value="0.0" integer="yes" />
-  </event>
-  <event name="ReadyBottom" id_arme="2b0f1731-eb54-47d8-ad8f-8ddc079931b3" parent_id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b">
-    <if_object_property property="positionZ" name="PVTR Jimi-Saru" comparator="GREATER" value="99990" />
-    <if_variable name="ReadyBottom" comparator="NOT" value="1.0" />
-    <set_variable name="ReadyBottom" value="1.0" integer="yes" />
-  </event>
-  <event name="Not ReadyBottom" id_arme="d8e2ece1-bf9b-45d2-ac4f-611d1395cade" parent_id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b">
-    <if_object_property property="positionZ" name="PVTR Jimi-Saru" comparator="LESS" value="99990" />
-    <if_variable name="ReadyBottom" comparator="EQUALS" value="1.0" />
-    <set_variable name="ReadyBottom" value="0.0" integer="yes" />
-  </event>
-  <event name="Ready Top" id_arme="ec19eed6-3626-4c76-8c70-407c982f709a" parent_id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b">
+  <event name="ReadyTop" id_arme="dda505d2-c1fc-45d2-ad21-f0cc7b0a6aae" parent_id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b">
     <if_object_property property="positionZ" name="PVTR Jimi-Saru" comparator="LESS" value="10" />
-    <if_variable name="ReadyTop" comparator="NOT" value="1.0" />
-    <set_variable name="ReadyTop" value="1.0" integer="yes" />
+    <if_variable name="CheckForShip1" comparator="EQUALS" value="0.0" />
+    <set_variable name="PVTRJimiSaruUp" value="1.0" integer="yes" />
   </event>
-  <event name="Not ReadyTop" id_arme="74090fc4-1e7f-4822-a463-619be9ec5322" parent_id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b">
-    <if_object_property property="positionZ" name="PVTR Jimi-Saru" comparator="GREATER" value="10" />
-    <if_variable name="ReadyTop" comparator="EQUALS" value="1.0" />
-    <set_variable name="ReadyTop" value="0.0" integer="yes" />
+  <event name="Not ReadyTop" id_arme="625d62c1-3516-4a38-a8f4-01272087205f" parent_id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b">
+    <if_variable name="Movedover1" comparator="EQUALS" value="1.0" />
+    <if_variable name="CheckForShip1" comparator="EQUALS" value="0.0" />
+    <set_variable name="PVTRJimiSaruUp" value="0.0" integer="yes" />
+    <set_variable name="PVTRJimiSaruDown" value="0.0" integer="yes" />
+    <set_variable name="PVTRJimiSaruRight" value="0.0" integer="yes" />
+    <set_variable name="PVTRJimiSaruLeft" value="0.0" integer="yes" />
+    <set_variable name="Movedover1" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="PVTR Fulminatae" id_arme="ad4213ee-4cf5-4d0b-a289-6683452702f5" parent_id_arme="b088bbca-04e0-47ca-817b-d4b3a2de869f" expanded_arme="" />
+  <folder_arme name="PVTR Fulminatae" id_arme="ad4213ee-4cf5-4d0b-a289-6683452702f5" parent_id_arme="b088bbca-04e0-47ca-817b-d4b3a2de869f" />
   <event name="ReadyRight" id_arme="9b0178f4-4fb5-462b-9364-eb6133a9387a" parent_id_arme="ad4213ee-4cf5-4d0b-a289-6683452702f5">
     <if_object_property property="positionX" name="PVTR Fulminatae" comparator="LESS" value="10" />
-    <if_variable name="ReadyRight" comparator="EQUALS" value="1.0" />
     <if_variable name="CheckForShip2" comparator="EQUALS" value="0.0" />
-    <set_variable name="PVTRFulminataeReady" value="1.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyRight" value="1.0" integer="yes" />
   </event>
   <event name="Ready Left" id_arme="efa623ad-9eb4-4bad-9304-d0803b8033a4" parent_id_arme="ad4213ee-4cf5-4d0b-a289-6683452702f5">
     <if_object_property property="positionX" name="PVTR Fulminatae" comparator="GREATER" value="99990" />
-    <if_variable name="ReadyLeft" comparator="EQUALS" value="1.0" />
     <if_variable name="CheckForShip2" comparator="EQUALS" value="0.0" />
-    <set_variable name="PVTRFulminataeReady" value="1.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyLeft" value="1.0" integer="yes" />
   </event>
   <event name="ReadyBottom" id_arme="85f25295-2fe7-434f-b052-ced75b236ac9" parent_id_arme="ad4213ee-4cf5-4d0b-a289-6683452702f5">
     <if_object_property property="positionZ" name="PVTR Fulminatae" comparator="GREATER" value="99990" />
-    <if_variable name="ReadyBottom" comparator="EQUALS" value="1.0" />
     <if_variable name="CheckForShip2" comparator="EQUALS" value="0.0" />
-    <set_variable name="PVTRFulminataeReady" value="1.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyDown" value="1.0" integer="yes" />
   </event>
   <event name="Ready Top" id_arme="a1792164-926b-4249-b8e3-36903a75bdf6" parent_id_arme="ad4213ee-4cf5-4d0b-a289-6683452702f5">
     <if_object_property property="positionZ" name="PVTR Fulminatae" comparator="LESS" value="10" />
-    <if_variable name="ReadyTop" comparator="EQUALS" value="1.0" />
     <if_variable name="CheckForShip2" comparator="EQUALS" value="0.0" />
-    <set_variable name="PVTRFulminataeReady" value="1.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyUp" value="1.0" integer="yes" />
   </event>
   <event name="Not ReadyTop" id_arme="621bfb17-6cdf-4c00-924e-0cda9803b421" parent_id_arme="ad4213ee-4cf5-4d0b-a289-6683452702f5">
-    <if_variable name="PVTRFulminataeReady" comparator="EQUALS" value="1.0" />
     <if_variable name="Movedover2" comparator="EQUALS" value="1.0" />
     <if_variable name="CheckForShip2" comparator="EQUALS" value="0.0" />
-    <set_variable name="PVTRFulminataeReady" value="0.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyUp" value="0.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyDown" value="0.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyRight" value="0.0" integer="yes" />
+    <set_variable name="PVTRFulminataeReadyLeft" value="0.0" integer="yes" />
     <set_variable name="Movedover2" value="0.0" integer="yes" />
   </event>
   <folder_arme name="PVTR Apocalypse" id_arme="a518d61c-05ca-4b9a-af2e-59d365cf4831" parent_id_arme="b088bbca-04e0-47ca-817b-d4b3a2de869f" />
   <event name="ReadyRight" id_arme="4da33753-3c2c-4a9b-9cd6-d8795b18fa7a" parent_id_arme="a518d61c-05ca-4b9a-af2e-59d365cf4831">
     <if_object_property property="positionX" name="PVTR Apocalypse" comparator="LESS" value="10" />
-    <if_variable name="ReadyRight" comparator="EQUALS" value="1.0" />
     <if_variable name="CheckForShip3" comparator="EQUALS" value="0.0" />
-    <set_variable name="PVTRApocalypseReady" value="1.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyRight" value="1.0" integer="yes" />
   </event>
   <event name="Ready Left" id_arme="935f0a3d-10e5-47df-b8b7-902555e9860b" parent_id_arme="a518d61c-05ca-4b9a-af2e-59d365cf4831">
     <if_object_property property="positionX" name="PVTR Apocalypse" comparator="GREATER" value="99990" />
-    <if_variable name="ReadyLeft" comparator="EQUALS" value="1.0" />
     <if_variable name="CheckForShip3" comparator="EQUALS" value="0.0" />
-    <set_variable name="PVTRApocalypseReady" value="1.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyLeft" value="1.0" integer="yes" />
   </event>
   <event name="ReadyBottom" id_arme="6520bb03-4571-4690-81ed-31af4486b8ca" parent_id_arme="a518d61c-05ca-4b9a-af2e-59d365cf4831">
     <if_object_property property="positionZ" name="PVTR Apocalypse" comparator="GREATER" value="99990" />
-    <if_variable name="ReadyBottom" comparator="EQUALS" value="1.0" />
     <if_variable name="CheckForShip3" comparator="EQUALS" value="0.0" />
-    <set_variable name="PVTRApocalypseReady" value="1.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyDown" value="1.0" integer="yes" />
   </event>
   <event name="Ready Top" id_arme="a8c50b77-909a-41eb-bf63-5fb023ff4167" parent_id_arme="a518d61c-05ca-4b9a-af2e-59d365cf4831">
     <if_object_property property="positionZ" name="PVTR Apocalypse" comparator="LESS" value="10" />
-    <if_variable name="ReadyTop" comparator="EQUALS" value="1.0" />
     <if_variable name="CheckForShip3" comparator="EQUALS" value="0.0" />
-    <set_variable name="PVTRApocalypseReady" value="1.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyUp" value="1.0" integer="yes" />
   </event>
   <event name="Not Ready" id_arme="54acc36c-a246-4be2-8617-d1b6c742cf45" parent_id_arme="a518d61c-05ca-4b9a-af2e-59d365cf4831">
     <if_variable name="PVTRApocalypseReady" comparator="EQUALS" value="1.0" />
     <if_variable name="Movedover3" comparator="EQUALS" value="1.0" />
     <if_variable name="CheckForShip3" comparator="EQUALS" value="0.0" />
+    <set_variable name="PVTRApocalypseReadyUp" value="0.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyDown" value="0.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyRight" value="0.0" integer="yes" />
+    <set_variable name="PVTRApocalypseReadyLeft" value="0.0" integer="yes" />
     <set_variable name="Movedover3" value="0.0" integer="yes" />
-    <set_variable name="PVTRApocalypseReady" value="0.0" integer="yes" />
   </event>
   <folder_arme name="TSN Academia" id_arme="5324227f-1e18-4550-8110-6ce660190724" parent_id_arme="b088bbca-04e0-47ca-817b-d4b3a2de869f" expanded_arme="" />
   <event name="ReadyRight" id_arme="b7900c86-7037-4232-a1aa-982b18cff5d3" parent_id_arme="5324227f-1e18-4550-8110-6ce660190724">
     <if_object_property property="positionX" name="TSN Academia" comparator="LESS" value="10" />
-    <if_variable name="ReadyRight" comparator="EQUALS" value="1.0" />
     <if_variable name="CheckForShip4" comparator="EQUALS" value="0.0" />
-    <set_variable name="TSNAcademiaReady" value="1.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyRight" value="1.0" integer="yes" />
   </event>
   <event name="Ready Left" id_arme="b51fe509-2227-4c32-b0a0-a0a9ebdec946" parent_id_arme="5324227f-1e18-4550-8110-6ce660190724">
     <if_object_property property="positionX" name="TSN Academia" comparator="GREATER" value="99990" />
-    <if_variable name="ReadyLeft" comparator="EQUALS" value="1.0" />
     <if_variable name="CheckForShip4" comparator="EQUALS" value="0.0" />
-    <set_variable name="TSNAcademiaReady" value="1.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyLeft" value="1.0" integer="yes" />
   </event>
   <event name="ReadyBottom" id_arme="b4df8e68-a008-4e69-92af-25ce8a3af0c5" parent_id_arme="5324227f-1e18-4550-8110-6ce660190724">
     <if_object_property property="positionZ" name="TSN Academia" comparator="GREATER" value="99990" />
-    <if_variable name="ReadyBottom" comparator="EQUALS" value="1.0" />
     <if_variable name="CheckForShip4" comparator="EQUALS" value="0.0" />
-    <set_variable name="TSNAcademiaReady" value="1.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyDown" value="1.0" integer="yes" />
   </event>
   <event name="Ready Top" id_arme="a163ec45-5e4a-4c58-ad69-344e1ad4aa3f" parent_id_arme="5324227f-1e18-4550-8110-6ce660190724">
     <if_object_property property="positionZ" name="TSN Academia" comparator="LESS" value="10" />
-    <if_variable name="ReadyTop" comparator="EQUALS" value="1.0" />
     <if_variable name="CheckForShip4" comparator="EQUALS" value="0.0" />
-    <set_variable name="TSNAcademiaReady" value="1.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyUp" value="1.0" integer="yes" />
   </event>
   <event name="Not Ready" id_arme="9f9012f1-e9d3-4b63-b4d8-d7c73f44e644" parent_id_arme="5324227f-1e18-4550-8110-6ce660190724">
     <if_variable name="TSNAcademiaReady" comparator="EQUALS" value="1.0" />
     <if_variable name="Movedover4" comparator="EQUALS" value="1.0" />
     <if_variable name="CheckForShip4" comparator="EQUALS" value="0.0" />
+    <set_variable name="TSNAcademiaReadyUp" value="0.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyDown" value="0.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyRight" value="0.0" integer="yes" />
+    <set_variable name="TSNAcademiaReadyLeft" value="0.0" integer="yes" />
     <set_variable name="Movedover4" value="0.0" integer="yes" />
-    <set_variable name="TSNAcademiaReady" value="0.0" integer="yes" />
   </event>
   <folder_arme name="Map Trigers" id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
   <folder_arme name="Create Enviroment" id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
@@ -1184,18 +1208,19 @@
     <create count="50" type="asteroids" startX="63094.0" startY="100.0" startZ="43648.0" endX="63094.0" endY="100.0" endZ="63648.0" randomRange="20000" />
     <create count="50" type="asteroids" startX="63094.0" startY="-100.0" startZ="43648.0" endX="63094.0" endY="-100.0" endZ="63648.0" />
     <create count="50" type="asteroids" startX="63094.0" startY="200.0" startZ="43648.0" endX="63094.0" endY="200.0" endZ="63648.0" randomRange="500" />
-    <create type="blackHole" x="24307.0" y="0.0" z="8383.0" name="Singularity1" />
     <create count="50" type="asteroids" startX="63094.0" startY="-200.0" startZ="43648.0" endX="63094.0" endY="-200.0" endZ="63648.0" randomRange="10000" />
+    <create type="blackHole" x="24307.0" y="0.0" z="8383.0" name="Singularity1" />
     <create count="50" type="asteroids" startX="63094.0" startY="300.0" startZ="43648.0" endX="63094.0" endY="300.0" endZ="63648.0" randomRange="15000" />
-    <create type="station" x="78155.0" y="0.0" z="63823.0" angle="0" name="SB-02" hullID="1004" />
     <create count="50" type="asteroids" startX="63094.0" startY="-300.0" startZ="43648.0" endX="63094.0" endY="-300.0" endZ="63648.0" randomRange="1500" />
     <create count="50" type="asteroids" startX="63094.0" startY="400.0" startZ="43648.0" endX="63094.0" endY="400.0" endZ="63648.0" randomRange="6000" />
+    <create type="station" x="78155.0" y="0.0" z="63823.0" angle="0" name="SB-02" hullID="1004" />
     <create count="50" type="asteroids" startX="63094.0" startY="-400.0" startZ="43648.0" endX="63094.0" endY="-400.0" endZ="63648.0" randomRange="600" />
     <create count="50" type="asteroids" startX="63094.0" startY="500.0" startZ="43648.0" endX="63094.0" endY="500.0" endZ="63648.0" randomRange="20000" />
-    <create type="station" x="76273.0" y="0.0" z="31109.0" angle="0" name="SB-03" hullID="1004" />
     <create count="50" type="asteroids" startX="63094.0" startY="-500.0" startZ="43648.0" endX="63094.0" endY="-500.0" endZ="63648.0" randomRange="8000" />
     <create count="100" type="nebulas" nebType="2" startX="27380.0" startY="0.0" startZ="79197.0" endX="62514.0" endY="0.0" endZ="29786.0" randomRange="20000" randomSeed="60" />
     <create count="30" type="nebulas" nebType="1" startX="75188.0" startY="0.0" startZ="79679.0" endX="20803.0" endY="0.0" endZ="20320.0" randomRange="10000" randomSeed="60" />
+    <create type="station" x="76273.0" y="0.0" z="31109.0" angle="0" name="SB-03" hullID="1004" />
+    <create type="monster" monsterType="5" x="29952.0" y="0.0" z="34439.0" angle="0" />
     <incoming_comms_text from="SB-01">All Craft, Be advised, We are studying creatures in this area and we believe they have abnormal abilities.</incoming_comms_text>
     <warning_popup_message message="Charybdi Breeding Grounds" consoles="MHWESCOF">All Craft, Be advised, We are studying creatures in this area and we believe they have abnormal abilities.</warning_popup_message>
     <warning_popup_message message="Research Area" consoles="MHWESCOF">All Craft, Be advised, We are studying creatures in this area and we believe they have abnormal abilities.</warning_popup_message>
@@ -2912,10 +2937,12 @@
   </event>
   <event name="Disable" id_arme="98249475-5757-4d50-925f-12f7e2bc02ba" parent_id_arme="72f4238c-9fc1-49a7-9167-a78b0026924a">
     <if_gm_button text="GM Opps/DisableEnable/Disable all ships" />
+    <warning_popup_message message="Systems offline" consoles="MHWESCOF" />
     <set_variable name="DisableLoop" value="1.0" integer="yes" />
   </event>
   <event name="Enable" id_arme="29e64906-dd8c-4120-bbf1-5db57cde9925" parent_id_arme="72f4238c-9fc1-49a7-9167-a78b0026924a">
     <if_gm_button text="GM Opps/DisableEnable/Enable all ships" />
+    <warning_popup_message message="Systems are now online" consoles="MHWESCOF" />
     <set_variable name="DisableLoop" value="0.0" integer="yes" />
     <set_object_property property="energy" value="1000" name="PVTR Jimi-Saru" />
     <set_object_property property="energy" value="1000" name="PVTR Fulminatae" />
