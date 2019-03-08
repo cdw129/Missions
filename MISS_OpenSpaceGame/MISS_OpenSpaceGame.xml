@@ -179,6 +179,7 @@
     <set_gm_button text="Create/Single Bad Guy/Skarran/Executor" />
     <set_gm_button text="Create/Single Bad Guy/Cargo" />
     <set_gm_button text="GM Opps/Refresh Coms screen" />
+    <set_gm_button text="GM Opps/Refresh Enveroment" />
     <set_gm_button text="GM Opps/Move" />
     <set_gm_button text="GM Opps/Level/1" />
     <set_gm_button text="GM Opps/Level/2" />
@@ -1377,7 +1378,7 @@
     <set_variable name="Movedover8" value="0.0" integer="yes" />
   </event>
   <folder_arme name="Map Trigers" id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" expanded_arme="" />
-  <folder_arme name="Create Enviroment" id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
+  <folder_arme name="Create Enviroment" id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" expanded_arme="" />
   <event name="Setup" id_arme="80f2e26f-2680-4ad2-a280-d6abad0b7399" parent_id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e">
     <if_variable name="CreateEnviroment" comparator="EQUALS" value="1.0" />
     <!--Whales-->
@@ -1535,7 +1536,7 @@
     <!--End-->
     <set_variable name="AmountofTyphoon" value="AmountofTyphoon-1" integer="yes" />
   </event>
-  <folder_arme name="Kill" id_arme="7b22ed32-7fe0-4d22-aa34-953ea854f545" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" expanded_arme="" />
+  <folder_arme name="Kill" id_arme="7b22ed32-7fe0-4d22-aa34-953ea854f545" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
   <event name="Nuke enviroment" id_arme="b35116d9-69c0-4b45-9f1e-41b4f123c8dd" parent_id_arme="7b22ed32-7fe0-4d22-aa34-953ea854f545">
     <if_variable name="IsKill" comparator="EQUALS" value="1.0" />
     <set_variable name="Num" value="99" integer="yes" />
@@ -3906,7 +3907,7 @@
     <if_gm_button text="GM Opps/Level/11" />
     <set_difficulty_level value="11" />
   </event>
-  <folder_arme name="GM Opps" id_arme="a6a650ab-cea2-4276-b6a7-948884347d89" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
+  <folder_arme name="GM Opps" id_arme="a6a650ab-cea2-4276-b6a7-948884347d89" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
   <event name="delete_selectedship" id_arme="ef436fcb-a3ff-4042-8d1e-d88e6341eab3" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
     <if_gm_button text="GM Opps/Delete/Selected ship" />
     <destroy use_gm_selection="yes" />
@@ -3925,6 +3926,10 @@
     <if_gm_button text="GM Opps/Refresh Coms screen" />
     <clear_comms_button text="Send bording party" sideValue="2" />
     <set_comms_button text="Send bording party" sideValue="2" />
+  </event>
+  <event name="Enveromet refresh" id_arme="de7d976a-f0dd-49eb-9e43-f761768edf43" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
+    <if_gm_button text="GM Opps/Refresh Enveroment" />
+    <set_variable name="CreateEnviroment" value="1.0" integer="yes" />
   </event>
   <folder_arme name="Sensor level" id_arme="1dc16059-dd29-4d37-aeda-905c1803b3aa" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <event name="Unlimited" id_arme="c802c4ce-3741-4dfa-b69d-22b698ccdfa4" parent_id_arme="1dc16059-dd29-4d37-aeda-905c1803b3aa">
@@ -3957,7 +3962,7 @@
     <warning_popup_message message="Sensor Range Change" consoles="MSC" />
     <warning_popup_message message="8k" consoles="MSC" />
   </event>
-  <folder_arme name="Enable Disable" id_arme="72f4238c-9fc1-49a7-9167-a78b0026924a" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
+  <folder_arme name="Enable Disable" id_arme="72f4238c-9fc1-49a7-9167-a78b0026924a" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <event name="DisableLoopPVTR Jimi-Saru" id_arme="8b85960b-4988-4391-ba27-c0d472a4f59a" parent_id_arme="72f4238c-9fc1-49a7-9167-a78b0026924a">
     <if_variable name="DisableLoop" comparator="EQUALS" value="1.0" />
     <if_object_property property="energy" name="PVTR Jimi-Saru" comparator="GREATER" value="0" />
