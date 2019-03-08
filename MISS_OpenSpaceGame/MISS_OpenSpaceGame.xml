@@ -255,7 +255,7 @@
     <!--END Start Block-->
   </start>
   <folder_arme name="Named Ships" id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
-  <folder_arme name="Movement script" id_arme="4ded7db6-bc56-49e8-8581-c475536cf975" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
+  <folder_arme name="Movement script" id_arme="4ded7db6-bc56-49e8-8581-c475536cf975" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
   <event name="PositionLeftX" id_arme="6af9d54f-3bc4-4c25-8b4f-e6f559a8c24c" parent_id_arme="4ded7db6-bc56-49e8-8581-c475536cf975">
     <if_variable name="PVTRJimiSaruLeft" comparator="EQUALS" value="1.0" />
     <if_variable name="PVTRFulminataeReadyLeft" comparator="EQUALS" value="1.0" />
@@ -432,7 +432,7 @@
     <set_variable name="Movedover8" value="1.0" integer="yes" />
     <!---->
   </event>
-  <folder_arme name="setup" id_arme="0554694a-fea2-4a18-a574-42b2702182a6" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
+  <folder_arme name="setup" id_arme="0554694a-fea2-4a18-a574-42b2702182a6" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
   <folder_arme name="Ships exists" id_arme="cdd2c353-da90-41e4-9c9f-3b1c770f7ccd" parent_id_arme="0554694a-fea2-4a18-a574-42b2702182a6" expanded_arme="" />
   <event name="Setting up PVTR Jimi-Saru" id_arme="5737ad8d-ce61-4322-bef0-e4e33b93fbe7" parent_id_arme="cdd2c353-da90-41e4-9c9f-3b1c770f7ccd">
     <if_variable name="CheckForShip1" comparator="EQUALS" value="1.0" />
@@ -579,7 +579,7 @@
     <set_variable name="Ship8Left" value="1.0" integer="yes" />
     <set_variable name="CheckForShip8" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="known pirate ships" id_arme="fe8b5df3-9bb9-41b7-8ee9-6e2daf4c45f5" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
+  <folder_arme name="known pirate ships" id_arme="fe8b5df3-9bb9-41b7-8ee9-6e2daf4c45f5" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
   <event name="PVTR Jimi-Saru athorized" id_arme="6865f782-703d-4d27-8a4e-154af558874e" parent_id_arme="fe8b5df3-9bb9-41b7-8ee9-6e2daf4c45f5">
     <if_variable name="Jimi-Saru" comparator="EQUALS" value="1.0" />
     <if_exists name="PVTR Jimi-Saru" />
@@ -622,7 +622,7 @@
     <set_object_property property="pirateRepWithStations" value="1" name="Ship 8" />
     <set_variable name="Ship8" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Fuel Collection System For known ships" id_arme="d235a81a-502f-4378-a8b5-9de51845102a" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
+  <folder_arme name="Fuel Collection System For known ships" id_arme="d235a81a-502f-4378-a8b5-9de51845102a" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
   <folder_arme name="PVTR Jimi-Saru" id_arme="f8975439-869a-4dc6-9b44-bb9fe98e6661" parent_id_arme="d235a81a-502f-4378-a8b5-9de51845102a" />
   <event name="activation on purple" id_arme="04da40ab-b9b3-4cf6-8e74-e6b6f88845c3" parent_id_arme="f8975439-869a-4dc6-9b44-bb9fe98e6661">
     <if_in_nebula name="PVTR Jimi-Saru" compare="1" />
@@ -1135,7 +1135,7 @@
     <set_variable name="FGSactive8" value="0.0" integer="yes" />
     <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Ship 8 is all toped off</incoming_comms_text>
   </event>
-  <folder_arme name="Move Together" id_arme="b088bbca-04e0-47ca-817b-d4b3a2de869f" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
+  <folder_arme name="Move Together" id_arme="b088bbca-04e0-47ca-817b-d4b3a2de869f" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
   <folder_arme name="PVTR Jimi-Saru" id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b" parent_id_arme="b088bbca-04e0-47ca-817b-d4b3a2de869f" />
   <event name="ReadyRight" id_arme="1b08b75d-90eb-4e12-99bc-1521fb9bc09b" parent_id_arme="60581618-a09c-4c52-96c1-86dae7f86e1b">
     <if_object_property property="positionX" name="PVTR Jimi-Saru" comparator="LESS" value="10" />
@@ -1376,7 +1376,7 @@
     <set_variable name="Ship8Left" value="0.0" integer="yes" />
     <set_variable name="Movedover8" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Map Trigers" id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
+  <folder_arme name="Map Trigers" id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" expanded_arme="" />
   <folder_arme name="Create Enviroment" id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
   <event name="Setup" id_arme="80f2e26f-2680-4ad2-a280-d6abad0b7399" parent_id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e">
     <if_variable name="CreateEnviroment" comparator="EQUALS" value="1.0" />
@@ -1535,7 +1535,7 @@
     <!--End-->
     <set_variable name="AmountofTyphoon" value="AmountofTyphoon-1" integer="yes" />
   </event>
-  <folder_arme name="Kill" id_arme="7b22ed32-7fe0-4d22-aa34-953ea854f545" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
+  <folder_arme name="Kill" id_arme="7b22ed32-7fe0-4d22-aa34-953ea854f545" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" expanded_arme="" />
   <event name="Nuke enviroment" id_arme="b35116d9-69c0-4b45-9f1e-41b4f123c8dd" parent_id_arme="7b22ed32-7fe0-4d22-aa34-953ea854f545">
     <if_variable name="IsKill" comparator="EQUALS" value="1.0" />
     <set_variable name="Num" value="99" integer="yes" />
@@ -1544,7 +1544,7 @@
     <!--End-->
     <set_variable name="IsKill" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Killing enemys" id_arme="af69a776-6f3a-4074-bd9f-06e82ae75193" parent_id_arme="7b22ed32-7fe0-4d22-aa34-953ea854f545" />
+  <folder_arme name="Killing enemys" id_arme="af69a776-6f3a-4074-bd9f-06e82ae75193" parent_id_arme="7b22ed32-7fe0-4d22-aa34-953ea854f545" expanded_arme="" />
   <event name="Kill Num" id_arme="c9aee556-15fd-47ae-a968-f52944adb32e" parent_id_arme="af69a776-6f3a-4074-bd9f-06e82ae75193">
     <if_variable name="Num" comparator="GREATER" value="-1" />
     <if_variable name="KillEnemys" comparator="EQUALS" value="1.0" />
@@ -1622,7 +1622,6 @@
     <if_variable name="NumB" comparator="LESS" value="0" />
     <if_variable name="KillEnemys" comparator="EQUALS" value="1.0" />
     <if_variable name="2ndrun" comparator="EQUALS" value="4.0" />
-    <set_variable name="CreateEnviroment" value="1.0" integer="yes" />
     <set_variable name="KillEnemys" value="0.0" integer="yes" />
     <set_variable name="2ndrun" value="2ndrun-1" integer="yes" />
     <set_variable name="IsKill" value="1.0" integer="yes" />
@@ -1633,6 +1632,7 @@
     <if_variable name="2ndrun" comparator="GREATER" value="0.0" />
     <if_variable name="KillEnemys" comparator="EQUALS" value="1.0" />
     <set_variable name="KillEnemys" value="0.0" integer="yes" />
+    <set_variable name="CreateEnviroment" value="1.0" integer="yes" />
   </event>
   <folder_arme name="Taking cargo ships" id_arme="77c537b0-d2f2-47c6-9995-243fb69a18de" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
   <folder_arme name="Action" id_arme="86510b11-4da1-4db6-a5d2-002ed60d69df" parent_id_arme="77c537b0-d2f2-47c6-9995-243fb69a18de" />
