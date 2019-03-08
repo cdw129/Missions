@@ -1377,7 +1377,7 @@
     <set_variable name="Ship8Left" value="0.0" integer="yes" />
     <set_variable name="Movedover8" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Map Trigers" id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" expanded_arme="" />
+  <folder_arme name="Map Trigers" id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
   <folder_arme name="Create Enviroment" id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" expanded_arme="" />
   <event name="Setup" id_arme="80f2e26f-2680-4ad2-a280-d6abad0b7399" parent_id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e">
     <if_variable name="CreateEnviroment" comparator="EQUALS" value="1.0" />
@@ -1765,7 +1765,7 @@
     <set_variable name="CleartoTake1" value="1.0" integer="yes" />
     <set_variable name="CheckforCrgoShip" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Sectors" id_arme="898a769e-3c48-4309-ad24-08082a051615" />
+  <folder_arme name="Sectors" id_arme="898a769e-3c48-4309-ad24-08082a051615" expanded_arme="" />
   <folder_arme name="0,0" id_arme="6b9af3fe-faf5-4ce4-be75-d094d2093621" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" />
   <event name="CreateGrid 0,0" id_arme="cd58e8c4-bdc5-4ee5-b37e-0fc5be57bbbd" parent_id_arme="6b9af3fe-faf5-4ce4-be75-d094d2093621">
     <if_variable name="IsCreate" comparator="EQUALS" value="1" />
@@ -2223,7 +2223,6 @@
     <if_variable name="IsCreate" comparator="EQUALS" value="1" />
     <if_variable name="x" comparator="EQUALS" value="2.0" />
     <if_variable name="z" comparator="EQUALS" value="-2.0" />
-    <warning_popup_message message="Hedgemony Stronghold" consoles="MHWESCOF" />
     <set_variable name="MAXWhalewillhappen" value="100.0" integer="yes" />
     <set_variable name="MAXSharkwillhappen" value="0" integer="yes" />
     <set_variable name="MAXJellywillhappen" value="0" integer="yes" />
@@ -2252,7 +2251,7 @@
     <set_variable name="IsDestroy" value="0" />
     <set_variable name="IsCreate" value="1" integer="yes" />
   </event>
-  <folder_arme name="-2,5" id_arme="a6844f4f-bd90-4259-a143-975256098164" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" />
+  <folder_arme name="-2,5" id_arme="a6844f4f-bd90-4259-a143-975256098164" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" expanded_arme="" />
   <event name="CreateGrid -2,5" id_arme="7a1c67e6-e785-4eac-a6ce-ba31a203794c" parent_id_arme="a6844f4f-bd90-4259-a143-975256098164">
     <if_variable name="IsCreate" comparator="EQUALS" value="1" />
     <if_variable name="x" comparator="EQUALS" value="-2.0" />
@@ -2263,6 +2262,7 @@
     <set_variable name="MAXPiranhawillhappen" value="20.0" integer="yes" />
     <set_variable name="MAXTyphoonwillhappen" value="0" integer="yes" />
     <set_variable name="MAXCharybdiswillhappen" value="0" integer="yes" />
+    <warning_popup_message message="Hedgemony Stronghold" consoles="MHWESCOF" />
     <create count="50" type="mines" startAngle="43" endAngle="303.5" startX="51086.0" startY="0.0" startZ="47177.0" radius="13915" />
     <create count="50" type="mines" startAngle="43" endAngle="303.5" startX="51086.0" startY="-100.0" startZ="47177.0" radius="13915" />
     <create count="50" type="mines" startAngle="43" endAngle="303.5" startX="51086.0" startY="100.0" startZ="47177.0" radius="13915" />
