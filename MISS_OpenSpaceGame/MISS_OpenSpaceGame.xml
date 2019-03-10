@@ -2,6 +2,14 @@
   <start id_arme="572f2d8c-9b42-4bfd-9cd0-28a9f212d9ca">
     <warning_popup_message message="Please stand by while systems come online." consoles="MHWESCOF" />
     <!--Set up on ships-->
+    <set_variable name="BPShip1" value="0.0" integer="yes" />
+    <set_variable name="BPShip2" value="0.0" integer="yes" />
+    <set_variable name="BPShip3" value="0.0" integer="yes" />
+    <set_variable name="BPShip4" value="0.0" integer="yes" />
+    <set_variable name="BPShip5" value="0.0" integer="yes" />
+    <set_variable name="BPShip6" value="0.0" integer="yes" />
+    <set_variable name="BPShip7" value="0.0" integer="yes" />
+    <set_variable name="BPShip8" value="0.0" integer="yes" />
     <set_variable name="CTnumber" value="1" integer="yes" />
     <set_variable name="CheckForShip1" value="0.0" integer="yes" />
     <set_variable name="CheckForShip2" value="0.0" integer="yes" />
@@ -149,6 +157,7 @@
     <!-- BEGIN GM BUTTON DEFINITIONS -->
     <set_gm_button text="Sector/Lock" menu_w="120" />
     <set_gm_button text="Sector/Unlock" />
+    <set_gm_button text="GM Opps/End Game/Are You sure" />
     <set_gm_button text="GM Opps/Delete/Selected ship" />
     <set_gm_button text="GM Opps/Delete/non-ships near" />
     <set_gm_button text="Create/Group Amount/1" />
@@ -178,8 +187,8 @@
     <set_gm_button text="Create/Single Bad Guy/Skarran/Enforcer" />
     <set_gm_button text="Create/Single Bad Guy/Skarran/Executor" />
     <set_gm_button text="Create/Single Bad Guy/Cargo" />
-    <set_gm_button text="GM Opps/Refresh Coms screen" />
-    <set_gm_button text="GM Opps/Refresh Enveroment" />
+    <set_gm_button text="GM Opps/Refresh/Coms" />
+    <set_gm_button text="GM Opps/Refresh/Enveroment" />
     <set_gm_button text="GM Opps/Move" />
     <set_gm_button text="GM Opps/Level/1" />
     <set_gm_button text="GM Opps/Level/2" />
@@ -255,8 +264,8 @@
     <!-- END GM BUTTON DEFINITIONS -->
     <!--END Start Block-->
   </start>
-  <folder_arme name="Named Ships" id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
-  <folder_arme name="Movement script" id_arme="4ded7db6-bc56-49e8-8581-c475536cf975" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
+  <folder_arme name="Named Ships" id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
+  <folder_arme name="Movement script" id_arme="4ded7db6-bc56-49e8-8581-c475536cf975" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
   <event name="PositionLeftX" id_arme="6af9d54f-3bc4-4c25-8b4f-e6f559a8c24c" parent_id_arme="4ded7db6-bc56-49e8-8581-c475536cf975">
     <if_variable name="PVTRJimiSaruLeft" comparator="EQUALS" value="1.0" />
     <if_variable name="PVTRFulminataeReadyLeft" comparator="EQUALS" value="1.0" />
@@ -3007,7 +3016,8 @@
     <destroy name="ES06" />
   </event>
   <folder_arme name="Missions" id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" />
-  <folder_arme name="Toratora" id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" parent_id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" />
+  <folder_arme name="Spring Retribution" id_arme="71e5e92f-1f25-4fc1-af12-0eb9a808aaf2" parent_id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" />
+  <folder_arme name="Toratora" id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" parent_id_arme="71e5e92f-1f25-4fc1-af12-0eb9a808aaf2" />
   <event name="Starting game" id_arme="d5741f4f-f0fb-4270-8abf-826baa8ae2a8" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68">
     <if_variable name="MissionSelection" comparator="EQUALS" value="1.0" />
     <if_variable name="x" comparator="EQUALS" value="-2.0" />
@@ -3320,7 +3330,8 @@
     <log text="END OF GAME!!  Ships that got out=|WhoGotOut|  Needed to win=12 " />
     <set_variable name="End" value="0.0" integer="yes" />
   </event>
-  <folder_arme name=" AI Scripts" id_arme="1edf422b-6931-471b-aed0-283e490b10e3" />
+  <folder_arme name="Spring Retribution" id_arme="3df9a3be-a756-436c-9bfb-b5f4b8188047" parent_id_arme="71e5e92f-1f25-4fc1-af12-0eb9a808aaf2" />
+  <folder_arme name=" AI Scripts" id_arme="1edf422b-6931-471b-aed0-283e490b10e3" expanded_arme="" />
   <folder_arme name="LL-01" id_arme="9e879c9a-d27f-4e03-a5d7-1d326e128450" parent_id_arme="1edf422b-6931-471b-aed0-283e490b10e3" />
   <folder_arme name="non vis movement" id_arme="1d44ce6d-6932-4827-a879-af91ee78d68f" parent_id_arme="9e879c9a-d27f-4e03-a5d7-1d326e128450" />
   <folder_arme name="Moving north" id_arme="14855af7-b12a-42e4-98df-bfa41fc024f0" parent_id_arme="1d44ce6d-6932-4827-a879-af91ee78d68f" />
@@ -3516,8 +3527,8 @@
     <if_variable name="Linnervis" comparator="EQUALS" value="1.0" />
     <set_variable name="LinnerAlive" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Taking cargo ships" id_arme="77c537b0-d2f2-47c6-9995-243fb69a18de" parent_id_arme="1edf422b-6931-471b-aed0-283e490b10e3" />
-  <folder_arme name="Action" id_arme="86510b11-4da1-4db6-a5d2-002ed60d69df" parent_id_arme="77c537b0-d2f2-47c6-9995-243fb69a18de" />
+  <folder_arme name="Taking cargo ships" id_arme="77c537b0-d2f2-47c6-9995-243fb69a18de" parent_id_arme="1edf422b-6931-471b-aed0-283e490b10e3" expanded_arme="" />
+  <folder_arme name="Action" id_arme="86510b11-4da1-4db6-a5d2-002ed60d69df" parent_id_arme="77c537b0-d2f2-47c6-9995-243fb69a18de" expanded_arme="" />
   <event name="Button pushed" id_arme="4bdb21be-2f95-4aac-a8d2-c6384787fc93" parent_id_arme="86510b11-4da1-4db6-a5d2-002ed60d69df">
     <if_comms_button text="Send bording party" />
     <clear_comms_button text="Send bording party" sideValue="2" />
@@ -3525,14 +3536,15 @@
     <set_variable name="CheckforCrgoShip" value="1.0" integer="yes" />
     <set_variable name="NumC" value="99" integer="yes" />
   </event>
-  <folder_arme name="Script" id_arme="1bd86a49-d454-42ae-a86a-2a0c4ff6966b" parent_id_arme="86510b11-4da1-4db6-a5d2-002ed60d69df" />
+  <folder_arme name="Script" id_arme="1bd86a49-d454-42ae-a86a-2a0c4ff6966b" parent_id_arme="86510b11-4da1-4db6-a5d2-002ed60d69df" expanded_arme="" />
   <event name="found ship1" id_arme="58c2ca28-2625-4013-8ebc-fa8807d06347" parent_id_arme="1bd86a49-d454-42ae-a86a-2a0c4ff6966b">
     <if_distance player_slot1="0" name2="U|NumC|" comparator="LESS_EQUAL" value="1000.0" />
     <if_object_property property="sideValue" name="U|NumC|" comparator="EQUALS" value="1" />
     <if_variable name="CleartoTake1" comparator="EQUALS" value="1.0" />
+    <set_variable name="BPShip1" value="1.0" integer="yes" />
     <set_variable name="CheckforCrgoShip" value="0.0" integer="yes" />
     <clear_comms_button text="Send bording party" sideValue="2" />
-    <incoming_comms_text from="Boarding party">We are on the enemy cargo vessel. Stand by while we disable the ship.</incoming_comms_text>
+    <incoming_comms_text from="Boarding party">Were atempting to board the ship now.</incoming_comms_text>
     <set_timer name="TakingCrgoShip" seconds="60" />
     <set_variable name="TakingTheShipC" value="1.0" integer="yes" />
     <set_variable name="CleartoTake1" value="0.0" integer="yes" />
@@ -3541,6 +3553,7 @@
     <if_distance player_slot1="1" name2="U|NumC|" comparator="LESS_EQUAL" value="1000.0" />
     <if_object_property property="sideValue" name="U|NumC|" comparator="EQUALS" value="1" />
     <if_variable name="CleartoTake1" comparator="EQUALS" value="1.0" />
+    <set_variable name="BPShip2" value="1.0" integer="yes" />
     <set_variable name="CheckforCrgoShip" value="0.0" integer="yes" />
     <clear_comms_button text="Send bording party" sideValue="2" />
     <incoming_comms_text from="Boarding party">We are on the enemy cargo vessel. Stand by while we disable the ship.</incoming_comms_text>
@@ -3552,6 +3565,7 @@
     <if_distance player_slot1="2" name2="U|NumC|" comparator="LESS_EQUAL" value="1000.0" />
     <if_object_property property="sideValue" name="U|NumC|" comparator="EQUALS" value="1" />
     <if_variable name="CleartoTake1" comparator="EQUALS" value="1.0" />
+    <set_variable name="BPShip3" value="1.0" integer="yes" />
     <set_variable name="CheckforCrgoShip" value="0.0" integer="yes" />
     <clear_comms_button text="Send bording party" sideValue="2" />
     <incoming_comms_text from="Boarding party">We are on the enemy cargo vessel. Stand by while we disable the ship.</incoming_comms_text>
@@ -3563,6 +3577,7 @@
     <if_distance player_slot1="3" name2="U|NumC|" comparator="LESS_EQUAL" value="1000.0" />
     <if_object_property property="sideValue" name="U|NumC|" comparator="EQUALS" value="1" />
     <if_variable name="CleartoTake1" comparator="EQUALS" value="1.0" />
+    <set_variable name="BPShip4" value="1.0" integer="yes" />
     <set_variable name="CheckforCrgoShip" value="0.0" integer="yes" />
     <clear_comms_button text="Send bording party" sideValue="2" />
     <incoming_comms_text from="Boarding party">We are on the enemy cargo vessel. Stand by while we disable the ship.</incoming_comms_text>
@@ -3574,6 +3589,7 @@
     <if_distance player_slot1="4" name2="U|NumC|" comparator="LESS_EQUAL" value="1000.0" />
     <if_object_property property="sideValue" name="U|NumC|" comparator="EQUALS" value="1" />
     <if_variable name="CleartoTake1" comparator="EQUALS" value="1.0" />
+    <set_variable name="BPShip5" value="1.0" integer="yes" />
     <set_variable name="CheckforCrgoShip" value="0.0" integer="yes" />
     <clear_comms_button text="Send bording party" sideValue="2" />
     <incoming_comms_text from="Boarding party">We are on the enemy cargo vessel. Stand by while we disable the ship.</incoming_comms_text>
@@ -3585,6 +3601,7 @@
     <if_distance player_slot1="5" name2="U|NumC|" comparator="LESS_EQUAL" value="1000.0" />
     <if_object_property property="sideValue" name="U|NumC|" comparator="EQUALS" value="1" />
     <if_variable name="CleartoTake1" comparator="EQUALS" value="1.0" />
+    <set_variable name="BPShip6" value="1.0" integer="yes" />
     <set_variable name="CheckforCrgoShip" value="0.0" integer="yes" />
     <clear_comms_button text="Send bording party" sideValue="2" />
     <incoming_comms_text from="Boarding party">We are on the enemy cargo vessel. Stand by while we disable the ship.</incoming_comms_text>
@@ -3596,6 +3613,7 @@
     <if_distance player_slot1="6" name2="U|NumC|" comparator="LESS_EQUAL" value="1000.0" />
     <if_object_property property="sideValue" name="U|NumC|" comparator="EQUALS" value="1" />
     <if_variable name="CleartoTake1" comparator="EQUALS" value="1.0" />
+    <set_variable name="BPShip7" value="1.0" integer="yes" />
     <set_variable name="CheckforCrgoShip" value="0.0" integer="yes" />
     <clear_comms_button text="Send bording party" sideValue="2" />
     <incoming_comms_text from="Boarding party">We are on the enemy cargo vessel. Stand by while we disable the ship.</incoming_comms_text>
@@ -3607,6 +3625,7 @@
     <if_distance player_slot1="7" name2="U|NumC|" comparator="LESS_EQUAL" value="1000.0" />
     <if_object_property property="sideValue" name="U|NumC|" comparator="EQUALS" value="1" />
     <if_variable name="CleartoTake1" comparator="EQUALS" value="1.0" />
+    <set_variable name="BPShip8" value="1.0" integer="yes" />
     <set_variable name="CheckforCrgoShip" value="0.0" integer="yes" />
     <clear_comms_button text="Send bording party" sideValue="2" />
     <incoming_comms_text from="Boarding party">We are on the enemy cargo vessel. Stand by while we disable the ship.</incoming_comms_text>
@@ -3614,27 +3633,29 @@
     <set_variable name="TakingTheShipC" value="1.0" integer="yes" />
     <set_variable name="CleartoTake1" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Taking ship" id_arme="d65863f1-040b-4f26-9b1c-9fae708265fa" parent_id_arme="86510b11-4da1-4db6-a5d2-002ed60d69df" />
+  <folder_arme name="Taking ship" id_arme="d65863f1-040b-4f26-9b1c-9fae708265fa" parent_id_arme="86510b11-4da1-4db6-a5d2-002ed60d69df" expanded_arme="" />
   <event name="Got them" id_arme="4a9d711c-18eb-411a-ae9e-eff1fb77caab" parent_id_arme="d65863f1-040b-4f26-9b1c-9fae708265fa">
     <if_timer_finished name="TakingCrgoShip" />
     <if_variable name="TakingTheShipC" comparator="EQUALS" value="1.0" />
+    <if_variable name="Onpoint" comparator="EQUALS" value="1.0" />
     <if_exists name="U|NumC|" />
     <set_object_property property="sideValue" value="2" name="U|NumC|" />
-    <incoming_comms_text from="Boarding Party">We got the ship</incoming_comms_text>
+    <incoming_comms_text from="Boarding Party">We got the ship and are taking it ouf of this sector.</incoming_comms_text>
     <clear_ai name="U|NumC|" />
     <set_ship_text name="U|NumC|" newname="BC|BCNum|" />
-    <add_ai type="DIR_THROTTLE" value1="180" value2="0.5" name="BC|BCNum|" />
-    <add_ai type="FOLLOW_COMMS_ORDERS" name="BC|BCNum|" />
+    <add_ai type="PROCEED_TO_EXIT" name="BC|BCNum|" />
     <add_ai type="AVOID_BLACK_HOLE" value1="500" name="BC|BCNum|" />
     <set_variable name="CleartoTake1" value="1.0" integer="yes" />
     <set_variable name="TakingTheShipC" value="0.0" integer="yes" />
     <set_comms_button text="Send bording party" sideValue="2" />
     <set_variable name="BCNum" value="BCNum+1" integer="yes" />
+    <set_variable name="Onpoint" value="0.0" integer="yes" />
     <!---->
   </event>
-  <event name="Team was killed" id_arme="cf89cea5-de24-4b9e-8e0f-7f77346fc1c7" parent_id_arme="d65863f1-040b-4f26-9b1c-9fae708265fa">
+  <event name="Team was killed" id_arme="78bfa5fc-5563-40db-bdf8-a3c33fabfa89" parent_id_arme="d65863f1-040b-4f26-9b1c-9fae708265fa">
     <if_timer_finished name="TakingCrgoShip" />
     <if_variable name="TakingTheShipC" comparator="EQUALS" value="1.0" />
+    <if_variable name="Onpoint" comparator="EQUALS" value="1.0" />
     <if_not_exists name="U|NumC|" />
     <incoming_comms_text from="Intell">Your boarding party was killed.  More recrutes are standing by at ShoShuShen Station in sector 0,0</incoming_comms_text>
     <set_variable name="CleartoTake1" value="0.0" integer="yes" />
@@ -3642,7 +3663,18 @@
     <clear_comms_button text="Send bording party" sideValue="2" />
     <!---->
   </event>
-  <folder_arme name="Run decrept" id_arme="e674cc01-5af0-41b7-9a13-c79ddd9c83a1" parent_id_arme="77c537b0-d2f2-47c6-9995-243fb69a18de" />
+  <event name="BP Shuttle Team was killed" id_arme="cf89cea5-de24-4b9e-8e0f-7f77346fc1c7" parent_id_arme="d65863f1-040b-4f26-9b1c-9fae708265fa">
+    <if_timer_finished name="TakingCrgoShip" />
+    <if_variable name="TakingTheShipC" comparator="EQUALS" value="1.0" />
+    <if_variable name="Onpoint" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="BP-01" />
+    <incoming_comms_text from="Intell">Your boarding party was killed.  More recrutes are standing by at ShoShuShen Station in sector 0,0</incoming_comms_text>
+    <set_variable name="CleartoTake1" value="0.0" integer="yes" />
+    <set_variable name="TakingTheShipC" value="0.0" integer="yes" />
+    <clear_comms_button text="Send bording party" sideValue="2" />
+    <!---->
+  </event>
+  <folder_arme name="Run decrept" id_arme="e674cc01-5af0-41b7-9a13-c79ddd9c83a1" parent_id_arme="77c537b0-d2f2-47c6-9995-243fb69a18de" expanded_arme="" />
   <event name="Checking for ships" id_arme="3616c8a4-20b3-42c8-aeee-44d438bff9e7" parent_id_arme="e674cc01-5af0-41b7-9a13-c79ddd9c83a1">
     <if_variable name="CheckforCrgoShip" comparator="EQUALS" value="1.0" />
     <if_variable name="NumC" comparator="GREATER" value="0.0" />
@@ -3722,7 +3754,88 @@
     <set_variable name="TakingTheShipC" value="0.0" integer="yes" />
     <set_comms_button text="Send bording party" sideValue="2" />
   </event>
-  <folder_arme name="GM Commands" id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
+  <folder_arme name="bording party animation" id_arme="e9f5a3ff-64a4-490c-9f5b-87ba3e021e39" parent_id_arme="77c537b0-d2f2-47c6-9995-243fb69a18de" expanded_arme="" />
+  <folder_arme name="Ship 1" id_arme="1949dc0e-4316-4c39-beb6-8d3463916773" parent_id_arme="e9f5a3ff-64a4-490c-9f5b-87ba3e021e39" expanded_arme="" />
+  <event name="Leaving ship 1" id_arme="a1103b2b-8b1d-459a-b1c2-ab27c2810497" parent_id_arme="1949dc0e-4316-4c39-beb6-8d3463916773">
+    <if_variable name="BPShip1" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="50000.0" y="0.0" z="50000.0" angle="0" name="BP-01" hullID="131" sideValue="2" fleetnumber="-1" />
+    <set_relative_position name2="BP-01" distance="100" angle="180" name1="PVTR Jimi-Saru" />
+    <clear_ai name="BP-01" />
+    <add_ai type="TARGET_THROTTLE" value1="1.2" targetName="U|NumC|" value2="1" name="BP-01" />
+    <set_variable name="BPShip1" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="Leaving ship 2" id_arme="7c74d8fa-4105-4299-b195-3a02bd23baeb" parent_id_arme="1949dc0e-4316-4c39-beb6-8d3463916773">
+    <if_variable name="BPShip2" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="50000.0" y="0.0" z="50000.0" angle="0" name="BP-01" hullID="131" sideValue="2" fleetnumber="-1" />
+    <set_relative_position name2="BP-01" distance="100" angle="180" name1="PVTR Fulminatae" />
+    <clear_ai name="BP-01" />
+    <add_ai type="TARGET_THROTTLE" value1="1.2" targetName="U|NumC|" value2="1" name="BP-01" />
+    <set_variable name="BPShip2" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="Leaving ship 3" id_arme="235a6ab5-df47-463c-b1b4-5b14b9058e82" parent_id_arme="1949dc0e-4316-4c39-beb6-8d3463916773">
+    <if_variable name="BPShip3" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="50000.0" y="0.0" z="50000.0" angle="0" name="BP-01" hullID="131" sideValue="2" fleetnumber="-1" />
+    <set_relative_position name2="BP-01" distance="100" angle="180" name1="PVTR Apocalypse" />
+    <clear_ai name="BP-01" />
+    <add_ai type="TARGET_THROTTLE" value1="1.2" targetName="U|NumC|" value2="1" name="BP-01" />
+    <set_variable name="BPShip3" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="Leaving ship 4" id_arme="6bdbc9d1-f647-4356-b11a-5ad32d831caf" parent_id_arme="1949dc0e-4316-4c39-beb6-8d3463916773">
+    <if_variable name="BPShip4" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="50000.0" y="0.0" z="50000.0" angle="0" name="BP-01" hullID="131" sideValue="2" fleetnumber="-1" />
+    <set_relative_position name2="BP-01" distance="100" angle="180" name1="TSN Academia" />
+    <clear_ai name="BP-01" />
+    <add_ai type="TARGET_THROTTLE" value1="1.2" targetName="U|NumC|" value2="1" name="BP-01" />
+    <set_variable name="BPShip4" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="Leaving ship 5" id_arme="ba87807a-3850-4268-aa00-76572898e8ae" parent_id_arme="1949dc0e-4316-4c39-beb6-8d3463916773">
+    <if_variable name="BPShip5" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="50000.0" y="0.0" z="50000.0" angle="0" name="BP-01" hullID="131" sideValue="2" fleetnumber="-1" />
+    <set_relative_position name2="BP-01" distance="0" angle="180" name1="Ship 5" />
+    <clear_ai name="BP-01" />
+    <add_ai type="TARGET_THROTTLE" value1="1.2" targetName="U|NumC|" value2="1" name="BP-01" />
+    <set_variable name="BPShip5" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="Leaving ship 6" id_arme="5325fcac-299c-4ac2-ac14-4790d882421a" parent_id_arme="1949dc0e-4316-4c39-beb6-8d3463916773">
+    <if_variable name="BPShip6" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="50000.0" y="0.0" z="50000.0" angle="0" name="BP-01" hullID="131" sideValue="2" fleetnumber="-1" />
+    <set_relative_position name2="BP-01" distance="100" angle="180" name1="Ship 6" />
+    <clear_ai name="BP-01" />
+    <add_ai type="TARGET_THROTTLE" value1="1.2" targetName="U|NumC|" value2="1" name="BP-01" />
+    <set_variable name="BPShip6" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="Leaving ship 7" id_arme="d86d6d2b-6f98-43a4-a1cc-1896c18fca22" parent_id_arme="1949dc0e-4316-4c39-beb6-8d3463916773">
+    <if_variable name="BPShip7" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="50000.0" y="0.0" z="50000.0" angle="0" name="BP-01" hullID="131" sideValue="2" fleetnumber="-1" />
+    <set_relative_position name2="BP-01" distance="100" angle="180" name1="Ship 7" />
+    <clear_ai name="BP-01" />
+    <add_ai type="TARGET_THROTTLE" value1="1.2" targetName="U|NumC|" value2="1" name="BP-01" />
+    <set_variable name="BPShip7" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="Leaving ship 8" id_arme="9d24c9f8-af12-41f2-bf1b-216b7825848e" parent_id_arme="1949dc0e-4316-4c39-beb6-8d3463916773">
+    <if_variable name="BPShip8" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="50000.0" y="0.0" z="50000.0" angle="0" name="BP-01" hullID="131" sideValue="2" fleetnumber="-1" />
+    <set_relative_position name2="BP-01" distance="100" angle="180" name1="Ship 8" />
+    <clear_ai name="BP-01" />
+    <add_ai type="TARGET_THROTTLE" value1="1.2" targetName="U|NumC|" value2="1" name="BP-01" />
+    <set_variable name="BPShip8" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <folder_arme name="Boarding" id_arme="dd7015c7-8ed7-44f3-9046-984bb599e2cf" parent_id_arme="e9f5a3ff-64a4-490c-9f5b-87ba3e021e39" expanded_arme="" />
+  <event name="next to ship" id_arme="36fe5de2-4ae4-44ee-9b7b-61f4d818972f" parent_id_arme="dd7015c7-8ed7-44f3-9046-984bb599e2cf">
+    <if_distance name1="BP-01" name2="U|NumC|" comparator="LESS_EQUAL" value="200.0" />
+    <set_variable name="Onpoint" value="1.0" integer="yes" />
+    <destroy name="BP-01" />
+    <incoming_comms_text from="Boarding party" sideValue="2">We are onboard the enemy ship</incoming_comms_text>
+  </event>
+  <folder_arme name="GM Commands" id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
   <event name="SectorLocking" id_arme="1dde4798-693d-4316-8cdb-9e9e568693af" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f">
     <if_gm_button text="Sector/Lock" />
     <if_variable name="IsSectorLocked" comparator="EQUALS" value="0" />
@@ -3983,7 +4096,7 @@
     <if_gm_button text="GM Opps/Level/11" />
     <set_difficulty_level value="11" />
   </event>
-  <folder_arme name="GM Opps" id_arme="a6a650ab-cea2-4276-b6a7-948884347d89" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
+  <folder_arme name="GM Opps" id_arme="a6a650ab-cea2-4276-b6a7-948884347d89" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
   <event name="delete_selectedship" id_arme="ef436fcb-a3ff-4042-8d1e-d88e6341eab3" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
     <if_gm_button text="GM Opps/Delete/Selected ship" />
     <destroy use_gm_selection="yes" />
@@ -3999,13 +4112,17 @@
     <set_to_gm_position use_gm_selection="" distance="0" angle="0" />
   </event>
   <event name="Refresh coms screen" id_arme="d80ace36-d3ad-42f0-a7f2-c59ddfeb52a5" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
-    <if_gm_button text="GM Opps/Refresh Coms screen" />
+    <if_gm_button text="GM Opps/Refresh/Coms" />
     <clear_comms_button text="Send bording party" sideValue="2" />
     <set_comms_button text="Send bording party" sideValue="2" />
   </event>
   <event name="Enveromet refresh" id_arme="de7d976a-f0dd-49eb-9e43-f761768edf43" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
-    <if_gm_button text="GM Opps/Refresh Enveroment" />
+    <if_gm_button text="GM Opps/Refresh/Enveroment" />
     <set_variable name="CreateEnviroment" value="1.0" integer="yes" />
+  </event>
+  <event name="End Game" id_arme="822d3ee8-6c3e-49be-8754-7f8e5fd9bcc0" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
+    <if_gm_button text="GM Opps/End Game/Are You sure" />
+    <end_mission />
   </event>
   <folder_arme name="Sensor level" id_arme="1dc16059-dd29-4d37-aeda-905c1803b3aa" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <event name="Unlimited" id_arme="c802c4ce-3741-4dfa-b69d-22b698ccdfa4" parent_id_arme="1dc16059-dd29-4d37-aeda-905c1803b3aa">
@@ -4081,15 +4198,15 @@
   </event>
   <event name="Disable" id_arme="98249475-5757-4d50-925f-12f7e2bc02ba" parent_id_arme="72f4238c-9fc1-49a7-9167-a78b0026924a">
     <if_gm_button text="GM Opps/DisableEnable/Disable all ships" />
+    <clear_comms_button text="Send bording party" sideValue="2" />
     <warning_popup_message message="Systems offline" consoles="MHWESCOF" />
     <set_variable name="IsSectorLocked" value="1.0" integer="yes" />
-    <clear_comms_button text="Send bording party" sideValue="2" />
     <set_variable name="DisableLoop" value="1.0" integer="yes" />
   </event>
   <event name="Enable" id_arme="29e64906-dd8c-4120-bbf1-5db57cde9925" parent_id_arme="72f4238c-9fc1-49a7-9167-a78b0026924a">
     <if_gm_button text="GM Opps/DisableEnable/Enable all ships" />
-    <warning_popup_message message="Systems are now online" consoles="MHWESCOF" />
     <set_comms_button text="Send bording party" sideValue="2" />
+    <warning_popup_message message="Systems are now online" consoles="MHWESCOF" />
     <set_variable name="DisableLoop" value="0.0" integer="yes" />
     <set_object_property property="energy" value="1000" name="PVTR Jimi-Saru" />
     <set_object_property property="energy" value="1000" name="PVTR Fulminatae" />
@@ -4290,9 +4407,14 @@
     <!-- Comms gets a message for current sector location -->
     <incoming_comms_text from="DSTAN AND ONBOARD NAV">Current position (|x|, |z|)</incoming_comms_text>
     <!--Extra-->
+    <set_variable name="Movedover1" value="1.0" integer="yes" />
     <set_variable name="Movedover2" value="1.0" integer="yes" />
     <set_variable name="Movedover3" value="1.0" integer="yes" />
     <set_variable name="Movedover4" value="1.0" integer="yes" />
+    <set_variable name="Movedover5" value="1.0" integer="yes" />
+    <set_variable name="Movedover6" value="1.0" integer="yes" />
+    <set_variable name="Movedover7" value="1.0" integer="yes" />
+    <set_variable name="Movedover8" value="1.0" integer="yes" />
     <!---->
   </event>
   <folder_arme name="Mission selection" id_arme="e0740ab4-52b4-4748-a527-6874ba9c724a" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
