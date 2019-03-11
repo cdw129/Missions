@@ -86,8 +86,6 @@
     <set_object_property property="sensorSetting" value="1" />
     <set_variable name="CleartoTake1" value="1.0" integer="yes" />
     <!--set known pirate ships arthorazation var-->
-    <set_variable name="MissionSelection" value="0.0" integer="yes" />
-    <set_variable name="MissionRunning" value="0.0" integer="yes" />
     <set_variable name="Jimi-Saru" value="1.0" integer="yes" />
     <set_variable name="Fulminatae" value="1.0" integer="yes" />
     <set_variable name="Apocalypse" value="1.0" integer="yes" />
@@ -95,6 +93,9 @@
     <set_variable name="Ship6" value="1.0" integer="yes" />
     <set_variable name="Ship7" value="1.0" integer="yes" />
     <set_variable name="Ship8" value="1.0" integer="yes" />
+    <!--Mission settings-->
+    <set_variable name="MissionSelection" value="0.0" integer="yes" />
+    <set_variable name="MissionRunning" value="0.0" integer="yes" />
     <!--FGS var-->
     <set_variable name="startticker1" value="0.0" integer="yes" />
     <set_variable name="amounttogive1" value="0.0" integer="yes" />
@@ -105,6 +106,7 @@
     <set_variable name="startticker4" value="0.0" integer="yes" />
     <set_variable name="amounttogive4" value="0.0" integer="yes" />
     <!--Bad Guy Var-->
+    <set_variable name="CmndShipNum" value="10" integer="yes" />
     <set_variable name="BCNum" value="10" integer="yes" />
     <set_variable name="Num" value="0" integer="yes" />
     <set_variable name="NumB" value="0" integer="yes" />
@@ -186,6 +188,10 @@
     <set_gm_button text="Create/Single Bad Guy/Skarran/Defiler" />
     <set_gm_button text="Create/Single Bad Guy/Skarran/Enforcer" />
     <set_gm_button text="Create/Single Bad Guy/Skarran/Executor" />
+    <set_gm_button text="Create/Single Bad Guy/Cmnd Ship/Karlien" />
+    <set_gm_button text="Create/Single Bad Guy/Cmnd Ship/Arvonian" />
+    <set_gm_button text="Create/Single Bad Guy/Cmnd Ship/Torgoth" />
+    <set_gm_button text="Create/Single Bad Guy/Cmnd Ship/Skarran" />
     <set_gm_button text="Create/Single Bad Guy/Cargo" />
     <set_gm_button text="GM Opps/Refresh/Coms" />
     <set_gm_button text="GM Opps/Refresh/Enveroment" />
@@ -252,6 +258,9 @@
     <set_gm_button text="GM Opps/Change location/Z/-10" />
     <set_gm_button text="GM Opps/Change location/GO!" />
     <set_gm_button text="Mission Selection/Tora Tora Tora/Start" />
+    <set_gm_button text="Mission Selection/Spring Retribution/Got out/8 or less" />
+    <set_gm_button text="Mission Selection/Spring Retribution/Got out/9 or more" />
+    <set_gm_button text="Mission Selection/Spring Retribution/Start" />
     <gm_instructions title="Sector Locking">
 
 			You must unlock the sector in order for the vessels to continue the transition after you lock it.
@@ -265,7 +274,7 @@
     <!--END Start Block-->
   </start>
   <folder_arme name="Named Ships" id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
-  <folder_arme name="Movement script" id_arme="4ded7db6-bc56-49e8-8581-c475536cf975" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
+  <folder_arme name="Movement script" id_arme="4ded7db6-bc56-49e8-8581-c475536cf975" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
   <event name="PositionLeftX" id_arme="6af9d54f-3bc4-4c25-8b4f-e6f559a8c24c" parent_id_arme="4ded7db6-bc56-49e8-8581-c475536cf975">
     <if_variable name="PVTRJimiSaruLeft" comparator="EQUALS" value="1.0" />
     <if_variable name="PVTRFulminataeReadyLeft" comparator="EQUALS" value="1.0" />
@@ -1568,6 +1577,7 @@
     <destroy name="PIRA" />
     <destroy name="ZZ" />
     <destroy name="BC|Num|" />
+    <destroy name="CmndS|Num|" />
     <destroy name="A|Num|" />
     <destroy name="B|Num|" />
     <destroy name="C|Num|" />
@@ -1858,14 +1868,14 @@
     <set_variable name="MAXCharybdiswillhappen" value="0" integer="yes" />
     <warning_popup_message message="Industrial Operations" consoles="MHWESCOF" />
     <!---->
-    <create count="500" type="asteroids" startX="47178.0" startY="100.0" startZ="79457.0" endX="24596.0" endY="-100.0" endZ="20253.0" randomRange="20000" randomSeed="75" />
+    <create count="500" type="asteroids" startX="28215.0" startY="100.0" startZ="79167.0" endX="27926.0" endY="-100.0" endZ="20832.0" randomRange="20000" randomSeed="75" />
     <create count="500" type="nebulas" nebType="2" startX="34440.0" startY="0.0" startZ="87708.0" endX="30821.0" endY="0.0" endZ="12870.0" randomRange="10000" />
     <create count="500" type="nebulas" nebType="3" startX="52534.0" startY="0.0" startZ="86694.0" endX="14898.0" endY="0.0" endZ="13594.0" randomRange="10000" />
-    <create count="10" type="mines" startAngle="288.8" endAngle="354.4" startX="73089.0" startY="0.0" startZ="35741.0" radius="14077" />
-    <create count="10" type="mines" startAngle="82" endAngle="27.6" startX="73089.0" startY="0.0" startZ="35741.0" radius="14077" />
-    <create count="10" type="mines" startAngle="265.4" endAngle="197.4" startX="73089.0" startY="0.0" startZ="35741.0" radius="14077" />
-    <create count="10" type="mines" startAngle="165.5" endAngle="107" startX="73089.0" startY="0.0" startZ="35741.0" radius="14077" />
-    <create type="station" x="73089.0" y="0.0" z="35452.0" angle="0" name="IB-01" hullID="1003" />
+    <create count="10" type="mines" startAngle="288.8" endAngle="354.4" startX="70773.0" startY="0.0" startZ="64547.0" radius="14077" />
+    <create count="10" type="mines" startAngle="82" endAngle="27.6" startX="70917.0" startY="0.0" startZ="64402.0" radius="14077" />
+    <create count="10" type="mines" startAngle="265.4" endAngle="197.4" startX="71062.0" startY="0.0" startZ="64692.0" radius="14077" />
+    <create count="10" type="mines" startAngle="165.5" endAngle="107" startX="70773.0" startY="0.0" startZ="64402.0" radius="14077" />
+    <create type="station" x="70917.0" y="0.0" z="64547.0" angle="0" name="IB-01" hullID="1003" />
     <!-- end create unnamed objects -->
     <set_variable name="IsCreate" value="0" />
   </event>
@@ -2229,7 +2239,7 @@
     <set_variable name="IsDestroy" value="0" />
     <set_variable name="IsCreate" value="1" integer="yes" />
   </event>
-  <folder_arme name="Bad Guys" id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <folder_arme name="Bad Guys" id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" expanded_arme="" />
   <folder_arme name="Making groups" id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
   <event name="Make 1 group" id_arme="9e33454e-6377-4056-93f0-78fc53528cb6" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
     <if_variable name="HowManyGroups" comparator="EQUALS" value="1.0" />
@@ -3015,8 +3025,8 @@
     <if_variable name="AmountofBadGuysTeam6" comparator="LESS_EQUAL" value="0.0" />
     <destroy name="ES06" />
   </event>
-  <folder_arme name="Missions" id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" />
-  <folder_arme name="Spring Retribution" id_arme="71e5e92f-1f25-4fc1-af12-0eb9a808aaf2" parent_id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" />
+  <folder_arme name="Missions" id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" expanded_arme="" />
+  <folder_arme name="Spring Retribution" id_arme="71e5e92f-1f25-4fc1-af12-0eb9a808aaf2" parent_id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" expanded_arme="" />
   <folder_arme name="Toratora" id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" parent_id_arme="71e5e92f-1f25-4fc1-af12-0eb9a808aaf2" />
   <event name="Starting game" id_arme="d5741f4f-f0fb-4270-8abf-826baa8ae2a8" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68">
     <if_variable name="MissionSelection" comparator="EQUALS" value="1.0" />
@@ -3067,7 +3077,7 @@
     <set_timer name="TillFinshGame" seconds="330" />
     <set_variable name="EndStartup" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Middle" id_arme="2c69df87-081c-4726-a242-965ecb792a2f" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" expanded_arme="" />
+  <folder_arme name="Middle" id_arme="2c69df87-081c-4726-a242-965ecb792a2f" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" />
   <event name="After 5 min timer" id_arme="eb1dd890-e279-47ce-a634-42e6cc858f4a" parent_id_arme="2c69df87-081c-4726-a242-965ecb792a2f">
     <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
     <if_variable name="Start" comparator="EQUALS" value="1.0" />
@@ -3296,7 +3306,7 @@
     <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT15" />
     <destroy name="CT15" />
   </event>
-  <folder_arme name="End" id_arme="3d60362e-412d-4ede-bc99-f1c2f3aad193" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" expanded_arme="" />
+  <folder_arme name="End" id_arme="3d60362e-412d-4ede-bc99-f1c2f3aad193" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" />
   <event name="end invasion timer" id_arme="df6ecaf4-594c-459a-8ca0-511c93d45879" parent_id_arme="3d60362e-412d-4ede-bc99-f1c2f3aad193">
     <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
     <if_timer_finished name="TillFinshGame" />
@@ -3330,8 +3340,128 @@
     <log text="END OF GAME!!  Ships that got out=|WhoGotOut|  Needed to win=12 " />
     <set_variable name="End" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Spring Retribution" id_arme="3df9a3be-a756-436c-9bfb-b5f4b8188047" parent_id_arme="71e5e92f-1f25-4fc1-af12-0eb9a808aaf2" />
-  <folder_arme name=" AI Scripts" id_arme="1edf422b-6931-471b-aed0-283e490b10e3" expanded_arme="" />
+  <folder_arme name="Spring Retribution" id_arme="3df9a3be-a756-436c-9bfb-b5f4b8188047" parent_id_arme="71e5e92f-1f25-4fc1-af12-0eb9a808aaf2" expanded_arme="" />
+  <event name="Setup" id_arme="cf6e9a05-8a1d-4700-94ac-489d5cb30c71" parent_id_arme="3df9a3be-a756-436c-9bfb-b5f4b8188047">
+    <if_variable name="MissionSelection" comparator="EQUALS" value="2.0" />
+    <if_variable name="x" comparator="EQUALS" value="-2.0" />
+    <if_variable name="z" comparator="EQUALS" value="2.0" />
+    <set_variable name="IsSectorLocked" value="1" integer="yes" />
+    <set_variable name="Intro" value="1.0" integer="yes" />
+    <set_variable name="MissionRunning" value="2.0" integer="yes" />
+    <set_variable name="MissionSelection" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Creating enviroment" id_arme="ef020c72-756e-4936-82c6-3f10a3ccc837" parent_id_arme="3df9a3be-a756-436c-9bfb-b5f4b8188047" expanded_arme="" />
+  <event name="Did good las mission" id_arme="8d678aba-c636-4e97-8f99-5360951d8bd5" parent_id_arme="ef020c72-756e-4936-82c6-3f10a3ccc837">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="2.0" />
+    <if_variable name="WhoGotOut" comparator="GREATER_EQUAL" value="9.0" />
+    <if_variable name="Intro" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="33137.0" y="0.0" z="17358.0" angle="0" name="LC01" hullID="7" fleetnumber="-1" />
+    <create type="neutral" x="69904.0" y="0.0" z="17503.0" angle="0" name="LC02" hullID="7" fleetnumber="-1" />
+    <create type="neutral" x="52823.0" y="0.0" z="16924.0" angle="0" name="SC01" hullID="8" fleetnumber="-1" />
+    <create type="neutral" x="51520.0" y="0.0" z="30386.0" angle="0" name="BS01" hullID="9" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="LC01" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="LC02" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="BS01" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="SC01" />
+    <!---->
+    <create count="50" type="mines" startAngle="-72.2" endAngle="66.2" startX="71641.0" startY="0.0" startZ="50940.0" radius="8551" />
+    <create count="50" type="mines" startAngle="-72.2" endAngle="66.2" startX="71641.0" startY="-100.0" startZ="50940.0" radius="8551" />
+    <create count="50" type="mines" startAngle="-72.2" endAngle="66.2" startX="71641.0" startY="100.0" startZ="50940.0" radius="8551" />
+    <create count="50" type="mines" startAngle="-72.2" endAngle="66.2" startX="71641.0" startY="-200.0" startZ="50940.0" radius="8551" />
+    <create count="50" type="mines" startAngle="-72.2" endAngle="66.2" startX="71641.0" startY="200.0" startZ="50940.0" radius="8551" />
+    <create count="50" type="mines" startAngle="-72.2" endAngle="66.2" startX="71641.0" startY="-300.0" startZ="50940.0" radius="8551" />
+    <create count="50" type="mines" startAngle="-72.2" endAngle="66.2" startX="71641.0" startY="300.0" startZ="50940.0" radius="8551" />
+    <create count="50" type="mines" startAngle="-72.2" endAngle="66.2" startX="71641.0" startY="-400.0" startZ="50940.0" radius="8551" />
+    <create count="50" type="mines" startAngle="-72.2" endAngle="66.2" startX="71641.0" startY="400.0" startZ="50940.0" radius="8551" />
+    <create count="100" type="mines" startX="85537.0" startY="0.0" startZ="22424.0" endX="15911.0" endY="0.0" endZ="22569.0" />
+    <create count="100" type="mines" startX="84814.0" startY="0.0" startZ="25753.0" endX="16345.0" endY="0.0" endZ="25753.0" />
+    <create count="50" type="mines" startX="99144.0" startY="0.0" startZ="13015.0" endX="85103.0" endY="0.0" endZ="13015.0" />
+    <create count="50" type="mines" startX="19530.0" startY="0.0" startZ="12436.0" endX="1725.0" endY="0.0" endZ="12291.0" />
+    <create count="50" type="mines" startX="20254.0" startY="0.0" startZ="16344.0" endX="857.0" endY="0.0" endZ="16489.0" />
+    <create count="50" type="mines" startX="84814.0" startY="0.0" startZ="15910.0" endX="99868.0" endY="0.0" endZ="16200.0" />
+    <incoming_comms_text from="Command">We were able to get enough intell from the retreating shuttles that we set up a defence and are awaiting for the enemy fleet.</incoming_comms_text>
+    <set_variable name="Intro" value="0.0" integer="yes" />
+    <set_variable name="Startup" value="1.0" integer="yes" />
+  </event>
+  <event name="Did not do so good last mission" id_arme="f1804543-4152-4ddb-a067-7d6af264b6b0" parent_id_arme="ef020c72-756e-4936-82c6-3f10a3ccc837">
+    <if_variable name="Intro" comparator="EQUALS" value="1.0" />
+    <if_variable name="MissionRunning" comparator="EQUALS" value="2.0" />
+    <if_variable name="WhoGotOut" comparator="LESS_EQUAL" value="8.0" />
+    <create type="neutral" x="33137.0" y="0.0" z="17358.0" angle="0" name="LC01" hullID="7" fleetnumber="-1" />
+    <create type="neutral" x="69904.0" y="0.0" z="17503.0" angle="0" name="LC02" hullID="7" fleetnumber="-1" />
+    <create type="neutral" x="52823.0" y="0.0" z="16924.0" angle="0" name="SC01" hullID="8" fleetnumber="-1" />
+    <create type="neutral" x="51520.0" y="0.0" z="30386.0" angle="0" name="BS01" hullID="9" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="LV01" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="LC02" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="BS01" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="SC01" />
+    <incoming_comms_text from="Command">We just made out the intell from the shuttles. Unfortunately we didn't have enough time to prepared.</incoming_comms_text>
+    <set_variable name="Intro" value="0.0" integer="yes" />
+    <set_variable name="Startup" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Game" id_arme="53bcd807-f1b1-42cb-a03a-877a07014709" parent_id_arme="3df9a3be-a756-436c-9bfb-b5f4b8188047" expanded_arme="" />
+  <event name="Start script" id_arme="4d823c59-1853-4899-8575-046c8fa1c755" parent_id_arme="53bcd807-f1b1-42cb-a03a-877a07014709">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="2.0" />
+    <if_variable name="Startup" comparator="EQUALS" value="1.0" />
+    <!---->
+    <incoming_comms_text from="Command">It looks like the enemy is massing and getting ready for an all out attack. Intell has them 2 minutes out!</incoming_comms_text>
+    <set_variable name="Start" value="1.0" integer="yes" />
+    <set_timer name="UntillInvasion" seconds="119" />
+    <set_timer name="TillFinshGame" seconds="900" />
+    <set_variable name="Startup" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="After 5 min timer" id_arme="34cf747b-ded2-4b47-8ba0-71be78e1326e" parent_id_arme="53bcd807-f1b1-42cb-a03a-877a07014709">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="2.0" />
+    <if_variable name="Start" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="UntillInvasion" />
+    <set_variable name="MinX" value="2.0" integer="yes" />
+    <set_variable name="MinY" value="1.0" integer="yes" />
+    <set_variable name="MaxX" value="9.0" integer="yes" />
+    <set_variable name="MaxY" value="1.0" integer="yes" />
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+    <set_variable name="WhatRace1" value="1.0" integer="yes" />
+    <set_variable name="WhatRace2" value="4.0" integer="yes" />
+    <set_variable name="WhatRace3" randomIntLow="1" randomIntHigh="4" integer="yes" />
+    <set_variable name="WhatRace4" randomIntLow="1" randomIntHigh="4" integer="yes" />
+    <set_variable name="WhatRace5" randomIntLow="1" randomIntHigh="4" integer="yes" />
+    <set_timer name="StrikeForceEnter" seconds="299" />
+    <set_timer name="TillFinshGame" seconds="900" />
+    <set_variable name="OutcomingFleet" value="1.0" integer="yes" />
+    <set_variable name="Middle" value="1.0" integer="yes" />
+    <set_variable name="Start" value="0.0" integer="yes" />
+  </event>
+  <event name="strike foce timer" id_arme="ab1f101b-bd88-4f51-b09b-fc2433f19373" parent_id_arme="53bcd807-f1b1-42cb-a03a-877a07014709">
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <if_variable name="MissionRunning" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="StrikeForceEnter" />
+    <set_variable name="MinX" value="2.0" integer="yes" />
+    <set_variable name="MinY" value="1.0" integer="yes" />
+    <set_variable name="MaxX" value="9.0" integer="yes" />
+    <set_variable name="MaxY" value="1.0" integer="yes" />
+    <set_variable name="WhatRace1" value="1.0" integer="yes" />
+    <set_variable name="WhatRace2" value="1.0" integer="yes" />
+    <set_variable name="WhatRace3" randomIntLow="1" randomIntHigh="4" integer="yes" />
+    <set_variable name="WhatRace4" randomIntLow="1" randomIntHigh="4" integer="yes" />
+    <set_variable name="WhatRace5" randomIntLow="1" randomIntHigh="4" integer="yes" />
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+    <set_timer name="StrikeForceEnter" seconds="299" />
+  </event>
+  <folder_arme name="End" id_arme="6cd56b20-921e-4d1b-aec5-6215e79b1d70" parent_id_arme="3df9a3be-a756-436c-9bfb-b5f4b8188047" expanded_arme="" />
+  <event name="End credits" id_arme="f3bade35-791c-4c29-afe4-9acdd58b8411" parent_id_arme="6cd56b20-921e-4d1b-aec5-6215e79b1d70">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="2.0" />
+    <if_variable name="End" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Command">The enemy forces are thining out.</incoming_comms_text>
+    <set_variable name="End" value="0.0" integer="yes" />
+  </event>
+  <event name="End invasion" id_arme="ea9c7bfe-47cc-406d-9c4e-fdd680aadd7b" parent_id_arme="6cd56b20-921e-4d1b-aec5-6215e79b1d70">
+    <if_variable name="MissionRunning" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="TillFinshGame" />
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <set_variable name="End" value="1.0" integer="yes" />
+    <set_variable name="Middle" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name=" AI Scripts" id_arme="1edf422b-6931-471b-aed0-283e490b10e3" />
   <folder_arme name="LL-01" id_arme="9e879c9a-d27f-4e03-a5d7-1d326e128450" parent_id_arme="1edf422b-6931-471b-aed0-283e490b10e3" />
   <folder_arme name="non vis movement" id_arme="1d44ce6d-6932-4827-a879-af91ee78d68f" parent_id_arme="9e879c9a-d27f-4e03-a5d7-1d326e128450" />
   <folder_arme name="Moving north" id_arme="14855af7-b12a-42e4-98df-bfa41fc024f0" parent_id_arme="1d44ce6d-6932-4827-a879-af91ee78d68f" />
@@ -3527,7 +3657,7 @@
     <if_variable name="Linnervis" comparator="EQUALS" value="1.0" />
     <set_variable name="LinnerAlive" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Taking cargo ships" id_arme="77c537b0-d2f2-47c6-9995-243fb69a18de" parent_id_arme="1edf422b-6931-471b-aed0-283e490b10e3" expanded_arme="" />
+  <folder_arme name="Taking cargo ships" id_arme="77c537b0-d2f2-47c6-9995-243fb69a18de" parent_id_arme="1edf422b-6931-471b-aed0-283e490b10e3" />
   <folder_arme name="Action" id_arme="86510b11-4da1-4db6-a5d2-002ed60d69df" parent_id_arme="77c537b0-d2f2-47c6-9995-243fb69a18de" expanded_arme="" />
   <event name="Button pushed" id_arme="4bdb21be-2f95-4aac-a8d2-c6384787fc93" parent_id_arme="86510b11-4da1-4db6-a5d2-002ed60d69df">
     <if_comms_button text="Send bording party" />
@@ -3835,7 +3965,7 @@
     <destroy name="BP-01" />
     <incoming_comms_text from="Boarding party" sideValue="2">We are onboard the enemy ship</incoming_comms_text>
   </event>
-  <folder_arme name="GM Commands" id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
+  <folder_arme name="GM Commands" id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <event name="SectorLocking" id_arme="1dde4798-693d-4316-8cdb-9e9e568693af" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f">
     <if_gm_button text="Sector/Lock" />
     <if_variable name="IsSectorLocked" comparator="EQUALS" value="0" />
@@ -4050,6 +4180,61 @@
     <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="V|NumofBadGuy6|" hullID="Badguys6" sideValue="1" fleetnumber="GroupNum6" />
     <set_relative_position name2="V|NumofBadGuy6|" distance="RandomSpacingEvent6" angle="RandomBarring" name1="U|NumofBadGuy6trans|" />
     <!--End-->
+  </event>
+  <folder_arme name="Cmnd Ships" id_arme="88924caf-454d-43aa-bfec-2da69d6eddba" parent_id_arme="0711e5bd-b1cd-4a5b-b2ce-ffd0b369e3f0" />
+  <event name="Kralien" id_arme="ce44f04c-bc66-4a31-8a82-67ae659d35b9" parent_id_arme="88924caf-454d-43aa-bfec-2da69d6eddba">
+    <if_gm_button text="Create/Single Bad Guy/Cmnd Ship/Karlien" />
+    <create type="enemy" use_gm_position="" angle="0" name="CmndS|CmndShipNum|" hullID="2002" sideValue="1" fleetnumber="-1" />
+    <set_ship_text name="CmndS|CmndShipNum|" desc="This is a Karlien Command Ship" scan_desc="Very dangerous if taken head on." hailtext="We Will defete you!" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="Cloak" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="ShldVamp" />
+    <set_object_property property="surrenderChance" value="0" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateBack" value="500" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateFront" value="800" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateBack" value="500" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateFront" value="800" name="CmndS|CmndShipNum|" />
+    <set_variable name="CmndShipNum" value="CmndShipNum+1" integer="yes" />
+  </event>
+  <event name="Arvonian" id_arme="bf6b769e-e448-4c82-939e-7f854cff6349" parent_id_arme="88924caf-454d-43aa-bfec-2da69d6eddba">
+    <if_gm_button text="Create/Single Bad Guy/Cmnd Ship/Arvonian" />
+    <create type="enemy" use_gm_position="" angle="0" name="CmndS|CmndShipNum|" hullID="3002" sideValue="1" fleetnumber="-1" />
+    <set_ship_text name="CmndS|CmndShipNum|" desc="This is a Arvonian Command Ship" scan_desc="Very dangerous if taken head on." hailtext="We Will defete you!" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="Drones" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="AntiMine" />
+    <set_object_property property="surrenderChance" value="0" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateBack" value="500" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateFront" value="500" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateFront" value="500" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateBack" value="500" name="CmndS|CmndShipNum|" />
+    <set_variable name="CmndShipNum" value="CmndShipNum+1" integer="yes" />
+  </event>
+  <event name="Torgoth" id_arme="2aa9c231-3425-42bb-9b50-d2a8a80554f4" parent_id_arme="88924caf-454d-43aa-bfec-2da69d6eddba">
+    <if_gm_button text="Create/Single Bad Guy/Cmnd Ship/Torgoth" />
+    <create type="enemy" use_gm_position="" angle="0" name="CmndS|CmndShipNum|" hullID="4002" sideValue="1" fleetnumber="-1" />
+    <set_ship_text name="CmndS|CmndShipNum|" desc="This is a Torgoth Command Ship" scan_desc="Very dangerous if taken head on." hailtext="We Will defete you!" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="AntiTorp" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="Tractor" />
+    <set_object_property property="surrenderChance" value="0" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateBack" value="800" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateFront" value="1000" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateBack" value="800" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateFront" value="1000" name="CmndS|CmndShipNum|" />
+    <set_variable name="CmndShipNum" value="CmndShipNum+1" integer="yes" />
+    <!---->
+  </event>
+  <event name="Skaraan" id_arme="f149805f-e842-4ceb-a71d-f920e28bfacc" parent_id_arme="88924caf-454d-43aa-bfec-2da69d6eddba">
+    <if_gm_button text="Create/Single Bad Guy/Cmnd Ship/Skarran" />
+    <create type="enemy" use_gm_position="" angle="0" name="CmndS|CmndShipNum|" hullID="5002" sideValue="1" fleetnumber="-1" />
+    <set_ship_text name="CmndS|CmndShipNum|" desc="This is a Skaraan Command Ship" scan_desc="Very dangerous if taken head on." hailtext="We Will defete you!" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="Stealth" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="ShldDrain" />
+    <set_object_property property="surrenderChance" value="0" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateBack" value="1000" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateFront" value="1000" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateBack" value="1000" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateFront" value="1000" name="CmndS|CmndShipNum|" />
+    <set_variable name="CmndShipNum" value="CmndShipNum+1" integer="yes" />
+    <!---->
   </event>
   <folder_arme name="Level" id_arme="44f79c2b-585f-457f-9ffb-ab6bf204f337" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <event name="1" id_arme="b4a7aa3e-11e2-4f51-8e87-962dc17a6142" parent_id_arme="44f79c2b-585f-457f-9ffb-ab6bf204f337">
@@ -4417,9 +4602,22 @@
     <set_variable name="Movedover8" value="1.0" integer="yes" />
     <!---->
   </event>
-  <folder_arme name="Mission selection" id_arme="e0740ab4-52b4-4748-a527-6874ba9c724a" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
+  <folder_arme name="Mission selection" id_arme="e0740ab4-52b4-4748-a527-6874ba9c724a" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
   <event name="Tora Tora Tora" id_arme="32602c77-8800-4959-be93-b54040978909" parent_id_arme="e0740ab4-52b4-4748-a527-6874ba9c724a">
     <if_gm_button text="Mission Selection/Tora Tora Tora/Start" />
     <set_variable name="MissionSelection" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Spring Retribution" id_arme="45a8e2e4-6b96-40b6-9d37-ae2ad37d28d5" parent_id_arme="e0740ab4-52b4-4748-a527-6874ba9c724a" expanded_arme="" />
+  <event name="not enough" id_arme="7dcce0f2-3df3-4db1-9d38-ff70cb9b1f94" parent_id_arme="45a8e2e4-6b96-40b6-9d37-ae2ad37d28d5">
+    <if_gm_button text="Mission Selection/Spring Retribution/Got out/8 or less" />
+    <set_variable name="WhoGotOut" value="1.0" integer="yes" />
+  </event>
+  <event name="enough" id_arme="2562a3ec-2c68-4aa3-a226-bf32bc180b45" parent_id_arme="45a8e2e4-6b96-40b6-9d37-ae2ad37d28d5">
+    <if_gm_button text="Mission Selection/Spring Retribution/Got out/9 or more" />
+    <set_variable name="WhoGotOut" value="15.0" integer="yes" />
+  </event>
+  <event name="start game" id_arme="19193185-c4df-472b-928b-f8be39dff539" parent_id_arme="45a8e2e4-6b96-40b6-9d37-ae2ad37d28d5">
+    <if_gm_button text="Mission Selection/Spring Retribution/Start" />
+    <set_variable name="MissionSelection" value="2.0" integer="yes" />
   </event>
 </mission_data>
