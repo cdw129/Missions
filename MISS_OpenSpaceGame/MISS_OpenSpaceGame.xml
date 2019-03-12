@@ -3995,7 +3995,7 @@
     <destroy name="BP-01" />
     <incoming_comms_text from="Boarding party" sideValue="2">We are onboard the enemy ship</incoming_comms_text>
   </event>
-  <folder_arme name="GM Commands" id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
+  <folder_arme name="GM Commands" id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
   <event name="SectorLocking" id_arme="1dde4798-693d-4316-8cdb-9e9e568693af" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f">
     <if_gm_button text="Sector/Lock" />
     <if_variable name="IsSectorLocked" comparator="EQUALS" value="0" />
@@ -4311,7 +4311,7 @@
     <if_gm_button text="GM Opps/Level/11" />
     <set_difficulty_level value="11" />
   </event>
-  <folder_arme name="GM Opps" id_arme="a6a650ab-cea2-4276-b6a7-948884347d89" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
+  <folder_arme name="GM Opps" id_arme="a6a650ab-cea2-4276-b6a7-948884347d89" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
   <event name="delete_selectedship" id_arme="ef436fcb-a3ff-4042-8d1e-d88e6341eab3" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
     <if_gm_button text="GM Opps/Delete/Selected ship" />
     <destroy use_gm_selection="yes" />
@@ -4341,11 +4341,11 @@
   </event>
   <event name="Swap sides good" id_arme="07ee3420-48e1-40e9-87df-77a97072d5c6" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
     <if_gm_button text="GM Opps/Swap sides/Good" />
-    <set_object_property property="tagOwnerSide" value="2" use_gm_selection="" />
+    <set_side_value value="2" use_gm_selection="" />
   </event>
   <event name="Swap sides bad" id_arme="b8096b01-2e5e-478c-b04d-1cb63c17f1fb" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
     <if_gm_button text="GM Opps/Swap sides/Bad" />
-    <set_object_property property="tagOwnerSide" value="2" use_gm_selection="" />
+    <set_side_value value="1" use_gm_selection="" />
   </event>
   <folder_arme name="Sensor level" id_arme="1dc16059-dd29-4d37-aeda-905c1803b3aa" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <event name="Unlimited" id_arme="c802c4ce-3741-4dfa-b69d-22b698ccdfa4" parent_id_arme="1dc16059-dd29-4d37-aeda-905c1803b3aa">
