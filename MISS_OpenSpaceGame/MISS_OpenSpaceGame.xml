@@ -193,6 +193,8 @@
     <set_gm_button text="Create/Single Bad Guy/Cmnd Ship/Torgoth" />
     <set_gm_button text="Create/Single Bad Guy/Cmnd Ship/Skarran" />
     <set_gm_button text="Create/Single Bad Guy/Cargo" />
+    <set_gm_button text="GM Opps/Swap sides/Bad" />
+    <set_gm_button text="GM Opps/Swap sides/Good" />
     <set_gm_button text="GM Opps/Refresh/Coms" />
     <set_gm_button text="GM Opps/Refresh/Enveroment" />
     <set_gm_button text="GM Opps/Move" />
@@ -273,7 +275,7 @@
     <!-- END GM BUTTON DEFINITIONS -->
     <!--END Start Block-->
   </start>
-  <folder_arme name="Named Ships" id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
+  <folder_arme name="Named Ships" id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
   <folder_arme name="Movement script" id_arme="4ded7db6-bc56-49e8-8581-c475536cf975" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
   <event name="PositionLeftX" id_arme="6af9d54f-3bc4-4c25-8b4f-e6f559a8c24c" parent_id_arme="4ded7db6-bc56-49e8-8581-c475536cf975">
     <if_variable name="PVTRJimiSaruLeft" comparator="EQUALS" value="1.0" />
@@ -1689,6 +1691,34 @@
     <set_variable name="IsDestroy" value="0" />
     <set_variable name="IsCreate" value="1" integer="yes" />
   </event>
+  <folder_arme name="0,2" id_arme="192b4a77-4681-47d3-b342-95f1b96bce41" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" />
+  <event name="CreateGrid 0,2" id_arme="78a57e0b-b2b9-41e5-91b2-6a18c075af3c" parent_id_arme="192b4a77-4681-47d3-b342-95f1b96bce41">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="0" />
+    <if_variable name="z" comparator="EQUALS" value="2.0" />
+    <set_variable name="MAXWhalewillhappen" value="40.0" integer="yes" />
+    <set_variable name="MAXSharkwillhappen" value="0" integer="yes" />
+    <set_variable name="MAXJellywillhappen" value="0" integer="yes" />
+    <set_variable name="MAXPiranhawillhappen" value="0" integer="yes" />
+    <set_variable name="MAXTyphoonwillhappen" value="0" integer="yes" />
+    <set_variable name="MAXCharybdiswillhappen" value="0" integer="yes" />
+    <!-- end create unnamed objects -->
+    <create count="200" type="asteroids" startX="50941.0" startY="500.0" startZ="50217.0" radius="26316" randomRange="5000" randomSeed="30" />
+    <create count="500" type="nebulas" startX="21701.0" startY="0.0" startZ="23003.0" endX="78155.0" endY="0.0" endZ="23003.0" randomRange="20000" />
+    <create type="station" x="50941.0" y="0.0" z="49927.0" angle="0" name="EFN-01" hullID="1001" sideValue="2" />
+    <set_ship_text name="EFN-01" hailtext="This is the Eastern Front News Station." />
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid 0,2" id_arme="8448ac01-2d17-49c5-a97b-e7faf325be37" parent_id_arme="192b4a77-4681-47d3-b342-95f1b96bce41">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="0" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="2.0" />
+    <!-- This is where all the objects are destroyed in the sector. -->
+    <destroy name="EFN-01" />
+    <!-- Flag the creation of a new sector if an event name_arme exists. -->
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" />
+  </event>
   <folder_arme name="0,1" id_arme="28341c30-e524-403f-a1a1-abea4b5544a0" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" />
   <event name="CreateGrid 0,1" id_arme="6a9263d0-304a-434a-b6b5-cc03454f1a4f" parent_id_arme="28341c30-e524-403f-a1a1-abea4b5544a0">
     <if_variable name="IsCreate" comparator="EQUALS" value="1" />
@@ -2239,7 +2269,7 @@
     <set_variable name="IsDestroy" value="0" />
     <set_variable name="IsCreate" value="1" integer="yes" />
   </event>
-  <folder_arme name="Bad Guys" id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" expanded_arme="" />
+  <folder_arme name="Bad Guys" id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
   <folder_arme name="Making groups" id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
   <event name="Make 1 group" id_arme="9e33454e-6377-4056-93f0-78fc53528cb6" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
     <if_variable name="HowManyGroups" comparator="EQUALS" value="1.0" />
@@ -3025,7 +3055,7 @@
     <if_variable name="AmountofBadGuysTeam6" comparator="LESS_EQUAL" value="0.0" />
     <destroy name="ES06" />
   </event>
-  <folder_arme name="Missions" id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" expanded_arme="" />
+  <folder_arme name="Missions" id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" />
   <folder_arme name="Spring Retribution" id_arme="71e5e92f-1f25-4fc1-af12-0eb9a808aaf2" parent_id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" expanded_arme="" />
   <folder_arme name="Toratora" id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" parent_id_arme="71e5e92f-1f25-4fc1-af12-0eb9a808aaf2" />
   <event name="Starting game" id_arme="d5741f4f-f0fb-4270-8abf-826baa8ae2a8" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68">
@@ -4281,7 +4311,7 @@
     <if_gm_button text="GM Opps/Level/11" />
     <set_difficulty_level value="11" />
   </event>
-  <folder_arme name="GM Opps" id_arme="a6a650ab-cea2-4276-b6a7-948884347d89" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
+  <folder_arme name="GM Opps" id_arme="a6a650ab-cea2-4276-b6a7-948884347d89" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <event name="delete_selectedship" id_arme="ef436fcb-a3ff-4042-8d1e-d88e6341eab3" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
     <if_gm_button text="GM Opps/Delete/Selected ship" />
     <destroy use_gm_selection="yes" />
@@ -4308,6 +4338,14 @@
   <event name="End Game" id_arme="822d3ee8-6c3e-49be-8754-7f8e5fd9bcc0" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
     <if_gm_button text="GM Opps/End Game/Are You sure" />
     <end_mission />
+  </event>
+  <event name="Swap sides good" id_arme="07ee3420-48e1-40e9-87df-77a97072d5c6" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
+    <if_gm_button text="GM Opps/Swap sides/Good" />
+    <set_object_property property="tagOwnerSide" value="2" use_gm_selection="" />
+  </event>
+  <event name="Swap sides bad" id_arme="b8096b01-2e5e-478c-b04d-1cb63c17f1fb" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
+    <if_gm_button text="GM Opps/Swap sides/Bad" />
+    <set_object_property property="tagOwnerSide" value="2" use_gm_selection="" />
   </event>
   <folder_arme name="Sensor level" id_arme="1dc16059-dd29-4d37-aeda-905c1803b3aa" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <event name="Unlimited" id_arme="c802c4ce-3741-4dfa-b69d-22b698ccdfa4" parent_id_arme="1dc16059-dd29-4d37-aeda-905c1803b3aa">
@@ -4602,7 +4640,7 @@
     <set_variable name="Movedover8" value="1.0" integer="yes" />
     <!---->
   </event>
-  <folder_arme name="Mission selection" id_arme="e0740ab4-52b4-4748-a527-6874ba9c724a" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
+  <folder_arme name="Mission selection" id_arme="e0740ab4-52b4-4748-a527-6874ba9c724a" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <event name="Tora Tora Tora" id_arme="32602c77-8800-4959-be93-b54040978909" parent_id_arme="e0740ab4-52b4-4748-a527-6874ba9c724a">
     <if_gm_button text="Mission Selection/Tora Tora Tora/Start" />
     <set_variable name="MissionSelection" value="1.0" integer="yes" />
