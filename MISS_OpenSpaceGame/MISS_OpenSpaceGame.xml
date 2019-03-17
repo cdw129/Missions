@@ -60,7 +60,6 @@
     <set_variable name="Ship8Right" value="0.0" integer="yes" />
     <set_variable name="Ship8Left" value="0.0" integer="yes" />
     <!--Linner Code-->
-    <set_timer name="LinermovementTick" seconds="120" />
     <set_variable name="LinnervisOnlocation" value="0.0" integer="yes" />
     <set_variable name="LinnerAlive" value="1.0" integer="yes" />
     <set_variable name="LinnerMessage" value="0.0" integer="yes" />
@@ -119,6 +118,19 @@
     <set_variable name="NumofBadGuy6" value="0" integer="yes" />
     <set_variable name="NumofBadGuy6trans" value="0" integer="yes" />
     <set_variable name="NumofBadGuy7" value="0" integer="yes" />
+    <set_variable name="NumofBadGuy8" value="0" integer="yes" />
+    <set_variable name="NumofBadGuy9" value="0" integer="yes" />
+    <set_variable name="NumofBadGuy10" value="0" integer="yes" />
+    <set_variable name="GroupNum1" value="1.0" integer="yes" />
+    <set_variable name="GroupNum2" value="10.0" integer="yes" />
+    <set_variable name="GroupNum3" value="20.0" integer="yes" />
+    <set_variable name="GroupNum4" value="30.0" integer="yes" />
+    <set_variable name="GroupNum5" value="40.0" integer="yes" />
+    <set_variable name="GroupNum6" value="50.0" integer="yes" />
+    <set_variable name="GroupNum7" value="60.0" integer="yes" />
+    <set_variable name="GroupNum8" value="70.0" integer="yes" />
+    <set_variable name="GroupNum9" value="80.0" integer="yes" />
+    <set_variable name="GroupNum10" value="90.0" integer="yes" />
     <set_variable name="MinX" value="1.0" integer="yes" />
     <set_variable name="MinY" value="1.0" integer="yes" />
     <set_variable name="MaxX" value="9.0" integer="yes" />
@@ -128,8 +140,6 @@
     <set_variable name="WhatRace3" value="1.0" integer="yes" />
     <set_variable name="WhatRace4" value="1.0" integer="yes" />
     <set_variable name="WhatRace5" value="1.0" integer="yes" />
-    <set_variable name="WhatRace6" value="1.0" integer="yes" />
-    <set_variable name="WhatRace7" value="1.0" integer="yes" />
     <set_variable name="HowManyGroups" value="0.0" integer="yes" />
     <!-- Starting sector -->
     <set_variable name="DisableLoop" value="1.0" integer="yes" />
@@ -156,12 +166,50 @@
     <set_variable name="IsDestroy" value="0" integer="yes" />
     <set_variable name="destroy_x" value="10000" integer="yes" />
     <set_variable name="destroy_z" value="10000" integer="yes" />
-    <!-- BEGIN GM BUTTON DEFINITIONS -->
-    <set_gm_button text="Sector/Lock" menu_w="120" />
-    <set_gm_button text="Sector/Unlock" />
+    <!--Sector Button-->
+    <set_gm_button text="Sector/GO TO/Mining colony" menu_w="120" />
+    <set_gm_button text="Sector/GO TO/Indestral Base" menu_w="120" />
+    <set_gm_button text="Sector/GO TO/Science Base" menu_w="120" />
+    <set_gm_button text="Sector/GO TO/ShoShuShen" menu_w="120" />
+    <set_gm_button text="Sector/Controle/Lock" menu_w="120" />
+    <set_gm_button text="Sector/Controle/Unlock" />
+    <!--GM Opps Button-->
     <set_gm_button text="GM Opps/End Game/Are You sure" />
     <set_gm_button text="GM Opps/Delete/Selected ship" />
     <set_gm_button text="GM Opps/Delete/non-ships near" />
+    <set_gm_button text="GM Opps/Swap sides/Bad" />
+    <set_gm_button text="GM Opps/Refresh/Enveroment" />
+    <set_gm_button text="GM Opps/Move" />
+    <set_gm_button text="GM Opps/Level/1" />
+    <set_gm_button text="GM Opps/Level/2" />
+    <set_gm_button text="GM Opps/Level/3" />
+    <set_gm_button text="GM Opps/Level/4" />
+    <set_gm_button text="GM Opps/Level/5" />
+    <set_gm_button text="GM Opps/Level/6" />
+    <set_gm_button text="GM Opps/Level/7" />
+    <set_gm_button text="GM Opps/Level/8" />
+    <set_gm_button text="GM Opps/Level/9" />
+    <set_gm_button text="GM Opps/Level/10" />
+    <set_gm_button text="GM Opps/Level/11" />
+    <set_gm_button text="GM Opps/Sensor Level/Unlimited" />
+    <set_gm_button text="GM Opps/Sensor Level/33k" />
+    <set_gm_button text="GM Opps/Sensor Level/16k" />
+    <set_gm_button text="GM Opps/Sensor Level/11k" />
+    <set_gm_button text="GM Opps/Sensor Level/8k" />
+    <set_gm_button text="GM Opps/DisableEnable/Disable all ships" />
+    <set_gm_button text="GM Opps/DisableEnable/Enable all ships" />
+    <set_gm_button text="GM Opps/Swap sides/Good" />
+    <set_gm_button text="GM Opps/Refresh/Coms" />
+    <set_gm_button text="GM Opps/Give/PShock" />
+    <set_gm_button text="GM Opps/Give/Torps" />
+    <set_gm_button text="GM Opps/Give/Mines" />
+    <set_gm_button text="GM Opps/Give/Nukes" />
+    <set_gm_button text="GM Opps/Give/EMP" />
+    <set_gm_button text="GM Opps/Give/Energy/100" />
+    <set_gm_button text="GM Opps/Give/Energy/500" />
+    <set_gm_button text="GM Opps/Give/Energy/1000" />
+    <set_gm_button text="GM Opps/BG will do/Surender" />
+    <!--Create Button-->
     <set_gm_button text="Create/Group Amount/1" />
     <set_gm_button text="Create/Group Amount/2" />
     <set_gm_button text="Create/Group Amount/3" />
@@ -193,76 +241,63 @@
     <set_gm_button text="Create/Single Bad Guy/Cmnd Ship/Torgoth" />
     <set_gm_button text="Create/Single Bad Guy/Cmnd Ship/Skarran" />
     <set_gm_button text="Create/Single Bad Guy/Cargo" />
-    <set_gm_button text="GM Opps/Swap sides/Bad" />
-    <set_gm_button text="GM Opps/Swap sides/Good" />
-    <set_gm_button text="GM Opps/Refresh/Coms" />
-    <set_gm_button text="GM Opps/Refresh/Enveroment" />
-    <set_gm_button text="GM Opps/Move" />
-    <set_gm_button text="GM Opps/Level/1" />
-    <set_gm_button text="GM Opps/Level/2" />
-    <set_gm_button text="GM Opps/Level/3" />
-    <set_gm_button text="GM Opps/Level/4" />
-    <set_gm_button text="GM Opps/Level/5" />
-    <set_gm_button text="GM Opps/Level/6" />
-    <set_gm_button text="GM Opps/Level/7" />
-    <set_gm_button text="GM Opps/Level/8" />
-    <set_gm_button text="GM Opps/Level/9" />
-    <set_gm_button text="GM Opps/Level/10" />
-    <set_gm_button text="GM Opps/Level/11" />
-    <set_gm_button text="GM Opps/Sensor Level/Unlimited" />
-    <set_gm_button text="GM Opps/Sensor Level/33k" />
-    <set_gm_button text="GM Opps/Sensor Level/16k" />
-    <set_gm_button text="GM Opps/Sensor Level/11k" />
-    <set_gm_button text="GM Opps/Sensor Level/8k" />
-    <set_gm_button text="GM Opps/DisableEnable/Disable all ships" />
-    <set_gm_button text="GM Opps/DisableEnable/Enable all ships" />
-    <set_gm_button text="GM Opps/Change location/X/10" />
-    <set_gm_button text="GM Opps/Change location/X/9" />
-    <set_gm_button text="GM Opps/Change location/X/8" />
-    <set_gm_button text="GM Opps/Change location/X/7" />
-    <set_gm_button text="GM Opps/Change location/X/6" />
-    <set_gm_button text="GM Opps/Change location/X/5" />
-    <set_gm_button text="GM Opps/Change location/X/4" />
-    <set_gm_button text="GM Opps/Change location/X/3" />
-    <set_gm_button text="GM Opps/Change location/X/2" />
-    <set_gm_button text="GM Opps/Change location/X/1" />
-    <set_gm_button text="GM Opps/Change location/X/0" />
-    <set_gm_button text="GM Opps/Change location/X/-1" />
-    <set_gm_button text="GM Opps/Change location/X/-2" />
-    <set_gm_button text="GM Opps/Change location/X/-3" />
-    <set_gm_button text="GM Opps/Change location/X/-4" />
-    <set_gm_button text="GM Opps/Change location/X/-5" />
-    <set_gm_button text="GM Opps/Change location/X/-6" />
-    <set_gm_button text="GM Opps/Change location/X/-7" />
-    <set_gm_button text="GM Opps/Change location/X/-8" />
-    <set_gm_button text="GM Opps/Change location/X/-9" />
-    <set_gm_button text="GM Opps/Change location/X/-10" />
-    <set_gm_button text="GM Opps/Change location/Z/10" />
-    <set_gm_button text="GM Opps/Change location/Z/9" />
-    <set_gm_button text="GM Opps/Change location/Z/8" />
-    <set_gm_button text="GM Opps/Change location/Z/7" />
-    <set_gm_button text="GM Opps/Change location/Z/6" />
-    <set_gm_button text="GM Opps/Change location/Z/5" />
-    <set_gm_button text="GM Opps/Change location/Z/4" />
-    <set_gm_button text="GM Opps/Change location/Z/3" />
-    <set_gm_button text="GM Opps/Change location/Z/2" />
-    <set_gm_button text="GM Opps/Change location/Z/1" />
-    <set_gm_button text="GM Opps/Change location/Z/0" />
-    <set_gm_button text="GM Opps/Change location/Z/-1" />
-    <set_gm_button text="GM Opps/Change location/Z/-2" />
-    <set_gm_button text="GM Opps/Change location/Z/-3" />
-    <set_gm_button text="GM Opps/Change location/Z/-4" />
-    <set_gm_button text="GM Opps/Change location/Z/-5" />
-    <set_gm_button text="GM Opps/Change location/Z/-6" />
-    <set_gm_button text="GM Opps/Change location/Z/-7" />
-    <set_gm_button text="GM Opps/Change location/Z/-8" />
-    <set_gm_button text="GM Opps/Change location/Z/-9" />
-    <set_gm_button text="GM Opps/Change location/Z/-10" />
-    <set_gm_button text="GM Opps/Change location/GO!" />
+    <!--Sector Button-->
+    <set_gm_button text="Sector/Change location/X/10" />
+    <set_gm_button text="Sector/Change location/X/9" />
+    <set_gm_button text="Sector/Change location/X/8" />
+    <set_gm_button text="Sector/Change location/X/7" />
+    <set_gm_button text="Sector/Change location/X/6" />
+    <set_gm_button text="Sector/Change location/X/5" />
+    <set_gm_button text="Sector/Change location/X/4" />
+    <set_gm_button text="Sector/Change location/X/3" />
+    <set_gm_button text="Sector/Change location/X/2" />
+    <set_gm_button text="Sector/Change location/X/1" />
+    <set_gm_button text="Sector/Change location/X/0" />
+    <set_gm_button text="Sector/Change location/X/-1" />
+    <set_gm_button text="Sector/Change location/X/-2" />
+    <set_gm_button text="Sector/Change location/X/-3" />
+    <set_gm_button text="Sector/Change location/X/-4" />
+    <set_gm_button text="Sector/Change location/X/-5" />
+    <set_gm_button text="Sector/Change location/X/-6" />
+    <set_gm_button text="Sector/Change location/X/-7" />
+    <set_gm_button text="Sector/Change location/X/-8" />
+    <set_gm_button text="Sector/Change location/X/-9" />
+    <set_gm_button text="Sector/Change location/X/-10" />
+    <set_gm_button text="Sector/Change location/Z/10" />
+    <set_gm_button text="Sector/Change location/Z/9" />
+    <set_gm_button text="Sector/Change location/Z/8" />
+    <set_gm_button text="Sector/Change location/Z/7" />
+    <set_gm_button text="Sector/Change location/Z/6" />
+    <set_gm_button text="Sector/Change location/Z/5" />
+    <set_gm_button text="Sector/Change location/Z/4" />
+    <set_gm_button text="Sector/Change location/Z/3" />
+    <set_gm_button text="Sector/Change location/Z/2" />
+    <set_gm_button text="Sector/Change location/Z/1" />
+    <set_gm_button text="Sector/Change location/Z/0" />
+    <set_gm_button text="Sector/Change location/Z/-1" />
+    <set_gm_button text="Sector/Change location/Z/-2" />
+    <set_gm_button text="Sector/Change location/Z/-3" />
+    <set_gm_button text="Sector/Change location/Z/-4" />
+    <set_gm_button text="Sector/Change location/Z/-5" />
+    <set_gm_button text="Sector/Change location/Z/-6" />
+    <set_gm_button text="Sector/Change location/Z/-7" />
+    <set_gm_button text="Sector/Change location/Z/-8" />
+    <set_gm_button text="Sector/Change location/Z/-9" />
+    <set_gm_button text="Sector/Change location/Z/-10" />
+    <set_gm_button text="Sector/Change location/GO!" />
+    <!--Mission Button-->
     <set_gm_button text="Mission Selection/Tora Tora Tora/Start" />
     <set_gm_button text="Mission Selection/Spring Retribution/Got out/8 or less" />
     <set_gm_button text="Mission Selection/Spring Retribution/Got out/9 or more" />
     <set_gm_button text="Mission Selection/Spring Retribution/Start" />
+    <!--Network Button-->
+    <set_gm_button text="Network/Tickspeed/50" />
+    <set_gm_button text="Network/Tickspeed/100" />
+    <set_gm_button text="Network/Tickspeed/150" />
+    <set_gm_button text="Network/Tickspeed/200" />
+    <set_gm_button text="Network/Tickspeed/250" />
+    <set_gm_button text="Network/Tickspeed/300" />
+    <!---->
     <gm_instructions title="Sector Locking">
 
 			You must unlock the sector in order for the vessels to continue the transition after you lock it.
@@ -272,7 +307,7 @@
 			Use GM selection to define start location when creating vessels
 
 			</gm_instructions>
-    <!-- END GM BUTTON DEFINITIONS -->
+    <gm_instructions title="Network Speed">Net Work Speed is now at 200ms</gm_instructions>
     <!--END Start Block-->
   </start>
   <folder_arme name="Named Ships" id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
@@ -1962,6 +1997,21 @@
     <destroy name="CB-01" />
     <destroy name="CB-02" />
     <destroy name="CB-03" />
+    <destroy name="CT1" />
+    <destroy name="CT2" />
+    <destroy name="CT3" />
+    <destroy name="CT4" />
+    <destroy name="CT5" />
+    <destroy name="CT6" />
+    <destroy name="CT7" />
+    <destroy name="CT8" />
+    <destroy name="CT9" />
+    <destroy name="CT10" />
+    <destroy name="CT11" />
+    <destroy name="CT12" />
+    <destroy name="CT13" />
+    <destroy name="CT14" />
+    <destroy name="CT15" />
     <destroy name="Singularity2" />
     <!-- Flag the creation of a new sector if an event name_arme exists. -->
     <set_variable name="IsDestroy" value="0" />
@@ -2269,8 +2319,8 @@
     <set_variable name="IsDestroy" value="0" />
     <set_variable name="IsCreate" value="1" integer="yes" />
   </event>
-  <folder_arme name="Bad Guys" id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
-  <folder_arme name="Making groups" id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <folder_arme name="Bad Guys" id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" expanded_arme="" />
+  <folder_arme name="Making groups" id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" expanded_arme="" />
   <event name="Make 1 group" id_arme="9e33454e-6377-4056-93f0-78fc53528cb6" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
     <if_variable name="HowManyGroups" comparator="EQUALS" value="1.0" />
     <set_variable name="AmountofBadGuysTeam1" randomIntLow="3" randomIntHigh="6" />
@@ -2287,7 +2337,7 @@
     <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
     <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="ES01" hullID="2000" sideValue="1" fleetnumber="GroupNum1" />
     <!--Ending creation-->
-    <set_variable name="HowManyGroups" value="6.0" integer="yes" />
+    <set_variable name="HowManyGroups" value="0.0" integer="yes" />
   </event>
   <event name="Make 2 group" id_arme="a9812549-e495-43fb-888e-f78ccaca6c33" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
     <if_variable name="HowManyGroups" comparator="EQUALS" value="2.0" />
@@ -2320,7 +2370,7 @@
     <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
     <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="ES02" hullID="2000" sideValue="1" fleetnumber="GroupNum2" />
     <!--Ending creation-->
-    <set_variable name="HowManyGroups" value="6.0" integer="yes" />
+    <set_variable name="HowManyGroups" value="0.0" integer="yes" />
   </event>
   <event name="Make 3 group" id_arme="02522729-1ab8-405d-9208-730bd54f42a6" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
     <if_variable name="HowManyGroups" comparator="EQUALS" value="3.0" />
@@ -2367,7 +2417,7 @@
     <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
     <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="ES03" hullID="2000" sideValue="1" fleetnumber="GroupNum2" />
     <!--Ending creation-->
-    <set_variable name="HowManyGroups" value="6.0" integer="yes" />
+    <set_variable name="HowManyGroups" value="0.0" integer="yes" />
   </event>
   <event name="Make 4 group" id_arme="28834d68-17fd-4c72-abe4-ea04a4b8a18a" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
     <if_variable name="HowManyGroups" comparator="EQUALS" value="4.0" />
@@ -2428,7 +2478,7 @@
     <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
     <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="ES04" hullID="2000" sideValue="1" fleetnumber="GroupNum2" />
     <!--Ending creation-->
-    <set_variable name="HowManyGroups" value="6.0" integer="yes" />
+    <set_variable name="HowManyGroups" value="0.0" integer="yes" />
   </event>
   <event name="Make 5 group" id_arme="2f911748-29fe-4a0b-9673-32273752611b" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
     <if_variable name="HowManyGroups" comparator="EQUALS" value="5.0" />
@@ -2503,7 +2553,7 @@
     <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
     <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="ES05" hullID="2000" sideValue="1" fleetnumber="GroupNum2" />
     <!--Ending creation-->
-    <set_variable name="HowManyGroups" value="6.0" integer="yes" />
+    <set_variable name="HowManyGroups" value="0.0" integer="yes" />
   </event>
   <event name="Make 6 group (transports)" id_arme="2fd10ec3-f382-4890-8584-b759353d583c" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
     <if_variable name="HowManyGroups" comparator="EQUALS" value="6.0" />
@@ -2522,82 +2572,43 @@
     <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
     <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="ES06" hullID="2000" sideValue="1" fleetnumber="GroupNum1" />
     <!--Ending creation-->
-    <set_variable name="HowManyGroups" value="0.0" integer="yes" />
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
   </event>
-  <event name="Make 7 group (capital Ship)" id_arme="c62d631a-c70c-4b6e-a250-ac44852f6e55" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
+  <event name="Make 7 group (Karlien capital Ship)" id_arme="e76fe051-b2aa-47fe-8180-79ab72be0f79" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
     <if_variable name="HowManyGroups" comparator="EQUALS" value="7.0" />
-    <!--Group1-->
-    <set_variable name="AmountofBadGuysTeam1" randomIntLow="1" randomIntHigh="2" />
-    <set_variable name="GroupNum1" value="GroupNum1+1" integer="yes" />
-    <set_fleet_property property="fleetMaxRadius" value="30000.0" fleetIndex="GroupNum1" />
-    <!--Making Lead Ship for Group 1-->
-    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
-    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
-    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
-    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
-    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
-    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
-    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
-    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
-    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="ES01" hullID="2000" sideValue="1" fleetnumber="GroupNum1" />
-    <!--Group2-->
-    <set_variable name="AmountofBadGuysTeam2" randomIntLow="1" randomIntHigh="2" />
-    <set_variable name="GroupNum2" value="GroupNum2+1" integer="yes" />
-    <set_fleet_property property="fleetMaxRadius" value="30000.0" fleetIndex="GroupNum2" />
-    <!--Making Lead Ship for Group 2-->
-    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
-    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
-    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
-    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
-    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
-    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
-    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
-    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
-    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="ES02" hullID="2000" sideValue="1" fleetnumber="GroupNum2" />
-    <!--Group3-->
-    <set_variable name="AmountofBadGuysTeam3" randomIntLow="1" randomIntHigh="2" />
-    <set_variable name="GroupNum3" value="GroupNum2+1" integer="yes" />
-    <set_fleet_property property="fleetMaxRadius" value="30000.0" fleetIndex="GroupNum3" />
-    <!--Making Lead Ship for Group 3-->
-    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
-    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
-    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
-    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
-    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
-    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
-    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
-    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
-    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="ES03" hullID="2000" sideValue="1" fleetnumber="GroupNum2" />
-    <!--Group4-->
-    <set_variable name="AmountofBadGuysTeam4" randomIntLow="1" randomIntHigh="2" />
-    <set_variable name="GroupNum4" value="GroupNum2+1" integer="yes" />
-    <set_fleet_property property="fleetMaxRadius" value="30000.0" fleetIndex="GroupNum4" />
-    <!--Making Lead Ship for Group 4-->
-    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
-    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
-    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
-    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
-    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
-    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
-    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
-    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
-    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="ES04" hullID="2000" sideValue="1" fleetnumber="GroupNum2" />
-    <!--Group5-->
-    <set_variable name="AmountofBadGuysTeam5" randomIntLow="1" randomIntHigh="2" />
-    <set_variable name="GroupNum5" value="GroupNum5+1" integer="yes" />
-    <set_fleet_property property="fleetMaxRadius" value="30000.0" fleetIndex="GroupNum5" />
-    <!--Making Lead Ship for Group 5-->
-    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
-    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
-    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
-    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
-    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
-    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
-    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
-    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
-    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="ES05" hullID="2000" sideValue="1" fleetnumber="GroupNum2" />
+    <!--Group7-->
+    <set_variable name="AmountofBadGuysTeam7" value="1.0" integer="yes" />
+    <set_variable name="GroupNum7" value="GroupNum7+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="30000.0" fleetIndex="GroupNum7" />
     <!--Ending creation-->
-    <set_variable name="HowManyGroups" value="0.0" integer="yes" />
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+  </event>
+  <event name="Make 8 group (Arvonian capital Ship)" id_arme="251656bb-8200-4163-ae2f-35ca64354816" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
+    <if_variable name="HowManyGroups" comparator="EQUALS" value="8.0" />
+    <!--Group8-->
+    <set_variable name="AmountofBadGuysTeam8" value="1.0" integer="yes" />
+    <set_variable name="GroupNum8" value="GroupNum8+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="30000.0" fleetIndex="GroupNum8" />
+    <!--Ending creation-->
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+  </event>
+  <event name="Make 9 group (Torgoth capital Ship)" id_arme="16057483-0fb4-49e8-ab35-0ba5092e8da0" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
+    <if_variable name="HowManyGroups" comparator="EQUALS" value="9.0" />
+    <!--Group8-->
+    <set_variable name="AmountofBadGuysTeam9" value="1.0" integer="yes" />
+    <set_variable name="GroupNum9" value="GroupNum9+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="30000.0" fleetIndex="GroupNum9" />
+    <!--Ending creation-->
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+  </event>
+  <event name="Make 10 group (Skaraan capital Ship)" id_arme="c62d631a-c70c-4b6e-a250-ac44852f6e55" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
+    <if_variable name="HowManyGroups" comparator="EQUALS" value="10.0" />
+    <!--Group8-->
+    <set_variable name="AmountofBadGuysTeam10" value="1.0" integer="yes" />
+    <set_variable name="GroupNum10" value="GroupNum10+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="30000.0" fleetIndex="GroupNum10" />
+    <!--Ending creation-->
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
   </event>
   <folder_arme name="Group1" id_arme="1ca0db55-9b74-4fce-8cf2-c5a0d1fb4287" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
   <event name="Kralien(A)" id_arme="92b31119-154e-4430-a7f8-91a92e92be23" parent_id_arme="1ca0db55-9b74-4fce-8cf2-c5a0d1fb4287">
@@ -3055,9 +3066,277 @@
     <if_variable name="AmountofBadGuysTeam6" comparator="LESS_EQUAL" value="0.0" />
     <destroy name="ES06" />
   </event>
-  <folder_arme name="Missions" id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" />
+  <folder_arme name="Kralien CMD Ship (7)" id_arme="cd7ceb2b-c633-4dae-8bf1-a309f49223ae" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <event name="CMD Ship" id_arme="48ae3017-d4fd-4d23-9f8b-5a7d9637095d" parent_id_arme="cd7ceb2b-c633-4dae-8bf1-a309f49223ae">
+    <if_variable name="AmountofBadGuysTeam7" comparator="GREATER" value="0.0" />
+    <!--Creating Cmd Ship-->
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="0" name="CmndS|CmndShipNum|" hullID="2002" sideValue="1" fleetnumber="GroupNum7" />
+    <set_ship_text name="CmndS|CmndShipNum|" desc="This is a Karlien Command Ship" scan_desc="Very dangerous if taken head on." hailtext="We Will defete you!" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="Cloak" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="ShldVamp" />
+    <set_object_property property="surrenderChance" value="0" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateBack" value="500" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateFront" value="800" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateBack" value="500" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateFront" value="800" name="CmndS|CmndShipNum|" />
+    <!--Creating escort team-->
+    <set_variable name="Badguys7" randomIntLow="2000" randomIntHigh="2001" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent7" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy7" randomIntLow="20" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="W|NumofBadGuy7|" hullID="Badguys7" sideValue="1" fleetnumber="GroupNum7" />
+    <set_relative_position name2="W|NumofBadGuy7|" distance="RandomSpacingEvent7" angle="RandomBarring" name1="CmndS|CmndShipNum|" />
+    <!--Creating escort team-->
+    <set_variable name="Badguys7" randomIntLow="2000" randomIntHigh="2001" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent7" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy7" randomIntLow="20" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="W|NumofBadGuy7|" hullID="Badguys7" sideValue="1" fleetnumber="GroupNum7" />
+    <set_relative_position name2="W|NumofBadGuy7|" distance="RandomSpacingEvent7" angle="RandomBarring" name1="CmndS|CmndShipNum|" />
+    <!--Creating escort team-->
+    <set_variable name="Badguys7" randomIntLow="2000" randomIntHigh="2001" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent7" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy7" randomIntLow="20" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="W|NumofBadGuy7|" hullID="Badguys7" sideValue="1" fleetnumber="GroupNum7" />
+    <set_relative_position name2="W|NumofBadGuy7|" distance="RandomSpacingEvent7" angle="RandomBarring" name1="CmndS|CmndShipNum|" />
+    <!--Creating escort team-->
+    <set_variable name="Badguys7" randomIntLow="2000" randomIntHigh="2001" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent7" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy7" randomIntLow="20" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="W|NumofBadGuy7|" hullID="Badguys7" sideValue="1" fleetnumber="GroupNum7" />
+    <set_relative_position name2="W|NumofBadGuy7|" distance="RandomSpacingEvent7" angle="RandomBarring" name1="CmndS|CmndShipNum|" />
+    <!--Creating escort team-->
+    <set_variable name="Badguys7" randomIntLow="2000" randomIntHigh="2001" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent7" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy7" randomIntLow="20" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="W|NumofBadGuy7|" hullID="Badguys7" sideValue="1" fleetnumber="GroupNum7" />
+    <set_relative_position name2="W|NumofBadGuy7|" distance="RandomSpacingEvent7" angle="RandomBarring" name1="CmndS|CmndShipNum|" />
+    <!--End-->
+    <set_variable name="CmndShipNum" value="CmndShipNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam7" value="AmountofBadGuysTeam7-1" integer="yes" />
+  </event>
+  <folder_arme name="Arvonian CMD Ship (8)" id_arme="cb8c2147-3a24-4c58-a1b4-4c0eaf1cf395" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <event name="CMD Ship" id_arme="99874fa4-3d96-422a-ad98-af453dfeabfe" parent_id_arme="cb8c2147-3a24-4c58-a1b4-4c0eaf1cf395">
+    <if_variable name="AmountofBadGuysTeam8" comparator="GREATER" value="0.0" />
+    <!--Creating Cmd Ship-->
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="0" name="CmndS|CmndShipNum|" hullID="3002" sideValue="1" fleetnumber="GroupNum8" />
+    <set_ship_text name="CmndS|CmndShipNum|" desc="This is a Arvonian Command Ship" scan_desc="Very dangerous if taken head on." hailtext="We Will defete you!" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="Drones" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="AntiMine" />
+    <set_object_property property="surrenderChance" value="0" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateBack" value="500" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateFront" value="500" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateFront" value="500" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateBack" value="500" name="CmndS|CmndShipNum|" />
+    <!--Creating escort team-->
+    <set_variable name="Badguys8" randomIntLow="3001" randomIntHigh="3001" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent8" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy8" randomIntLow="20" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="W|NumofBadGuy8|" hullID="Badguys8" sideValue="1" fleetnumber="GroupNum8" />
+    <set_relative_position name2="W|NumofBadGuy8|" distance="RandomSpacingEvent8" angle="RandomBarring" name1="CmndS|CmndShipNum|" />
+    <!--Creating escort team-->
+    <set_variable name="Badguys8" randomIntLow="3001" randomIntHigh="3001" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent8" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy8" randomIntLow="20" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="W|NumofBadGuy8|" hullID="Badguys8" sideValue="1" fleetnumber="GroupNum8" />
+    <set_relative_position name2="W|NumofBadGuy8|" distance="RandomSpacingEvent8" angle="RandomBarring" name1="CmndS|CmndShipNum|" />
+    <!--End-->
+    <set_variable name="CmndShipNum" value="CmndShipNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam8" value="AmountofBadGuysTeam8-1" integer="yes" />
+  </event>
+  <folder_arme name="Torgoth CMD Ship (9)" id_arme="07b46e0a-ed10-4c52-8114-3c5dd8eacfa6" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <event name="CMD Ship" id_arme="cdeb7481-cc62-4f78-a0a1-0964e7c037df" parent_id_arme="07b46e0a-ed10-4c52-8114-3c5dd8eacfa6">
+    <if_variable name="AmountofBadGuysTeam9" comparator="GREATER" value="0.0" />
+    <!--Creating Cmd Ship-->
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="0" name="CmndS|CmndShipNum|" hullID="4002" sideValue="1" fleetnumber="GroupNum9" />
+    <set_ship_text name="CmndS|CmndShipNum|" desc="This is a Torgoth Command Ship" scan_desc="Very dangerous if taken head on." hailtext="We Will defete you!" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="AntiTorp" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="Tractor" />
+    <set_object_property property="surrenderChance" value="0" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateBack" value="800" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateFront" value="1000" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateBack" value="800" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateFront" value="1000" name="CmndS|CmndShipNum|" />
+    <!--Creating escort team-->
+    <set_variable name="Badguys9" randomIntLow="4000" randomIntHigh="4001" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent9" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy9" randomIntLow="20" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="W|NumofBadGuy9|" hullID="Badguys9" sideValue="1" fleetnumber="GroupNum9" />
+    <set_relative_position name2="W|NumofBadGuy9|" distance="RandomSpacingEvent9" angle="RandomBarring" name1="CmndS|CmndShipNum|" />
+    <!--Creating escort team-->
+    <set_variable name="Badguys9" randomIntLow="4000" randomIntHigh="4001" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent9" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy9" randomIntLow="20" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="W|NumofBadGuy9|" hullID="Badguys9" sideValue="1" fleetnumber="GroupNum9" />
+    <set_relative_position name2="W|NumofBadGuy9|" distance="RandomSpacingEvent9" angle="RandomBarring" name1="CmndS|CmndShipNum|" />
+    <!--End-->
+    <set_variable name="CmndShipNum" value="CmndShipNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam9" value="AmountofBadGuysTeam9-1" integer="yes" />
+  </event>
+  <folder_arme name="Skaraan CMD Ship (10)" id_arme="3140eb49-e58c-44b3-b7f1-362c1443dd33" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <event name="CMD Ship" id_arme="a8ecd8ba-9936-4303-8b84-d3df798b1e10" parent_id_arme="3140eb49-e58c-44b3-b7f1-362c1443dd33">
+    <if_variable name="AmountofBadGuysTeam10" comparator="GREATER" value="0.0" />
+    <!--Creating Cmd Ship-->
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="0" name="CmndS|CmndShipNum|" hullID="5002" sideValue="1" fleetnumber="GroupNum10" />
+    <set_ship_text name="CmndS|CmndShipNum|" desc="This is a Skaraan Command Ship" scan_desc="Very dangerous if taken head on." hailtext="We Will defete you!" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="Stealth" />
+    <set_special name="CmndS|CmndShipNum|" ship="0" captain="4" ability="ShldDrain" />
+    <set_object_property property="surrenderChance" value="0" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateBack" value="1000" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldMaxStateFront" value="1000" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateBack" value="1000" name="CmndS|CmndShipNum|" />
+    <set_object_property property="shieldStateFront" value="1000" name="CmndS|CmndShipNum|" />
+    <!--Creating escort team-->
+    <set_variable name="Badguys10" randomIntLow="5000" randomIntHigh="5001" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent10" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy10" randomIntLow="20" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="W|NumofBadGuy10|" hullID="Badguys10" sideValue="1" fleetnumber="GroupNum10" />
+    <set_relative_position name2="W|NumofBadGuy10|" distance="RandomSpacingEvent10" angle="RandomBarring" name1="CmndS|CmndShipNum|" />
+    <!--Creating escort team-->
+    <set_variable name="Badguys10" randomIntLow="5000" randomIntHigh="5001" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent10" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy10" randomIntLow="20" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="W|NumofBadGuy10|" hullID="Badguys10" sideValue="1" fleetnumber="GroupNum10" />
+    <set_relative_position name2="W|NumofBadGuy10|" distance="RandomSpacingEvent10" angle="RandomBarring" name1="CmndS|CmndShipNum|" />
+    <!--Creating escort team-->
+    <set_variable name="Badguys10" randomIntLow="5000" randomIntHigh="5001" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent10" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy10" randomIntLow="20" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="W|NumofBadGuy10|" hullID="Badguys10" sideValue="1" fleetnumber="GroupNum10" />
+    <set_relative_position name2="W|NumofBadGuy10|" distance="RandomSpacingEvent10" angle="RandomBarring" name1="CmndS|CmndShipNum|" />
+    <!--End-->
+    <set_variable name="CmndShipNum" value="CmndShipNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam10" value="AmountofBadGuysTeam10-1" integer="yes" />
+  </event>
+  <folder_arme name="Missions" id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" expanded_arme="" />
   <folder_arme name="Spring Retribution" id_arme="71e5e92f-1f25-4fc1-af12-0eb9a808aaf2" parent_id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" expanded_arme="" />
-  <folder_arme name="Toratora" id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" parent_id_arme="71e5e92f-1f25-4fc1-af12-0eb9a808aaf2" />
+  <folder_arme name="Toratora" id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" parent_id_arme="71e5e92f-1f25-4fc1-af12-0eb9a808aaf2" expanded_arme="" />
   <event name="Starting game" id_arme="d5741f4f-f0fb-4270-8abf-826baa8ae2a8" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68">
     <if_variable name="MissionSelection" comparator="EQUALS" value="1.0" />
     <if_variable name="x" comparator="EQUALS" value="-2.0" />
@@ -3107,7 +3386,7 @@
     <set_timer name="TillFinshGame" seconds="330" />
     <set_variable name="EndStartup" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Middle" id_arme="2c69df87-081c-4726-a242-965ecb792a2f" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" />
+  <folder_arme name="Middle" id_arme="2c69df87-081c-4726-a242-965ecb792a2f" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" expanded_arme="" />
   <event name="After 5 min timer" id_arme="eb1dd890-e279-47ce-a634-42e6cc858f4a" parent_id_arme="2c69df87-081c-4726-a242-965ecb792a2f">
     <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
     <if_variable name="Start" comparator="EQUALS" value="1.0" />
@@ -3116,7 +3395,7 @@
     <set_variable name="MinY" value="1.0" integer="yes" />
     <set_variable name="MaxX" value="9.0" integer="yes" />
     <set_variable name="MaxY" value="1.0" integer="yes" />
-    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="10" integer="yes" />
     <set_variable name="WhatRace1" value="1.0" integer="yes" />
     <set_variable name="WhatRace2" value="4.0" integer="yes" />
     <set_variable name="WhatRace3" randomIntLow="1" randomIntHigh="4" integer="yes" />
@@ -3142,7 +3421,7 @@
     <set_variable name="WhatRace3" randomIntLow="1" randomIntHigh="4" integer="yes" />
     <set_variable name="WhatRace4" randomIntLow="1" randomIntHigh="4" integer="yes" />
     <set_variable name="WhatRace5" randomIntLow="1" randomIntHigh="4" integer="yes" />
-    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="10" integer="yes" />
     <set_variable name="OutcomingFleet" value="1.0" integer="yes" />
     <set_variable name="wereareyou" value="wereareyou+1" integer="yes" />
     <log text="wereareyou=|wereareyou|  1) Intro 2)Start 3)Middle 4)End" />
@@ -3336,7 +3615,7 @@
     <log text="Ships that got out=|WhoGotOut|  Needed to win=12 CT15" />
     <destroy name="CT15" />
   </event>
-  <folder_arme name="End" id_arme="3d60362e-412d-4ede-bc99-f1c2f3aad193" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" />
+  <folder_arme name="End" id_arme="3d60362e-412d-4ede-bc99-f1c2f3aad193" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" expanded_arme="" />
   <event name="end invasion timer" id_arme="df6ecaf4-594c-459a-8ca0-511c93d45879" parent_id_arme="3d60362e-412d-4ede-bc99-f1c2f3aad193">
     <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
     <if_timer_finished name="TillFinshGame" />
@@ -3449,7 +3728,7 @@
     <set_variable name="MinY" value="1.0" integer="yes" />
     <set_variable name="MaxX" value="9.0" integer="yes" />
     <set_variable name="MaxY" value="1.0" integer="yes" />
-    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="10" integer="yes" />
     <set_variable name="WhatRace1" value="1.0" integer="yes" />
     <set_variable name="WhatRace2" value="4.0" integer="yes" />
     <set_variable name="WhatRace3" randomIntLow="1" randomIntHigh="4" integer="yes" />
@@ -3474,7 +3753,7 @@
     <set_variable name="WhatRace3" randomIntLow="1" randomIntHigh="4" integer="yes" />
     <set_variable name="WhatRace4" randomIntLow="1" randomIntHigh="4" integer="yes" />
     <set_variable name="WhatRace5" randomIntLow="1" randomIntHigh="4" integer="yes" />
-    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="10" integer="yes" />
     <set_timer name="StrikeForceEnter" seconds="299" />
   </event>
   <folder_arme name="End" id_arme="6cd56b20-921e-4d1b-aec5-6215e79b1d70" parent_id_arme="3df9a3be-a756-436c-9bfb-b5f4b8188047" expanded_arme="" />
@@ -3492,7 +3771,7 @@
     <set_variable name="Middle" value="0.0" integer="yes" />
   </event>
   <folder_arme name=" AI Scripts" id_arme="1edf422b-6931-471b-aed0-283e490b10e3" />
-  <folder_arme name="LL-01" id_arme="9e879c9a-d27f-4e03-a5d7-1d326e128450" parent_id_arme="1edf422b-6931-471b-aed0-283e490b10e3" />
+  <folder_arme name="LL-01" id_arme="9e879c9a-d27f-4e03-a5d7-1d326e128450" parent_id_arme="1edf422b-6931-471b-aed0-283e490b10e3" expanded_arme="" />
   <folder_arme name="non vis movement" id_arme="1d44ce6d-6932-4827-a879-af91ee78d68f" parent_id_arme="9e879c9a-d27f-4e03-a5d7-1d326e128450" />
   <folder_arme name="Moving north" id_arme="14855af7-b12a-42e4-98df-bfa41fc024f0" parent_id_arme="1d44ce6d-6932-4827-a879-af91ee78d68f" />
   <event name="move" id_arme="817cb7fc-3a48-4c6b-9135-805aca98e54f" parent_id_arme="14855af7-b12a-42e4-98df-bfa41fc024f0">
@@ -3559,6 +3838,7 @@
     <clear_ai name="LL-01" />
     <add_ai type="POINT_THROTTLE" value1="50000.0" value2="0.0" value3="0.0" value4="1.0" name="LL-01" />
     <add_ai type="AVOID_BLACK_HOLE" value1="5000" name="LL-01" />
+    <set_timer name="LinermovementTick" seconds="120" />
     <set_variable name="Linnervis" value="1.0" integer="yes" />
   </event>
   <event name="Become vis South" id_arme="3ba2e29a-a319-4e4c-a3b9-2d8a046f588c" parent_id_arme="7c58d883-b719-429b-bd7b-7d4080f66a54">
@@ -3571,6 +3851,7 @@
     <clear_ai name="LL-01" />
     <add_ai type="POINT_THROTTLE" value1="50000.0" value2="0.0" value3="100000.0" value4="1.0" name="LL-01" />
     <add_ai type="AVOID_BLACK_HOLE" value1="5000" name="LL-01" />
+    <set_timer name="LinermovementTick" seconds="120" />
     <set_variable name="Linnervis" value="1.0" integer="yes" />
   </event>
   <event name="Become non visX" id_arme="4f8ff353-d8eb-4046-b822-c326653361bb" parent_id_arme="7c58d883-b719-429b-bd7b-7d4080f66a54">
@@ -3580,6 +3861,7 @@
     <set_variable name="Linnervis" value="0.0" integer="yes" />
     <destroy name="LL-01" />
     <set_variable name="LinnervisOnlocation" value="0.0" integer="yes" />
+    <set_timer name="LinermovementTick" seconds="120" />
     <set_variable name="LinnerMessage" value="0.0" integer="yes" />
   </event>
   <event name="Become non visZ" id_arme="98cd1eb8-c877-40a8-9c08-e3d1a5eedca0" parent_id_arme="7c58d883-b719-429b-bd7b-7d4080f66a54">
@@ -3589,6 +3871,7 @@
     <set_variable name="Linnervis" value="0.0" integer="yes" />
     <destroy name="LL-01" />
     <set_variable name="LinnervisOnlocation" value="0.0" integer="yes" />
+    <set_timer name="LinermovementTick" seconds="120" />
     <set_variable name="LinnerMessage" value="0.0" integer="yes" />
   </event>
   <event name="Sector Trans North" id_arme="9cefb68f-59e6-40cf-bf35-e6f200af0b77" parent_id_arme="7c58d883-b719-429b-bd7b-7d4080f66a54">
@@ -3601,6 +3884,7 @@
     <set_variable name="LinnerZ" value="LinnerZ+1" integer="yes" />
     <set_variable name="Linnervis" value="0.0" integer="yes" />
     <destroy name="LL-01" />
+    <set_timer name="LinermovementTick" seconds="120" />
     <set_variable name="LinnerMessage" value="0.0" integer="yes" />
   </event>
   <event name="Sector Trans South" id_arme="347287a1-16d5-4b44-b56f-8bf09aa31277" parent_id_arme="7c58d883-b719-429b-bd7b-7d4080f66a54">
@@ -3613,6 +3897,7 @@
     <set_variable name="LinnerZ" value="LinnerZ-1" integer="yes" />
     <set_variable name="Linnervis" value="0.0" integer="yes" />
     <destroy name="LL-01" />
+    <set_timer name="LinermovementTick" seconds="120" />
     <set_variable name="LinnerMessage" value="0.0" integer="yes" />
   </event>
   <folder_arme name="At location" id_arme="3fa79e55-99fc-4333-9c9c-a233ba7ec4ec" parent_id_arme="9e879c9a-d27f-4e03-a5d7-1d326e128450" />
@@ -3626,6 +3911,7 @@
     <clear_ai name="LL-01" />
     <add_ai type="POINT_THROTTLE" value1="50000.0" value2="0.0" value3="10000.0" value4="1.0" name="LL-01" />
     <add_ai type="AVOID_BLACK_HOLE" value1="5000" name="LL-01" />
+    <set_timer name="LinermovementTick" seconds="120" />
     <set_variable name="LinnervisOnlocation" value="1.0" integer="yes" />
   </event>
   <event name="At station North" id_arme="c9637b4d-b745-43d6-9305-d34161cd461e" parent_id_arme="3fa79e55-99fc-4333-9c9c-a233ba7ec4ec">
@@ -3638,6 +3924,7 @@
     <clear_ai name="LL-01" />
     <add_ai type="POINT_THROTTLE" value1="50000.0" value2="0.0" value3="100000.0" value4="1.0" name="LL-01" />
     <add_ai type="AVOID_BLACK_HOLE" value1="5000" name="LL-01" />
+    <set_timer name="LinermovementTick" seconds="120" />
     <set_variable name="LinnerMovement" value="2.0" integer="yes" />
   </event>
   <event name="Location south" id_arme="5eefa058-d8c8-4dd7-bf57-6ca93bc4e1f0" parent_id_arme="3fa79e55-99fc-4333-9c9c-a233ba7ec4ec">
@@ -3650,6 +3937,7 @@
     <clear_ai name="LL-01" />
     <add_ai type="POINT_THROTTLE" value1="50000.0" value2="0.0" value3="90000.0" value4="1.0" name="LL-01" />
     <add_ai type="AVOID_BLACK_HOLE" value1="5000" name="LL-01" />
+    <set_timer name="LinermovementTick" seconds="120" />
     <set_variable name="LinnervisOnlocation" value="1.0" integer="yes" />
   </event>
   <event name="At station South" id_arme="6998d770-4df8-4fa7-87a8-c927b9fbebc2" parent_id_arme="3fa79e55-99fc-4333-9c9c-a233ba7ec4ec">
@@ -3662,6 +3950,7 @@
     <clear_ai name="LL-01" />
     <add_ai type="POINT_THROTTLE" value1="50000.0" value2="0.0" value3="0.0" value4="1.0" name="LL-01" />
     <add_ai type="AVOID_BLACK_HOLE" value1="5000" name="LL-01" />
+    <set_timer name="LinermovementTick" seconds="120" />
     <set_variable name="LinnerMovement" value="1.0" integer="yes" />
   </event>
   <folder_arme name="Messages from AI" id_arme="ab0ce452-c139-4dd4-b4ac-5544634742de" parent_id_arme="9e879c9a-d27f-4e03-a5d7-1d326e128450" />
@@ -3995,20 +4284,20 @@
     <destroy name="BP-01" />
     <incoming_comms_text from="Boarding party" sideValue="2">We are onboard the enemy ship</incoming_comms_text>
   </event>
-  <folder_arme name="GM Commands" id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
+  <folder_arme name="GM Commands" id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <event name="SectorLocking" id_arme="1dde4798-693d-4316-8cdb-9e9e568693af" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f">
-    <if_gm_button text="Sector/Lock" />
+    <if_gm_button text="Sector/Controle/Lock" />
     <if_variable name="IsSectorLocked" comparator="EQUALS" value="0" />
     <warning_popup_message message="Sector Locked" consoles="MHWESCOF" />
     <set_variable name="IsSectorLocked" value="1" integer="yes" />
   </event>
   <event name="SectorUnLocking" id_arme="1b191d31-1980-44d4-8c88-b8f7611df40e" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f">
-    <if_gm_button text="Sector/Unlock" />
+    <if_gm_button text="Sector/Controle/Unlock" />
     <if_variable name="IsSectorLocked" comparator="EQUALS" value="1" />
     <warning_popup_message message="Sector Unlocked" consoles="MHWESCOF" />
     <set_variable name="IsSectorLocked" value="0" integer="yes" />
   </event>
-  <folder_arme name="Creating bad guys" id_arme="986a044b-a1df-4a33-b522-f1eabf063e13" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
+  <folder_arme name="Creating bad guys" id_arme="986a044b-a1df-4a33-b522-f1eabf063e13" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
   <folder_arme name="Groups" id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b" parent_id_arme="986a044b-a1df-4a33-b522-f1eabf063e13" />
   <event name="Create Group 1" id_arme="fda93248-e8b2-4d1b-9c7c-5de7567c3b5e" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Group Amount/1" />
@@ -4102,7 +4391,7 @@
     <set_variable name="MaxY" value="10.0" integer="yes" />
     <set_variable name="HowManyGroups" value="HowManyGroupsinput" integer="yes" />
   </event>
-  <folder_arme name="Single" id_arme="0711e5bd-b1cd-4a5b-b2ce-ffd0b369e3f0" parent_id_arme="986a044b-a1df-4a33-b522-f1eabf063e13" />
+  <folder_arme name="Single" id_arme="0711e5bd-b1cd-4a5b-b2ce-ffd0b369e3f0" parent_id_arme="986a044b-a1df-4a33-b522-f1eabf063e13" expanded_arme="" />
   <folder_arme name="Kralien" id_arme="9e3c031a-7e2d-40a9-81cb-e3fa85fd457b" parent_id_arme="0711e5bd-b1cd-4a5b-b2ce-ffd0b369e3f0" />
   <event name="Battleship" id_arme="1b8c9b3e-8602-45f4-8ba3-76f19f267a48" parent_id_arme="9e3c031a-7e2d-40a9-81cb-e3fa85fd457b">
     <if_gm_button text="Create/Single Bad Guy/Karlien/Battleship" />
@@ -4211,7 +4500,7 @@
     <set_relative_position name2="V|NumofBadGuy6|" distance="RandomSpacingEvent6" angle="RandomBarring" name1="U|NumofBadGuy6trans|" />
     <!--End-->
   </event>
-  <folder_arme name="Cmnd Ships" id_arme="88924caf-454d-43aa-bfec-2da69d6eddba" parent_id_arme="0711e5bd-b1cd-4a5b-b2ce-ffd0b369e3f0" />
+  <folder_arme name="Cmnd Ships" id_arme="88924caf-454d-43aa-bfec-2da69d6eddba" parent_id_arme="0711e5bd-b1cd-4a5b-b2ce-ffd0b369e3f0" expanded_arme="" />
   <event name="Kralien" id_arme="ce44f04c-bc66-4a31-8a82-67ae659d35b9" parent_id_arme="88924caf-454d-43aa-bfec-2da69d6eddba">
     <if_gm_button text="Create/Single Bad Guy/Cmnd Ship/Karlien" />
     <create type="enemy" use_gm_position="" angle="0" name="CmndS|CmndShipNum|" hullID="2002" sideValue="1" fleetnumber="-1" />
@@ -4311,41 +4600,83 @@
     <if_gm_button text="GM Opps/Level/11" />
     <set_difficulty_level value="11" />
   </event>
-  <folder_arme name="GM Opps" id_arme="a6a650ab-cea2-4276-b6a7-948884347d89" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
-  <event name="delete_selectedship" id_arme="ef436fcb-a3ff-4042-8d1e-d88e6341eab3" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
-    <if_gm_button text="GM Opps/Delete/Selected ship" />
-    <destroy use_gm_selection="yes" />
-  </event>
-  <event name="Delete-non ships near" id_arme="450647ec-5fab-478c-a36d-f7537312bf85" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
-    <if_gm_button text="GM Opps/Delete/non-ships near" />
-    <destroy_near type="asteroids" radius="5000" use_gm_position="yes" />
-    <destroy_near type="nebulas" radius="5000" use_gm_position="yes" />
-    <destroy_near type="mines" radius="5000" use_gm_position="yes" />
-  </event>
+  <folder_arme name="GM Opps" id_arme="a6a650ab-cea2-4276-b6a7-948884347d89" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <event name="Move" id_arme="e66e77a2-3f37-46bc-959b-b2a26ac601ca" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
     <if_gm_button text="GM Opps/Move" />
     <set_to_gm_position use_gm_selection="" distance="0" angle="0" />
-  </event>
-  <event name="Refresh coms screen" id_arme="d80ace36-d3ad-42f0-a7f2-c59ddfeb52a5" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
-    <if_gm_button text="GM Opps/Refresh/Coms" />
-    <clear_comms_button text="Send bording party" sideValue="2" />
-    <set_comms_button text="Send bording party" sideValue="2" />
-  </event>
-  <event name="Enveromet refresh" id_arme="de7d976a-f0dd-49eb-9e43-f761768edf43" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
-    <if_gm_button text="GM Opps/Refresh/Enveroment" />
-    <set_variable name="CreateEnviroment" value="1.0" integer="yes" />
   </event>
   <event name="End Game" id_arme="822d3ee8-6c3e-49be-8754-7f8e5fd9bcc0" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
     <if_gm_button text="GM Opps/End Game/Are You sure" />
     <end_mission />
   </event>
-  <event name="Swap sides good" id_arme="07ee3420-48e1-40e9-87df-77a97072d5c6" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
+  <folder_arme name="Give" id_arme="4c254118-00fe-4e15-82f8-92624220ff11" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89" />
+  <event name="Torps" id_arme="5a0f4dda-c89e-4c54-a49a-3971b7f27487" parent_id_arme="4c254118-00fe-4e15-82f8-92624220ff11">
+    <if_gm_button text="GM Opps/Give/Torps" />
+    <addto_object_property value="5.0" property="countHoming" use_gm_selection="" />
+  </event>
+  <event name="Nukes" id_arme="37015c0d-0655-4618-b91b-0d84c65b5717" parent_id_arme="4c254118-00fe-4e15-82f8-92624220ff11">
+    <if_gm_button text="GM Opps/Give/Nukes" />
+    <addto_object_property value="2.0" property="countNuke" use_gm_selection="" />
+  </event>
+  <event name="p-shock" id_arme="65a8bb01-7220-412e-9800-942cc7622aca" parent_id_arme="4c254118-00fe-4e15-82f8-92624220ff11">
+    <if_gm_button text="GM Opps/Give/PShock" />
+    <addto_object_property value="5.0" property="countPro" use_gm_selection="" />
+  </event>
+  <event name="Mines" id_arme="cafc4f48-a7ab-462a-967d-104c4dc3fb6a" parent_id_arme="4c254118-00fe-4e15-82f8-92624220ff11">
+    <if_gm_button text="GM Opps/Give/Mines" />
+    <addto_object_property value="5.0" property="countMine" use_gm_selection="" />
+  </event>
+  <event name="EMP" id_arme="888edfe1-e311-41d0-be3f-dd75300ed825" parent_id_arme="4c254118-00fe-4e15-82f8-92624220ff11">
+    <if_gm_button text="GM Opps/Give/EMP" />
+    <addto_object_property value="2.0" property="countEMP" use_gm_selection="" />
+  </event>
+  <folder_arme name="Energy" id_arme="2439ac9b-c5c8-49e0-a3e4-4c3d9f3e8df4" parent_id_arme="4c254118-00fe-4e15-82f8-92624220ff11" />
+  <event name="100" id_arme="16ade59b-c1b2-4674-978c-55d9c6a759bd" parent_id_arme="2439ac9b-c5c8-49e0-a3e4-4c3d9f3e8df4">
+    <if_gm_button text="GM Opps/Give/Energy/100" />
+    <addto_object_property value="100.0" property="energy" use_gm_selection="" />
+  </event>
+  <event name="500" id_arme="75dcec62-48ab-4b14-be01-a5882bfd0aec" parent_id_arme="2439ac9b-c5c8-49e0-a3e4-4c3d9f3e8df4">
+    <if_gm_button text="GM Opps/Give/Energy/500" />
+    <addto_object_property value="500.0" property="energy" use_gm_selection="" />
+  </event>
+  <event name="1000" id_arme="509df385-6c10-4529-b5dd-5b59c82d0316" parent_id_arme="2439ac9b-c5c8-49e0-a3e4-4c3d9f3e8df4">
+    <if_gm_button text="GM Opps/Give/Energy/1000" />
+    <addto_object_property value="1000.0" property="energy" use_gm_selection="" />
+  </event>
+  <folder_arme name="Swap" id_arme="1bab09cb-4da9-49b5-85a2-da6977b9af57" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89" />
+  <event name="Swap sides good" id_arme="07ee3420-48e1-40e9-87df-77a97072d5c6" parent_id_arme="1bab09cb-4da9-49b5-85a2-da6977b9af57">
     <if_gm_button text="GM Opps/Swap sides/Good" />
     <set_side_value value="2" use_gm_selection="" />
   </event>
-  <event name="Swap sides bad" id_arme="b8096b01-2e5e-478c-b04d-1cb63c17f1fb" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89">
+  <event name="Swap sides bad" id_arme="b8096b01-2e5e-478c-b04d-1cb63c17f1fb" parent_id_arme="1bab09cb-4da9-49b5-85a2-da6977b9af57">
     <if_gm_button text="GM Opps/Swap sides/Bad" />
     <set_side_value value="1" use_gm_selection="" />
+  </event>
+  <folder_arme name="Delete" id_arme="ad179fab-b2ca-4409-87e7-cd66e7ff55c1" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89" />
+  <event name="delete_selectedship" id_arme="ef436fcb-a3ff-4042-8d1e-d88e6341eab3" parent_id_arme="ad179fab-b2ca-4409-87e7-cd66e7ff55c1">
+    <if_gm_button text="GM Opps/Delete/Selected ship" />
+    <destroy use_gm_selection="yes" />
+  </event>
+  <event name="Delete-non ships near" id_arme="450647ec-5fab-478c-a36d-f7537312bf85" parent_id_arme="ad179fab-b2ca-4409-87e7-cd66e7ff55c1">
+    <if_gm_button text="GM Opps/Delete/non-ships near" />
+    <destroy_near type="asteroids" radius="5000" use_gm_position="yes" />
+    <destroy_near type="nebulas" radius="5000" use_gm_position="yes" />
+    <destroy_near type="mines" radius="5000" use_gm_position="yes" />
+  </event>
+  <folder_arme name="Refresh" id_arme="6dd51f0a-c7a6-40ed-88dc-18212e0c9d40" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89" />
+  <event name="Refresh coms screen" id_arme="d80ace36-d3ad-42f0-a7f2-c59ddfeb52a5" parent_id_arme="6dd51f0a-c7a6-40ed-88dc-18212e0c9d40">
+    <if_gm_button text="GM Opps/Refresh/Coms" />
+    <clear_comms_button text="Send bording party" sideValue="2" />
+    <set_comms_button text="Send bording party" sideValue="2" />
+  </event>
+  <event name="Enveromet refresh" id_arme="de7d976a-f0dd-49eb-9e43-f761768edf43" parent_id_arme="6dd51f0a-c7a6-40ed-88dc-18212e0c9d40">
+    <if_gm_button text="GM Opps/Refresh/Enveroment" />
+    <set_variable name="CreateEnviroment" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="BG will do" id_arme="03bb2f1a-38ef-4ce0-a79e-587f2289a6a3" parent_id_arme="a6a650ab-cea2-4276-b6a7-948884347d89" />
+  <event name="surender" id_arme="16e57909-4761-452d-84e9-e9037b9716cc" parent_id_arme="03bb2f1a-38ef-4ce0-a79e-587f2289a6a3">
+    <if_gm_button text="GM Opps/BG will do/Surender" />
+    <set_object_property property="hasSurrendered" value="1" use_gm_selection="" />
   </event>
   <folder_arme name="Sensor level" id_arme="1dc16059-dd29-4d37-aeda-905c1803b3aa" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <event name="Unlimited" id_arme="c802c4ce-3741-4dfa-b69d-22b698ccdfa4" parent_id_arme="1dc16059-dd29-4d37-aeda-905c1803b3aa">
@@ -4444,176 +4775,176 @@
   <folder_arme name="Locations" id_arme="b5bfa1d0-8fae-43d2-87d1-97874a1a2cb0" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <folder_arme name="X" id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7" parent_id_arme="b5bfa1d0-8fae-43d2-87d1-97874a1a2cb0" />
   <event name="10" id_arme="18133edb-8b82-4ac1-a32d-e22f3facf187" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/10" />
+    <if_gm_button text="Sector/Change location/X/10" />
     <set_variable name="TempX" value="10.0" integer="yes" />
   </event>
   <event name="9" id_arme="b127f89f-e145-4e83-93f9-d71ed9a3fe5d" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/9" />
+    <if_gm_button text="Sector/Change location/X/9" />
     <set_variable name="TempX" value="9.0" integer="yes" />
   </event>
   <event name="8" id_arme="528b9321-ad46-40f3-bade-632d55475c50" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/8" />
+    <if_gm_button text="Sector/Change location/X/8" />
     <set_variable name="TempX" value="8.0" integer="yes" />
   </event>
   <event name="7" id_arme="d876100b-445b-46cf-b4d2-7d295d2b6345" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/7" />
+    <if_gm_button text="Sector/Change location/X/7" />
     <set_variable name="TempX" value="7.0" integer="yes" />
   </event>
   <event name="6" id_arme="567a7b87-2b1d-402e-abf2-c84e67567733" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/6" />
+    <if_gm_button text="Sector/Change location/X/6" />
     <set_variable name="TempX" value="6.0" integer="yes" />
   </event>
   <event name="5" id_arme="255861ce-e0be-4744-884d-baca2aec7719" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/5" />
+    <if_gm_button text="Sector/Change location/X/5" />
     <set_variable name="TempX" value="5.0" integer="yes" />
   </event>
   <event name="4" id_arme="389586d0-0816-487a-ba3a-2d7dec512d19" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/4" />
+    <if_gm_button text="Sector/Change location/X/4" />
     <set_variable name="TempX" value="4.0" integer="yes" />
   </event>
   <event name="3" id_arme="326e0445-ec0a-45e6-9866-67dcfe69c3d8" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/3" />
+    <if_gm_button text="Sector/Change location/X/3" />
     <set_variable name="TempX" value="3.0" integer="yes" />
   </event>
   <event name="2" id_arme="66871798-e642-4f83-a0fe-9a71a97bb554" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/2" />
+    <if_gm_button text="Sector/Change location/X/2" />
     <set_variable name="TempX" value="2.0" integer="yes" />
   </event>
   <event name="1" id_arme="dbfc3618-39ee-4d68-bfbc-cba43e543172" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/1" />
+    <if_gm_button text="Sector/Change location/X/1" />
     <set_variable name="TempX" value="1.0" integer="yes" />
   </event>
   <event name="0" id_arme="861358b5-abba-4be4-8e19-3215b1c8ccf8" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/0" />
+    <if_gm_button text="Sector/Change location/X/0" />
     <set_variable name="TempX" value="0.0" integer="yes" />
   </event>
   <event name="-1" id_arme="7c3f39e8-f406-469c-90e9-45cac0e1bfd0" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/-1" />
+    <if_gm_button text="Sector/Change location/X/-1" />
     <set_variable name="TempX" value="-1.0" integer="yes" />
   </event>
   <event name="-2" id_arme="8b7e832f-85b6-484a-b46b-768e4f620e0c" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/-2" />
+    <if_gm_button text="Sector/Change location/X/-2" />
     <set_variable name="TempX" value="-2.0" integer="yes" />
   </event>
   <event name="-3" id_arme="834b27f9-e935-4da8-8924-eacb6b0b5c4c" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/-3" />
+    <if_gm_button text="Sector/Change location/X/-3" />
     <set_variable name="TempX" value="-3.0" integer="yes" />
   </event>
   <event name="-4" id_arme="a5fdb0ee-272f-4b6b-a5a9-1b8800ee6ec2" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/-4" />
+    <if_gm_button text="Sector/Change location/X/-4" />
     <set_variable name="TempX" value="-4.0" integer="yes" />
   </event>
   <event name="-5" id_arme="66762716-3009-4fac-81c0-5775d2b2079c" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/-5" />
+    <if_gm_button text="Sector/Change location/X/-5" />
     <set_variable name="TempX" value="-5.0" integer="yes" />
   </event>
   <event name="-6" id_arme="632ba7df-7f90-44d7-bd15-0a8e3e714e61" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/-6" />
+    <if_gm_button text="Sector/Change location/X/-6" />
     <set_variable name="TempX" value="-6.0" integer="yes" />
   </event>
   <event name="-7" id_arme="4e88c5da-382d-48e1-b9d1-ad40593cf59f" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/-7" />
+    <if_gm_button text="Sector/Change location/X/-7" />
     <set_variable name="TempX" value="-7.0" integer="yes" />
   </event>
   <event name="-8" id_arme="6e4fdf5d-e9e8-4abb-ba10-f1412710257c" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/-8" />
+    <if_gm_button text="Sector/Change location/X/-8" />
     <set_variable name="TempX" value="-8.0" integer="yes" />
   </event>
   <event name="-9" id_arme="765fe4e4-2f32-4e21-82ba-06536b9c7e14" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/-9" />
+    <if_gm_button text="Sector/Change location/X/-9" />
     <set_variable name="TempX" value="-9.0" integer="yes" />
   </event>
   <event name="-10" id_arme="c8757aff-14cc-48b1-ad46-1f4920e5e824" parent_id_arme="e614428a-54c2-4d9c-9436-3d536a3a5ee7">
-    <if_gm_button text="GM Opps/Change location/X/-10" />
+    <if_gm_button text="Sector/Change location/X/-10" />
     <set_variable name="TempX" value="-10.0" integer="yes" />
   </event>
   <folder_arme name="Z" id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63" parent_id_arme="b5bfa1d0-8fae-43d2-87d1-97874a1a2cb0" />
   <event name="10" id_arme="48df3482-56c0-48a3-83cd-93e47af9e91b" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/10" />
+    <if_gm_button text="Sector/Change location/Z/10" />
     <set_variable name="TempZ" value="10.0" integer="yes" />
   </event>
   <event name="9" id_arme="0b22b07e-e72e-4d51-86b5-7ab1ce14e792" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/9" />
+    <if_gm_button text="Sector/Change location/Z/9" />
     <set_variable name="TempZ" value="9.0" integer="yes" />
   </event>
   <event name="8" id_arme="c502af89-1e6f-4b92-a58e-23d119298795" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/8" />
+    <if_gm_button text="Sector/Change location/Z/8" />
     <set_variable name="TempZ" value="8.0" integer="yes" />
   </event>
   <event name="7" id_arme="cd628623-c782-4e26-9d56-59473af80908" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/7" />
+    <if_gm_button text="Sector/Change location/Z/7" />
     <set_variable name="TempZ" value="7.0" integer="yes" />
   </event>
   <event name="6" id_arme="e4ca05cb-d2fe-4385-812e-283ab5bcc73b" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/6" />
+    <if_gm_button text="Sector/Change location/Z/6" />
     <set_variable name="TempZ" value="6.0" integer="yes" />
   </event>
   <event name="5" id_arme="c901c74a-c1d1-46ee-9a65-310fbfe77642" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/5" />
+    <if_gm_button text="Sector/Change location/Z/5" />
     <set_variable name="TempZ" value="5.0" integer="yes" />
   </event>
   <event name="4" id_arme="513ea4ad-38f3-4a55-87e8-22486c236477" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/4" />
+    <if_gm_button text="Sector/Change location/Z/4" />
     <set_variable name="TempZ" value="4.0" integer="yes" />
   </event>
   <event name="3" id_arme="070178be-0b79-4d20-b5a4-bdb54683f5d3" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/3" />
+    <if_gm_button text="Sector/Change location/Z/3" />
     <set_variable name="TempZ" value="3.0" integer="yes" />
   </event>
   <event name="2" id_arme="b89c6d63-7ba0-4f9c-a2ca-2bbc982df3ef" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/2" />
+    <if_gm_button text="Sector/Change location/Z/2" />
     <set_variable name="TempZ" value="2.0" integer="yes" />
   </event>
   <event name="1" id_arme="009ec309-f2a8-43bb-a846-8446e0a67542" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/1" />
+    <if_gm_button text="Sector/Change location/Z/1" />
     <set_variable name="TempZ" value="1.0" integer="yes" />
   </event>
   <event name="0" id_arme="0ef901f5-de57-4b2b-bc97-d788c3f17ed8" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/0" />
+    <if_gm_button text="Sector/Change location/Z/0" />
     <set_variable name="TempZ" value="0.0" integer="yes" />
   </event>
   <event name="-1" id_arme="39ab4621-c040-481b-a55d-e975bf4043cd" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/-1" />
+    <if_gm_button text="Sector/Change location/Z/-1" />
     <set_variable name="TempZ" value="-1.0" integer="yes" />
   </event>
   <event name="-2" id_arme="e106d747-8467-43ad-8aa9-4850d6f4dba4" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/-2" />
+    <if_gm_button text="Sector/Change location/Z/-2" />
     <set_variable name="TempZ" value="-2.0" integer="yes" />
   </event>
   <event name="-3" id_arme="fdc5ec98-aa37-4635-8041-b8b98d682d1f" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/-3" />
+    <if_gm_button text="Sector/Change location/Z/-3" />
     <set_variable name="TempZ" value="-3.0" integer="yes" />
   </event>
   <event name="-4" id_arme="4abf1e19-d2ca-4bc0-bea5-bf3bd1e3fa0f" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/-4" />
+    <if_gm_button text="Sector/Change location/Z/-4" />
     <set_variable name="TempZ" value="-4.0" integer="yes" />
   </event>
   <event name="-5" id_arme="9a5c8e22-664e-42f8-a344-2ad467cac1b5" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/-5" />
+    <if_gm_button text="Sector/Change location/Z/-5" />
     <set_variable name="TempZ" value="-5.0" integer="yes" />
   </event>
   <event name="-6" id_arme="81158b4f-c9a0-4404-aed4-21f55f4988b9" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/-6" />
+    <if_gm_button text="Sector/Change location/Z/-6" />
     <set_variable name="TempZ" value="-6.0" integer="yes" />
   </event>
   <event name="-7" id_arme="48e55bb1-3b35-4c85-bd21-ee03ab2a4c26" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/-7" />
+    <if_gm_button text="Sector/Change location/Z/-7" />
     <set_variable name="TempZ" value="-7.0" integer="yes" />
   </event>
   <event name="-8" id_arme="09d9310d-559c-4ad6-b1b3-d8165e67536b" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/-8" />
+    <if_gm_button text="Sector/Change location/Z/-8" />
     <set_variable name="TempZ" value="-8.0" integer="yes" />
   </event>
   <event name="-9" id_arme="bb966f9d-b7c0-4817-8313-63d4785c039f" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/-9" />
+    <if_gm_button text="Sector/Change location/Z/-9" />
     <set_variable name="TempZ" value="-9.0" integer="yes" />
   </event>
   <event name="-10" id_arme="e8f66b62-7222-4f73-b67a-c7084838b2d4" parent_id_arme="2ff58bd4-d9bc-414e-8b29-3011d2dd2f63">
-    <if_gm_button text="GM Opps/Change location/Z/-10" />
+    <if_gm_button text="Sector/Change location/Z/-10" />
     <set_variable name="TempZ" value="-10.0" integer="yes" />
   </event>
   <event name="go to" id_arme="f73e6c92-21d2-4407-98b0-ceb4a2443499" parent_id_arme="b5bfa1d0-8fae-43d2-87d1-97874a1a2cb0">
-    <if_gm_button text="GM Opps/Change location/GO!" />
+    <if_gm_button text="Sector/Change location/GO!" />
     <set_variable name="IsDestroy" value="1" />
     <set_variable name="IsKill" value="1.0" integer="yes" />
     <set_variable name="destroy_x" value="x" />
@@ -4640,6 +4971,251 @@
     <set_variable name="Movedover8" value="1.0" integer="yes" />
     <!---->
   </event>
+  <folder_arme name="Locations" id_arme="8d5ba819-7fdc-4b82-a961-573c88ebdaae" parent_id_arme="b5bfa1d0-8fae-43d2-87d1-97874a1a2cb0" />
+  <folder_arme name="ShoShuShen" id_arme="b8f4c7a5-26c5-4c7a-a31f-197720e61dc9" parent_id_arme="8d5ba819-7fdc-4b82-a961-573c88ebdaae" />
+  <event name="ShoShuShen" id_arme="39c8c375-8529-4cc2-84ea-7211ccab38d5" parent_id_arme="b8f4c7a5-26c5-4c7a-a31f-197720e61dc9">
+    <if_gm_button text="Sector/GO TO/ShoShuShen" />
+    <set_variable name="IsDestroy" value="1" />
+    <set_variable name="IsKill" value="1.0" integer="yes" />
+    <set_variable name="destroy_x" value="x" />
+    <set_variable name="destroy_z" value="z" />
+    <!-- Initiate the destroy pattern by setting the flag and recording the current sector position -->
+    <set_variable name="x" value="0.0" integer="yes" />
+    <set_variable name="z" value="0.0" integer="yes" />
+    <!-- This records the next sector, once the destroy pattern finishes, the create pattern will start using the new coordinates. -->
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0.0" centerZ="50000" />
+    <destroy_near type="all" radius="100000" centerX="0.0" centerY="0.0" centerZ="0.0" />
+    <destroy_near type="all" radius="100000" centerX="0.0" centerY="0.0" centerZ="100000.0" />
+    <destroy_near type="all" radius="100000" centerX="100000.0" centerY="0.0" centerZ="100000.0" />
+    <destroy_near type="all" radius="100000" centerX="100000.0" centerY="0.0" centerZ="0.0" />
+    <!-- Comms gets a message for current sector location -->
+    <incoming_comms_text from="DSTAN AND ONBOARD NAV">Current position (|x|, |z|)</incoming_comms_text>
+    <!--Extra-->
+    <set_variable name="Movedover1" value="1.0" integer="yes" />
+    <set_variable name="Movedover2" value="1.0" integer="yes" />
+    <set_variable name="Movedover3" value="1.0" integer="yes" />
+    <set_variable name="Movedover4" value="1.0" integer="yes" />
+    <set_variable name="Movedover5" value="1.0" integer="yes" />
+    <set_variable name="Movedover6" value="1.0" integer="yes" />
+    <set_variable name="Movedover7" value="1.0" integer="yes" />
+    <set_variable name="Movedover8" value="1.0" integer="yes" />
+    <!---->
+    <set_variable name="QuickRun1" value="1.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="run script" id_arme="51d59a34-b297-45fb-9cf8-e79654be0773" parent_id_arme="b8f4c7a5-26c5-4c7a-a31f-197720e61dc9">
+    <if_variable name="QuickRun1" comparator="EQUALS" value="1.0" />
+    <if_variable name="x" comparator="EQUALS" value="0" />
+    <if_variable name="z" comparator="EQUALS" value="0" />
+    <if_variable name="IsCreate" comparator="EQUALS" value="0.0" />
+    <set_comms_button text="Send bording party" sideValue="2" />
+    <warning_popup_message message="Systems are now online" consoles="MHWESCOF" />
+    <set_variable name="DisableLoop" value="0.0" integer="yes" />
+    <set_object_property property="energy" value="1000" name="PVTR Jimi-Saru" />
+    <set_object_property property="energy" value="1000" name="PVTR Fulminatae" />
+    <set_object_property property="energy" value="1000" name="PVTR Apocalypse" />
+    <set_object_property property="energy" value="1000" name="TSN Academia" />
+    <set_object_property property="energy" value="1000" name="Ship 5" />
+    <set_object_property property="energy" value="1000" name="Ship 6" />
+    <set_object_property property="energy" value="1000" name="Ship 7" />
+    <set_object_property property="energy" value="1000" name="Ship 8" />
+    <set_variable name="IsSectorLocked" value="0.0" integer="yes" />
+    <!---->
+    <set_relative_position name2="PVTR Jimi-Saru" distance="100" angle="0" name1="ShoShuShen" />
+    <set_relative_position name2="PVTR Fulminatae" distance="100" angle="45" name1="ShoShuShen" />
+    <set_relative_position name2="PVTR Apocalypse" distance="100" angle="90" name1="ShoShuShen" />
+    <set_relative_position name2="TSN Academia" distance="100" angle="135" name1="ShoShuShen" />
+    <set_relative_position name2="Ship 5" distance="100" angle="180" name1="ShoShuShen" />
+    <set_relative_position name2="Ship 6" distance="100" angle="225" name1="ShoShuShen" />
+    <set_relative_position name2="Ship 7" distance="100" angle="270" name1="ShoShuShen" />
+    <set_relative_position name2="Ship 8" distance="100" angle="315" name1="ShoShuShen" />
+    <!---->
+    <set_variable name="QuickRun1" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <folder_arme name="Scince Base" id_arme="2e0fb61c-7ef0-47d2-be55-a6e8ec3fef24" parent_id_arme="8d5ba819-7fdc-4b82-a961-573c88ebdaae" />
+  <event name="Scince Base" id_arme="5d703cf0-272e-4aa3-af67-95ce41b30850" parent_id_arme="2e0fb61c-7ef0-47d2-be55-a6e8ec3fef24">
+    <if_gm_button text="Sector/GO TO/Science Base" />
+    <set_variable name="IsDestroy" value="1" />
+    <set_variable name="IsKill" value="1.0" integer="yes" />
+    <set_variable name="destroy_x" value="x" />
+    <set_variable name="destroy_z" value="z" />
+    <!-- Initiate the destroy pattern by setting the flag and recording the current sector position -->
+    <set_variable name="x" value="2.0" integer="yes" />
+    <set_variable name="z" value="2.0" integer="yes" />
+    <!-- This records the next sector, once the destroy pattern finishes, the create pattern will start using the new coordinates. -->
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0.0" centerZ="50000" />
+    <destroy_near type="all" radius="100000" centerX="0.0" centerY="0.0" centerZ="0.0" />
+    <destroy_near type="all" radius="100000" centerX="0.0" centerY="0.0" centerZ="100000.0" />
+    <destroy_near type="all" radius="100000" centerX="100000.0" centerY="0.0" centerZ="100000.0" />
+    <destroy_near type="all" radius="100000" centerX="100000.0" centerY="0.0" centerZ="0.0" />
+    <!-- Comms gets a message for current sector location -->
+    <incoming_comms_text from="DSTAN AND ONBOARD NAV">Current position (|x|, |z|)</incoming_comms_text>
+    <!--Extra-->
+    <set_variable name="Movedover1" value="1.0" integer="yes" />
+    <set_variable name="Movedover2" value="1.0" integer="yes" />
+    <set_variable name="Movedover3" value="1.0" integer="yes" />
+    <set_variable name="Movedover4" value="1.0" integer="yes" />
+    <set_variable name="Movedover5" value="1.0" integer="yes" />
+    <set_variable name="Movedover6" value="1.0" integer="yes" />
+    <set_variable name="Movedover7" value="1.0" integer="yes" />
+    <set_variable name="Movedover8" value="1.0" integer="yes" />
+    <!---->
+    <set_variable name="QuickRun1" value="1.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="run script" id_arme="3be2c7ff-bcad-4ca5-be3e-52859197eca3" parent_id_arme="2e0fb61c-7ef0-47d2-be55-a6e8ec3fef24">
+    <if_variable name="QuickRun1" comparator="EQUALS" value="1.0" />
+    <if_variable name="x" comparator="EQUALS" value="2.0" />
+    <if_variable name="z" comparator="EQUALS" value="2.0" />
+    <if_variable name="IsCreate" comparator="EQUALS" value="0.0" />
+    <set_comms_button text="Send bording party" sideValue="2" />
+    <warning_popup_message message="Systems are now online" consoles="MHWESCOF" />
+    <set_variable name="DisableLoop" value="0.0" integer="yes" />
+    <set_object_property property="energy" value="1000" name="PVTR Jimi-Saru" />
+    <set_object_property property="energy" value="1000" name="PVTR Fulminatae" />
+    <set_object_property property="energy" value="1000" name="PVTR Apocalypse" />
+    <set_object_property property="energy" value="1000" name="TSN Academia" />
+    <set_object_property property="energy" value="1000" name="Ship 5" />
+    <set_object_property property="energy" value="1000" name="Ship 6" />
+    <set_object_property property="energy" value="1000" name="Ship 7" />
+    <set_object_property property="energy" value="1000" name="Ship 8" />
+    <set_variable name="IsSectorLocked" value="0.0" integer="yes" />
+    <!---->
+    <set_relative_position name2="PVTR Jimi-Saru" distance="100" angle="0" name1="SB-01" />
+    <set_relative_position name2="PVTR Fulminatae" distance="100" angle="45" name1="SB-01" />
+    <set_relative_position name2="PVTR Apocalypse" distance="100" angle="90" name1="SB-01" />
+    <set_relative_position name2="TSN Academia" distance="100" angle="135" name1="SB-01" />
+    <set_relative_position name2="Ship 5" distance="100" angle="180" name1="SB-01" />
+    <set_relative_position name2="Ship 6" distance="100" angle="225" name1="SB-01" />
+    <set_relative_position name2="Ship 7" distance="100" angle="270" name1="SB-01" />
+    <set_relative_position name2="Ship 8" distance="100" angle="315" name1="SB-01" />
+    <!---->
+    <set_variable name="QuickRun1" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <folder_arme name="Indestral Base" id_arme="9bc2ac10-e694-4972-abcb-4f100ed0ef7c" parent_id_arme="8d5ba819-7fdc-4b82-a961-573c88ebdaae" />
+  <event name="Indestral Base" id_arme="2bc336cf-aa7e-4053-ad84-575c1874a13f" parent_id_arme="9bc2ac10-e694-4972-abcb-4f100ed0ef7c">
+    <if_gm_button text="Sector/GO TO/Indestral Base" />
+    <set_variable name="IsDestroy" value="1" />
+    <set_variable name="IsKill" value="1.0" integer="yes" />
+    <set_variable name="destroy_x" value="x" />
+    <set_variable name="destroy_z" value="z" />
+    <!-- Initiate the destroy pattern by setting the flag and recording the current sector position -->
+    <set_variable name="x" value="-2.0" integer="yes" />
+    <set_variable name="z" value="2.0" integer="yes" />
+    <!-- This records the next sector, once the destroy pattern finishes, the create pattern will start using the new coordinates. -->
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0.0" centerZ="50000" />
+    <destroy_near type="all" radius="100000" centerX="0.0" centerY="0.0" centerZ="0.0" />
+    <destroy_near type="all" radius="100000" centerX="0.0" centerY="0.0" centerZ="100000.0" />
+    <destroy_near type="all" radius="100000" centerX="100000.0" centerY="0.0" centerZ="100000.0" />
+    <destroy_near type="all" radius="100000" centerX="100000.0" centerY="0.0" centerZ="0.0" />
+    <!-- Comms gets a message for current sector location -->
+    <incoming_comms_text from="DSTAN AND ONBOARD NAV">Current position (|x|, |z|)</incoming_comms_text>
+    <!--Extra-->
+    <set_variable name="Movedover1" value="1.0" integer="yes" />
+    <set_variable name="Movedover2" value="1.0" integer="yes" />
+    <set_variable name="Movedover3" value="1.0" integer="yes" />
+    <set_variable name="Movedover4" value="1.0" integer="yes" />
+    <set_variable name="Movedover5" value="1.0" integer="yes" />
+    <set_variable name="Movedover6" value="1.0" integer="yes" />
+    <set_variable name="Movedover7" value="1.0" integer="yes" />
+    <set_variable name="Movedover8" value="1.0" integer="yes" />
+    <!---->
+    <set_variable name="QuickRun1" value="1.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="run script" id_arme="4b9722c1-d805-4d6f-b1f1-67320feb7498" parent_id_arme="9bc2ac10-e694-4972-abcb-4f100ed0ef7c">
+    <if_variable name="QuickRun1" comparator="EQUALS" value="1.0" />
+    <if_variable name="x" comparator="EQUALS" value="-2.0" />
+    <if_variable name="z" comparator="EQUALS" value="2.0" />
+    <if_variable name="IsCreate" comparator="EQUALS" value="0.0" />
+    <set_comms_button text="Send bording party" sideValue="2" />
+    <warning_popup_message message="Systems are now online" consoles="MHWESCOF" />
+    <set_variable name="DisableLoop" value="0.0" integer="yes" />
+    <set_object_property property="energy" value="1000" name="PVTR Jimi-Saru" />
+    <set_object_property property="energy" value="1000" name="PVTR Fulminatae" />
+    <set_object_property property="energy" value="1000" name="PVTR Apocalypse" />
+    <set_object_property property="energy" value="1000" name="TSN Academia" />
+    <set_object_property property="energy" value="1000" name="Ship 5" />
+    <set_object_property property="energy" value="1000" name="Ship 6" />
+    <set_object_property property="energy" value="1000" name="Ship 7" />
+    <set_object_property property="energy" value="1000" name="Ship 8" />
+    <set_variable name="IsSectorLocked" value="0.0" integer="yes" />
+    <!---->
+    <set_relative_position name2="PVTR Jimi-Saru" distance="100" angle="0" name1="IB-01" />
+    <set_relative_position name2="PVTR Fulminatae" distance="100" angle="45" name1="IB-01" />
+    <set_relative_position name2="PVTR Apocalypse" distance="100" angle="90" name1="IB-01" />
+    <set_relative_position name2="TSN Academia" distance="100" angle="135" name1="IB-01" />
+    <set_relative_position name2="Ship 5" distance="100" angle="180" name1="IB-01" />
+    <set_relative_position name2="Ship 6" distance="100" angle="225" name1="IB-01" />
+    <set_relative_position name2="Ship 7" distance="100" angle="270" name1="IB-01" />
+    <set_relative_position name2="Ship 8" distance="100" angle="315" name1="IB-01" />
+    <!---->
+    <set_variable name="QuickRun1" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <folder_arme name="Mining Colony" id_arme="85cd6e6a-567b-438f-ae84-174b58801d1b" parent_id_arme="8d5ba819-7fdc-4b82-a961-573c88ebdaae" />
+  <event name="Mining colony" id_arme="b5b2ac31-ff99-4db9-9942-14c1ff7343dc" parent_id_arme="85cd6e6a-567b-438f-ae84-174b58801d1b">
+    <if_gm_button text="Sector/GO TO/Mining colony" />
+    <set_variable name="IsDestroy" value="1" />
+    <set_variable name="IsKill" value="1.0" integer="yes" />
+    <set_variable name="destroy_x" value="x" />
+    <set_variable name="destroy_z" value="z" />
+    <!-- Initiate the destroy pattern by setting the flag and recording the current sector position -->
+    <set_variable name="x" value="-2.0" integer="yes" />
+    <set_variable name="z" value="3.0" integer="yes" />
+    <!-- This records the next sector, once the destroy pattern finishes, the create pattern will start using the new coordinates. -->
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0.0" centerZ="50000" />
+    <destroy_near type="all" radius="100000" centerX="0.0" centerY="0.0" centerZ="0.0" />
+    <destroy_near type="all" radius="100000" centerX="0.0" centerY="0.0" centerZ="100000.0" />
+    <destroy_near type="all" radius="100000" centerX="100000.0" centerY="0.0" centerZ="100000.0" />
+    <destroy_near type="all" radius="100000" centerX="100000.0" centerY="0.0" centerZ="0.0" />
+    <!-- Comms gets a message for current sector location -->
+    <incoming_comms_text from="DSTAN AND ONBOARD NAV">Current position (|x|, |z|)</incoming_comms_text>
+    <!--Extra-->
+    <set_variable name="Movedover1" value="1.0" integer="yes" />
+    <set_variable name="Movedover2" value="1.0" integer="yes" />
+    <set_variable name="Movedover3" value="1.0" integer="yes" />
+    <set_variable name="Movedover4" value="1.0" integer="yes" />
+    <set_variable name="Movedover5" value="1.0" integer="yes" />
+    <set_variable name="Movedover6" value="1.0" integer="yes" />
+    <set_variable name="Movedover7" value="1.0" integer="yes" />
+    <set_variable name="Movedover8" value="1.0" integer="yes" />
+    <!---->
+    <set_variable name="QuickRun1" value="1.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="run script" id_arme="38e2a1a2-6b10-4eee-b561-3b9f1e2b6ad3" parent_id_arme="85cd6e6a-567b-438f-ae84-174b58801d1b">
+    <if_variable name="QuickRun1" comparator="EQUALS" value="1.0" />
+    <if_variable name="x" comparator="EQUALS" value="-2.0" />
+    <if_variable name="z" comparator="EQUALS" value="3.0" />
+    <if_variable name="IsCreate" comparator="EQUALS" value="0.0" />
+    <set_comms_button text="Send bording party" sideValue="2" />
+    <warning_popup_message message="Systems are now online" consoles="MHWESCOF" />
+    <set_variable name="DisableLoop" value="0.0" integer="yes" />
+    <set_object_property property="energy" value="1000" name="PVTR Jimi-Saru" />
+    <set_object_property property="energy" value="1000" name="PVTR Fulminatae" />
+    <set_object_property property="energy" value="1000" name="PVTR Apocalypse" />
+    <set_object_property property="energy" value="1000" name="TSN Academia" />
+    <set_object_property property="energy" value="1000" name="Ship 5" />
+    <set_object_property property="energy" value="1000" name="Ship 6" />
+    <set_object_property property="energy" value="1000" name="Ship 7" />
+    <set_object_property property="energy" value="1000" name="Ship 8" />
+    <set_variable name="IsSectorLocked" value="0.0" integer="yes" />
+    <!---->
+    <set_relative_position name2="PVTR Jimi-Saru" distance="100" angle="0" name1="CB-01" />
+    <set_relative_position name2="PVTR Fulminatae" distance="100" angle="45" name1="CB-01" />
+    <set_relative_position name2="PVTR Apocalypse" distance="100" angle="90" name1="CB-01" />
+    <set_relative_position name2="TSN Academia" distance="100" angle="135" name1="CB-01" />
+    <set_relative_position name2="Ship 5" distance="100" angle="180" name1="CB-01" />
+    <set_relative_position name2="Ship 6" distance="100" angle="225" name1="CB-01" />
+    <set_relative_position name2="Ship 7" distance="100" angle="270" name1="CB-01" />
+    <set_relative_position name2="Ship 8" distance="100" angle="315" name1="CB-01" />
+    <!---->
+    <set_variable name="QuickRun1" value="0.0" integer="yes" />
+    <!---->
+  </event>
   <folder_arme name="Mission selection" id_arme="e0740ab4-52b4-4748-a527-6874ba9c724a" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" />
   <event name="Tora Tora Tora" id_arme="32602c77-8800-4959-be93-b54040978909" parent_id_arme="e0740ab4-52b4-4748-a527-6874ba9c724a">
     <if_gm_button text="Mission Selection/Tora Tora Tora/Start" />
@@ -4657,5 +5233,36 @@
   <event name="start game" id_arme="19193185-c4df-472b-928b-f8be39dff539" parent_id_arme="45a8e2e4-6b96-40b6-9d37-ae2ad37d28d5">
     <if_gm_button text="Mission Selection/Spring Retribution/Start" />
     <set_variable name="MissionSelection" value="2.0" integer="yes" />
+  </event>
+  <folder_arme name="Network Speed" id_arme="4da6f22c-bc74-4fbe-86c3-65e5b02ecb75" parent_id_arme="19d90dc4-cd5d-4c4e-98d3-67338741ee6f" expanded_arme="" />
+  <event name="50" id_arme="9fcfdfe7-dec2-43b8-95fc-49e212a258e3" parent_id_arme="4da6f22c-bc74-4fbe-86c3-65e5b02ecb75">
+    <if_gm_button text="Network/Tickspeed/50" />
+    <set_object_property property="networkTickSpeed" value="50.0" />
+    <gm_instructions title="Network Speed">Net Work Speed is now at 50ms</gm_instructions>
+  </event>
+  <event name="100" id_arme="d21637fd-11a0-407f-be5d-29457e269fa7" parent_id_arme="4da6f22c-bc74-4fbe-86c3-65e5b02ecb75">
+    <if_gm_button text="Network/Tickspeed/100" />
+    <set_object_property property="networkTickSpeed" value="100.0" />
+    <gm_instructions title="Network Speed">Net Work Speed is now at 100ms</gm_instructions>
+  </event>
+  <event name="150" id_arme="06dff818-853a-466b-8e6f-9e0b6ccfe713" parent_id_arme="4da6f22c-bc74-4fbe-86c3-65e5b02ecb75">
+    <if_gm_button text="Network/Tickspeed/150" />
+    <set_object_property property="networkTickSpeed" value="150.0" />
+    <gm_instructions title="Network Speed">Net Work Speed is now at 150ms</gm_instructions>
+  </event>
+  <event name="200" id_arme="afc81864-a142-4454-bc4b-8992c7c3984a" parent_id_arme="4da6f22c-bc74-4fbe-86c3-65e5b02ecb75">
+    <if_gm_button text="Network/Tickspeed/200" />
+    <set_object_property property="networkTickSpeed" value="200.0" />
+    <gm_instructions title="Network Speed">Net Work Speed is now at 200ms</gm_instructions>
+  </event>
+  <event name="250" id_arme="7ab505d4-e991-4492-8697-2e1495db355f" parent_id_arme="4da6f22c-bc74-4fbe-86c3-65e5b02ecb75">
+    <if_gm_button text="Network/Tickspeed/250" />
+    <set_object_property property="networkTickSpeed" value="250.0" />
+    <gm_instructions title="Network Speed">Net Work Speed is now at 250ms</gm_instructions>
+  </event>
+  <event name="300" id_arme="7f7b89ec-0cfd-40de-a40a-9a84a45ba58e" parent_id_arme="4da6f22c-bc74-4fbe-86c3-65e5b02ecb75">
+    <if_gm_button text="Network/Tickspeed/300" />
+    <set_object_property property="networkTickSpeed" value="300.0" />
+    <gm_instructions title="Network Speed">Net Work Speed is now at 300ms</gm_instructions>
   </event>
 </mission_data>
