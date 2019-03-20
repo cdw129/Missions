@@ -105,6 +105,7 @@
     <set_variable name="startticker4" value="0.0" integer="yes" />
     <set_variable name="amounttogive4" value="0.0" integer="yes" />
     <!--Bad Guy Var-->
+    <set_variable name="GuardStationGroup" value="1.0" integer="yes" />
     <set_variable name="CmndShipNum" value="10" integer="yes" />
     <set_variable name="BCNum" value="10" integer="yes" />
     <set_variable name="Num" value="0" integer="yes" />
@@ -1984,11 +1985,144 @@
     <create count="60" type="nebulas" nebType="2" startX="24017.0" startY="0.0" startZ="49927.0" endX="42835.0" endY="0.0" endZ="29372.0" randomRange="10000" randomSeed="30" />
     <create count="60" type="nebulas" nebType="3" startX="90025.0" startY="0.0" startZ="65850.0" endX="42835.0" endY="0.0" endZ="29372.0" randomRange="10000" randomSeed="30" />
     <create count="60" type="nebulas" nebType="2" startX="49349.0" startY="0.0" startZ="83655.0" endX="42835.0" endY="0.0" endZ="29372.0" randomRange="10000" randomSeed="30" />
-    <create type="station" x="76430.0" y="0.0" z="42791.0" angle="0" name="CB-01" hullID="1001" sideValue="2" />
-    <create type="station" x="52264.0" y="0.0" z="53840.0" angle="0" name="CB-02" hullID="1001" sideValue="2" />
-    <create type="station" x="31235.0" y="0.0" z="38559.0" angle="0" name="CB-03" hullID="1001" sideValue="2" />
+    <create type="station" x="76430.0" y="0.0" z="42791.0" angle="0" name="CB-01" hullID="1001" sideValue="1" />
+    <create type="station" x="52264.0" y="0.0" z="53840.0" angle="0" name="CB-02" hullID="1001" sideValue="1" />
+    <create type="station" x="31235.0" y="0.0" z="38559.0" angle="0" name="CB-03" hullID="1001" sideValue="1" />
     <create type="blackHole" x="49060.0" y="0.0" z="27490.0" name="Singularity2" />
     <!-- end create unnamed objects -->
+    <!--Make bad guards for station CB01-->
+    <set_variable name="Badguys1" randomIntLow="2000" randomIntHigh="2002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy" randomIntLow="10" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="GS|NumofBadGuy|" hullID="Badguys1" sideValue="1" fleetnumber="GuardStationGroup" />
+    <set_relative_position name2="GS|NumofBadGuy|" distance="RandomSpacingEvent" angle="RandomBarring" name1="CB-01" />
+    <add_ai type="GUARD_STATION" value1="10000" name="GS|NumofBadGuy|" />
+    <set_variable name="Badguys1" randomIntLow="2000" randomIntHigh="2002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy" randomIntLow="10" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="GS|NumofBadGuy|" hullID="Badguys1" sideValue="1" fleetnumber="GuardStationGroup" />
+    <set_relative_position name2="GS|NumofBadGuy|" distance="RandomSpacingEvent" angle="RandomBarring" name1="CB-01" />
+    <add_ai type="GUARD_STATION" value1="10000" name="GS|NumofBadGuy|" />
+    <set_variable name="Badguys1" randomIntLow="2000" randomIntHigh="2002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy" randomIntLow="10" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="GS|NumofBadGuy|" hullID="Badguys1" sideValue="1" fleetnumber="GuardStationGroup" />
+    <set_relative_position name2="GS|NumofBadGuy|" distance="RandomSpacingEvent" angle="RandomBarring" name1="CB-01" />
+    <add_ai type="GUARD_STATION" value1="10000" name="GS|NumofBadGuy|" />
+    <set_variable name="GuardStationGroup" value="GuardStationGroup+1" integer="yes" />
+    <!--Make bad guards for station CB02-->
+    <set_variable name="Badguys1" randomIntLow="2000" randomIntHigh="2002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy" randomIntLow="10" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="GS|NumofBadGuy|" hullID="Badguys1" sideValue="1" fleetnumber="GuardStationGroup" />
+    <set_relative_position name2="GS|NumofBadGuy|" distance="RandomSpacingEvent" angle="RandomBarring" name1="CB-02" />
+    <add_ai type="GUARD_STATION" value1="10000" name="GS|NumofBadGuy|" />
+    <set_variable name="Badguys1" randomIntLow="2000" randomIntHigh="2002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy" randomIntLow="10" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="GS|NumofBadGuy|" hullID="Badguys1" sideValue="1" fleetnumber="GuardStationGroup" />
+    <set_relative_position name2="GS|NumofBadGuy|" distance="RandomSpacingEvent" angle="RandomBarring" name1="CB-02" />
+    <add_ai type="GUARD_STATION" value1="10000" name="GS|NumofBadGuy|" />
+    <set_variable name="Badguys1" randomIntLow="2000" randomIntHigh="2002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy" randomIntLow="10" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="GS|NumofBadGuy|" hullID="Badguys1" sideValue="1" fleetnumber="GuardStationGroup" />
+    <set_relative_position name2="GS|NumofBadGuy|" distance="RandomSpacingEvent" angle="RandomBarring" name1="CB-02" />
+    <add_ai type="GUARD_STATION" value1="10000" name="GS|NumofBadGuy|" />
+    <set_variable name="GuardStationGroup" value="GuardStationGroup+1" integer="yes" />
+    <!--Make bad guards for station CB03-->
+    <set_variable name="Badguys1" randomIntLow="2000" randomIntHigh="2002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy" randomIntLow="10" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="GS|NumofBadGuy|" hullID="Badguys1" sideValue="1" fleetnumber="GuardStationGroup" />
+    <set_relative_position name2="GS|NumofBadGuy|" distance="RandomSpacingEvent" angle="RandomBarring" name1="CB-03" />
+    <add_ai type="GUARD_STATION" value1="10000" name="GS|NumofBadGuy|" />
+    <set_variable name="Badguys1" randomIntLow="2000" randomIntHigh="2002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy" randomIntLow="10" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="GS|NumofBadGuy|" hullID="Badguys1" sideValue="1" fleetnumber="GuardStationGroup" />
+    <set_relative_position name2="GS|NumofBadGuy|" distance="RandomSpacingEvent" angle="RandomBarring" name1="CB-03" />
+    <add_ai type="GUARD_STATION" value1="10000" name="GS|NumofBadGuy|" />
+    <set_variable name="Badguys1" randomIntLow="2000" randomIntHigh="2002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="MinX" randomIntHigh="MaxX" />
+    <set_variable name="RandomY" randomIntLow="MinY" randomIntHigh="MaxY" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomSpacingEvent" randomIntLow="100" randomIntHigh="1000" />
+    <set_variable name="NumofBadGuy" randomIntLow="10" randomIntHigh="99" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="GS|NumofBadGuy|" hullID="Badguys1" sideValue="1" fleetnumber="GuardStationGroup" />
+    <set_relative_position name2="GS|NumofBadGuy|" distance="RandomSpacingEvent" angle="RandomBarring" name1="CB-03" />
+    <add_ai type="GUARD_STATION" value1="10000" name="GS|NumofBadGuy|" />
+    <set_variable name="GuardStationGroup" value="GuardStationGroup+1" integer="yes" />
+    <!--End-->
     <set_variable name="IsCreate" value="0" />
   </event>
   <event name="DestroyGrid -2,3" id_arme="f33c99cc-0662-4c96-8598-eaf95150b28c" parent_id_arme="306c177d-55f4-423a-843d-c5a79222fdb9">
@@ -2328,7 +2462,7 @@
     <set_variable name="IsCreate" value="1" integer="yes" />
   </event>
   <folder_arme name="Bad Guys" id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
-  <folder_arme name="Making groups" id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <folder_arme name="Making groups" id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" expanded_arme="" />
   <event name="Make 1 group" id_arme="9e33454e-6377-4056-93f0-78fc53528cb6" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
     <if_variable name="HowManyGroups" comparator="EQUALS" value="1.0" />
     <set_variable name="AmountofBadGuysTeam1" randomIntLow="3" randomIntHigh="6" />
@@ -2618,7 +2752,7 @@
     <!--Ending creation-->
     <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
   </event>
-  <folder_arme name="Group1" id_arme="1ca0db55-9b74-4fce-8cf2-c5a0d1fb4287" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <folder_arme name="Group1" id_arme="1ca0db55-9b74-4fce-8cf2-c5a0d1fb4287" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" expanded_arme="" />
   <event name="Kralien(A)" id_arme="92b31119-154e-4430-a7f8-91a92e92be23" parent_id_arme="1ca0db55-9b74-4fce-8cf2-c5a0d1fb4287">
     <if_variable name="WhatRace1" comparator="EQUALS" value="1.0" />
     <if_variable name="AmountofBadGuysTeam1" comparator="GREATER" value="0.0" />
@@ -2696,7 +2830,7 @@
     <destroy name="ES01" />
     <set_variable name="AmountofBadGuysTeam1" value="-1.0" integer="yes" />
   </event>
-  <folder_arme name="Group2" id_arme="8e8bff42-b7e2-49b6-a09d-29e4016097b1" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <folder_arme name="Group2" id_arme="8e8bff42-b7e2-49b6-a09d-29e4016097b1" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" />
   <event name="Kralien(E)" id_arme="b9a00964-d30a-4b28-a5d6-f8e440ef15b7" parent_id_arme="8e8bff42-b7e2-49b6-a09d-29e4016097b1">
     <if_variable name="WhatRace2" comparator="EQUALS" value="1.0" />
     <if_variable name="AmountofBadGuysTeam2" comparator="GREATER" value="0.0" />
@@ -2774,7 +2908,7 @@
     <destroy name="ES02" />
     <set_variable name="AmountofBadGuysTeam2" value="-1.0" integer="yes" />
   </event>
-  <folder_arme name="Group3" id_arme="256f463f-2dcb-443a-9413-d7cd40808fe7" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <folder_arme name="Group3" id_arme="256f463f-2dcb-443a-9413-d7cd40808fe7" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" />
   <event name="Kralien(I)" id_arme="81e0aa8f-d91f-4312-88d4-bbc5b5155816" parent_id_arme="256f463f-2dcb-443a-9413-d7cd40808fe7">
     <if_variable name="WhatRace3" comparator="EQUALS" value="1.0" />
     <if_variable name="AmountofBadGuysTeam3" comparator="GREATER" value="0.0" />
@@ -2852,7 +2986,7 @@
     <destroy name="ES03" />
     <set_variable name="AmountofBadGuysTeam3" value="-1.0" integer="yes" />
   </event>
-  <folder_arme name="Group4" id_arme="8f7c7ecb-51cd-4e1e-9446-ecdcd21780e4" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <folder_arme name="Group4" id_arme="8f7c7ecb-51cd-4e1e-9446-ecdcd21780e4" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" />
   <event name="Kralien(M)" id_arme="0eb9ee01-968f-48f9-b985-75a420755882" parent_id_arme="8f7c7ecb-51cd-4e1e-9446-ecdcd21780e4">
     <if_variable name="WhatRace4" comparator="EQUALS" value="1.0" />
     <if_variable name="AmountofBadGuysTeam4" comparator="GREATER" value="0.0" />
@@ -2930,7 +3064,7 @@
     <destroy name="ES04" />
     <set_variable name="AmountofBadGuysTeam4" value="-1.0" integer="yes" />
   </event>
-  <folder_arme name="Group5" id_arme="e1142848-0022-4f1d-bde7-4e6bc3e9a70f" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <folder_arme name="Group5" id_arme="e1142848-0022-4f1d-bde7-4e6bc3e9a70f" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" />
   <event name="Kralien(Q)" id_arme="8982b693-842a-48db-a200-a72501064388" parent_id_arme="e1142848-0022-4f1d-bde7-4e6bc3e9a70f">
     <if_variable name="WhatRace5" comparator="EQUALS" value="1.0" />
     <if_variable name="AmountofBadGuysTeam5" comparator="GREATER" value="0.0" />
@@ -3008,7 +3142,7 @@
     <destroy name="ES05" />
     <set_variable name="AmountofBadGuysTeam5" value="-1.0" integer="yes" />
   </event>
-  <folder_arme name="Group6" id_arme="e9f33285-1fd5-46f3-a961-2c574274e1b0" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <folder_arme name="Group6" id_arme="e9f33285-1fd5-46f3-a961-2c574274e1b0" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" />
   <event name="Cargo(U and V)" id_arme="8870536a-a038-46f6-a96b-38272b925af7" parent_id_arme="e9f33285-1fd5-46f3-a961-2c574274e1b0">
     <if_variable name="AmountofBadGuysTeam6" comparator="GREATER" value="0.0" />
     <!--Creating cargo ship-->
@@ -3074,7 +3208,7 @@
     <if_variable name="AmountofBadGuysTeam6" comparator="LESS_EQUAL" value="0.0" />
     <destroy name="ES06" />
   </event>
-  <folder_arme name="Kralien CMD Ship (7)" id_arme="cd7ceb2b-c633-4dae-8bf1-a309f49223ae" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <folder_arme name="Kralien CMD Ship (7)" id_arme="cd7ceb2b-c633-4dae-8bf1-a309f49223ae" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" />
   <event name="CMD Ship" id_arme="48ae3017-d4fd-4d23-9f8b-5a7d9637095d" parent_id_arme="cd7ceb2b-c633-4dae-8bf1-a309f49223ae">
     <if_variable name="AmountofBadGuysTeam7" comparator="GREATER" value="0.0" />
     <!--Creating Cmd Ship-->
@@ -3169,7 +3303,7 @@
     <set_variable name="CmndShipNum" value="CmndShipNum+1" integer="yes" />
     <set_variable name="AmountofBadGuysTeam7" value="AmountofBadGuysTeam7-1" integer="yes" />
   </event>
-  <folder_arme name="Arvonian CMD Ship (8)" id_arme="cb8c2147-3a24-4c58-a1b4-4c0eaf1cf395" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <folder_arme name="Arvonian CMD Ship (8)" id_arme="cb8c2147-3a24-4c58-a1b4-4c0eaf1cf395" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" />
   <event name="CMD Ship" id_arme="99874fa4-3d96-422a-ad98-af453dfeabfe" parent_id_arme="cb8c2147-3a24-4c58-a1b4-4c0eaf1cf395">
     <if_variable name="AmountofBadGuysTeam8" comparator="GREATER" value="0.0" />
     <!--Creating Cmd Ship-->
@@ -3222,7 +3356,7 @@
     <set_variable name="CmndShipNum" value="CmndShipNum+1" integer="yes" />
     <set_variable name="AmountofBadGuysTeam8" value="AmountofBadGuysTeam8-1" integer="yes" />
   </event>
-  <folder_arme name="Torgoth CMD Ship (9)" id_arme="07b46e0a-ed10-4c52-8114-3c5dd8eacfa6" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <folder_arme name="Torgoth CMD Ship (9)" id_arme="07b46e0a-ed10-4c52-8114-3c5dd8eacfa6" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" />
   <event name="CMD Ship" id_arme="cdeb7481-cc62-4f78-a0a1-0964e7c037df" parent_id_arme="07b46e0a-ed10-4c52-8114-3c5dd8eacfa6">
     <if_variable name="AmountofBadGuysTeam9" comparator="GREATER" value="0.0" />
     <!--Creating Cmd Ship-->
@@ -3275,7 +3409,7 @@
     <set_variable name="CmndShipNum" value="CmndShipNum+1" integer="yes" />
     <set_variable name="AmountofBadGuysTeam9" value="AmountofBadGuysTeam9-1" integer="yes" />
   </event>
-  <folder_arme name="Skaraan CMD Ship (10)" id_arme="3140eb49-e58c-44b3-b7f1-362c1443dd33" parent_id_arme="4f2292b3-47d0-4cae-8fdd-91b33518de12" />
+  <folder_arme name="Skaraan CMD Ship (10)" id_arme="3140eb49-e58c-44b3-b7f1-362c1443dd33" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" />
   <event name="CMD Ship" id_arme="a8ecd8ba-9936-4303-8b84-d3df798b1e10" parent_id_arme="3140eb49-e58c-44b3-b7f1-362c1443dd33">
     <if_variable name="AmountofBadGuysTeam10" comparator="GREATER" value="0.0" />
     <!--Creating Cmd Ship-->
@@ -3342,7 +3476,7 @@
     <set_variable name="CmndShipNum" value="CmndShipNum+1" integer="yes" />
     <set_variable name="AmountofBadGuysTeam10" value="AmountofBadGuysTeam10-1" integer="yes" />
   </event>
-  <folder_arme name="Missions" id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" expanded_arme="" />
+  <folder_arme name="Missions" id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" />
   <folder_arme name="Spring Retribution" id_arme="71e5e92f-1f25-4fc1-af12-0eb9a808aaf2" parent_id_arme="06140dd9-15f2-41bc-8f7d-8257af1d3833" expanded_arme="" />
   <folder_arme name="Toratora" id_arme="61193f9a-43f2-49c3-b786-4136c6563a68" parent_id_arme="71e5e92f-1f25-4fc1-af12-0eb9a808aaf2" expanded_arme="" />
   <event name="Starting game" id_arme="d5741f4f-f0fb-4270-8abf-826baa8ae2a8" parent_id_arme="61193f9a-43f2-49c3-b786-4136c6563a68">
@@ -3431,6 +3565,7 @@
     <set_variable name="WhatRace5" randomIntLow="1" randomIntHigh="4" integer="yes" />
     <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="10" integer="yes" />
     <set_variable name="wereareyou" value="wereareyou+1" integer="yes" />
+    <set_variable name="Makethem" value="1.0" integer="yes" />
     <log text="wereareyou=|wereareyou|  1) Intro 2)Start 3)Middle 4)End" />
     <set_timer name="StrikeForceEnter" seconds="299" />
   </event>
@@ -3447,9 +3582,10 @@
   </event>
   <event name="Create running transprts" id_arme="d3d60786-3aac-42d1-b66c-0bfab513c9d8" parent_id_arme="2c69df87-081c-4726-a242-965ecb792a2f">
     <if_variable name="MissionRunning" comparator="EQUALS" value="1.0" />
-    <if_timer_finished name="StrikeForceEnter" />
+    <if_variable name="Makethem" comparator="EQUALS" value="1.0" />
     <if_variable name="CTnumber" comparator="LESS" value="15.0" />
     <set_variable name="OutcomingFleet" value="1.0" integer="yes" />
+    <set_variable name="Makethem" value="0.0" integer="yes" />
   </event>
   <folder_arme name="civilan cargo" id_arme="e0513427-c572-4cac-a575-ca1bf655bf3c" parent_id_arme="2c69df87-081c-4726-a242-965ecb792a2f" expanded_arme="" />
   <folder_arme name="leaving the stations" id_arme="fef45a6a-9822-4520-8141-cdd75730c82c" parent_id_arme="e0513427-c572-4cac-a575-ca1bf655bf3c" expanded_arme="" />
