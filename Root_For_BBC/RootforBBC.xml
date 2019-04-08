@@ -1,5 +1,4 @@
-
-  <start id_arme="67316bfb-820d-4b85-a4c2-ac8d91c0db18">
+<start id_arme="4c16c0a0-dc14-487a-9e54-79b8042cae1c">
     <set_variable name="CheckForShip1" value="0.0" integer="yes" />
     <set_variable name="CheckForShip2" value="0.0" integer="yes" />
     <set_variable name="CheckForShip3" value="0.0" integer="yes" />
@@ -769,8 +768,7 @@
     <set_variable name="Ship8Left" value="0.0" integer="yes" />
     <set_variable name="Movedover8" value="0.0" integer="yes" />
   </event>
-    </event>
-  <folder_arme name="Fuel Collection System For known ships" id_arme="d235a81a-502f-4378-a8b5-9de51845102a" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
+  <folder_arme name="Fuel Collection System For known ships" id_arme="d235a81a-502f-4378-a8b5-9de51845102a" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" />
   <folder_arme name="Ship 1" id_arme="f8975439-869a-4dc6-9b44-bb9fe98e6661" parent_id_arme="d235a81a-502f-4378-a8b5-9de51845102a" />
   <event name="activation on purple" id_arme="04da40ab-b9b3-4cf6-8e74-e6b6f88845c3" parent_id_arme="f8975439-869a-4dc6-9b44-bb9fe98e6661">
     <if_in_nebula name="Artemis" compare="1" />
@@ -1284,7 +1282,7 @@
     <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Diana is all toped off</incoming_comms_text>
   </event>
   <folder_arme name="Map Trigers" id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
-  <folder_arme name="Create Enviroment" id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
+  <folder_arme name="Create Enviroment" id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" expanded_arme="" />
   <event name="Setup" id_arme="80f2e26f-2680-4ad2-a280-d6abad0b7399" parent_id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e">
     <if_variable name="CreateEnviroment" comparator="EQUALS" value="1.0" />
     <!--Whales-->
@@ -1442,7 +1440,7 @@
     <!--End-->
     <set_variable name="AmountofTyphoon" value="AmountofTyphoon-1" integer="yes" />
   </event>
-  <folder_arme name="Kill" id_arme="7b22ed32-7fe0-4d22-aa34-953ea854f545" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
+  <folder_arme name="Kill" id_arme="7b22ed32-7fe0-4d22-aa34-953ea854f545" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" expanded_arme="" />
   <event name="Nuke enviroment" id_arme="b35116d9-69c0-4b45-9f1e-41b4f123c8dd" parent_id_arme="7b22ed32-7fe0-4d22-aa34-953ea854f545">
     <if_variable name="IsKill" comparator="EQUALS" value="1.0" />
     <set_variable name="Num" value="99" integer="yes" />
@@ -1451,7 +1449,7 @@
     <!--End-->
     <set_variable name="IsKill" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Killing enemys" id_arme="af69a776-6f3a-4074-bd9f-06e82ae75193" parent_id_arme="7b22ed32-7fe0-4d22-aa34-953ea854f545" />
+  <folder_arme name="Killing enemys" id_arme="af69a776-6f3a-4074-bd9f-06e82ae75193" parent_id_arme="7b22ed32-7fe0-4d22-aa34-953ea854f545" expanded_arme="" />
   <event name="Kill Num" id_arme="c9aee556-15fd-47ae-a968-f52944adb32e" parent_id_arme="af69a776-6f3a-4074-bd9f-06e82ae75193">
     <if_variable name="Num" comparator="GREATER" value="-1" />
     <if_variable name="KillEnemys" comparator="EQUALS" value="1.0" />
@@ -2564,6 +2562,13 @@
     <set_to_gm_position use_gm_selection="" distance="0" angle="0" />
   </event>
   <folder_arme name="Game" id_arme="243a8bef-5619-423e-a218-3c0351fbfb06" parent_id_arme="f20d9d03-f244-456d-bb74-24fc6695db17" />
+  <event name="Start Game" id_arme="991c7ce4-140b-47d4-b68a-d401b15bf55b" parent_id_arme="243a8bef-5619-423e-a218-3c0351fbfb06">
+    <if_gm_button text="Game/Start/Start Game?" />
+  </event>
+  <event name="End Game" id_arme="3623662e-6200-40bc-9603-0e086b02acb6" parent_id_arme="243a8bef-5619-423e-a218-3c0351fbfb06">
+    <if_gm_button text="Game/End/End Game?" />
+    <end_mission />
+  </event>
   <folder_arme name="Level" id_arme="44f79c2b-585f-457f-9ffb-ab6bf204f337" parent_id_arme="243a8bef-5619-423e-a218-3c0351fbfb06" />
   <event name="1" id_arme="b4a7aa3e-11e2-4f51-8e87-962dc17a6142" parent_id_arme="44f79c2b-585f-457f-9ffb-ab6bf204f337">
     <if_gm_button text="Game/Level/1" />
@@ -2609,40 +2614,33 @@
     <if_gm_button text="Game/Level/11" />
     <set_difficulty_level value="11" />
   </event>
-  <event name="End Game" id_arme="3623662e-6200-40bc-9603-0e086b02acb6" parent_id_arme="243a8bef-5619-423e-a218-3c0351fbfb06">
-    <if_gm_button text="Game/End/End Game?" />
-    <end_mission />
-  </event>
-  <event name="Start Game" id_arme="991c7ce4-140b-47d4-b68a-d401b15bf55b" parent_id_arme="243a8bef-5619-423e-a218-3c0351fbfb06">
-    <if_gm_button text="Game/Start/Start Game?" />
-  </event>
   <folder_arme name="Creating bad guys" id_arme="986a044b-a1df-4a33-b522-f1eabf063e13" parent_id_arme="f20d9d03-f244-456d-bb74-24fc6695db17" />
-  <folder_arme name="Creating bad guys" id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f" parent_id_arme="986a044b-a1df-4a33-b522-f1eabf063e13" />
-  <event name="Create Group 1" id_arme="fda93248-e8b2-4d1b-9c7c-5de7567c3b5e" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <folder_arme name="Groups" id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b" parent_id_arme="986a044b-a1df-4a33-b522-f1eabf063e13" />
+  <event name="Create Group 1" id_arme="fda93248-e8b2-4d1b-9c7c-5de7567c3b5e" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Group Amount/1" />
     <set_variable name="HowManyGroupsinput" value="1.0" integer="yes" />
   </event>
-  <event name="Create Group 2" id_arme="2c1618d6-e4d3-4476-ba9d-205d592e63d4" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <event name="Create Group 2" id_arme="2c1618d6-e4d3-4476-ba9d-205d592e63d4" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Group Amount/2" />
     <set_variable name="HowManyGroupsinput" value="2.0" integer="yes" />
   </event>
-  <event name="Create Group 3" id_arme="2d372d3c-6226-46c4-9d4e-b7d8bba591f5" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <event name="Create Group 3" id_arme="2d372d3c-6226-46c4-9d4e-b7d8bba591f5" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Group Amount/3" />
     <set_variable name="HowManyGroupsinput" value="3.0" integer="yes" />
   </event>
-  <event name="Create Group 4" id_arme="9bf86fc8-3b13-4174-b04e-5f1c9bc888a1" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <event name="Create Group 4" id_arme="9bf86fc8-3b13-4174-b04e-5f1c9bc888a1" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Group Amount/4" />
     <set_variable name="HowManyGroupsinput" value="4.0" integer="yes" />
   </event>
-  <event name="Create Group 5" id_arme="e0e535ee-dcd6-4a7c-aa9e-1c56394a6e71" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <event name="Create Group 5" id_arme="e0e535ee-dcd6-4a7c-aa9e-1c56394a6e71" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Group Amount/5" />
     <set_variable name="HowManyGroupsinput" value="5.0" integer="yes" />
   </event>
-  <event name="Create Group Random" id_arme="39dd4aaf-da01-47eb-9346-4538058c9841" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <event name="Create Group Random" id_arme="39dd4aaf-da01-47eb-9346-4538058c9841" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Group Amount/Random" />
     <set_variable name="HowManyGroupsinput" randomIntLow="1" randomIntHigh="10" integer="yes" />
   </event>
-  <event name="Create Race Karlien" id_arme="a3d49120-9085-4636-a910-80904706b190" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <event name="Create Race Karlien" id_arme="a3d49120-9085-4636-a910-80904706b190" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Group Race/Karlien" />
     <set_variable name="WhatRace1" value="1.0" integer="yes" />
     <set_variable name="WhatRace2" value="1.0" integer="yes" />
@@ -2650,7 +2648,7 @@
     <set_variable name="WhatRace4" value="1.0" integer="yes" />
     <set_variable name="WhatRace5" value="1.0" integer="yes" />
   </event>
-  <event name="Create Race Arvonian" id_arme="4d965226-161d-4a96-8e40-1ae6885e159f" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <event name="Create Race Arvonian" id_arme="4d965226-161d-4a96-8e40-1ae6885e159f" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Group Race/Arvonian" />
     <set_variable name="WhatRace1" value="2.0" integer="yes" />
     <set_variable name="WhatRace2" value="2.0" integer="yes" />
@@ -2658,7 +2656,7 @@
     <set_variable name="WhatRace4" value="2.0" integer="yes" />
     <set_variable name="WhatRace5" value="2.0" integer="yes" />
   </event>
-  <event name="Create Race Torgoth" id_arme="bca21b01-95ab-4949-ad93-5b07f66ca4ad" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <event name="Create Race Torgoth" id_arme="bca21b01-95ab-4949-ad93-5b07f66ca4ad" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Group Race/Torgoth" />
     <set_variable name="WhatRace1" value="3.0" integer="yes" />
     <set_variable name="WhatRace2" value="3.0" integer="yes" />
@@ -2666,7 +2664,7 @@
     <set_variable name="WhatRace4" value="3.0" integer="yes" />
     <set_variable name="WhatRace5" value="3.0" integer="yes" />
   </event>
-  <event name="Create Race Skaraan" id_arme="dd1a8795-e80d-4ffe-9598-8ba01eff257b" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <event name="Create Race Skaraan" id_arme="dd1a8795-e80d-4ffe-9598-8ba01eff257b" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Group Race/Skaraan" />
     <set_variable name="WhatRace1" value="4.0" integer="yes" />
     <set_variable name="WhatRace2" value="4.0" integer="yes" />
@@ -2674,7 +2672,7 @@
     <set_variable name="WhatRace4" value="4.0" integer="yes" />
     <set_variable name="WhatRace5" value="4.0" integer="yes" />
   </event>
-  <event name="Create Race Random" id_arme="133a7c16-6eff-4311-83c6-38e4c75311d9" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <event name="Create Race Random" id_arme="133a7c16-6eff-4311-83c6-38e4c75311d9" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Group Race/Random" />
     <set_variable name="WhatRace1" randomIntLow="1" randomIntHigh="4" integer="yes" />
     <set_variable name="WhatRace2" randomIntLow="1" randomIntHigh="4" integer="yes" />
@@ -2682,7 +2680,7 @@
     <set_variable name="WhatRace4" randomIntLow="1" randomIntHigh="4" integer="yes" />
     <set_variable name="WhatRace5" randomIntLow="1" randomIntHigh="4" integer="yes" />
   </event>
-  <event name="Create UP" id_arme="322fea3e-28c5-4baa-968d-039b7f3d52e1" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <event name="Create UP" id_arme="322fea3e-28c5-4baa-968d-039b7f3d52e1" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Create!/Up" />
     <set_variable name="MinX" value="2.0" integer="yes" />
     <set_variable name="MinY" value="1.0" integer="yes" />
@@ -2690,7 +2688,7 @@
     <set_variable name="MaxY" value="1.0" integer="yes" />
     <set_variable name="HowManyGroups" value="HowManyGroupsinput" integer="yes" />
   </event>
-  <event name="Create Down" id_arme="db9f8599-3062-43fe-b2d6-a9e90dd4247a" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <event name="Create Down" id_arme="db9f8599-3062-43fe-b2d6-a9e90dd4247a" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Create!/Down" />
     <set_variable name="MinX" value="2.0" integer="yes" />
     <set_variable name="MinY" value="10.0" integer="yes" />
@@ -2698,7 +2696,7 @@
     <set_variable name="MaxY" value="10.0" integer="yes" />
     <set_variable name="HowManyGroups" value="HowManyGroupsinput" integer="yes" />
   </event>
-  <event name="Create Right" id_arme="e951bff4-a9df-4e45-9094-9fea4045a418" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <event name="Create Right" id_arme="e951bff4-a9df-4e45-9094-9fea4045a418" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Create!/Right" />
     <set_variable name="MinX" value="1.0" integer="yes" />
     <set_variable name="MinY" value="2.0" integer="yes" />
@@ -2706,7 +2704,7 @@
     <set_variable name="MaxY" value="9.0" integer="yes" />
     <set_variable name="HowManyGroups" value="HowManyGroupsinput" integer="yes" />
   </event>
-  <event name="Create Left" id_arme="a0780b81-ec99-419a-ba6c-12a16bf16626" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <event name="Create Left" id_arme="a0780b81-ec99-419a-ba6c-12a16bf16626" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Create!/Left" />
     <set_variable name="MinX" value="10.0" integer="yes" />
     <set_variable name="MinY" value="2.0" integer="yes" />
@@ -2714,7 +2712,7 @@
     <set_variable name="MaxY" value="9.0" integer="yes" />
     <set_variable name="HowManyGroups" value="HowManyGroupsinput" integer="yes" />
   </event>
-  <event name="Create Anywere" id_arme="8f5216d0-9baa-424a-82a5-fdbdfc36387c" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f">
+  <event name="Create Anywere" id_arme="8f5216d0-9baa-424a-82a5-fdbdfc36387c" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b">
     <if_gm_button text="Create/Create!/Anywhere" />
     <set_variable name="MinX" value="1.0" integer="yes" />
     <set_variable name="MinY" value="1.0" integer="yes" />
@@ -2722,8 +2720,8 @@
     <set_variable name="MaxY" value="10.0" integer="yes" />
     <set_variable name="HowManyGroups" value="HowManyGroupsinput" integer="yes" />
   </event>
-  <folder_arme name="Single" id_arme="0711e5bd-b1cd-4a5b-b2ce-ffd0b369e3f0" parent_id_arme="452ae70a-0189-40ee-abb1-fe5c62c1503f" />
-  <folder_arme name="Kralien" id_arme="9e3c031a-7e2d-40a9-81cb-e3fa85fd457b" parent_id_arme="0711e5bd-b1cd-4a5b-b2ce-ffd0b369e3f0" />
+  <folder_arme name="Single" id_arme="0711e5bd-b1cd-4a5b-b2ce-ffd0b369e3f0" parent_id_arme="cd816c54-5ff2-41fe-a436-ce31f6b8919b" expanded_arme="" />
+  <folder_arme name="Kralien" id_arme="9e3c031a-7e2d-40a9-81cb-e3fa85fd457b" parent_id_arme="0711e5bd-b1cd-4a5b-b2ce-ffd0b369e3f0" expanded_arme="" />
   <event name="Battleship" id_arme="1b8c9b3e-8602-45f4-8ba3-76f19f267a48" parent_id_arme="9e3c031a-7e2d-40a9-81cb-e3fa85fd457b">
     <if_gm_button text="Create/Single Bad Guy/Karlien/Battleship" />
     <create type="enemy" use_gm_position="" angle="0" hullID="2001" sideValue="1" fleetnumber="-1" />
@@ -3010,7 +3008,7 @@
     <set_object_property property="networkTickSpeed" value="300.0" />
     <gm_instructions title="Network Speed">Net Work Speed is now at 300ms</gm_instructions>
   </event>
-  <folder_arme name="Sensor level" id_arme="1dc16059-dd29-4d37-aeda-905c1803b3aa" parent_id_arme="f20d9d03-f244-456d-bb74-24fc6695db17" />
+  <folder_arme name="Sensor level" id_arme="1dc16059-dd29-4d37-aeda-905c1803b3aa" parent_id_arme="f20d9d03-f244-456d-bb74-24fc6695db17" expanded_arme="" />
   <event name="Unlimited" id_arme="c802c4ce-3741-4dfa-b69d-22b698ccdfa4" parent_id_arme="1dc16059-dd29-4d37-aeda-905c1803b3aa">
     <if_gm_button text="GM Opps/Sensor Level/Unlimited" />
     <set_object_property property="sensorSetting" value="0" />
@@ -3041,7 +3039,7 @@
     <warning_popup_message message="Sensor Range Change" consoles="MSC" />
     <warning_popup_message message="8k" consoles="MSC" />
   </event>
-  <folder_arme name="Give" id_arme="1e2a08c2-a9cb-4583-a13c-91bb80e4e2d0" parent_id_arme="f20d9d03-f244-456d-bb74-24fc6695db17" />
+  <folder_arme name="Give" id_arme="1e2a08c2-a9cb-4583-a13c-91bb80e4e2d0" parent_id_arme="f20d9d03-f244-456d-bb74-24fc6695db17" expanded_arme="" />
   <event name="1000 Energy" id_arme="579a2e47-8134-4480-a15b-e48e5fec7001" parent_id_arme="1e2a08c2-a9cb-4583-a13c-91bb80e4e2d0">
     <if_gm_button text="GM Opps/Give/Energy/1000" />
     <set_object_property property="energy" value="1000" use_gm_selection="" />
