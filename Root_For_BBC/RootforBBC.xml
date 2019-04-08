@@ -769,6 +769,520 @@
     <set_variable name="Ship8Left" value="0.0" integer="yes" />
     <set_variable name="Movedover8" value="0.0" integer="yes" />
   </event>
+    </event>
+  <folder_arme name="Fuel Collection System For known ships" id_arme="d235a81a-502f-4378-a8b5-9de51845102a" parent_id_arme="640c6da4-3ac3-415a-8389-26a173af9cb9" expanded_arme="" />
+  <folder_arme name="Ship 1" id_arme="f8975439-869a-4dc6-9b44-bb9fe98e6661" parent_id_arme="d235a81a-502f-4378-a8b5-9de51845102a" />
+  <event name="activation on purple" id_arme="04da40ab-b9b3-4cf6-8e74-e6b6f88845c3" parent_id_arme="f8975439-869a-4dc6-9b44-bb9fe98e6661">
+    <if_in_nebula name="Artemis" compare="1" />
+    <if_variable name="startticker1" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Artemis" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Artemis" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Artemis FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput1" seconds="10" />
+    <set_variable name="startticker1" value="1.0" integer="yes" />
+    <set_variable name="FGSactive1" value="1.0" integer="yes" />
+    <set_variable name="amounttogive1" value="50.0" />
+  </event>
+  <event name="activation on yellow" id_arme="0ac687f0-373e-4682-bd5f-4bd7f6ad3186" parent_id_arme="f8975439-869a-4dc6-9b44-bb9fe98e6661">
+    <if_in_nebula name="Artemis" compare="3" />
+    <if_variable name="startticker1" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Artemis" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Artemis" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Artemis FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput1" seconds="10" />
+    <set_variable name="startticker1" value="1.0" integer="yes" />
+    <set_variable name="FGSactive1" value="1.0" integer="yes" />
+    <set_variable name="amounttogive1" value="30.0" />
+  </event>
+  <event name="activation on blue" id_arme="7eae04c4-a976-40c5-a128-ff5c2b8b96b2" parent_id_arme="f8975439-869a-4dc6-9b44-bb9fe98e6661">
+    <if_in_nebula name="Artemis" compare="2" />
+    <if_variable name="startticker1" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Artemis" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Artemis" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Artemis FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput1" seconds="10" />
+    <set_variable name="startticker1" value="1.0" integer="yes" />
+    <set_variable name="FGSactive1" value="1.0" integer="yes" />
+    <set_variable name="amounttogive1" value="20.0" />
+  </event>
+  <event name="FGSticker" id_arme="003a935c-fd7a-4272-964f-be0926b61d43" parent_id_arme="f8975439-869a-4dc6-9b44-bb9fe98e6661">
+    <if_timer_finished name="FGSinput1" />
+    <if_variable name="startticker1" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive1" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Artemis" comparator="GREATER_EQUAL" value="0.325" />
+    <addto_object_property value="amounttogive1" property="energy" name="Artemis" />
+    <set_timer name="FGSinput1" seconds="5" />
+  </event>
+  <event name="not fast enough" id_arme="9ce7e2bc-15c1-47a2-abc6-392d3cc84558" parent_id_arme="f8975439-869a-4dc6-9b44-bb9fe98e6661">
+    <if_timer_finished name="FGSinput1" />
+    <if_variable name="startticker1" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive1" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Artemis" comparator="LESS" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Artemis is not going fast enough for FGS</incoming_comms_text>
+    <set_variable name="startticker1" value="0.0" integer="yes" />
+  </event>
+  <event name="not in nebula" id_arme="fd084d3f-6f6a-4303-b65c-41f6ffdda345" parent_id_arme="f8975439-869a-4dc6-9b44-bb9fe98e6661">
+    <if_in_nebula name="Artemis" compare="0" />
+    <if_variable name="FGSactive1" comparator="EQUALS" value="1.0" />
+    <set_variable name="FGSactive1" value="0.0" integer="yes" />
+    <set_variable name="startticker1" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Artemis has left the nebula for fuel collection.</incoming_comms_text>
+  </event>
+  <event name="End FGS" id_arme="acae631b-e0e0-4d79-89c0-a44feb94442c" parent_id_arme="f8975439-869a-4dc6-9b44-bb9fe98e6661">
+    <if_object_property property="energy" name="Artemis" comparator="GREATER_EQUAL" value="1000" />
+    <if_variable name="startticker1" comparator="EQUALS" value="1.0" />
+    <set_variable name="startticker1" value="0.0" integer="yes" />
+    <set_variable name="FGSactive1" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Artemis is all toped off</incoming_comms_text>
+  </event>
+  <folder_arme name="Ship 2" id_arme="d01467a2-38e9-48af-846a-c86ce2f2515b" parent_id_arme="d235a81a-502f-4378-a8b5-9de51845102a" />
+  <event name="activation on purple" id_arme="37e54737-a1b1-4bfa-9572-988f5c5570e6" parent_id_arme="d01467a2-38e9-48af-846a-c86ce2f2515b">
+    <if_in_nebula name="Intrepid" compare="1" />
+    <if_variable name="startticker2" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Intrepid" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Intrepid" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Intrepid FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput2" seconds="10" />
+    <set_variable name="startticker2" value="1.0" integer="yes" />
+    <set_variable name="FGSactive2" value="1.0" integer="yes" />
+    <set_variable name="amounttogive2" value="50.0" />
+  </event>
+  <event name="activation on yellow" id_arme="41044128-1d58-4a38-bc65-13db8e7f15d4" parent_id_arme="d01467a2-38e9-48af-846a-c86ce2f2515b">
+    <if_in_nebula name="Intrepid" compare="3" />
+    <if_variable name="startticker2" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Intrepid" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Intrepid" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Intrepid FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput2" seconds="10" />
+    <set_variable name="startticker2" value="1.0" integer="yes" />
+    <set_variable name="FGSactive2" value="1.0" integer="yes" />
+    <set_variable name="amounttogive2" value="30.0" />
+  </event>
+  <event name="activation on blue" id_arme="4fa2ad48-fd35-4547-93f6-47098c2a5afe" parent_id_arme="d01467a2-38e9-48af-846a-c86ce2f2515b">
+    <if_in_nebula name="Intrepid" compare="2" />
+    <if_variable name="startticker2" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Intrepid" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Intrepid" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Intrepid FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput2" seconds="10" />
+    <set_variable name="startticker2" value="1.0" integer="yes" />
+    <set_variable name="FGSactive2" value="1.0" integer="yes" />
+    <set_variable name="amounttogive2" value="20.0" />
+  </event>
+  <event name="FGSticker" id_arme="a8c6fbea-a6b1-4769-b62b-60166ddbac3b" parent_id_arme="d01467a2-38e9-48af-846a-c86ce2f2515b">
+    <if_timer_finished name="FGSinput2" />
+    <if_variable name="startticker2" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive2" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Intrepid" comparator="GREATER_EQUAL" value="0.325" />
+    <addto_object_property value="amounttogive2" property="energy" name="Intrepid" />
+    <set_timer name="FGSinput2" seconds="5" />
+  </event>
+  <event name="not fast enough" id_arme="80cbef8d-ef26-4bc8-9a8b-ccdc21ffb6b8" parent_id_arme="d01467a2-38e9-48af-846a-c86ce2f2515b">
+    <if_timer_finished name="FGSinput2" />
+    <if_variable name="startticker2" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive2" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Intrepid" comparator="LESS" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Intrepid is not going fast enough for FGS</incoming_comms_text>
+    <set_variable name="startticker2" value="0.0" integer="yes" />
+  </event>
+  <event name="not in nebula" id_arme="e8e84c92-d9bf-4f3b-8fe2-4f3422cb1bc5" parent_id_arme="d01467a2-38e9-48af-846a-c86ce2f2515b">
+    <if_in_nebula name="Intrepid" compare="0" />
+    <if_variable name="FGSactive2" comparator="EQUALS" value="1.0" />
+    <set_variable name="FGSactive2" value="0.0" integer="yes" />
+    <set_variable name="startticker2" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Intrepid has left the nebula for fuel collection.</incoming_comms_text>
+  </event>
+  <event name="End FGS" id_arme="efd15279-340a-4683-bea2-a657e41c8513" parent_id_arme="d01467a2-38e9-48af-846a-c86ce2f2515b">
+    <if_object_property property="energy" name="Intrepid" comparator="GREATER_EQUAL" value="1000" />
+    <if_variable name="startticker2" comparator="EQUALS" value="1.0" />
+    <set_variable name="startticker2" value="0.0" integer="yes" />
+    <set_variable name="FGSactive2" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Intrepid is all toped off</incoming_comms_text>
+  </event>
+  <folder_arme name="Ship 3" id_arme="8429f35c-33ef-4c9b-9111-0cc6d8e931d1" parent_id_arme="d235a81a-502f-4378-a8b5-9de51845102a" />
+  <event name="activation on purple" id_arme="10f91656-5e2e-456d-87f3-31e59fcd9925" parent_id_arme="8429f35c-33ef-4c9b-9111-0cc6d8e931d1">
+    <if_in_nebula name="Aegis" compare="1" />
+    <if_variable name="startticker3" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Aegis" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Aegis" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Aegis FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput3" seconds="10" />
+    <set_variable name="startticker3" value="1.0" integer="yes" />
+    <set_variable name="FGSactive3" value="1.0" integer="yes" />
+    <set_variable name="amounttogive3" value="50.0" />
+  </event>
+  <event name="activation on yellow" id_arme="1d67c89c-481b-479d-b496-fc2b27c398db" parent_id_arme="8429f35c-33ef-4c9b-9111-0cc6d8e931d1">
+    <if_in_nebula name="Aegis" compare="3" />
+    <if_variable name="startticker3" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Aegis" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Aegis" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Aegis FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput3" seconds="10" />
+    <set_variable name="startticker3" value="1.0" integer="yes" />
+    <set_variable name="FGSactive3" value="1.0" integer="yes" />
+    <set_variable name="amounttogive3" value="30.0" />
+  </event>
+  <event name="activation on blue" id_arme="e6b532f2-636f-4595-a78e-1754fc3b5350" parent_id_arme="8429f35c-33ef-4c9b-9111-0cc6d8e931d1">
+    <if_in_nebula name="Aegis" compare="2" />
+    <if_variable name="startticker3" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Aegis" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Aegis" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Aegis FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput3" seconds="10" />
+    <set_variable name="startticker3" value="1.0" integer="yes" />
+    <set_variable name="FGSactive3" value="1.0" integer="yes" />
+    <set_variable name="amounttogive3" value="20.0" />
+  </event>
+  <event name="FGSticker" id_arme="f09ab14b-5091-4e15-9fbb-a03a4254546b" parent_id_arme="8429f35c-33ef-4c9b-9111-0cc6d8e931d1">
+    <if_timer_finished name="FGSinput3" />
+    <if_variable name="startticker3" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive3" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Aegis" comparator="GREATER_EQUAL" value="0.325" />
+    <addto_object_property value="amounttogive3" property="energy" name="Aegis" />
+    <set_timer name="FGSinput3" seconds="5" />
+  </event>
+  <event name="not fast enough" id_arme="24a112ae-a235-4117-9517-a758981ec34b" parent_id_arme="8429f35c-33ef-4c9b-9111-0cc6d8e931d1">
+    <if_timer_finished name="FGSinput3" />
+    <if_variable name="startticker3" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive3" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Aegis" comparator="LESS" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Aegis is not going fast enough for FGS</incoming_comms_text>
+    <set_variable name="startticker3" value="0.0" integer="yes" />
+  </event>
+  <event name="not in nebula" id_arme="93f548f0-0958-414e-a1f9-612ee11344b0" parent_id_arme="8429f35c-33ef-4c9b-9111-0cc6d8e931d1">
+    <if_in_nebula name="Aegis" compare="0" />
+    <if_variable name="FGSactive3" comparator="EQUALS" value="1.0" />
+    <set_variable name="FGSactive3" value="0.0" integer="yes" />
+    <set_variable name="startticker3" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Aegis has left the nebula for fuel collection.</incoming_comms_text>
+  </event>
+  <event name="End FGS" id_arme="d5fe967b-8534-489d-8ecd-c14afb48cd09" parent_id_arme="8429f35c-33ef-4c9b-9111-0cc6d8e931d1">
+    <if_object_property property="energy" name="Aegis" comparator="GREATER_EQUAL" value="1000" />
+    <if_variable name="startticker3" comparator="EQUALS" value="1.0" />
+    <set_variable name="startticker3" value="0.0" integer="yes" />
+    <set_variable name="FGSactive3" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Aegis is all toped off</incoming_comms_text>
+  </event>
+  <folder_arme name="Ship 4" id_arme="c00e2abf-d17b-4eac-96aa-bda20d49c527" parent_id_arme="d235a81a-502f-4378-a8b5-9de51845102a" />
+  <event name="activation on purple" id_arme="3972e6d2-2603-4aff-96fe-fe4dcc3a1175" parent_id_arme="c00e2abf-d17b-4eac-96aa-bda20d49c527">
+    <if_in_nebula name="Horatio" compare="1" />
+    <if_variable name="startticker4" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Horatio" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Horatio" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Horatio FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput4" seconds="10" />
+    <set_variable name="startticker4" value="1.0" integer="yes" />
+    <set_variable name="FGSactive4" value="1.0" integer="yes" />
+    <set_variable name="amounttogive4" value="50.0" />
+  </event>
+  <event name="activation on yellow" id_arme="ca8d7a2e-b3ae-4cf7-9471-3e704e04bc75" parent_id_arme="c00e2abf-d17b-4eac-96aa-bda20d49c527">
+    <if_in_nebula name="Horatio" compare="3" />
+    <if_variable name="startticker4" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Horatio" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Horatio" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Horatio FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput4" seconds="10" />
+    <set_variable name="startticker4" value="1.0" integer="yes" />
+    <set_variable name="FGSactive4" value="1.0" integer="yes" />
+    <set_variable name="amounttogive4" value="30.0" />
+  </event>
+  <event name="activation on blue" id_arme="fee71682-ce33-470c-93ea-3544b1bee533" parent_id_arme="c00e2abf-d17b-4eac-96aa-bda20d49c527">
+    <if_in_nebula name="Horatio" compare="2" />
+    <if_variable name="startticker4" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Horatio" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Horatio" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Horatio FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput4" seconds="10" />
+    <set_variable name="startticker4" value="1.0" integer="yes" />
+    <set_variable name="FGSactive4" value="1.0" integer="yes" />
+    <set_variable name="amounttogive4" value="20.0" />
+  </event>
+  <event name="FGSticker" id_arme="8f084be3-e1bd-4761-b834-bbb9778adc6d" parent_id_arme="c00e2abf-d17b-4eac-96aa-bda20d49c527">
+    <if_timer_finished name="FGSinput4" />
+    <if_variable name="startticker4" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive4" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Horatio" comparator="GREATER_EQUAL" value="0.325" />
+    <addto_object_property value="amounttogive4" property="energy" name="Horatio" />
+    <set_timer name="FGSinput4" seconds="5" />
+  </event>
+  <event name="not fast enough" id_arme="1f165a57-b9a4-4002-a423-618ddd8a8171" parent_id_arme="c00e2abf-d17b-4eac-96aa-bda20d49c527">
+    <if_timer_finished name="FGSinput4" />
+    <if_variable name="startticker4" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive4" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Horatio" comparator="LESS" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Horatio is not going fast enough for FGS</incoming_comms_text>
+    <set_variable name="startticker4" value="0.0" integer="yes" />
+  </event>
+  <event name="not in nebula" id_arme="19b27736-3db5-42df-9b4c-347e60006602" parent_id_arme="c00e2abf-d17b-4eac-96aa-bda20d49c527">
+    <if_in_nebula name="Horatio" compare="0" />
+    <if_variable name="FGSactive4" comparator="EQUALS" value="1.0" />
+    <set_variable name="FGSactive4" value="0.0" integer="yes" />
+    <set_variable name="startticker4" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Horatio has left the nebula for fuel collection.</incoming_comms_text>
+  </event>
+  <event name="End FGS" id_arme="1f777b1a-60a8-4fc9-b486-3e5d87220a3c" parent_id_arme="c00e2abf-d17b-4eac-96aa-bda20d49c527">
+    <if_object_property property="energy" name="Horatio" comparator="GREATER_EQUAL" value="1000" />
+    <if_variable name="startticker4" comparator="EQUALS" value="1.0" />
+    <set_variable name="startticker4" value="0.0" integer="yes" />
+    <set_variable name="FGSactive4" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Horatio is all toped off</incoming_comms_text>
+  </event>
+  <folder_arme name="Ship 5" id_arme="3b8b733a-b54b-4879-957c-5cba5b7ad517" parent_id_arme="d235a81a-502f-4378-a8b5-9de51845102a" />
+  <event name="activation on purple" id_arme="b916d3b3-c229-4844-b9c5-3619e03be77e" parent_id_arme="3b8b733a-b54b-4879-957c-5cba5b7ad517">
+    <if_in_nebula name="Excalibur" compare="1" />
+    <if_variable name="startticker5" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Excalibur" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Excalibur" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Excalibur FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput5" seconds="10" />
+    <set_variable name="startticker5" value="1.0" integer="yes" />
+    <set_variable name="FGSactive5" value="1.0" integer="yes" />
+    <set_variable name="amounttogive5" value="50.0" />
+  </event>
+  <event name="activation on yellow" id_arme="d6d8e274-bcc8-4273-b81e-a1621543ea70" parent_id_arme="3b8b733a-b54b-4879-957c-5cba5b7ad517">
+    <if_in_nebula name="Excalibur" compare="3" />
+    <if_variable name="startticker5" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Excalibur" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Excalibur" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Excalibur FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput5" seconds="10" />
+    <set_variable name="startticker5" value="1.0" integer="yes" />
+    <set_variable name="FGSactive5" value="1.0" integer="yes" />
+    <set_variable name="amounttogive5" value="30.0" />
+  </event>
+  <event name="activation on blue" id_arme="287c326f-e6f4-49eb-b931-77748d8a3ae4" parent_id_arme="3b8b733a-b54b-4879-957c-5cba5b7ad517">
+    <if_in_nebula name="Excalibur" compare="2" />
+    <if_variable name="startticker5" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Excalibur" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Excalibur" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Excalibur FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput5" seconds="10" />
+    <set_variable name="startticker5" value="1.0" integer="yes" />
+    <set_variable name="FGSactive5" value="1.0" integer="yes" />
+    <set_variable name="amounttogive5" value="20.0" />
+  </event>
+  <event name="FGSticker" id_arme="78d3b70b-3f80-42ca-b813-1981aa672117" parent_id_arme="3b8b733a-b54b-4879-957c-5cba5b7ad517">
+    <if_timer_finished name="FGSinput5" />
+    <if_variable name="startticker5" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive5" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Excalibur" comparator="GREATER_EQUAL" value="0.325" />
+    <addto_object_property value="amounttogive4" property="energy" name="Excalibur" />
+    <set_timer name="FGSinput5" seconds="5" />
+  </event>
+  <event name="not fast enough" id_arme="be14e1fe-401d-483b-bba6-bddf95dc621a" parent_id_arme="3b8b733a-b54b-4879-957c-5cba5b7ad517">
+    <if_timer_finished name="FGSinput5" />
+    <if_variable name="startticker5" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive5" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Excalibur" comparator="LESS" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Excalibur is not going fast enough for FGS</incoming_comms_text>
+    <set_variable name="startticker5" value="0.0" integer="yes" />
+  </event>
+  <event name="not in nebula" id_arme="7c92be0e-321d-4fc5-9196-97c0309867a8" parent_id_arme="3b8b733a-b54b-4879-957c-5cba5b7ad517">
+    <if_in_nebula name="Excalibur" compare="0" />
+    <if_variable name="FGSactive5" comparator="EQUALS" value="1.0" />
+    <set_variable name="FGSactive5" value="0.0" integer="yes" />
+    <set_variable name="startticker5" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Excalibur has left the nebula for fuel collection.</incoming_comms_text>
+  </event>
+  <event name="End FGS" id_arme="e56c158e-d079-4d88-b967-61e8735b510f" parent_id_arme="3b8b733a-b54b-4879-957c-5cba5b7ad517">
+    <if_object_property property="energy" name="Excalibur" comparator="GREATER_EQUAL" value="1000" />
+    <if_variable name="startticker5" comparator="EQUALS" value="1.0" />
+    <set_variable name="startticker5" value="0.0" integer="yes" />
+    <set_variable name="FGSactive5" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Excalibur is all toped off</incoming_comms_text>
+  </event>
+  <folder_arme name="Ship 6" id_arme="1f5f1f83-f04f-4d90-9fbd-c6f984ef68b1" parent_id_arme="d235a81a-502f-4378-a8b5-9de51845102a" />
+  <event name="activation on purple" id_arme="9424a6b9-895c-4fdb-92e0-bdd717cf4fcc" parent_id_arme="1f5f1f83-f04f-4d90-9fbd-c6f984ef68b1">
+    <if_in_nebula name="Hera" compare="1" />
+    <if_variable name="startticker6" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Hera" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Hera" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Hera FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput6" seconds="10" />
+    <set_variable name="startticker6" value="1.0" integer="yes" />
+    <set_variable name="FGSactive6" value="1.0" integer="yes" />
+    <set_variable name="amounttogive6" value="50.0" />
+  </event>
+  <event name="activation on yellow" id_arme="c02e2a6a-e002-4a00-a607-cf0f5c28a82c" parent_id_arme="1f5f1f83-f04f-4d90-9fbd-c6f984ef68b1">
+    <if_in_nebula name="Hera" compare="3" />
+    <if_variable name="startticker6" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Hera" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Hera" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Hera FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput6" seconds="10" />
+    <set_variable name="startticker6" value="1.0" integer="yes" />
+    <set_variable name="FGSactive6" value="1.0" integer="yes" />
+    <set_variable name="amounttogive6" value="30.0" />
+  </event>
+  <event name="activation on blue" id_arme="43d690b0-5ebe-431b-9f68-c18d2876b49e" parent_id_arme="1f5f1f83-f04f-4d90-9fbd-c6f984ef68b1">
+    <if_in_nebula name="Hera" compare="2" />
+    <if_variable name="startticker6" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Hera" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Hera" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Hera FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput6" seconds="10" />
+    <set_variable name="startticker6" value="1.0" integer="yes" />
+    <set_variable name="FGSactive6" value="1.0" integer="yes" />
+    <set_variable name="amounttogive6" value="20.0" />
+  </event>
+  <event name="FGSticker" id_arme="d80d81d4-4fd3-4f2a-9689-28e41df293c2" parent_id_arme="1f5f1f83-f04f-4d90-9fbd-c6f984ef68b1">
+    <if_timer_finished name="FGSinput6" />
+    <if_variable name="startticker6" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive6" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Hera" comparator="GREATER_EQUAL" value="0.325" />
+    <addto_object_property value="amounttogive4" property="energy" name="Hera" />
+    <set_timer name="FGSinput6" seconds="5" />
+  </event>
+  <event name="not fast enough" id_arme="de54cb3a-0214-4c0e-8b0c-5b4e2eb717ae" parent_id_arme="1f5f1f83-f04f-4d90-9fbd-c6f984ef68b1">
+    <if_timer_finished name="FGSinput6" />
+    <if_variable name="startticker6" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive6" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Hera" comparator="LESS" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Hera is not going fast enough for FGS</incoming_comms_text>
+    <set_variable name="startticker6" value="0.0" integer="yes" />
+  </event>
+  <event name="not in nebula" id_arme="67d2fee7-6301-4e03-8111-6f898348d822" parent_id_arme="1f5f1f83-f04f-4d90-9fbd-c6f984ef68b1">
+    <if_in_nebula name="Hera" compare="0" />
+    <if_variable name="FGSactive6" comparator="EQUALS" value="1.0" />
+    <set_variable name="FGSactive6" value="0.0" integer="yes" />
+    <set_variable name="startticker6" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Hera has left the nebula for fuel collection.</incoming_comms_text>
+  </event>
+  <event name="End FGS" id_arme="364334d2-21fb-443f-8ff4-253e5937547d" parent_id_arme="1f5f1f83-f04f-4d90-9fbd-c6f984ef68b1">
+    <if_object_property property="energy" name="Hera" comparator="GREATER_EQUAL" value="1000" />
+    <if_variable name="startticker6" comparator="EQUALS" value="1.0" />
+    <set_variable name="startticker6" value="0.0" integer="yes" />
+    <set_variable name="FGSactive6" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Hera is all toped off</incoming_comms_text>
+  </event>
+  <folder_arme name="Ship 7" id_arme="97f16e2a-9870-4194-a0d3-2dfc3a9c191e" parent_id_arme="d235a81a-502f-4378-a8b5-9de51845102a" />
+  <event name="activation on purple" id_arme="923f7a4d-a3cb-4002-b061-b35cafc94333" parent_id_arme="97f16e2a-9870-4194-a0d3-2dfc3a9c191e">
+    <if_in_nebula name="Ceres" compare="1" />
+    <if_variable name="startticker7" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Ceres" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Ceres" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Ceres FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput7" seconds="10" />
+    <set_variable name="startticker7" value="1.0" integer="yes" />
+    <set_variable name="FGSactive7" value="1.0" integer="yes" />
+    <set_variable name="amounttogive7" value="50.0" />
+  </event>
+  <event name="activation on yellow" id_arme="ddd5a871-f8e0-4e21-87b8-66f649ece1d9" parent_id_arme="97f16e2a-9870-4194-a0d3-2dfc3a9c191e">
+    <if_in_nebula name="Ceres" compare="3" />
+    <if_variable name="startticker7" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Ceres" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Ceres" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Ceres FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput7" seconds="10" />
+    <set_variable name="startticker7" value="1.0" integer="yes" />
+    <set_variable name="FGSactive7" value="1.0" integer="yes" />
+    <set_variable name="amounttogive7" value="30.0" />
+  </event>
+  <event name="activation on blue" id_arme="868f5346-45f0-4ed0-9a0f-764adbff1b13" parent_id_arme="97f16e2a-9870-4194-a0d3-2dfc3a9c191e">
+    <if_in_nebula name="Ceres" compare="2" />
+    <if_variable name="startticker7" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Ceres" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Ceres" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Ceres FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput7" seconds="10" />
+    <set_variable name="startticker7" value="1.0" integer="yes" />
+    <set_variable name="FGSactive7" value="1.0" integer="yes" />
+    <set_variable name="amounttogive7" value="20.0" />
+  </event>
+  <event name="FGSticker" id_arme="35573ec7-11e2-4800-a038-d5352907d85c" parent_id_arme="97f16e2a-9870-4194-a0d3-2dfc3a9c191e">
+    <if_timer_finished name="FGSinput7" />
+    <if_variable name="startticker7" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive7" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Ceres" comparator="GREATER_EQUAL" value="0.325" />
+    <addto_object_property value="amounttogive4" property="energy" name="Ceres" />
+    <set_timer name="FGSinput7" seconds="5" />
+  </event>
+  <event name="not fast enough" id_arme="4a2a8df6-614a-4d15-a267-0d80f652223d" parent_id_arme="97f16e2a-9870-4194-a0d3-2dfc3a9c191e">
+    <if_timer_finished name="FGSinput7" />
+    <if_variable name="startticker7" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive7" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Ship 7" comparator="LESS" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Ceres is not going fast enough for FGS</incoming_comms_text>
+    <set_variable name="startticker7" value="0.0" integer="yes" />
+  </event>
+  <event name="not in nebula" id_arme="3eb2de94-8fd6-4d0f-9505-d479f0b4a89d" parent_id_arme="97f16e2a-9870-4194-a0d3-2dfc3a9c191e">
+    <if_in_nebula name="Ceres" compare="0" />
+    <if_variable name="FGSactive7" comparator="EQUALS" value="1.0" />
+    <set_variable name="FGSactive7" value="0.0" integer="yes" />
+    <set_variable name="startticker7" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Ceres has left the nebula for fuel collection.</incoming_comms_text>
+  </event>
+  <event name="End FGS" id_arme="d45590f7-9122-4b38-a122-d08cb265ac33" parent_id_arme="97f16e2a-9870-4194-a0d3-2dfc3a9c191e">
+    <if_object_property property="energy" name="Ceres" comparator="GREATER_EQUAL" value="1000" />
+    <if_variable name="startticker7" comparator="EQUALS" value="1.0" />
+    <set_variable name="startticker7" value="0.0" integer="yes" />
+    <set_variable name="FGSactive7" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Ceres is all toped off</incoming_comms_text>
+  </event>
+  <folder_arme name="Ship 8" id_arme="795c0934-8f06-4bb5-ba4d-cae879a4ee8d" parent_id_arme="d235a81a-502f-4378-a8b5-9de51845102a" />
+  <event name="activation on purple" id_arme="6f671901-2d1e-46aa-b99d-4b6069d2336f" parent_id_arme="795c0934-8f06-4bb5-ba4d-cae879a4ee8d">
+    <if_in_nebula name="Diana" compare="1" />
+    <if_variable name="startticker8" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Diana" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Diana" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Diana FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput8" seconds="10" />
+    <set_variable name="startticker8" value="1.0" integer="yes" />
+    <set_variable name="FGSactive8" value="1.0" integer="yes" />
+    <set_variable name="amounttogive8" value="50.0" />
+  </event>
+  <event name="activation on yellow" id_arme="91d5ac53-9321-4b3a-af6e-d95c524ac566" parent_id_arme="795c0934-8f06-4bb5-ba4d-cae879a4ee8d">
+    <if_in_nebula name="Diana" compare="3" />
+    <if_variable name="startticker8" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Diana" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Diana" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Diana FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput8" seconds="10" />
+    <set_variable name="startticker8" value="1.0" integer="yes" />
+    <set_variable name="FGSactive8" value="1.0" integer="yes" />
+    <set_variable name="amounttogive8" value="30.0" />
+  </event>
+  <event name="activation on blue" id_arme="bf13074f-6692-413e-9bf6-59473f3a2757" parent_id_arme="795c0934-8f06-4bb5-ba4d-cae879a4ee8d">
+    <if_in_nebula name="Diana" compare="2" />
+    <if_variable name="startticker8" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Diana" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Diana" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Diana FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput8" seconds="10" />
+    <set_variable name="startticker8" value="1.0" integer="yes" />
+    <set_variable name="FGSactive8" value="1.0" integer="yes" />
+    <set_variable name="amounttogive8" value="20.0" />
+  </event>
+  <event name="FGSticker" id_arme="1202ff12-ea73-4572-8b9b-5edb7ddfa412" parent_id_arme="795c0934-8f06-4bb5-ba4d-cae879a4ee8d">
+    <if_timer_finished name="FGSinput8" />
+    <if_variable name="startticker8" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive8" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Diana" comparator="GREATER_EQUAL" value="0.325" />
+    <addto_object_property value="amounttogive4" property="energy" name="Diana" />
+    <set_timer name="FGSinput8" seconds="5" />
+  </event>
+  <event name="not fast enough" id_arme="78daa534-d45e-47ab-ade0-1d82c8829d59" parent_id_arme="795c0934-8f06-4bb5-ba4d-cae879a4ee8d">
+    <if_timer_finished name="FGSinput8" />
+    <if_variable name="startticker8" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive8" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Diana" comparator="LESS" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Diana is not going fast enough for FGS</incoming_comms_text>
+    <set_variable name="startticker8" value="0.0" integer="yes" />
+  </event>
+  <event name="not in nebula" id_arme="7fc23681-fa77-46c1-a95a-1904327c0530" parent_id_arme="795c0934-8f06-4bb5-ba4d-cae879a4ee8d">
+    <if_in_nebula name="Diana" compare="0" />
+    <if_variable name="FGSactive8" comparator="EQUALS" value="1.0" />
+    <set_variable name="FGSactive8" value="0.0" integer="yes" />
+    <set_variable name="startticker8" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Diana has left the nebula for fuel collection.</incoming_comms_text>
+  </event>
+  <event name="End FGS" id_arme="42148a5b-b3a5-45d1-9608-0fa69abf98b8" parent_id_arme="795c0934-8f06-4bb5-ba4d-cae879a4ee8d">
+    <if_object_property property="energy" name="Diana" comparator="GREATER_EQUAL" value="1000" />
+    <if_variable name="startticker8" comparator="EQUALS" value="1.0" />
+    <set_variable name="startticker8" value="0.0" integer="yes" />
+    <set_variable name="FGSactive8" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">Diana is all toped off</incoming_comms_text>
+  </event>
   <folder_arme name="Map Trigers" id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
   <folder_arme name="Create Enviroment" id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e" parent_id_arme="dc43024c-70d5-452f-b0f2-9694c98b4237" />
   <event name="Setup" id_arme="80f2e26f-2680-4ad2-a280-d6abad0b7399" parent_id_arme="2391f4b8-f46e-4868-a108-a59ebee7e91e">
