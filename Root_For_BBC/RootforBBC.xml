@@ -1,4 +1,4 @@
-<mission_data version="1.0" background_id_arme="67316bfb-820d-4b85-a4c2-ac8d91c0db18" playerShipNames_arme="Artemis\Intrepid\Aegis\Horatio\Excalibur\Hera\Ceres\Diana">
+
   <start id_arme="67316bfb-820d-4b85-a4c2-ac8d91c0db18">
     <set_variable name="CheckForShip1" value="0.0" integer="yes" />
     <set_variable name="CheckForShip2" value="0.0" integer="yes" />
@@ -2540,4 +2540,3 @@
     <if_gm_button text="GM Opps/Give/Energy/100" />
     <set_object_property property="energy" value="100" use_gm_selection="" />
   </event>
-</mission_data>
