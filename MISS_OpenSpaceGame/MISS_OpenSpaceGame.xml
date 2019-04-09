@@ -1854,7 +1854,7 @@
     <set_variable name="IsDestroy" value="0" />
     <set_variable name="IsCreate" value="1" />
   </event>
-  <folder_arme name="-1,4" id_arme="de0b2c32-6ea8-48fe-ba75-2d85198ca2a7" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" expanded_arme="" />
+  <folder_arme name="-1,4" id_arme="de0b2c32-6ea8-48fe-ba75-2d85198ca2a7" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" />
   <event name="CreateGrid -1,4" id_arme="fa69c457-886e-4804-aef0-ecedb362fd15" parent_id_arme="de0b2c32-6ea8-48fe-ba75-2d85198ca2a7">
     <if_variable name="IsCreate" comparator="EQUALS" value="1" />
     <if_variable name="x" comparator="EQUALS" value="-1.0" />
@@ -1868,9 +1868,8 @@
     <!---->
     <create count="500" type="asteroids" startX="48481.0" startY="0.0" startZ="50506.0" radius="25332" randomRange="20000" />
     <create type="genericMesh" x="47178.0" y="0.0" z="51230.0" angle="0" name="Astroid B" meshFileName="dat\asteroid6.dxs" textureFileName="dat\asteroidTexture.png" colorRed="0.5" colorGreen="0.3" colorBlue="0.0" />
-    <create type="station" x="45671.0" y="0.0" z="50166.0" angle="0" name="AMB-01" hullID="1006" sideValue="1" />
+    <create type="station" x="45671.0" y="0.0" z="50166.0" angle="0" name="SB-04" hullID="1004" sideValue="2" />
     <create count="100" type="nebulas" nebType="3" startX="23149.0" startY="0.0" startZ="39794.0" endX="77865.0" endY="0.0" endZ="77575.0" randomRange="20000" randomSeed="60" />
-    <set_ship_text name="AMB-01" desc="Arvonian Mining Base" scan_desc="Strong shields, a base beam, and carries a complement of 10 fighters." hailtext="Leave here before you are distroyed." />
     <set_object_property property="sensorSetting" value="3" />
     <warning_popup_message message="Sensor Jamed" consoles="MSC" />
     <warning_popup_message message="11k" consoles="MSC" />
@@ -1889,7 +1888,7 @@
     <set_variable name="MAXCharybdiswillhappen" value="30.0" integer="yes" />
     <!-- This is where all the objects are destroyed in the sector. -->
     <destroy name="Astroid B" />
-    <destroy name="AMB-01" />
+    <destroy name="SB-04" />
     <set_object_property property="sensorSetting" value="1" />
     <warning_popup_message message="33k" consoles="MSC" />
     <warning_popup_message message="Sensors Updated" consoles="MSC" />
@@ -2276,7 +2275,7 @@
     <set_variable name="IsDestroy" value="0" />
     <set_variable name="IsCreate" value="1" integer="yes" />
   </event>
-  <folder_arme name="-2,5" id_arme="a6844f4f-bd90-4259-a143-975256098164" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" />
+  <folder_arme name="-2,5" id_arme="a6844f4f-bd90-4259-a143-975256098164" parent_id_arme="898a769e-3c48-4309-ad24-08082a051615" expanded_arme="" />
   <event name="CreateGrid -2,5" id_arme="7a1c67e6-e785-4eac-a6ce-ba31a203794c" parent_id_arme="a6844f4f-bd90-4259-a143-975256098164">
     <if_variable name="IsCreate" comparator="EQUALS" value="1" />
     <if_variable name="x" comparator="EQUALS" value="-2.0" />
@@ -2308,12 +2307,13 @@
     <create type="station" x="22715.0" y="0.0" z="70482.0" angle="0" name="KB-02" hullID="1005" sideValue="1" />
     <!---->
     <set_variable name="IsSectorLocked" value="1" integer="yes" />
+    <warning_popup_message message="Sector Locked" consoles="MHWESCOF" />
     <!--making bad guys-->
     <set_variable name="MinX" value="1.0" integer="yes" />
     <set_variable name="MinY" value="1.0" integer="yes" />
     <set_variable name="MaxX" value="10.0" integer="yes" />
     <set_variable name="MaxY" value="10.0" integer="yes" />
-    <set_timer name="tmr1" seconds="1" />
+    <set_timer name="tmr1" seconds="25" />
     <set_variable name="makingbadguys" value="1.0" integer="yes" />
     <!-- end create unnamed objects -->
     <set_variable name="IsCreate" value="0" />
@@ -2353,7 +2353,6 @@
     <set_variable name="HowManyGroups" value="2.0" integer="yes" />
     <set_timer name="tmr1" seconds="1" />
     <set_variable name="makingbadguys" value="0.0" integer="yes" />
-    <set_variable name="IsSectorLocked" value="0.0" integer="yes" />
   </event>
   <event name="DestroyGrid -2,5" id_arme="8c1fcfd3-d3b9-4600-a56a-1e37cb8fd97e" parent_id_arme="a6844f4f-bd90-4259-a143-975256098164">
     <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
