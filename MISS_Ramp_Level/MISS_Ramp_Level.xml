@@ -1,0 +1,1147 @@
+<mission_data version="1.0" background_id_arme="01973061-5329-456b-a6bc-c9378a71de4d" playerShipNames_arme="Artemis\Intrepid\Aegis\Horatio\Excalibur\Hera\Ceres\Diana">
+  <start id_arme="01973061-5329-456b-a6bc-c9378a71de4d">
+    <set_variable name="OnOffSwitch" value="1.0" integer="yes" />
+    <set_variable name="AmountofGoodStations" value="0" integer="yes" />
+    <set_variable name="StationType" value="0" integer="yes" />
+    <set_variable name="Counter" value="1.0" integer="yes" />
+    <set_variable name="WillnebHappen" randomIntLow="1" randomIntHigh="7" />
+    <set_variable name="WillnastHappen" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="WillbhHappen" randomIntLow="1" randomIntHigh="2" />
+    <set_variable name="RandAmountofBlackHoles" randomIntLow="1" randomIntHigh="3" />
+    <set_variable name="BadGuyNum" value="10" integer="yes" />
+    <set_difficulty_level value="1" />
+    <set_variable name="AmountofTyphone" randomIntLow="-10" randomIntHigh="3" />
+    <set_variable name="AmountofCharybdis" randomIntLow="-20" randomIntHigh="10" />
+    <set_variable name="AmountofWhale" randomIntLow="-20" randomIntHigh="10" />
+    <set_variable name="AmountofDragon" randomIntLow="-10" randomIntHigh="3" />
+    <set_variable name="AmountofPiranha" randomIntLow="-20" randomIntHigh="10" />
+    <set_variable name="AmountofNsect" randomIntLow="-20" randomIntHigh="10" />
+    <set_variable name="AmountofJelly" randomIntLow="-20" randomIntHigh="10" />
+    <set_variable name="AmountofShark" randomIntLow="-20" randomIntHigh="10" />
+    <set_variable name="AmountofGoodStations" randomIntLow="1" randomIntHigh="4" />
+    <!---->
+    <set_variable name="CreateSteps" value="1.0" integer="yes" />
+  </start>
+  <folder_arme name="Creating Enviroment" id_arme="32b23a5e-e98b-46a9-b66d-47ee92e16d50" expanded_arme="" />
+  <folder_arme name="Step 1 Nebs" id_arme="7bdf5a1a-b5e7-4af0-9a05-fc033ed6d304" parent_id_arme="32b23a5e-e98b-46a9-b66d-47ee92e16d50" />
+  <event name="Stright Purple" id_arme="c31c77f1-cffb-4c41-975a-1a174bff3cd0" parent_id_arme="7bdf5a1a-b5e7-4af0-9a05-fc033ed6d304">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="1.0" />
+    <if_variable name="WillbhHappen" comparator="EQUALS" value="1.0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <!---->
+    <create count="RandAmount" type="nebulas" nebType="1" startX="RandNumA*RandTimesA" startY="0" startZ="RandNumB*RandTimesB" endX="RandNumC*RandTimesC" endY="0" endZ="RandNumD*RandTimesD" randomRange="RandSpred" randomSeed="RandSeed" />
+    <!---->
+    <set_variable name="CreateSteps" value="CreateSteps+1" integer="yes" />
+  </event>
+  <event name="Stright Blue" id_arme="de497c16-8ffb-4009-bb8f-7ce13168dca5" parent_id_arme="7bdf5a1a-b5e7-4af0-9a05-fc033ed6d304">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="1.0" />
+    <if_variable name="WillbhHappen" comparator="EQUALS" value="2.0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <!---->
+    <create count="RandAmount" type="nebulas" nebType="2" startX="RandNumA*RandTimesA" startY="0" startZ="RandNumB*RandTimesB" endX="RandNumC*RandTimesC" endY="0" endZ="RandNumD*RandTimesD" randomRange="RandSpred" randomSeed="RandSeed" />
+    <!---->
+    <set_variable name="CreateSteps" value="CreateSteps+1" integer="yes" />
+  </event>
+  <event name="Stright Yellow" id_arme="4236b6b0-f86d-4186-8ba9-e58042f64d72" parent_id_arme="7bdf5a1a-b5e7-4af0-9a05-fc033ed6d304">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="1.0" />
+    <if_variable name="WillbhHappen" comparator="EQUALS" value="3.0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <!---->
+    <create count="RandAmount" type="nebulas" nebType="3" startX="RandNumA*RandTimesA" startY="0" startZ="RandNumB*RandTimesB" endX="RandNumC*RandTimesC" endY="0" endZ="RandNumD*RandTimesD" randomRange="RandSpred" randomSeed="RandSeed" />
+    <!---->
+    <set_variable name="CreateSteps" value="CreateSteps+1" integer="yes" />
+  </event>
+  <event name="Round Purple" id_arme="a8faad85-31e7-488a-82e1-3141e391b190" parent_id_arme="7bdf5a1a-b5e7-4af0-9a05-fc033ed6d304">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="1.0" />
+    <if_variable name="WillbhHappen" comparator="EQUALS" value="4.0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <!---->
+    <create count="RandAmount" type="nebulas" nebType="1" startX="RandNumA*RandTimesA" startY="0" startZ="RandNumB*RandTimesB" radius="RandAmount" randomRange="RandSpred" randomSeed="RandSeed" />
+    <!---->
+    <set_variable name="CreateSteps" value="CreateSteps+1" integer="yes" />
+  </event>
+  <event name="Round Blue" id_arme="022f669c-aad0-4d8f-bfaa-59aaebdf67dc" parent_id_arme="7bdf5a1a-b5e7-4af0-9a05-fc033ed6d304">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="1.0" />
+    <if_variable name="WillbhHappen" comparator="EQUALS" value="5.0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <!---->
+    <create count="RandAmount" type="nebulas" nebType="2" startX="RandNumA*RandTimesA" startY="0" startZ="RandNumB*RandTimesB" radius="RandAmount" randomRange="RandSpred" randomSeed="RandSeed" />
+    <!---->
+    <set_variable name="CreateSteps" value="CreateSteps+1" integer="yes" />
+  </event>
+  <event name="Round Yellow" id_arme="2efe92cf-7135-4bb4-aedc-342a67b4d995" parent_id_arme="7bdf5a1a-b5e7-4af0-9a05-fc033ed6d304">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="1.0" />
+    <if_variable name="WillbhHappen" comparator="EQUALS" value="6.0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <!---->
+    <create count="RandAmount" type="nebulas" nebType="3" startX="RandNumA*RandTimesA" startY="0" startZ="RandNumB*RandTimesB" radius="RandAmount" randomRange="RandSpred" randomSeed="RandSeed" />
+    <!---->
+    <set_variable name="CreateSteps" value="CreateSteps+1" integer="yes" />
+  </event>
+  <event name="Nothing" id_arme="75eace9d-862c-401f-99e3-19f519e31987" parent_id_arme="7bdf5a1a-b5e7-4af0-9a05-fc033ed6d304">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="1.0" />
+    <if_variable name="WillbhHappen" comparator="EQUALS" value="7.0" />
+    <!---->
+    <set_variable name="CreateSteps" value="CreateSteps+1" integer="yes" />
+  </event>
+  <folder_arme name="Step2 Ast" id_arme="6e9bf323-1c8d-486c-9ebb-f2baf9a172a9" parent_id_arme="32b23a5e-e98b-46a9-b66d-47ee92e16d50" />
+  <event name="Stright Astroids" id_arme="555a0aae-4c4d-4841-8484-240beab3f6eb" parent_id_arme="6e9bf323-1c8d-486c-9ebb-f2baf9a172a9">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="2.0" />
+    <if_variable name="WillnastHappen" comparator="EQUALS" value="1.0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <!---->
+    <create count="RandAmount" type="asteroids" startX="RandNumA*RandTimesA" startY="0" startZ="RandNumB*RandTimesB" endX="RandNumC*RandTimesC" endY="0" endZ="RandNumD*RandTimesD" randomRange="RandSpred" randomSeed="RandSeed" />
+    <!---->
+    <set_variable name="CreateSteps" value="CreateSteps+1" integer="yes" />
+  </event>
+  <event name="Circle Astroids" id_arme="c3f8749e-12a7-445f-8f8e-81740b398870" parent_id_arme="6e9bf323-1c8d-486c-9ebb-f2baf9a172a9">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="2.0" />
+    <if_variable name="WillnastHappen" comparator="EQUALS" value="2.0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <!---->
+    <create count="RandAmount" type="asteroids" startX="RandNumA*RandTimesA" startY="0" startZ="RandNumB*RandTimesB" radius="RandAmount" randomRange="RandSpred" randomSeed="RandSeed" />
+    <!---->
+    <set_variable name="CreateSteps" value="CreateSteps+1" integer="yes" />
+  </event>
+  <event name="Arc Astroids" id_arme="dda40308-980a-4d7b-aa9e-488c572d02f5" parent_id_arme="6e9bf323-1c8d-486c-9ebb-f2baf9a172a9">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="2.0" />
+    <if_variable name="WillnastHappen" comparator="EQUALS" value="3.0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandHeadingA" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RandHeadingB" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <!---->
+    <create count="RandAmount" type="asteroids" startAngle="RandHeadingA" endAngle="RandHeadingB" startX="RandNumA*RandTimesA" startY="0" startZ="RandNumB*RandTimesB" radius="RandAmount" randomRange="RandSpred" randomSeed="RandSeed" />
+    <!---->
+    <set_variable name="CreateSteps" value="CreateSteps+1" integer="yes" />
+  </event>
+  <event name="Nothing" id_arme="f391fd17-33ee-4576-8961-88821083f941" parent_id_arme="6e9bf323-1c8d-486c-9ebb-f2baf9a172a9">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="2.0" />
+    <if_variable name="WillnastHappen" comparator="EQUALS" value="4.0" />
+    <!---->
+    <set_variable name="CreateSteps" value="CreateSteps+1" integer="yes" />
+  </event>
+  <folder_arme name="Step 3 Black Hole" id_arme="aed2b86a-9853-4b52-9892-3a1128258cc9" parent_id_arme="32b23a5e-e98b-46a9-b66d-47ee92e16d50" />
+  <event name="Black Holes" id_arme="312b9fad-2bc8-46c7-9084-dbcdf740c41e" parent_id_arme="aed2b86a-9853-4b52-9892-3a1128258cc9">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="3.0" />
+    <if_variable name="WillbhHappen" comparator="EQUALS" value="1.0" />
+    <if_variable name="RandAmountofBlackHoles" comparator="NOT" value="0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <!---->
+    <create type="blackHole" x="RandNumA*RandTimesA" y="0" z="RandNumB*RandTimesB" />
+    <!---->
+    <set_variable name="RandAmountofBlackHoles" value="RandAmountofBlackHoles-1" integer="yes" />
+  </event>
+  <event name="End Black hole making" id_arme="558d43b7-b592-49f0-baf2-ef99efc3bbc4" parent_id_arme="aed2b86a-9853-4b52-9892-3a1128258cc9">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="3.0" />
+    <if_variable name="RandAmountofBlackHoles" comparator="EQUALS" value="0" />
+    <!---->
+    <set_variable name="CreateSteps" value="CreateSteps+1" integer="yes" />
+  </event>
+  <event name="Nothing" id_arme="1ffba995-c724-45ff-a16c-0cc9d4c02741" parent_id_arme="aed2b86a-9853-4b52-9892-3a1128258cc9">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="3.0" />
+    <if_variable name="WillbhHappen" comparator="EQUALS" value="2.0" />
+    <!---->
+    <set_variable name="CreateSteps" value="CreateSteps+1" integer="yes" />
+  </event>
+  <folder_arme name="Step 4 Create critters" id_arme="e7e9be18-cea4-40ee-aa07-f5a6d0f9366a" parent_id_arme="32b23a5e-e98b-46a9-b66d-47ee92e16d50" />
+  <event name="Typhone" id_arme="fdd0b82a-700b-419b-8b88-903759e169ca" parent_id_arme="e7e9be18-cea4-40ee-aa07-f5a6d0f9366a">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="4.0" />
+    <if_variable name="AmountofTyphone" comparator="GREATER" value="0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandHeadingA" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RandHeadingB" randomIntLow="0" randomIntHigh="360" />
+    <!---->
+    <create type="monster" monsterType="0" x="RandNumA*RandTimesA" y="0" z="RandNumB*RandTimesB" angle="RandHeadingA" />
+    <!---->
+    <set_variable name="AmountofTyphone" value="AmountofTyphone-1" integer="yes" />
+  </event>
+  <event name="Whale" id_arme="c0e93d73-e7ac-4fbe-a1a1-d3d7608cfa48" parent_id_arme="e7e9be18-cea4-40ee-aa07-f5a6d0f9366a">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="4.0" />
+    <if_variable name="AmountofWhale" comparator="GREATER" value="0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandHeadingA" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RandHeadingB" randomIntLow="0" randomIntHigh="360" />
+    <!---->
+    <create type="monster" monsterType="1" x="RandNumA*RandTimesA" y="0" z="RandNumB*RandTimesB" angle="RandHeadingA" />
+    <!---->
+    <set_variable name="AmountofWhale" value="AmountofWhale-1" integer="yes" />
+  </event>
+  <event name="Shark" id_arme="b3fdcdad-10d3-4ae9-9daa-ed214aa7e191" parent_id_arme="e7e9be18-cea4-40ee-aa07-f5a6d0f9366a">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="4.0" />
+    <if_variable name="AmountofShark" comparator="GREATER" value="0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandHeadingA" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RandHeadingB" randomIntLow="0" randomIntHigh="360" />
+    <!---->
+    <create type="monster" monsterType="2" x="RandNumA*RandTimesA" y="0" z="RandNumB*RandTimesB" angle="RandHeadingA" />
+    <!---->
+    <set_variable name="AmountofShark" value="AmountofShark-1" integer="yes" />
+  </event>
+  <event name="Dragon" id_arme="b482f80c-e28c-4b4c-bb72-e6804418d6c9" parent_id_arme="e7e9be18-cea4-40ee-aa07-f5a6d0f9366a">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="4.0" />
+    <if_variable name="AmountofDragon" comparator="GREATER" value="0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandHeadingA" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RandHeadingB" randomIntLow="0" randomIntHigh="360" />
+    <!---->
+    <create type="monster" monsterType="3" x="RandNumA*RandTimesA" y="0" z="RandNumB*RandTimesB" angle="RandHeadingA" />
+    <!---->
+    <set_variable name="AmountofDragon" value="AmountofDragon-1" integer="yes" />
+  </event>
+  <event name="Piranha" id_arme="dc9a8e2b-acb6-48e2-ace4-c93823bde2f9" parent_id_arme="e7e9be18-cea4-40ee-aa07-f5a6d0f9366a">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="4.0" />
+    <if_variable name="AmountofPiranha" comparator="GREATER" value="0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandHeadingA" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RandHeadingB" randomIntLow="0" randomIntHigh="360" />
+    <!---->
+    <create type="monster" monsterType="4" x="RandNumA*RandTimesA" y="0" z="RandNumB*RandTimesB" angle="RandHeadingA" />
+    <!---->
+    <set_variable name="AmountofPiranha" value="AmountofPiranha-1" integer="yes" />
+  </event>
+  <event name="Charybdis" id_arme="72f0e36d-a5cd-4315-94aa-08eeb1cbde9d" parent_id_arme="e7e9be18-cea4-40ee-aa07-f5a6d0f9366a">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="4.0" />
+    <if_variable name="AmountofCharybdis" comparator="GREATER" value="0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandHeadingA" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RandHeadingB" randomIntLow="0" randomIntHigh="360" />
+    <!---->
+    <create type="monster" monsterType="5" x="RandNumA*RandTimesA" y="0" z="RandNumB*RandTimesB" angle="RandHeadingA" />
+    <!---->
+    <set_variable name="AmountofCharybdis" value="AmountofCharybdis-1" integer="yes" />
+  </event>
+  <event name="Nsect" id_arme="b7850e40-0292-4a8b-aa83-7ee8c4acbc4e" parent_id_arme="e7e9be18-cea4-40ee-aa07-f5a6d0f9366a">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="4.0" />
+    <if_variable name="AmountofNsect" comparator="GREATER" value="0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandHeadingA" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RandHeadingB" randomIntLow="0" randomIntHigh="360" />
+    <!---->
+    <create type="monster" monsterType="6" x="RandNumA*RandTimesA" y="0" z="RandNumB*RandTimesB" angle="RandHeadingA" />
+    <!---->
+    <set_variable name="AmountofNsect" value="AmountofNsect-1" integer="yes" />
+  </event>
+  <event name="Jelly" id_arme="ff90c0ca-4088-49e2-b366-048a82e77389" parent_id_arme="e7e9be18-cea4-40ee-aa07-f5a6d0f9366a">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="4.0" />
+    <if_variable name="AmountofJelly" comparator="GREATER" value="0" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandHeadingA" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RandHeadingB" randomIntLow="0" randomIntHigh="360" />
+    <!---->
+    <create type="monster" monsterType="7" x="RandNumA*RandTimesA" y="0" z="RandNumB*RandTimesB" angle="RandHeadingA" />
+    <!---->
+    <set_variable name="AmountofJelly" value="AmountofJelly-1" integer="yes" />
+  </event>
+  <event name="All Done" id_arme="e5206383-7862-4098-b9d8-e4f78faca63c" parent_id_arme="e7e9be18-cea4-40ee-aa07-f5a6d0f9366a">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="4.0" />
+    <if_variable name="AmountofTyphone" comparator="LESS_EQUAL" value="0" />
+    <if_variable name="AmountofWhale" comparator="LESS_EQUAL" value="0" />
+    <if_variable name="AmountofShark" comparator="LESS_EQUAL" value="0" />
+    <if_variable name="AmountofDragon" comparator="LESS_EQUAL" value="0" />
+    <if_variable name="AmountofPiranha" comparator="LESS_EQUAL" value="0" />
+    <if_variable name="AmountofCharybdis" comparator="LESS_EQUAL" value="0" />
+    <if_variable name="AmountofNsect" comparator="LESS_EQUAL" value="0" />
+    <if_variable name="AmountofJelly" comparator="LESS_EQUAL" value="0" />
+    <!---->
+    <set_variable name="CreateSteps" value="CreateSteps+1" integer="yes" />
+  </event>
+  <folder_arme name="Step 5 Stations" id_arme="923f2af7-95b9-49ca-b243-5930dc8c3030" parent_id_arme="32b23a5e-e98b-46a9-b66d-47ee92e16d50" expanded_arme="" />
+  <event name="Good Stations" id_arme="f0e8863a-153b-4ed9-924b-4d1ef38f05b8" parent_id_arme="923f2af7-95b9-49ca-b243-5930dc8c3030">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="5.0" />
+    <if_variable name="AmountofGoodStations" comparator="GREATER" value="0" />
+    <set_variable name="StationType" randomIntLow="1000" randomIntHigh="1004" />
+    <set_variable name="RandNumA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandNumD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandTimesA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandTimesD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandAmount" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <set_variable name="RandSpred" randomIntLow="300" randomIntHigh="25000" integer="yes" />
+    <set_variable name="RandHeadingA" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RandSeed" randomIntLow="1" randomIntHigh="300" integer="yes" />
+    <!---->
+    <create type="station" x="RandNumA*RandTimesA" y="0" z="RandNumB*RandTimesB" angle="RandHeadingA" name="B0|AmountofGoodStations|" hullID="StationType" />
+    <!---->
+    <set_variable name="AmountofGoodStations" value="AmountofGoodStations-1" integer="yes" />
+  </event>
+  <event name="Stations finshed" id_arme="8432ae25-73e0-463c-92b6-430acc852e68" parent_id_arme="923f2af7-95b9-49ca-b243-5930dc8c3030">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="5.0" />
+    <if_variable name="AmountofGoodStations" comparator="LESS_EQUAL" value="0" />
+    <!---->
+    <set_variable name="CreateSteps" value="CreateSteps+1" integer="yes" />
+  </event>
+  <folder_arme name="Levels" id_arme="57e5aab3-a705-437c-a09e-6aa7640cd3b5" expanded_arme="" />
+  <folder_arme name="Start Level 1" id_arme="5aa6a922-b8d9-4d50-b3f1-87a223173b50" parent_id_arme="57e5aab3-a705-437c-a09e-6aa7640cd3b5" />
+  <event name="Create Bad Guys" id_arme="89ce4ec2-fb78-4529-91d1-0e9c58368964" parent_id_arme="5aa6a922-b8d9-4d50-b3f1-87a223173b50">
+    <if_variable name="CreateSteps" comparator="EQUALS" value="6.0" />
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="1.0" />
+    <if_variable name="Counter" comparator="EQUALS" value="1.0" />
+    <!---->
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+  </event>
+  <event name="Move to next level" id_arme="0f3e5616-9ed4-46fa-9e28-a40e3ae3c32c" parent_id_arme="5aa6a922-b8d9-4d50-b3f1-87a223173b50">
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="0.0" />
+    <if_variable name="Counter" comparator="EQUALS" value="1.0" />
+    <if_not_exists name="A11" />
+    <if_not_exists name="A12" />
+    <if_not_exists name="A13" />
+    <if_not_exists name="A14" />
+    <if_not_exists name="A15" />
+    <if_not_exists name="A16" />
+    <if_not_exists name="A17" />
+    <if_not_exists name="A18" />
+    <if_not_exists name="A19" />
+    <!---->
+    <set_difficulty_level value="2" />
+    <set_variable name="Counter" value="Counter+1" integer="yes" />
+    <set_variable name="OnOffSwitch" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Level 2" id_arme="87ba5570-3254-4166-8d6d-e1631780157b" parent_id_arme="57e5aab3-a705-437c-a09e-6aa7640cd3b5" />
+  <event name="Create Bad Guys" id_arme="4fe4c94f-54c7-445c-ae5e-ff86d37052c7" parent_id_arme="87ba5570-3254-4166-8d6d-e1631780157b">
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="1.0" />
+    <if_variable name="Counter" comparator="EQUALS" value="2.0" />
+    <!---->
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+  </event>
+  <event name="Move to next level" id_arme="6c704da6-d694-440f-832b-1eeee361fbe6" parent_id_arme="87ba5570-3254-4166-8d6d-e1631780157b">
+    <if_variable name="Counter" comparator="EQUALS" value="2.0" />
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="A20" />
+    <if_not_exists name="A21" />
+    <if_not_exists name="A22" />
+    <if_not_exists name="A23" />
+    <if_not_exists name="A24" />
+    <if_not_exists name="A25" />
+    <if_not_exists name="A26" />
+    <if_not_exists name="A27" />
+    <if_not_exists name="A28" />
+    <if_not_exists name="A29" />
+    <!---->
+    <set_difficulty_level value="3" />
+    <set_variable name="Counter" value="Counter+1" integer="yes" />
+    <set_variable name="OnOffSwitch" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Level 3" id_arme="d1c67fcf-45f0-4dc9-9dbf-fc610dcf3d7e" parent_id_arme="57e5aab3-a705-437c-a09e-6aa7640cd3b5" />
+  <event name="Create Bad Guys" id_arme="ace13835-a4d6-4987-984c-f9511dc1f5ed" parent_id_arme="d1c67fcf-45f0-4dc9-9dbf-fc610dcf3d7e">
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="1.0" />
+    <if_variable name="Counter" comparator="EQUALS" value="3.0" />
+    <!---->
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+  </event>
+  <event name="Move to next level" id_arme="dc71e820-cd02-4652-b557-48bc6a96ec24" parent_id_arme="d1c67fcf-45f0-4dc9-9dbf-fc610dcf3d7e">
+    <if_variable name="Counter" comparator="EQUALS" value="3.0" />
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="A30" />
+    <if_not_exists name="A31" />
+    <if_not_exists name="A32" />
+    <if_not_exists name="A33" />
+    <if_not_exists name="A34" />
+    <if_not_exists name="A35" />
+    <if_not_exists name="A36" />
+    <if_not_exists name="A37" />
+    <if_not_exists name="A38" />
+    <if_not_exists name="A39" />
+    <!---->
+    <set_difficulty_level value="4" />
+    <set_variable name="Counter" value="Counter+1" integer="yes" />
+    <set_variable name="OnOffSwitch" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Level 4" id_arme="ffc8e731-1f67-4b71-ac1a-1d85715adecd" parent_id_arme="57e5aab3-a705-437c-a09e-6aa7640cd3b5" />
+  <event name="Create Bad Guys" id_arme="bec1f972-0e52-448d-93d7-fbfc8066904a" parent_id_arme="ffc8e731-1f67-4b71-ac1a-1d85715adecd">
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="1.0" />
+    <if_variable name="Counter" comparator="EQUALS" value="4.0" />
+    <!---->
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+  </event>
+  <event name="Move to next level" id_arme="d0492d58-5227-479f-9e0c-564e0e18e067" parent_id_arme="ffc8e731-1f67-4b71-ac1a-1d85715adecd">
+    <if_variable name="Counter" comparator="EQUALS" value="4.0" />
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="A40" />
+    <if_not_exists name="A41" />
+    <if_not_exists name="A42" />
+    <if_not_exists name="A43" />
+    <if_not_exists name="A44" />
+    <if_not_exists name="A45" />
+    <if_not_exists name="A46" />
+    <if_not_exists name="A47" />
+    <if_not_exists name="A48" />
+    <if_not_exists name="A49" />
+    <!---->
+    <set_difficulty_level value="5" />
+    <set_variable name="Counter" value="Counter+1" integer="yes" />
+    <set_variable name="OnOffSwitch" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Level 5" id_arme="fd26bf9e-e3c7-4e29-b5f8-4b3c040d0224" parent_id_arme="57e5aab3-a705-437c-a09e-6aa7640cd3b5" />
+  <event name="Create Bad Guys" id_arme="3cbf1a6b-a1b0-43ec-8c73-0e7831f6aa59" parent_id_arme="fd26bf9e-e3c7-4e29-b5f8-4b3c040d0224">
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="1.0" />
+    <if_variable name="Counter" comparator="EQUALS" value="5.0" />
+    <!---->
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+  </event>
+  <event name="Move to next level" id_arme="e5905e62-0611-40ed-9041-d913771ec5a8" parent_id_arme="fd26bf9e-e3c7-4e29-b5f8-4b3c040d0224">
+    <if_variable name="Counter" comparator="EQUALS" value="5.0" />
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="A50" />
+    <if_not_exists name="A51" />
+    <if_not_exists name="A52" />
+    <if_not_exists name="A53" />
+    <if_not_exists name="A54" />
+    <if_not_exists name="A55" />
+    <if_not_exists name="A56" />
+    <if_not_exists name="A57" />
+    <if_not_exists name="A58" />
+    <if_not_exists name="A59" />
+    <!---->
+    <set_difficulty_level value="6" />
+    <set_variable name="Counter" value="Counter+1" integer="yes" />
+    <set_variable name="OnOffSwitch" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Level 6" id_arme="cd506973-668d-4135-a0e3-1274bfb9e1b2" parent_id_arme="57e5aab3-a705-437c-a09e-6aa7640cd3b5" expanded_arme="" />
+  <event name="Create Bad Guys" id_arme="bead9586-9063-40bc-85c8-360c04ad407b" parent_id_arme="cd506973-668d-4135-a0e3-1274bfb9e1b2">
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="1.0" />
+    <if_variable name="Counter" comparator="EQUALS" value="6.0" />
+    <!---->
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+  </event>
+  <event name="Move to next level" id_arme="9cff62eb-5f01-402a-b4f8-e2a971fe5a1b" parent_id_arme="cd506973-668d-4135-a0e3-1274bfb9e1b2">
+    <if_variable name="Counter" comparator="EQUALS" value="6.0" />
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="A60" />
+    <if_not_exists name="A61" />
+    <if_not_exists name="A62" />
+    <if_not_exists name="A63" />
+    <if_not_exists name="A64" />
+    <if_not_exists name="A65" />
+    <if_not_exists name="A66" />
+    <if_not_exists name="A67" />
+    <if_not_exists name="A68" />
+    <if_not_exists name="A69" />
+    <!---->
+    <set_difficulty_level value="7" />
+    <set_variable name="Counter" value="Counter+1" integer="yes" />
+    <set_variable name="OnOffSwitch" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Level 7" id_arme="9f7bfa6f-bfb7-4bdd-be68-026d2eccfed7" parent_id_arme="57e5aab3-a705-437c-a09e-6aa7640cd3b5" expanded_arme="" />
+  <event name="Create Bad Guys" id_arme="0347dfd6-77eb-4528-931b-20fafbfba1fd" parent_id_arme="9f7bfa6f-bfb7-4bdd-be68-026d2eccfed7">
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="1.0" />
+    <if_variable name="Counter" comparator="EQUALS" value="7.0" />
+    <!---->
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+  </event>
+  <event name="Move to next level" id_arme="0f5ab63d-91bc-4ab4-81ac-7e73c2921175" parent_id_arme="9f7bfa6f-bfb7-4bdd-be68-026d2eccfed7">
+    <if_variable name="Counter" comparator="EQUALS" value="7.0" />
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="A70" />
+    <if_not_exists name="A71" />
+    <if_not_exists name="A72" />
+    <if_not_exists name="A73" />
+    <if_not_exists name="A74" />
+    <if_not_exists name="A75" />
+    <if_not_exists name="A76" />
+    <if_not_exists name="A77" />
+    <if_not_exists name="A78" />
+    <if_not_exists name="A79" />
+    <!---->
+    <set_difficulty_level value="8" />
+    <set_variable name="Counter" value="Counter+1" integer="yes" />
+    <set_variable name="OnOffSwitch" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Level 8" id_arme="aba08e26-a85a-4e70-b44f-5e4c8b939d4e" parent_id_arme="57e5aab3-a705-437c-a09e-6aa7640cd3b5" expanded_arme="" />
+  <event name="Create Bad Guys" id_arme="c60576a1-0a30-4598-bba6-c5c59b1f5524" parent_id_arme="aba08e26-a85a-4e70-b44f-5e4c8b939d4e">
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="1.0" />
+    <if_variable name="Counter" comparator="EQUALS" value="8.0" />
+    <!---->
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+  </event>
+  <event name="Move to next level" id_arme="568ab420-c60e-4fcc-9a99-cb786553a521" parent_id_arme="aba08e26-a85a-4e70-b44f-5e4c8b939d4e">
+    <if_variable name="Counter" comparator="EQUALS" value="8.0" />
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="A80" />
+    <if_not_exists name="A81" />
+    <if_not_exists name="A82" />
+    <if_not_exists name="A83" />
+    <if_not_exists name="A84" />
+    <if_not_exists name="A85" />
+    <if_not_exists name="A86" />
+    <if_not_exists name="A87" />
+    <if_not_exists name="A88" />
+    <if_not_exists name="A89" />
+    <!---->
+    <set_difficulty_level value="9" />
+    <set_variable name="Counter" value="Counter+1" integer="yes" />
+    <set_variable name="OnOffSwitch" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Level 9" id_arme="155235fe-5854-44c2-8914-d4db9648a9e9" parent_id_arme="57e5aab3-a705-437c-a09e-6aa7640cd3b5" expanded_arme="" />
+  <event name="Create Bad Guys" id_arme="f6310166-5241-4e60-aec0-18f9b47ebc3b" parent_id_arme="155235fe-5854-44c2-8914-d4db9648a9e9">
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="1.0" />
+    <if_variable name="Counter" comparator="EQUALS" value="9.0" />
+    <!---->
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+  </event>
+  <event name="Move to next level" id_arme="89d377c6-db86-404c-a026-6412a0281741" parent_id_arme="155235fe-5854-44c2-8914-d4db9648a9e9">
+    <if_variable name="Counter" comparator="EQUALS" value="9.0" />
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="A90" />
+    <if_not_exists name="A91" />
+    <if_not_exists name="A92" />
+    <if_not_exists name="A93" />
+    <if_not_exists name="A94" />
+    <if_not_exists name="A95" />
+    <if_not_exists name="A96" />
+    <if_not_exists name="A97" />
+    <if_not_exists name="A98" />
+    <if_not_exists name="A99" />
+    <!---->
+    <set_difficulty_level value="10" />
+    <set_variable name="Counter" value="Counter+1" integer="yes" />
+    <set_variable name="OnOffSwitch" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Level 10" id_arme="f789e7bd-ef0d-4ea1-ac7e-1713dbf3c31c" parent_id_arme="57e5aab3-a705-437c-a09e-6aa7640cd3b5" expanded_arme="" />
+  <event name="Create Bad Guys" id_arme="69e9424e-a5da-4b91-86f3-fcb97e4d8dc1" parent_id_arme="f789e7bd-ef0d-4ea1-ac7e-1713dbf3c31c">
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="1.0" />
+    <if_variable name="Counter" comparator="EQUALS" value="10.0" />
+    <!---->
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+  </event>
+  <event name="Move to next level" id_arme="6be71970-4e3c-4321-ae59-fdf18286d18f" parent_id_arme="f789e7bd-ef0d-4ea1-ac7e-1713dbf3c31c">
+    <if_variable name="Counter" comparator="EQUALS" value="10.0" />
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="A100" />
+    <if_not_exists name="A101" />
+    <if_not_exists name="A102" />
+    <if_not_exists name="A103" />
+    <if_not_exists name="A104" />
+    <if_not_exists name="A105" />
+    <if_not_exists name="A106" />
+    <if_not_exists name="A107" />
+    <if_not_exists name="A108" />
+    <if_not_exists name="A109" />
+    <!---->
+    <set_difficulty_level value="11" />
+    <set_variable name="Counter" value="Counter+1" integer="yes" />
+    <set_variable name="OnOffSwitch" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Level 11" id_arme="f9143e11-5c2c-465b-bf93-09a836837133" parent_id_arme="57e5aab3-a705-437c-a09e-6aa7640cd3b5" expanded_arme="" />
+  <event name="Create Bad Guys" id_arme="f948d317-e8d6-4c69-a12b-d6a9d0bf3e82" parent_id_arme="f9143e11-5c2c-465b-bf93-09a836837133">
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="1.0" />
+    <if_variable name="Counter" comparator="EQUALS" value="11.0" />
+    <!---->
+    <set_variable name="HowManyGroups" randomIntLow="1" randomIntHigh="5" integer="yes" />
+  </event>
+  <event name="End Game" id_arme="6ac3d6ca-9c22-46bf-be5f-22868e717026" parent_id_arme="f9143e11-5c2c-465b-bf93-09a836837133">
+    <if_variable name="Counter" comparator="EQUALS" value="11.0" />
+    <if_variable name="OnOffSwitch" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="A110" />
+    <if_not_exists name="A111" />
+    <if_not_exists name="A112" />
+    <if_not_exists name="A113" />
+    <if_not_exists name="A11" />
+    <if_not_exists name="A115" />
+    <if_not_exists name="A116" />
+    <if_not_exists name="A117" />
+    <if_not_exists name="A118" />
+    <if_not_exists name="A119" />
+    <!---->
+    <end_mission />
+  </event>
+  <folder_arme name="Create Bad Guys" id_arme="03e25337-304c-4385-9209-6874a36c6206" expanded_arme="" />
+  <folder_arme name="Making groups" id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974" parent_id_arme="03e25337-304c-4385-9209-6874a36c6206" expanded_arme="" />
+  <event name="Make 1 group" id_arme="9e33454e-6377-4056-93f0-78fc53528cb6" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
+    <if_variable name="HowManyGroups" comparator="EQUALS" value="1.0" />
+    <set_variable name="WhatRace1" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBadGuysTeam1" value="10.0" integer="yes" />
+    <set_variable name="GroupNum1" value="GroupNum1+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="50000.0" fleetIndex="GroupNum1" />
+    <set_variable name="HowManyGroups" value="0.0" integer="yes" />
+    <set_variable name="OnOffSwitch" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="Make 2 group" id_arme="a9812549-e495-43fb-888e-f78ccaca6c33" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
+    <if_variable name="HowManyGroups" comparator="EQUALS" value="2.0" />
+    <set_variable name="WhatRace1" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBadGuysTeam1" value="5.0" integer="yes" />
+    <set_variable name="WhatRace2" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBadGuysTeam2" value="5.0" integer="yes" />
+    <set_variable name="GroupNum1" value="GroupNum1+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="50000.0" fleetIndex="GroupNum1" />
+    <set_variable name="GroupNum2" value="GroupNum2+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="30000.0" fleetIndex="GroupNum2" />
+    <set_variable name="HowManyGroups" value="0.0" integer="yes" />
+    <set_variable name="OnOffSwitch" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="Make 3 group" id_arme="02522729-1ab8-405d-9208-730bd54f42a6" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
+    <if_variable name="HowManyGroups" comparator="EQUALS" value="3.0" />
+    <set_variable name="WhatRace1" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBadGuysTeam1" value="5.0" integer="yes" />
+    <set_variable name="WhatRace2" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBadGuysTeam2" value="3.0" integer="yes" />
+    <set_variable name="WhatRace3" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBadGuysTeam3" value="2.0" integer="yes" />
+    <set_variable name="GroupNum1" value="GroupNum1+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="50000.0" fleetIndex="GroupNum1" />
+    <set_variable name="GroupNum2" value="GroupNum2+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="30000.0" fleetIndex="GroupNum2" />
+    <set_variable name="GroupNum3" value="GroupNum2+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="50000.0" fleetIndex="GroupNum3" />
+    <set_variable name="HowManyGroups" value="0.0" integer="yes" />
+    <set_variable name="OnOffSwitch" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="Make 4 group" id_arme="28834d68-17fd-4c72-abe4-ea04a4b8a18a" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
+    <if_variable name="HowManyGroups" comparator="EQUALS" value="4.0" />
+    <set_variable name="WhatRace1" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBadGuysTeam1" value="2.0" integer="yes" />
+    <set_variable name="WhatRace2" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBadGuysTeam2" value="1.0" integer="yes" />
+    <set_variable name="WhatRace3" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBadGuysTeam3" value="3.0" integer="yes" />
+    <set_variable name="WhatRace4" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBadGuysTeam4" value="4.0" integer="yes" />
+    <set_variable name="GroupNum1" value="GroupNum1+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="20000.0" fleetIndex="GroupNum1" />
+    <set_variable name="GroupNum2" value="GroupNum2+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="30000.0" fleetIndex="GroupNum2" />
+    <set_variable name="GroupNum3" value="GroupNum2+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="40000.0" fleetIndex="GroupNum3" />
+    <set_variable name="GroupNum4" value="GroupNum2+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="50000.0" fleetIndex="GroupNum4" />
+    <set_variable name="HowManyGroups" value="0.0" integer="yes" />
+    <set_variable name="OnOffSwitch" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <event name="Make 5 group" id_arme="c62d631a-c70c-4b6e-a250-ac44852f6e55" parent_id_arme="a52b948b-238b-48ba-8a5e-5245a8a4c974">
+    <if_variable name="HowManyGroups" comparator="EQUALS" value="5.0" />
+    <set_variable name="WhatRace1" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBadGuysTeam1" value="2.0" integer="yes" />
+    <set_variable name="WhatRace2" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBadGuysTeam2" value="1.0" integer="yes" />
+    <set_variable name="WhatRace3" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBadGuysTeam3" value="2.0" integer="yes" />
+    <set_variable name="WhatRace4" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBadGuysTeam4" value="3.0" integer="yes" />
+    <set_variable name="WhatRace5" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBadGuysTeam5" value="2.0" integer="yes" />
+    <set_variable name="GroupNum1" value="GroupNum1+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="10000.0" fleetIndex="GroupNum1" />
+    <set_variable name="GroupNum2" value="GroupNum2+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="30000.0" fleetIndex="GroupNum2" />
+    <set_variable name="GroupNum3" value="GroupNum2+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="30000.0" fleetIndex="GroupNum3" />
+    <set_variable name="GroupNum4" value="GroupNum2+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="50000.0" fleetIndex="GroupNum4" />
+    <set_variable name="GroupNum5" value="GroupNum5+1" integer="yes" />
+    <set_fleet_property property="fleetMaxRadius" value="40000.0" fleetIndex="GroupNum5" />
+    <set_variable name="HowManyGroups" value="0.0" integer="yes" />
+    <set_variable name="OnOffSwitch" value="0.0" integer="yes" />
+    <!---->
+  </event>
+  <folder_arme name="Group1" id_arme="cac5d755-830b-424d-827b-eed8ca5afb30" parent_id_arme="03e25337-304c-4385-9209-6874a36c6206" />
+  <event name="Kralien" id_arme="92b31119-154e-4430-a7f8-91a92e92be23" parent_id_arme="cac5d755-830b-424d-827b-eed8ca5afb30">
+    <if_variable name="WhatRace1" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofBadGuysTeam1" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys1" randomIntLow="2000" randomIntHigh="2002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys1" sideValue="1" fleetnumber="GroupNum1" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam1" value="AmountofBadGuysTeam1-1" integer="yes" />
+  </event>
+  <event name="Arvonian" id_arme="b074cd92-f2b2-446f-9791-8cc93fc2cee2" parent_id_arme="cac5d755-830b-424d-827b-eed8ca5afb30">
+    <if_variable name="WhatRace1" comparator="EQUALS" value="2.0" />
+    <if_variable name="AmountofBadGuysTeam1" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys1" randomIntLow="3000" randomIntHigh="3002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys1" sideValue="1" fleetnumber="GroupNum1" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam1" value="AmountofBadGuysTeam1-1" integer="yes" />
+  </event>
+  <event name="Torgoth" id_arme="14c4fc1c-329b-4e6c-8c41-a8eece390883" parent_id_arme="cac5d755-830b-424d-827b-eed8ca5afb30">
+    <if_variable name="WhatRace1" comparator="EQUALS" value="3.0" />
+    <if_variable name="AmountofBadGuysTeam1" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys1" randomIntLow="4000" randomIntHigh="4002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys1" sideValue="1" fleetnumber="GroupNum1" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam1" value="AmountofBadGuysTeam1-1" integer="yes" />
+  </event>
+  <event name="Skaraan" id_arme="bf8e77db-cd94-4acd-85d2-db30b42ab49a" parent_id_arme="cac5d755-830b-424d-827b-eed8ca5afb30">
+    <if_variable name="WhatRace1" comparator="EQUALS" value="4.0" />
+    <if_variable name="AmountofBadGuysTeam1" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys1" randomIntLow="5000" randomIntHigh="5002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys1" sideValue="1" fleetnumber="GroupNum1" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam1" value="AmountofBadGuysTeam1-1" integer="yes" />
+  </event>
+  <folder_arme name="Group2" id_arme="d9f25959-b1ab-4885-9c0d-c14df5e18747" parent_id_arme="03e25337-304c-4385-9209-6874a36c6206" />
+  <event name="Kralien" id_arme="b9a00964-d30a-4b28-a5d6-f8e440ef15b7" parent_id_arme="d9f25959-b1ab-4885-9c0d-c14df5e18747">
+    <if_variable name="WhatRace2" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofBadGuysTeam2" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys2" randomIntLow="2000" randomIntHigh="2002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys2" sideValue="1" fleetnumber="GroupNum2" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam2" value="AmountofBadGuysTeam2-2" integer="yes" />
+  </event>
+  <event name="Arvonian" id_arme="f1143011-d802-46e3-be01-2e7dd85207f0" parent_id_arme="d9f25959-b1ab-4885-9c0d-c14df5e18747">
+    <if_variable name="WhatRace2" comparator="EQUALS" value="2.0" />
+    <if_variable name="AmountofBadGuysTeam2" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys2" randomIntLow="3000" randomIntHigh="3002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys2" sideValue="1" fleetnumber="GroupNum2" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam2" value="AmountofBadGuysTeam2-1" integer="yes" />
+  </event>
+  <event name="Torgoth" id_arme="98d54db0-f9b3-4711-869f-fde0914f3f5a" parent_id_arme="d9f25959-b1ab-4885-9c0d-c14df5e18747">
+    <if_variable name="WhatRace2" comparator="EQUALS" value="3.0" />
+    <if_variable name="AmountofBadGuysTeam2" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys2" randomIntLow="4000" randomIntHigh="4002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys2" sideValue="1" fleetnumber="GroupNum2" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam2" value="AmountofBadGuysTeam2-1" integer="yes" />
+  </event>
+  <event name="Skaraan" id_arme="68c08191-6cd1-4521-94a8-7def5d90e7bb" parent_id_arme="d9f25959-b1ab-4885-9c0d-c14df5e18747">
+    <if_variable name="WhatRace2" comparator="EQUALS" value="4.0" />
+    <if_variable name="AmountofBadGuysTeam2" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys2" randomIntLow="5000" randomIntHigh="5002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys2" sideValue="1" fleetnumber="GroupNum2" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam2" value="AmountofBadGuysTeam2-1" integer="yes" />
+  </event>
+  <folder_arme name="Group3" id_arme="c115bc82-7767-452a-8c78-9400d4d8e9ad" parent_id_arme="03e25337-304c-4385-9209-6874a36c6206" />
+  <event name="Kralien" id_arme="81e0aa8f-d91f-4312-88d4-bbc5b5155816" parent_id_arme="c115bc82-7767-452a-8c78-9400d4d8e9ad">
+    <if_variable name="WhatRace3" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofBadGuysTeam3" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys3" randomIntLow="2000" randomIntHigh="2002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys3" sideValue="1" fleetnumber="GroupNum3" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam3" value="AmountofBadGuysTeam3-1" integer="yes" />
+  </event>
+  <event name="Arvonian" id_arme="07ea7800-d2e1-4290-addb-06ad35ddc3f0" parent_id_arme="c115bc82-7767-452a-8c78-9400d4d8e9ad">
+    <if_variable name="WhatRace3" comparator="EQUALS" value="2.0" />
+    <if_variable name="AmountofBadGuysTeam3" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys3" randomIntLow="3000" randomIntHigh="3002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys3" sideValue="1" fleetnumber="GroupNum3" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam3" value="AmountofBadGuysTeam3-1" integer="yes" />
+  </event>
+  <event name="Torgoth" id_arme="f8fc09b5-78d2-4ad4-859d-ecddcbaf4486" parent_id_arme="c115bc82-7767-452a-8c78-9400d4d8e9ad">
+    <if_variable name="WhatRace3" comparator="EQUALS" value="3.0" />
+    <if_variable name="AmountofBadGuysTeam3" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys3" randomIntLow="4000" randomIntHigh="4002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys3" sideValue="1" fleetnumber="GroupNum3" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam3" value="AmountofBadGuysTeam3-1" integer="yes" />
+  </event>
+  <event name="Skaraan" id_arme="0d2a3c7d-f315-4316-93d4-2fa82516b193" parent_id_arme="c115bc82-7767-452a-8c78-9400d4d8e9ad">
+    <if_variable name="WhatRace3" comparator="EQUALS" value="4.0" />
+    <if_variable name="AmountofBadGuysTeam3" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys3" randomIntLow="5000" randomIntHigh="5002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys3" sideValue="1" fleetnumber="GroupNum3" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam3" value="AmountofBadGuysTeam3-1" integer="yes" />
+  </event>
+  <folder_arme name="Group4" id_arme="6e09d6fe-84d7-4723-9018-90b7f4c29dfe" parent_id_arme="03e25337-304c-4385-9209-6874a36c6206" />
+  <event name="Kralien" id_arme="0eb9ee01-968f-48f9-b985-75a420755882" parent_id_arme="6e09d6fe-84d7-4723-9018-90b7f4c29dfe">
+    <if_variable name="WhatRace4" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofBadGuysTeam4" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys4" randomIntLow="2000" randomIntHigh="2002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys4" sideValue="1" fleetnumber="GroupNum4" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam4" value="AmountofBadGuysTeam4-1" integer="yes" />
+  </event>
+  <event name="Arvonian" id_arme="0235bc0d-44f9-45bf-8257-7e72f8daa1a9" parent_id_arme="6e09d6fe-84d7-4723-9018-90b7f4c29dfe">
+    <if_variable name="WhatRace4" comparator="EQUALS" value="2.0" />
+    <if_variable name="AmountofBadGuysTeam4" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys4" randomIntLow="3000" randomIntHigh="3002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys4" sideValue="1" fleetnumber="GroupNum4" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam4" value="AmountofBadGuysTeam4-1" integer="yes" />
+  </event>
+  <event name="Torgoth" id_arme="36c2bf58-dfac-4e04-91d4-6d762fc854e9" parent_id_arme="6e09d6fe-84d7-4723-9018-90b7f4c29dfe">
+    <if_variable name="WhatRace4" comparator="EQUALS" value="3.0" />
+    <if_variable name="AmountofBadGuysTeam4" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys4" randomIntLow="4000" randomIntHigh="4002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys4" sideValue="1" fleetnumber="GroupNum4" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam4" value="AmountofBadGuysTeam4-1" integer="yes" />
+  </event>
+  <event name="Skaraan" id_arme="b8d12368-3535-4045-a664-4c6e1dbc93fb" parent_id_arme="6e09d6fe-84d7-4723-9018-90b7f4c29dfe">
+    <if_variable name="WhatRace4" comparator="EQUALS" value="4.0" />
+    <if_variable name="AmountofBadGuysTeam4" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys4" randomIntLow="5000" randomIntHigh="5002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys4" sideValue="1" fleetnumber="GroupNum4" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam4" value="AmountofBadGuysTeam4-1" integer="yes" />
+  </event>
+  <folder_arme name="Group5" id_arme="42e0492a-e4bb-4f61-880a-10122a749b20" parent_id_arme="03e25337-304c-4385-9209-6874a36c6206" />
+  <event name="Kralien" id_arme="8982b693-842a-48db-a200-a72501064388" parent_id_arme="42e0492a-e4bb-4f61-880a-10122a749b20">
+    <if_variable name="WhatRace5" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofBadGuysTeam5" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys5" randomIntLow="2000" randomIntHigh="2002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys5" sideValue="1" fleetnumber="GroupNum5" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam5" value="AmountofBadGuysTeam5-1" integer="yes" />
+  </event>
+  <event name="Arvonian" id_arme="dd776d46-219b-487f-9836-ac9695593553" parent_id_arme="42e0492a-e4bb-4f61-880a-10122a749b20">
+    <if_variable name="WhatRace5" comparator="EQUALS" value="2.0" />
+    <if_variable name="AmountofBadGuysTeam5" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys5" randomIntLow="3000" randomIntHigh="3002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys5" sideValue="1" fleetnumber="GroupNum5" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam5" value="AmountofBadGuysTeam5-1" integer="yes" />
+  </event>
+  <event name="Torgoth" id_arme="08e290cd-0b52-4f52-9833-ec7fe2bd167d" parent_id_arme="42e0492a-e4bb-4f61-880a-10122a749b20">
+    <if_variable name="WhatRace5" comparator="EQUALS" value="3.0" />
+    <if_variable name="AmountofBadGuysTeam5" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys5" randomIntLow="4000" randomIntHigh="4002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys5" sideValue="1" fleetnumber="GroupNum5" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam5" value="AmountofBadGuysTeam5-1" integer="yes" />
+  </event>
+  <event name="Skaraan" id_arme="1fd415b9-feb0-4bb2-84d9-bdbc6cabda99" parent_id_arme="42e0492a-e4bb-4f61-880a-10122a749b20">
+    <if_variable name="WhatRace5" comparator="EQUALS" value="4.0" />
+    <if_variable name="AmountofBadGuysTeam5" comparator="GREATER" value="0.0" />
+    <set_variable name="Badguys5" randomIntLow="5000" randomIntHigh="5002" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="9900" randomIntHigh="10000" />
+    <set_variable name="RandomX" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomY" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-200" randomIntHigh="200" />
+    <set_variable name="RandomhighthB" randomIntLow="-200" randomIntHigh="200" />
+    <create type="enemy" x="RandomA*RandomX" y="RandomhighthA" z="RandomB*RandomY" angle="RandomBarring" name="A|BadGuyNum|" hullID="Badguys5" sideValue="1" fleetnumber="GroupNum5" />
+    <set_variable name="BadGuyNum" value="BadGuyNum+1" integer="yes" />
+    <set_variable name="AmountofBadGuysTeam5" value="AmountofBadGuysTeam5-1" integer="yes" />
+  </event>
+</mission_data>
