@@ -1,0 +1,16 @@
+**** log file for mission MISS_Cruiser_Tournament ****
+CRUISER TOURNAMENT has started
+Beginning First Period. 48 minutes remaining.
+DIFFICULTY FACTOR 1
+Enemy Hunter 1 Destroyed
+Score = 40 kt  44 minutes remaining.
+Skaraan Defiler K61 Destroyed
+Score = 80 kt  42 minutes remaining.
+Kralien Cruiser K02 destroyed
+Kralien Cruiser K01 destroyed
+Kralien Cruiser K00 destroyed
+Score = 107 kt  41 minutes remaining.
+End of First Period. Whale Bonus = 2
+Score = 107 kt  41 minutes remaining.
+Enemy Hunter 3 Destroyed
+Score = 149 kt  38 minutes remaining.

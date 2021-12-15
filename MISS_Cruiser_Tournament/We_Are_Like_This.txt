@@ -1,0 +1,87 @@
+**** log file for mission MISS_Cruiser_Tournament ****
+CRUISER TOURNAMENT has started
+Beginning First Period. 48 minutes remaining.
+DIFFICULTY FACTOR 5
+Skaraan Defiler K61 Destroyed
+Score = 40 kt  45 minutes remaining.
+Kralien Cruiser K02 destroyed
+Score = 49 kt  42 minutes remaining.
+Kralien Cruiser K00 destroyed
+Score = 58 kt  42 minutes remaining.
+Kralien Cruiser K01 destroyed
+Score = 67 kt  42 minutes remaining.
+End of First Period. Whale Bonus = 5
+Score = 67 kt  41 minutes remaining.
+Enemy Hunter 3 Destroyed
+Score = 107 kt  39 minutes remaining.
+Kralien Dreadnought K08 destroyed
+Score = 132 kt  36 minutes remaining.
+Kralien Battleship K04 destroyed
+Score = 149 kt  35 minutes remaining.
+Kralien Dreadnought K09 destroyed
+Score = 174 kt  35 minutes remaining.
+Kralien Battleship K06 destroyed
+Score = 191 kt  35 minutes remaining.
+Kralien Battleship K05 destroyed
+Score = 208 kt  34 minutes remaining.
+Enemy Hunter 1 Destroyed
+Score = 248 kt  33 minutes remaining.
+Friendly Base DS2 Destroyed
+Score = 158 kt  33 minutes remaining.
+End of Second Period. Whale Bonus = 5
+Score = 158 kt  33 minutes remaining.
+Friendly Destroyer Phoenix Destroyed
+Score = 128 kt  32 minutes remaining.
+Pirate Nimbus Destroyed
+Score = 148 kt  30 minutes remaining.
+Kralien Dreadnought K07 destroyed
+Score = 173 kt  30 minutes remaining.
+Pirate Lusty Wrench Destroyed
+Score = 193 kt  28 minutes remaining.
+Arvonian Carrier N14 Destroyed
+Score = 233 kt  27 minutes remaining.
+Friendly Base DS1 Destroyed
+Score = 143 kt  27 minutes remaining.
+End of Third Period. Whale Bonus = 1
+Score = 143 kt  25 minutes remaining.
+Skaraan Enforcer N18 Destroyed
+Score = 193 kt  23 minutes remaining.
+Enemy Leviathan 2 Destroyed
+Score = 283 kt  19 minutes remaining.
+Enemy Leviathan 1 Destroyed
+Score = 373 kt  18 minutes remaining.
+Enemy Behemoth 1 Destroyed
+Score = 523 kt  17 minutes remaining.
+End of Fourth Period. Whale Bonus = 2
+Score = 523 kt  17 minutes remaining.
+Enemy Goliath 1 Destroyed
+Score = 603 kt  16 minutes remaining.
+Enemy Goliath 2 Destroyed
+Score = 683 kt  15 minutes remaining.
+Arvonian Carrier D20 Destroyed
+Score = 728 kt  11 minutes remaining.
+Pirate Black Comet Destroyed
+Arvonian Light Carrier D12 Destroyed
+Score = 773 kt  10 minutes remaining.
+Friendly Destroyer Moscow Destroyed
+Score = 743 kt  9 minutes remaining.
+End of Fifth Period. Whale Bonus = 1
+Score = 743 kt  9 minutes remaining.
+Score = 743 kt  8 minutes remaining.
+Friendly Base DS4 Destroyed
+Score = 653 kt  7 minutes remaining.
+Enemy Hunter 4 Destroyed
+Score = 693 kt  7 minutes remaining.
+Kralien Battleship K14 destroyed
+Score = 710 kt  5 minutes remaining.
+Kralien Battleship K16 destroyed
+Score = 727 kt  3 minutes remaining.
+Kralien Battleship K15 destroyed
+Score = 744 kt  3 minutes remaining.
+Kralien Dreadnought K19 destroyed
+Kralien Dreadnought K17 destroyed
+Score = 794 kt  1 minutes remaining.
+Kralien Dreadnought K18 destroyed
+Score = 819 kt  1 minutes remaining.
+End of Sixth Period. Whale Bonus = 2
+Final Score = 819 kilotons.

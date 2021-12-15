@@ -1,0 +1,68 @@
+**** log file for mission MISS_Cruiser_Tournament ****
+CRUISER TOURNAMENT has started
+Beginning First Period. 48 minutes remaining.
+DIFFICULTY FACTOR 5
+Skaraan Defiler K61 Destroyed
+Score = 40 kt  46 minutes remaining.
+Kralien Cruiser K01 destroyed
+Kralien Cruiser K02 destroyed
+Score = 58 kt  44 minutes remaining.
+Kralien Cruiser K00 destroyed
+Score = 67 kt  44 minutes remaining.
+End of First Period. Whale Bonus = 2
+Score = 67 kt  41 minutes remaining.
+Kralien Dreadnought K08 Surrendered
+Score = 105 kt  39 minutes remaining.
+Kralien Battleship K05 destroyed
+Kralien Battleship K06 destroyed
+Kralien Battleship K04 Surrendered
+Score = 165 kt  39 minutes remaining.
+Kralien Dreadnought K09 Surrendered
+Kralien Dreadnought K07 Surrendered
+Score = 241 kt  38 minutes remaining.
+Enemy Hunter 1 Surrendered
+Score = 301 kt  37 minutes remaining.
+Skaraan Defiler N14 Destroyed
+Score = 341 kt  34 minutes remaining.
+End of Second Period. Whale Bonus = 0
+Score = 341 kt  33 minutes remaining.
+Enemy Hunter 3 Surrendered
+Friendly Base DS1 Destroyed
+Score = 311 kt  31 minutes remaining.
+Pirate Lusty Wrench Destroyed
+Score = 331 kt  30 minutes remaining.
+Skaraan Enforcer N18 Destroyed
+Score = 381 kt  27 minutes remaining.
+Friendly Destroyer Phoenix Destroyed
+Score = 351 kt  25 minutes remaining.
+End of Third Period. Whale Bonus = 0
+Score = 351 kt  25 minutes remaining.
+Friendly Freighter Delta Queen Destroyed
+Score = 301 kt  24 minutes remaining.
+Friendly Base DS2 Destroyed
+Score = 211 kt  24 minutes remaining.
+Pirate Nimbus Destroyed
+Score = 231 kt  23 minutes remaining.
+Arvonian Light Carrier D12 Destroyed
+Score = 256 kt  20 minutes remaining.
+Enemy Hunter 4 Destroyed
+Score = 296 kt  18 minutes remaining.
+End of Fourth Period. Whale Bonus = 0
+Score = 296 kt  17 minutes remaining.
+Pirate Black Comet Destroyed
+Score = 316 kt  15 minutes remaining.
+Enemy N22 Surrendered
+Score = 421 kt  14 minutes remaining.
+Friendly Base DS4 Destroyed
+Score = 331 kt  9 minutes remaining.
+End of Fifth Period. Whale Bonus = 0
+Score = 331 kt  9 minutes remaining.
+Friendly Base DS3 Destroyed
+Score = 241 kt  4 minutes remaining.
+Friendly Destroyer Moscow Destroyed
+Score = 211 kt  3 minutes remaining.
+Friendly Freighter Alpha Betty Destroyed
+Arvonian Carrier D20 Destroyed
+Score = 206 kt  3 minutes remaining.
+End of Sixth Period. Whale Bonus = 0
+Final Score = 206 kilotons.
